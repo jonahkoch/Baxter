@@ -108,6 +108,49 @@ def fetch_names_concurrent(dreps, max_workers=15):
     
     return names
 
+def get_delegator_count(drep_id):
+    """Get count of delegators for a DRep."""
+    try:
+        resp = requests.get(
+            f"{KOIOS_URL}/drep_delegators",
+            params={"_drep_id": drep_id, "limit": 1},
+            timeout=10
+        )
+        if resp.status_code == 200:
+            data = resp.json()
+            # Get total count from response headers or by fetching all
+            # Koios doesn't return total count directly, so we need to count
+            # We'll do a count query by fetching with large limit
+            if data:
+                # Fetch all delegators to get count
+                count_resp = requests.get(
+                    f"{KOIOS_URL}/drep_delegators",
+                    params={"_drep_id": drep_id, "limit": 100000},
+                    timeout=30
+                )
+                if count_resp.status_code == 200:
+                    return len(count_resp.json())
+    except Exception as e:
+        print(f"Error fetching delegator count for {drep_id}: {e}", file=sys.stderr)
+    return 0
+
+def fetch_delegator_counts_concurrent(dreps, max_workers=10):
+    """Fetch delegator counts concurrently."""
+    counts = {}
+    
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = {executor.submit(get_delegator_count, d['drep_id']): d['drep_id'] for d in dreps}
+        for i, future in enumerate(futures):
+            did = futures[future]
+            try:
+                counts[did] = future.result()
+            except:
+                counts[did] = 0
+            if (i + 1) % 20 == 0:
+                print(f"  Fetched {i+1}/{len(futures)} delegator counts...", file=sys.stderr)
+    
+    return counts
+
 def main():
     print("=" * 60, file=sys.stderr)
     print("Finding Inactive DReps (100k-1M ADA delegation)", file=sys.stderr)
@@ -162,18 +205,24 @@ def main():
     print(f"\n5. Fetching DRep names...", file=sys.stderr)
     names = fetch_names_concurrent(inactive_in_range)
     
+    # Fetch delegator counts
+    print(f"\n6. Fetching delegator counts...", file=sys.stderr)
+    delegator_counts = fetch_delegator_counts_concurrent(inactive_in_range)
+    
     # Prepare CSV data
-    print(f"\n6. Preparing CSV...", file=sys.stderr)
+    print(f"\n7. Preparing CSV...", file=sys.stderr)
     csv_data = []
     for d in inactive_in_range:
         did = d['drep_id']
         amount_ada = int(d.get('amount', '0') or '0') / 1_000_000
         name = names.get(did, "Unnamed")
         expires = d.get('expires_epoch_no', 'N/A')
+        delegator_count = delegator_counts.get(did, 0)
         csv_data.append({
             'name': name,
             'delegation_ada': amount_ada,
-            'expired_epoch': expires
+            'expired_epoch': expires,
+            'delegator_count': delegator_count
         })
     
     # Sort by delegation amount
@@ -184,7 +233,7 @@ def main():
     output_file = f"inactive_dreps_{MIN_ADA}k-{MAX_ADA}k_{timestamp}.csv"
     
     with open(output_file, 'w', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=['name', 'delegation_ada', 'expired_epoch'])
+        writer = csv.DictWriter(f, fieldnames=['name', 'delegation_ada', 'expired_epoch', 'delegator_count'])
         writer.writeheader()
         writer.writerows(csv_data)
     
@@ -197,7 +246,7 @@ def main():
     print(f"\nCSV saved to: {output_file}", file=sys.stderr)
     print("\nTop 10 inactive DReps:", file=sys.stderr)
     for i, row in enumerate(csv_data[:10], 1):
-        print(f"  {i}. {row['name']} - {row['delegation_ada']:,.0f} ADA (expired epoch {row['expired_epoch']})", file=sys.stderr)
+        print(f"  {i}. {row['name']} - {row['delegation_ada']:,.0f} ADA ({row['delegator_count']} delegators, expired epoch {row['expired_epoch']})", file=sys.stderr)
     
     # Output filename for piping
     print(f"\nFile: {output_file}")
