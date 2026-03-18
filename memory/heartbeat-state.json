@@ -1,0 +1,15 @@
+{
+  "lastChecks": {
+    "tokenUsage": 1740194280
+  },
+  "dailyStats": {
+    "date": "2026-02-22",
+    "inputTokens": 3210,
+    "outputTokens": 1055
+  },
+  "thresholds": {
+    "contextWarningPercent": 80,
+    "dailyInputLimit": 100000,
+    "dailyOutputLimit": 10000
+  }
+}

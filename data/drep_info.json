@@ -1,0 +1,818 @@
+[
+,{
+,  "drep_id": "drep1yte7vdu7vjvq56xzza0grets7f5yk37d43d3pwjzuxe0d9gdl0x6e",
+,  "hex": "f3e6379e64980a68c2175e81e570f2684b47cdac5b10ba42e1b2f695",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1yteavz0lr3qsaacetdfgyjg2h9g2f5lvrfngjuhjyk7trpss7aghu",
+,  "hex": "f3d609ff1c410ef7195b5282490ab950a4d3ec1a668972f225bcb186",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 527,
+,  "amount": "0",
+,  "meta_url": "https://x.com/BullishDumpling",
+,  "meta_hash": "e898e14f60b6706ad13d65b17b47b8ca775ce27eb6f6f26b952aad81d4cb7fec"
+,}
+,{
+,  "drep_id": "drep1yt6hcg7qndze3wvx8es56jgzfcld5wru9p9qek9j9wh4eycr2vkfp",
+,  "hex": "f57c23c09b4598b9863e614d49024e3eda387c284a0cd8b22baf5c93",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 536,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytm2zedqf54prqf5kfvzq56dgr7s3p4h53w8z428z6l2c8cj8e33y",
+,  "hex": "f6a165a04d2a118134b25820534d40fd0886b7a45c71554716beac1f",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": true,
+,  "expires_epoch_no": 638,
+,  "amount": "6444101389",
+,  "meta_url": "https://raw.githubusercontent.com/AnonymousDRep/AnonymousDRep/refs/heads/main/Anonymous.jsonld",
+,  "meta_hash": "64ade6e98b8e9bdab7921a9b56056919d4adff215b4506b10270e6d5e2f56ea1"
+,}
+,{
+,  "drep_id": "drep1ytmptp3smf4gceeem8hf5464q72vgywv6z84ql04exkje3se2n5s8",
+,  "hex": "f6158630da6a8c6739d9ee9a57550794c411ccd08f507df5c9ad2cc6",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": true,
+,  "expires_epoch_no": 631,
+,  "amount": "1460266243616",
+,  "meta_url": "https://cardaspians.io/JasonMatthys_DRep.json",
+,  "meta_hash": "afe9a1e6f4dfad895b9e0b720dd1e97b8fa5f3163190dc9a8eab993e12be946f"
+,}
+,{
+,  "drep_id": "drep1ytmr6kcyhmj3pp62peueqyc85fl5qvsp8mpkwsplg629alqkp478c",
+,  "hex": "f63d5b04bee510874a0e79901307a27f4032013ec367403f46945efc",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": true,
+,  "expires_epoch_no": 633,
+,  "amount": "1768993608236",
+,  "meta_url": "https://raw.githubusercontent.com/jarturomora/arturoDRep/refs/heads/main/Arturo.jsonld",
+,  "meta_hash": "1516a5580586405cff8de659605d25b2dfa5eb9e70b02a86c73d103dc9a48531"
+,}
+,{
+,  "drep_id": "drep1ytmrkg092hpd79ypf564avazzdqeyz0crcpwvp9fck64njsekx0yx",
+,  "hex": "f63b21e555c2df14814d355eb3a213419209f81e02e604a9c5b559ca",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytmpyezpmhxy7u2v7mx8fsrcnzzcqrlhek5drnauazqtr8ga7tzur",
+,  "hex": "f6126441ddcc4f714cf6cc74c0789885800ff7cda8d1cfbce880b19d",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": true,
+,  "expires_epoch_no": 625,
+,  "amount": "896877234579",
+,  "meta_url": "https://raw.githubusercontent.com/ilija-radeljic/Cardano-DRep/refs/heads/main/ILIJA.jsonld",
+,  "meta_hash": "f1cdeca1ca12ab739b0835487b80da20fa25678e3ca771ed7e047977b6e380ee"
+,}
+,{
+,  "drep_id": "drep1ytmq2fgafnw0xc28u24p56tz2ecakzcmmv5r7ke4eh68dgsgqvu5z",
+,  "hex": "f605251d4cdcf36147e2aa1a69625671db0b1bdb283f5b35cdf476a2",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 529,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1yteh8udkttzy7frwl6yj5wzyqc04kx65pwwrqefx9j52ymgr6kuak",
+,  "hex": "f373f1b65ac44f246efe892a3844061f5b1b540b9c3065262ca8a26d",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": true,
+,  "expires_epoch_no": 638,
+,  "amount": "18817256069347",
+,  "meta_url": "https://raw.githubusercontent.com/0xdoriworld/DRep-metadata/refs/heads/main/Dori.jsonld",
+,  "meta_hash": "923ee005f463793f0600111ca8af59ae1dea6ae72122cd8d06165fdfb5d80358"
+,}
+,{
+,  "drep_id": "drep1ytmxglsfxxlth64fhyj3wwjfnlayjn3lak6sh4z8x3y0wgq8yylm3",
+,  "hex": "f6647e0931bebbeaa9b925173a499ffa494e3fedb50bd4473448f720",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytm8770aqd0xqn8f30y3cc3wtsah59vqg5u4ju7xmphl4ecyn8cap",
+,  "hex": "f67f79fd035e604ce98bc91c622e5c3b7a158045395973c6d86ffae7",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": true,
+,  "expires_epoch_no": 621,
+,  "amount": "90389559829",
+,  "meta_url": "https://most-brass-sun.quicknode-ipfs.com/ipfs/QmQ8Ur4Vjg9MVUxs3zHcAQHyUB4SV5Ehn9nfZmvcy7R3UT",
+,  "meta_hash": "bc2579c0e0f926cb7a3c31802a3f2bca263e95913881fd7d2c5bda7e36fffeb2"
+,}
+,{
+,  "drep_id": "drep1yteze88u2ck9wup8kr87qxf2tj736epvqr8cekaxxh5y5estsal7h",
+,  "hex": "f22c9cfc562c577027b0cfe0192a5cbd1d642c00cf8cdba635e84a66",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1yteqn40fjrvaqk4yewyxekdx65js3ke5tv2t6uhtc6gtxuqc0nqu0",
+,  "hex": "f209d5e990d9d05aa4cb886cd9a6d52508db345b14bd72ebc690b370",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 561,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1yt6lgdpqjey286qwt287mnk7sdqh95avfmde42vq3mltjys75kg5k",
+,  "hex": "f5f434209648a3e80e5a8fedcede834172d3ac4edb9aa9808efeb912",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": true,
+,  "expires_epoch_no": 637,
+,  "amount": "37194796194474",
+,  "meta_url": "https://raw.githubusercontent.com/MUEN718/Sarver-saver/refs/heads/main/MUEN.jsonld",
+,  "meta_hash": "4bd1ba823f86d96d4d311b0e449b79d92b6779c83f58424ffac8a3d977924e2f"
+,}
+,{
+,  "drep_id": "drep1yt6l40htemepw0rwe5gtptm2en6xfepyvpfryltap0epnlq3jh536",
+,  "hex": "f5fabeebcef2173c6ecd10b0af6accf464e4246052327d7d0bf219fc",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1yt67l7we0xtkl9v8krjlkjm6g9g9khqvecndevz44n3lcdc9rg2ur",
+,  "hex": "f5eff9d979976f9587b0e5fb4b7a41505b5c0cce26dcb055ace3fc37",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 586,
+,  "amount": "1897681844684",
+,  "meta_url": "https://raw.githubusercontent.com/canopus-n/voltaire/refs/heads/main/canopus-n.jsonld",
+,  "meta_hash": "0297d69dc29633bad70d6605c892ef99c61f6a9554366e56ae8f66c9cf93986d"
+,}
+,{
+,  "drep_id": "drep1y06ljagpy4vy2qtk9ux8fwvwhqnp7a0mz9czpaa38ejpw3glsr8ga",
+,  "hex": "f5f9750125584501762f0c74b98eb8261f75fb117020f7b13e641745",
+,  "has_script": true,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1yt6tfmsgzxm6ve5d5aqmulxeuvgyfyndxthqjxd0nudd86gqjwgam",
+,  "hex": "f4b4ee0811b7a6668da741be7cd9e31044926d32ee0919af9f1ad3e9",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 610,
+,  "amount": "108887944784",
+,  "meta_url": "https://raw.githubusercontent.com/Autonomous-AI-dRep/dRep-info/refs/heads/main/dRep%20AI%20Agent%20(S%20(1).jsonld",
+,  "meta_hash": "7717de71c1a08a6947949edc769030d4c491cba4241d9cd3e906cbb143434221"
+,}
+,{
+,  "drep_id": "drep1ytmuvwmr55g3yg34ar5j43qkjpj8mep8yw6walrmp4slxjsr7p2av",
+,  "hex": "f7c63b63a511122235e8e92ac41690647de42723b4eefc7b0d61f34a",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1yt6zkzzvuem9gpg64ffxkcsg5l55yk4sdfltjpul0amdtpgrxd4vt",
+,  "hex": "f42b084ce67654051aaa526b6208a7e9425ab06a7eb9079f7f76d585",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 601,
+,  "amount": "170134518173",
+,  "meta_url": "https://most-brass-sun.quicknode-ipfs.com/ipfs/QmQmHMEX8R5A4ZzLpCSYKxz6CJaCMm5qRP5w5UAedddLBv",
+,  "meta_hash": "2e4e1692ece143a55b2bbef2cd51e6ad58fb91e5b3cb54266422b06965e4cd52"
+,}
+,{
+,  "drep_id": "drep1ytms0h83mmg2uu7a53vlhrghdm4dkqft42az0p9vf5qfkqgq6q3d2",
+,  "hex": "f707dcf1ded0ae73dda459fb8d176eeadb012baaba2784ac4d009b01",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1yte3chru8m7d3gzgpwvmgan0gjfxru9r9cyvrkkcerc0wcg6qfvtc",
+,  "hex": "f31c5c7c3efcd8a0480b99b4766f449261f0a32e08c1dad8c8f0f761",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": true,
+,  "expires_epoch_no": 638,
+,  "amount": "2908272184493",
+,  "meta_url": "https://most-brass-sun.quicknode-ipfs.com/ipfs/QmYKxvHysLLaQTZchnjqepE3fEKMdvQpTJgTzV6SkYFM46",
+,  "meta_hash": "47daf68f1264bb5a83b5aef1b6d0a64de6ba590d69b6b7b9d1ec5bb6e3eae3eb"
+,}
+,{
+,  "drep_id": "drep1ytec7gdrfp0nt578cl4hx9a7umqxejmf6f40gvsydq8pm0qlzsarn",
+,  "hex": "f38f21a3485f35d3c7c7eb7317bee6c06ccb69d26af43204680e1dbc",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 603,
+,  "amount": "2608709849",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytee8ue66qdqkfquq5c9hld7trhxvqdra5plfhyuragcfsgrqen4n",
+,  "hex": "f393f33ad01a0b241c05305bfdbe58ee6601a3ed03f4dc9c1f5184c1",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": true,
+,  "expires_epoch_no": 629,
+,  "amount": "44445125327",
+,  "meta_url": "https://raw.githubusercontent.com/jakubszyca/Cardano-Drep/refs/heads/main/Jakub%20Szyca.jsonld",
+,  "meta_hash": "3b8fde4facbf378dbf814a5a394321bcad7c76db4d5bba4177427436130d5ec4"
+,}
+,{
+,  "drep_id": "drep1ytec0m7nhw498kzu5qvkqcn2gy2xxw5dwzr62zte9px262chpn3je",
+,  "hex": "f387efd3bbaa53d85ca01960626a4114633a8d7087a50979284cad2b",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 617,
+,  "amount": "1529939420",
+,  "meta_url": "https://raw.githubusercontent.com/Cardano-Ghost-001/Drep-ghost-info/refs/heads/main/Cardano-Ghost-00.jsonld",
+,  "meta_hash": "76150e7caac1aebc3696e7f3f5d5b9f427bc71cf8c719732bdf5ce746117ba73"
+,}
+,{
+,  "drep_id": "drep1ytaujq09nkztzehu06aeut6y29mc4udlfgsrl7cwy6v78dqdua047",
+,  "hex": "fbc901e59d84b166fc7ebb9e2f4451778af1bf4a203ffb0e2699e3b4",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytaunswwpytxjk2ja7c5suxrjz57vtq4ryzu7prkxmm4wdqs7c9wn",
+,  "hex": "fbc9c1ce0916695952efb14870c390a9e62c151905cf047636f75734",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": true,
+,  "expires_epoch_no": 638,
+,  "amount": "16970312927583",
+,  "meta_url": "https://raw.githubusercontent.com/toshimiyatake/MYTK/refs/heads/master/MiyatakeJapan%20(2).jsonld",
+,  "meta_hash": "80ed7954831be29c5ad3e81461bd982c620bbd7d9f968b59478e50d42845b493"
+,}
+,{
+,  "drep_id": "drep1ytat60hw0em99dq0ncav5q4kjsdqxc3n576auqkzxyjk5pcmglqss",
+,  "hex": "fabd3eee7e7652b40f9e3aca02b6941a036233a7b5de02c231256a07",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 593,
+,  "amount": "474619550160",
+,  "meta_url": "https://raw.githubusercontent.com/Coldheat22/DREP_Cardano/main/COLDHEAT_3.jsonld",
+,  "meta_hash": "ce0f8d45fe8517ea721951823509126a8093e7f70b333151cebfc408bf38e4fd"
+,}
+,{
+,  "drep_id": "drep1ytatjy0ffn5hlxqcltltd9cddc44jza56spuxn9mqqgqa4qw7lmmq",
+,  "hex": "fab911e94ce97f9818fafeb6970d6e2b590bb4d403c34cbb00100ed4",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1yt79448qcvaljuk39l8g8xlf7rvhn68hdy5vhkrs9s8cyystalcwr",
+,  "hex": "fc5ad4e0c33bf972d12fce839be9f0d979e8f76928cbd8702c0f8212",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1yt7hfdllz0l707unkh9g2fs9e35dl6d94tvjynnh4t5gw6gcmn4jn",
+,  "hex": "fd74b7ff13ffe7fb93b5ca852605cc68dfe9a5aad9224e77aae88769",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": true,
+,  "expires_epoch_no": 632,
+,  "amount": "376637652515",
+,  "meta_url": "https://most-brass-sun.quicknode-ipfs.com/ipfs/QmNi9fxk5yo2La3fXABLWfYDXzyu7ocB3DEyXmjD1gH697",
+,  "meta_hash": "46d9b6249abe90727b8caa8b8bd7d8555c8ec649b7b1a82adf11f89fa2219866"
+,}
+,{
+,  "drep_id": "drep1yt7h6xrn6nlc7r3egjzcsqs25syayalplcal42nj30npefs8tknhc",
+,  "hex": "fd7d1873d4ff8f0e39448588020aa409d277e1fe3bfaaa728be61ca6",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 530,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1yt73pq8a3uh46h2dt8tkt4pkm0ul6dp3y9ey9vhystvq7zgk0ceug",
+,  "hex": "fd1080fd8f2f5d5d4d59d765d436dbf9fd3431217242b2e482d80f09",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 569,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytuu497zn22dxenxjetk843v5kttcyypvkqy7353tdsh9wgc5h47w",
+,  "hex": "f9ca97c29a94d36666965763d62ca596bc108165804f46915b6172b9",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytulwjetfmltznfa3d4rz545fdcl884kwp6zfzchazqpvtsv4ckzq",
+,  "hex": "f9f74b2b4efeb14d3d8b6a3152b44b71f39eb67074248b17e880162e",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 615,
+,  "amount": "19204061",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytuuvvckgw4x874v8f4ht57rp97c2tv55vm877pxvf5t4aqec94t3",
+,  "hex": "f9c6331643aa63faac3a6b75d3c3097d852d94a3367f78266268baf4",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytuufvd6maykgfcp20fxgpx7g6a9z2suchqehfejwdsx8cgpx80yg",
+,  "hex": "f9c4b1badf4964270153d26404de46ba512a1cc5c19ba732736063e1",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": true,
+,  "expires_epoch_no": 637,
+,  "amount": "844729296937",
+,  "meta_url": "https://ipfs.io/ipfs/QmQ3GS8wVAnMKw74CKfGB9HJAeW4NWvh9NAGTQuJK37zEU",
+,  "meta_hash": "bc2fef6e1583bca1dbd3cfdb1bb5ddd0e57b920281aee5785a83dfb25a49be87"
+,}
+,{
+,  "drep_id": "drep1ytu5wxmgk8pvg6ud4aptls8neuffy6hzwhurj0rgnd49cvq5gv47r",
+,  "hex": "f9471b68b1c2c46b8daf42bfc0f3cf12926ae275f8393c689b6a5c30",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytu5gw8crp2ezf0wysx9lfhma4vn5q0sfjhna6qdnn8tssql2h24j",
+,  "hex": "f94438f818559125ee240c5fa6fbed593a01f04caf3ee80d9cceb840",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 541,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytlrg0j7mv7rqn3m8lt3yr3unflvl0yvlzgcpcyzavz42tsle8c2p",
+,  "hex": "fe343e5edb3c304e3b3fd7120e3c9a7ecfbc8cf89180e082eb05552e",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 543,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1yta4g9f8rzn857u8axv2nmlhjyhkg984cm6rqa86ttv8l5qn0za3n",
+,  "hex": "fb54152718a67a7b87e998a9eff7912f6414f5c6f43074fa5ad87fd0",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytl8k34gzgmlmvs38aag27fw076gp76rhquflw70490efkswvzhqx",
+,  "hex": "fe7b46a81237fdb2113f7a85792e7fb480fb43b8389fbbcfa95f94da",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 563,
+,  "amount": "1417409686",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1yta9pcuf4vpe2dptkvcknp4z2aqlzv3hz8ekct4k3ell8asktq73w",
+,  "hex": "fa50e389ab0395342bb3316986a25741f1323711f36c2eb68e7ff3f6",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 570,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytaqxetquhe2qqa23hndt72fv9fy424evamps7z0gg5tntgea7gne",
+,  "hex": "fa036560e5f2a003aa8de6d5f94961524aaab9677618784f4228b9ad",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 595,
+,  "amount": "542791471",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1yt77crnmjuqkj9gcwjjsurez7s07jhwhyt4suxs3xeqftcsfrspun",
+,  "hex": "fdec0e7b970169151874a50e0f22f41fe95dd722eb0e1a11364095e2",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": true,
+,  "expires_epoch_no": 638,
+,  "amount": "103062888206735",
+,  "meta_url": "https://neeup.com/drep/JAZZ.jsonld",
+,  "meta_hash": "74dbbc4975d2b5cec44f1155fce9f9c40753bfbb6ecec9295a4fc2c17c2005b8"
+,}
+,{
+,  "drep_id": "drep1yt7e2v997mfxw72t2vznatuswayezd77c9lpkaay9eve9fsuw6nfj",
+,  "hex": "fd9530a5f6d267794b53053eaf9077499137dec17e1b77a42e5992a6",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytllxpuhl9jexu8uegevmekhj9k3hyn48gcqmct9vp0k4vqk23lwk",
+,  "hex": "fff30797f9659370fcca32cde6d7916d1b92753a300de165605f6ab0",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytllaa4zcsvp83k84nz5hu9uhnrjhgflptlnam8t0g2z2dq3364xc",
+,  "hex": "fffef6a2c41813c6c7acc54bf0bcbcc72ba13f0aff3eeceb7a142534",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytludduzatqjau05ywpz232fjlzkr79t2gd2qq2q6c6w5tcvuqgqv",
+,  "hex": "ffc6b782eac12ef1f4238225454997c561f8ab521aa00140d634ea2f",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytlac07elexm2mwcww604ke2l5cngex50tsszv4scl6pu0qk6fgnv",
+,  "hex": "ffdc3fd9fe4db56dd873b4fadb2afd313464d47ae10132b0c7f41e3c",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytlwuly0r2nhnjvrjmgklsqjn3pa2dtheu7ct99gpe3mhgqpvcesz",
+,  "hex": "feee7c8f1aa779c98396d16fc0129c43d53577cf3d8594a80e63bba0",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 574,
+,  "amount": "501320",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1yt7vr9r0ay4h7fagkgwkvwdll3etupc40vn5tmeqf46x0sq63mk3a",
+,  "hex": "fcc1946fe92b7f27a8b21d6639bffc72be07157b2745ef204d7467c0",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 617,
+,  "amount": "256565604733",
+,  "meta_url": "https://raw.githubusercontent.com/Birdlord69/drep2025/refs/heads/main/Oomfie.jsonld",
+,  "meta_hash": "b3ad18e5a2395ab9fddea01a7fc096687e9ae11aa51060cec6c9942a7d75745e"
+,}
+,{
+,  "drep_id": "drep1ytuvz8hq2qmcdvy9rs4erpfhge5gypfut9yva9tjj2vw66g73ge5q",
+,  "hex": "f8c11ee0503786b0851c2b918537466882053c5948ce95729298ed69",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 591,
+,  "amount": "1086005816057",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytuddrgqca0xd4aams6pl9zndpcmxg0rs7z3mggjelm6kscp4arg5",
+,  "hex": "f8d68d00c75e66d7bddc341f94536871b321e387851da112cff7ab43",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": true,
+,  "expires_epoch_no": 637,
+,  "amount": "58550022285754",
+,  "meta_url": "https://raw.githubusercontent.com/nagamarupanda/Drep/refs/heads/main/SASA_nagamaru_%E3%81%AA%E3%81%8C%E3%81%BE%E3%82%8B.jsonld",
+,  "meta_hash": "867285a8cade7056ac82b73583ab87946ee8a21a61ee6b3fca9545c309be40b4"
+,}
+,{
+,  "drep_id": "drep1ytuvsulm46gydp6cqzdupg6evx49g28qwf3aaw0gr7sy0lqwmvhhy",
+,  "hex": "f8c873fbae90468758009bc0a35961aa5428e07263deb9e81fa047fc",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": true,
+,  "expires_epoch_no": 620,
+,  "amount": "1628729237",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1yt7phuhu6w0a92zyq3q4xyhhm8l5txaha2m3gdl7883qhdgqfvu7z",
+,  "hex": "fc1bf2fcd39fd2a84404415312f7d9ff459bb7eab71437fe39e20bb5",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytadr8yj8he4788sktf3a5jeh22r54yl0xeg6mt7xfv4x2slt7nlr",
+,  "hex": "fad19c923df35f1cf0b2d31ed259ba943a549f79b28d6d7e3259532a",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytl3ulm57y0u8q3kdjq4ttql2ncl0nakx0rqmararaqu2yc229nk3",
+,  "hex": "ff1e7f74f11fc382366c8155ac1f54f1f7cfb633c60df47d1f41c513",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytlngxqtlakeq5sxn7xkqrjk2pn5f6mxvh0pn2p2fpsrpdsw8y96g",
+,  "hex": "ff34180bff6d9052069f8d600e56506744eb6665de19a82a486030b6",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 552,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytasx739a2q9hg22vk0rza6dwtzpry6cyp4kkxmmgqa929gmf3a8e",
+,  "hex": "fb037a25ea805ba14a659e31774d72c4119358206b6b1b7b403a5515",
+,  "has_script": false,
+,  "registered": false,
+,  "deposit": null,
+,  "active": false,
+,  "expires_epoch_no": null,
+,  "amount": "0",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytajpleue086e8jw0vetfl70qay0tgv8nccfv4aygkpt8xsjpgdys",
+,  "hex": "fb20ff3ccbcfac9e4e7b32b4ffcf0748f5a1879e309657a44582b39a",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 615,
+,  "amount": "62217191436",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytae7wj5s8pu8qry9vfcnqy97w68z96lffzwzrc4verpkfqsl8e8m",
+,  "hex": "fb9f3a5481c3c380642b13898085f3b471175f4a44e10f1566461b24",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": true,
+,  "expires_epoch_no": 632,
+,  "amount": "5908077690998",
+,  "meta_url": "https://tobg.github.io/Cardano_Pool/drep.jsonld",
+,  "meta_hash": "5b9b493105b3c48ccb291cfab388625b3d5ae6da0c164687515d0c81f5b52142"
+,}
+,{
+,  "drep_id": "drep1ytamqncvuz2r0atkwxwgcn5zmgxm09j0g2lgcrp7ddqfsfcsgnr8s",
+,  "hex": "fbb04f0ce09437f576719c8c4e82da0db7964f42be8c0c3e6b409827",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": true,
+,  "expires_epoch_no": 635,
+,  "amount": "1625337613819",
+,  "meta_url": "https://most-brass-sun.quicknode-ipfs.com/ipfs/QmUeLVSdXRpTRaMyrTMwB1CvcUqok8fQpk5TRnUeEbEZpA",
+,  "meta_hash": "1a0ed3ec7eee597ffacebabdc4f85d93c8d1508eb552fdd0852db8e681c9fc18"
+,}
+,{
+,  "drep_id": "drep1ytu64qt7send5dw7wcd0z5geh4ka6qstgvtgval097hed7qqnqh2n",
+,  "hex": "f9aa817e8666da35de761af15119bd6ddd020b43168677ef2faf96f8",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": true,
+,  "expires_epoch_no": 629,
+,  "amount": "21368828278790",
+,  "meta_url": "http://www.queenada.com/wp-content/uploads/2025/08/phillerino.jsonld",
+,  "meta_hash": "aeb3377d94aab4930d6cdd1c6172228a8a3b58674027dccfaf2b0d0ebe2a1898"
+,}
+,{
+,  "drep_id": "drep1ytujgtwpnnjwnrl03kf2pfe68sssfrlsl3u2a9gegp5u96csz78z7",
+,  "hex": "f9242dc19ce4e98fef8d92a0a73a3c21048ff0fc78ae95194069c2eb",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": true,
+,  "expires_epoch_no": 625,
+,  "amount": "1820618951",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytufxvm6y9zyhxamfh4g8g272j4d0nce8rmqkdlvwf9qpngw465t5",
+,  "hex": "f893337a21444b9bbb4dea83a15e54aad7cf1938f60b37ec724a00cd",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": false,
+,  "expires_epoch_no": 527,
+,  "amount": "108532092361",
+,  "meta_url": null,
+,  "meta_hash": null
+,}
+,{
+,  "drep_id": "drep1ytuf3fjch3lu5rkutgfz0wc3ngjszqluthj67pdeyvp49uszfkcp7",
+,  "hex": "f898a658bc7fca0edc5a1227bb119a250103fc5de5af05b9230352f2",
+,  "has_script": false,
+,  "registered": true,
+,  "deposit": "500000000",
+,  "active": true,
+,  "expires_epoch_no": 633,
+,  "amount": "946524360023",
+,  "meta_url": "https://thevikingpool.com/thor.jsonld",
+,  "meta_hash": "52220a6a07e3706a410d7766f6c25856d21aabdd434f5736dc5180892becc307"
+,}
+]
