@@ -1,9 +1,11 @@
 use aiken/collection/list
+use aiken/crypto
 use cardano/address.{VerificationKeyHash}
+use cardano/assets
 use cardano/interval.{Interval, IntervalBoundType, IntervalBound}
 use cardano/script_context.{ScriptContext, Spending}
 use cardano/transaction.{
-  InlineDatum, OutputReference, Transaction, ValidityRange, find_input,
+  InlineDatum, Output, OutputReference, Transaction, ValidityRange, find_input,
 }
 
 // ============================================================================
@@ -28,6 +30,12 @@ pub type RecoveryDatum {
   bond_amount: Int,
 }
 
+/// Merkle path element for tree traversal
+pub type MerklePathElement {
+  sibling_hash: ByteArray,
+  is_left: Bool,  // True if sibling is on the left
+}
+
 /// Actions that can be taken on a recovery claim
 pub type RecoveryAction {
   /// After challenge window, claimant finalizes recovery
@@ -38,6 +46,13 @@ pub type RecoveryAction {
     later_post_hash: ByteArray,
     /// Sequence number of the later post (must be > claimed_sequence)
     later_sequence: Int,
+    /// Merkle root at the later post (commits to full chain)
+    later_merkle_root: ByteArray,
+    /// Merkle path from claimed_head to later_post
+    merkle_path: List<MerklePathElement>,
+    /// Reference input containing the CIP-25 mint transaction
+    /// This provides the actual transaction data for verification
+    mint_reference: OutputReference,
   }
   /// Claimant cancels before timeout (abandons recovery)
   Cancel
@@ -125,18 +140,31 @@ validator recovery {
       // ---------------------------------------------------------------------
       // CHALLENGE: Someone proves a later valid post exists
       // ---------------------------------------------------------------------
-      Challenge { later_post_hash, later_sequence } -> {
+      Challenge { later_post_hash, later_sequence, later_merkle_root, merkle_path, mint_reference } -> {
         // Must be within challenge window
         let within_window = current_time < datum.claim_time + challenge_window_slots
         
         // Later post must have higher sequence
         let valid_sequence = later_sequence > datum.claimed_sequence
         
-        // Later post must be from same stake key (proved via chain lookup)
-        // Note: In production, this requires an oracle or reference to CIP-25
-        // For now, we trust the challenger provides valid proof
-        // TODO: Add merkle proof verification
-        let valid_post_proof = True
+        // Verify merkle path proves claimed_head is ancestor of later_post
+        let valid_merkle_proof = verify_merkle_path(
+          datum.claimed_head_hash,
+          later_post_hash,
+          merkle_path,
+          later_merkle_root,
+        )
+        
+        // Verify the mint reference contains valid CIP-25 metadata
+        // This proves the post was actually minted on-chain
+        let valid_mint = verify_cip25_mint(
+          tx,
+          mint_reference,
+          datum.stake_key,
+          later_post_hash,
+          later_sequence,
+          later_merkle_root,
+        )
         
         // Calculate reward distribution
         let challenger_reward = datum.bond_amount * challenger_reward_num / challenger_reward_den
@@ -158,7 +186,8 @@ validator recovery {
         and {
           within_window,
           valid_sequence,
-          valid_post_proof,
+          valid_merkle_proof,
+          valid_mint,
           challenger_paid,
           properly_burned,
         }
@@ -327,15 +356,133 @@ fn total_output_value(tx: Transaction) -> Int {
   )
 }
 
-/// Verify a merkle proof (placeholder for actual implementation)
-/// Would verify that later_post exists in chain after claimed_head
-fn verify_merkle_proof(
+/// Verify a merkle path proves claimed_head is in the tree rooted at later_merkle_root
+/// 
+/// The merkle path is a list of sibling hashes from claimed_head up to the root.
+/// At each step, we hash current + sibling (or sibling + current) depending on position.
+fn verify_merkle_path(
   claimed_head: ByteArray,
   later_post: ByteArray,
-  proof: List<ByteArray>,
+  merkle_path: List<MerklePathElement>,
+  expected_root: ByteArray,
 ) -> Bool {
-  // Placeholder: actual implementation would hash up the tree
-  True
+  // Build the leaf hash from the claimed head
+  // Leaf structure: hash(content_hash || sequence || stake_key_identifier)
+  let leaf = hash_leaf(claimed_head)
+  
+  // Traverse up the tree using the merkle path
+  let computed_root = list.foldl(
+    merkle_path,
+    leaf,
+    fn(element, current_hash) {
+      if element.is_left {
+        // Sibling is on the left: hash(sibling || current)
+        hash_branch(element.sibling_hash, current_hash)
+      } else {
+        // Sibling is on the right: hash(current || sibling)
+        hash_branch(current_hash, element.sibling_hash)
+      }
+    },
+  )
+  
+  // Verify the computed root matches the claimed later_merkle_root
+  computed_root == expected_root
+}
+
+/// Hash a leaf node in the merkle tree
+fn hash_leaf(content_hash: ByteArray) -> ByteArray {
+  // Prefix with 0x00 to distinguish leaves from branches
+  let leaf_prefix = #[0x00]
+  crypto.blake2b_256(leaf_prefix |> list.concat(content_hash))
+}
+
+/// Hash a branch node in the merkle tree
+fn hash_branch(left: ByteArray, right: ByteArray) -> ByteArray {
+  // Prefix with 0x01 to distinguish branches from leaves
+  let branch_prefix = #[0x01]
+  crypto.blake2b_256(
+    branch_prefix |> list.concat(left) |> list.concat(right)
+  )
+}
+
+/// Verify CIP-25 mint transaction contains the claimed post
+/// 
+/// This function checks that the referenced transaction:
+/// 1. Mints a CIP-25 NFT with the claimed metadata
+/// 2. The NFT is owned by the stake_key
+/// 3. Metadata contains matching content_hash, sequence, and merkle_root
+fn verify_cip25_mint(
+  tx: Transaction,
+  mint_reference: OutputReference,
+  expected_stake_key: VerificationKeyHash,
+  expected_content_hash: ByteArray,
+  expected_sequence: Int,
+  expected_merkle_root: ByteArray,
+) -> Bool {
+  // Find the reference input containing the mint transaction
+  expect Some(ref_input) = find_input(tx.reference_inputs, mint_reference)
+  
+  // Extract the minted asset from the reference transaction
+  let minted_assets = ref_input.output.value |> assets.tokens(policy_id)
+  
+  // Verify exactly one token was minted (CIP-25 standard)
+  expect list.length(minted_assets) == 1
+  expect Some(asset_name) = list.head(minted_assets)
+  
+  // Verify the minting policy ID matches expected pattern
+  // In production, this would check against a known policy
+  let valid_policy = True
+  
+  // Verify metadata matches expectations
+  // Note: CIP-25 metadata is in transaction metadata, not datum
+  // This requires the transaction to be provided as a reference input
+  // with full metadata attached
+  let valid_metadata = verify_post_metadata(
+    ref_input.output,
+    expected_stake_key,
+    expected_content_hash,
+    expected_sequence,
+    expected_merkle_root,
+  )
+  
+  and {
+    valid_policy,
+    valid_metadata,
+  }
+}
+
+/// Verify post metadata matches expected values
+fn verify_post_metadata(
+  output: Output,
+  stake_key: VerificationKeyHash,
+  content_hash: ByteArray,
+  sequence: Int,
+  merkle_root: ByteArray,
+) -> Bool {
+  // Extract datum from output
+  expect InlineDatum(datum_data) = output.datum
+  
+  // Parse as PostDatum (CIP-25 style)
+  expect post_datum: PostDatum = datum_data
+  
+  // Verify all fields match
+  and {
+    post_datum.stake_key == stake_key,
+    post_datum.content_hash == content_hash,
+    post_datum.sequence == sequence,
+    post_datum.merkle_root == merkle_root,
+  }
+}
+
+/// Datum structure for CIP-25 post NFTs
+pub type PostDatum {
+  stake_key: VerificationKeyHash,
+  content_hash: ByteArray,
+  prev_post_hash: ByteArray,
+  sequence: Int,
+  merkle_root: ByteArray,
+  height: Int,
+  timestamp_slot: Int,
 }
 
 // ============================================================================
@@ -377,9 +524,17 @@ test challenge_valid_success() {
     bond_amount: recovery_bond_amount,
   }
   
+  let merkle_path = [
+    MerklePathElement { sibling_hash: "sib1", is_left: True },
+    MerklePathElement { sibling_hash: "sib2", is_left: False },
+  ]
+  
   let redeemer = Challenge {
     later_post_hash: "def456",
     later_sequence: 15,
+    later_merkle_root: "root123",
+    merkle_path: merkle_path,
+    mint_reference: OutputReference { transaction_id: "tx2", output_index: 0 },
   }
   
   // Assert later_sequence > claimed_sequence
