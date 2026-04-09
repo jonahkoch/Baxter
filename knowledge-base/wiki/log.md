@@ -46,3 +46,14 @@ Updated:
 - `raw/midnight/proving-nothing-charles-hoskinson.md` — Status updated
 
 Source touched: 1 → 1 wiki page created, 1 index entry
+
+## 2026-04-09 ingest | Midnight Network Documentation (llms.txt)
+
+Archived source:
+- `raw/midnight/midnight-docs-llms.txt` (19KB documentation index)
+- `raw/midnight/midnight-docs-llms.md` (metadata)
+
+Source: Midnight official docs (llmstxt.org format)
+Topics: Getting started, Compact language, concepts, tutorials, node ops
+Status: Archived, ready for query-driven ingestion
+Note: Same source used for Midnight skill — now in knowledge base for cross-referencing with Proving Nothing book
