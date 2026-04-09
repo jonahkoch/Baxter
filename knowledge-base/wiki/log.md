@@ -20,3 +20,13 @@ Schema customized for Jonah Koch's focus areas:
 5. Web3/AI Intersection
 
 Ready for first source ingestion.
+
+## 2026-04-09 ingest | Proving Nothing by Charles Hoskinson
+
+Archived source:
+- `raw/midnight/proving-nothing-charles-hoskinson.pdf` (4.2MB)
+- `raw/midnight/proving-nothing-charles-hoskinson.md` (metadata)
+
+Source: GitHub release (Seven Layer project)
+Topic: Zero-knowledge proofs, Midnight Network
+Status: Downloaded, pending wiki ingestion
