@@ -30,3 +30,19 @@ Archived source:
 Source: GitHub release (Seven Layer project)
 Topic: Zero-knowledge proofs, Midnight Network
 Status: Downloaded, pending wiki ingestion
+
+## 2026-04-09 update | Wiki page created for Proving Nothing
+
+Created comprehensive summary page:
+- `wiki/proving-nothing-book.md`
+- Seven-layer model breakdown
+- Three frontiers analysis
+- Seven open questions
+- Key terminology and market context
+- Cross-references to Midnight Network
+
+Updated:
+- `wiki/index.md` — Added to Midnight Network section
+- `raw/midnight/proving-nothing-charles-hoskinson.md` — Status updated
+
+Source touched: 1 → 1 wiki page created, 1 index entry

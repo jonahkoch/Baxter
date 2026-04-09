@@ -15,7 +15,7 @@ Last updated: 2026-04-09
 
 ## Midnight Network
 
-*No pages yet — add as sources are ingested*
+- [[proving-nothing-book]] — Comprehensive ZK guide by Charles Hoskinson with seven-layer model and Midnight case studies
 
 ## Kochfoto
 

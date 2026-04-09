@@ -9,9 +9,10 @@
 Book on zero-knowledge proofs from the founder of Midnight Network (and Cardano). Covers ZK concepts, applications, and implementations.
 
 ## Status
-- [ ] Ingested into wiki
-- [ ] Key concepts extracted
-- [ ] Cross-references created
+- [x] Ingested into wiki
+- [x] Summary created: [[proving-nothing-book]]
+- [ ] Detailed chapter notes pending
+- [ ] Cross-references to other topics pending
 
 ## Notes
 *Add notes here as we process this source*
