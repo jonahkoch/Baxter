@@ -57,3 +57,13 @@ Source: Midnight official docs (llmstxt.org format)
 Topics: Getting started, Compact language, concepts, tutorials, node ops
 Status: Archived, ready for query-driven ingestion
 Note: Same source used for Midnight skill — now in knowledge base for cross-referencing with Proving Nothing book
+
+## 2026-04-09 create | Session continuity guide
+
+Created `wiki/session-continuity.md` to help future sessions understand:
+- What's in the knowledge base (sources and wiki pages)
+- How to query it (mention knowledge base, specific sources, or wiki pages)
+- How to add new sources (drop in raw/, say "ingest")
+- Recent activity and current status
+
+Updated `wiki/index.md` — added Knowledge Base Meta section

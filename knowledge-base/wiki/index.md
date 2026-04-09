@@ -13,6 +13,10 @@ Last updated: 2026-04-09
 
 *No pages yet — add as sources are ingested*
 
+## Knowledge Base Meta
+
+- [[session-continuity]] — How to use this knowledge base across sessions
+
 ## Midnight Network
 
 - [[proving-nothing-book]] — Comprehensive ZK guide by Charles Hoskinson with seven-layer model and Midnight case studies
