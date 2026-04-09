@@ -1,5 +1,15 @@
 # Long-Term Memory
 
+## Repository Access
+
+My workspace repo and any others I have push access to:
+
+| Repository | URL | Access Identity | Method | Notes |
+|------------|-----|-----------------|--------|-------|
+| baxter-repo | https://github.com/jonahkoch/Baxter | baxter@openclaw | SSH key | My primary workspace repo — stores scripts, configs, docs |
+
+**Key location:** SSH key already configured in environment
+
 ## Tools & Infrastructure
 
 ### ClawPod (Massive Proxy Network)

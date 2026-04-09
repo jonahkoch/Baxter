@@ -37,4 +37,14 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 ---
 
+## Repositories (I have push access)
+
+| Name | URL | Identity | Purpose |
+|------|-----|----------|---------|
+| baxter-repo | https://github.com/jonahkoch/Baxter | baxter@openclaw | My workspace — scripts, configs, docs |
+
+SSH key already configured in environment.
+
+---
+
 Add whatever helps you do your job. This is your cheat sheet.
