@@ -1,10 +1,10 @@
 # Jonah's DRep Treasury Assessment Rubric
-## Derived from Commercial Treasury Rule Book v14, aligned with builder/governance values
+## Derived from Commercial Treasury Rule Book v15, aligned with builder/governance values
 
-**Version:** 1.0  
+**Version:** 1.1  
 **Date:** 2026-07-11  
-**Source influence:** DRep Commercial Treasury Rule Book v14 by [anonymous DRep]  
-**Philosophy:** The Treasury is finite public capital. It should fund things that make Cardano more decentralized, more usable, or more resilient — with clear accountability and without creating private tollbooths.
+**Source influence:** DRep Commercial Treasury Rule Book v15 by [anonymous DRep]  
+**Philosophy:** The Treasury is finite public capital. It should fund things that make Cardano more decentralized, more usable, or more resilient — with clear accountability, productive ecosystem effects, and without creating private tollbooths.
 
 ---
 
@@ -16,16 +16,17 @@
 4. **Governance integrity is infrastructure** — tools that make Cardano governance more transparent, accessible, or accountable are public goods.
 5. **Small bets with public learning > large bets with private upside** — especially for frontier ideas.
 6. **Cardano needs users and developers** — marketing/onboarding that demonstrably converts to retained activity can be worth funding, but vanity metrics are theft.
+7. **Treasury-funded circulation is not growth by itself** — internal spending among the same subsidized actors is not a self-reproducing economy. I want to see outside demand and independent new work.
 
 ---
 
-## My Two-Layer Framework (Simplified from v14)
+## My Two-Layer Framework (Simplified from v15)
 
 I use **two layers**, not four. Layer 0 handles the "should we?" and Layer 1 handles the "is this specific proposal good enough?" For small/simple proposals, Layer 0 is enough. For large/complex/controversial ones, I go to Layer 1.
 
 ### LAYER 0 — Priority & Fit Screen (Every Proposal)
 
-Ask these five questions. If any answer is strongly negative, the vote is No without scoring.
+Ask these six questions. If any answer is strongly negative, the vote is No without scoring.
 
 | Question | What I'm Looking For | Red Flag |
 |----------|---------------------|----------|
@@ -34,6 +35,13 @@ Ask these five questions. If any answer is strongly negative, the vote is No wit
 | **3. Is the instrument appropriate?** | Grants for public goods; loans/revenue-share for commercial; LP positions for liquidity; RFPs for repeated needs | Grant requested for private business expansion |
 | **4. Does this increase or decrease decentralization?** | More operators, open standards, forkability, neutral access | Creates dependency on one vendor/API/custodian without public rights |
 | **5. What's the opportunity cost?** | Does this crowd out infrastructure, security, smaller experiments, or emergency reserves? | Large discretionary ask in a crowded category |
+| **6. Does this create productive ecosystem effects?** | Enables independent new work, reusable inputs, composability, outside demand, post-Treasury reproduction | Isolated output with no downstream use; closed loop of Treasury-funded teams paying each other |
+
+**What I mean by "productive ecosystem effect":**
+- **New-work branching:** What independent products, services, or operators can emerge because this capability exists?
+- **Common-input leverage:** Can unrelated teams use, extend, or compete around the output without the applicant's permission?
+- **External demand:** Can this attract users, revenue, or developers from *outside* the Treasury-funded loop?
+- **Post-Treasury reproduction:** Can the activity maintain itself after funding ends?
 
 **Layer 0 outcomes:**
 - **Clear No** → Vote No, brief rationale citing the blocking issue
@@ -61,6 +69,7 @@ I don't use a 100-point scorecard for every proposal. I use a **checklist + judg
 | Check | What I Look For | Weight in My Thinking |
 |-------|----------------|---------------------|
 | **Public asset quality** | Open source (with license/docs/tests), open standards, public data, fork rights | **High** — this is my top priority |
+| **Productive public value** | Reusable capability that enables independent products, services, or operators | **High** — v15 addition |
 | **Additionality** | Why is Treasury funding needed? Why won't private capital/users solve this? | High |
 | **10x or critical gap** | Is this transformative, or filling a hole that hurts the ecosystem? | Medium-High |
 | **Counterfactual harm** | What breaks or centralizes if Cardano says No? | Medium |
@@ -90,7 +99,7 @@ For commercial or hybrid proposals, I require **at least one** of the following:
 
 #### Section E: Marketing & Adoption (Special Rules)
 
-I agree with v14's marketing annex: pay for **retained impact + public assets**, not attention.
+I agree with v15's marketing annex: pay for **retained impact + public assets**, not attention.
 
 | What I Require | What Gets a No |
 |---------------|----------------|
@@ -120,6 +129,23 @@ I agree with v14's marketing annex: pay for **retained impact + public assets**,
 | **Sustainability** | Maintenance plan, revenue model, handover process, or explicit public-good justification for ongoing support |
 | **Operator reality** | Runbooks, incident process, bus factor >1, handover possible |
 
+#### Section H: Subsidy-Loop & Dependency-Graph Check (v15 Addition)
+
+| Check | What I Look For | Red Flag |
+|-------|----------------|----------|
+| **Subsidy-loop risk** | Would the activity continue through customer demand, outside revenue, or durable public-good model? | Activity relies on Treasury-funded teams repeatedly paying one another — not economic growth |
+| **Dependency-graph concentration** | Do multiple projects rely on the same API, operator, bridge, oracle, custodian, or key person? | 10 "independent" apps on 1 hidden dependency = 1 systemic exposure |
+| **Productive ADA circulation** (if claimed) | Does the applicant buy real goods/services from unaffiliated Cardano actors at competitive prices? | Payroll to founders, transfers between controlled wallets, exchange deposits, token purchases — these do NOT count |
+
+**On productive ADA circulation:** I give limited credit (at most +1 to +2 in the Productive Ecosystem Multiplier) only when:
+- The procurement is to named, unaffiliated suppliers
+- Prices are benchmarked and competitive
+- Deliverables are defined and verifiable
+- Payment is direct ADA settlement with transaction evidence
+- Anti-circular-payment controls are in place
+
+I do **not** give credit for: founder salary, affiliate payments, exchange deposits, token purchases, pass-through transfers, or unsupported claims that funds will "stay in the ecosystem."
+
 ---
 
 ## My Vote Mapping
@@ -142,18 +168,18 @@ For proposals where I want numerical discipline, I use this leaner version:
 
 | Category | Max | My Minimum for Yes |
 |----------|-----|-------------------|
-| Public value & additionality | 15 | 10 |
+| Public value, additionality & productive value | 15 | 10 |
 | Public asset / open-source / continuity | 15 | 10 |
 | Team evidence & integrity | 10 | 6 |
 | Price & value (including ADA volatility) | 10 | 6 |
 | Treasury return / risk sharing | 15 | 8 (public good) / 12 (commercial) |
 | Milestones & verification | 15 | 10 |
-| Decentralization delta | 10 | 6 |
+| Decentralization delta & dependency graph | 10 | 6 |
 | Risk management & sustainability | 10 | 6 |
 | **Total** | **100** | **75+ for small, 80+ for medium, 85+ for large** |
 
 **Adjustments:**
-- **Ecosystem coordination bonus:** +0 to +3 for real cooperation with shared public output
+- **Productive Ecosystem Multiplier:** +0 to +3 for verified new-work branching, reusable shared inputs, independent adoption, outside demand, productive redundancy, or qualified ADA-denominated ecosystem procurement. Cannot rescue a failed proposal.
 - **Conviction adjustment:** -3 to +3, explained, cannot override failed minimums
 
 ---
@@ -172,6 +198,9 @@ For proposals where I want numerical discipline, I use this leaner version:
 - Treasury takes first-loss with no compensation
 - Negative decentralization delta without safeguards
 - Marketing proposal with no retained impact plan
+- **Treasury subsidy loop presented as growth** — repeated public funding among same actors is not outside demand
+- **Circular or related-party ecosystem-spending claim** — transfers among controlled wallets do not demonstrate productive circulation
+- **Cardano-native but inferior duplication** — branding and ADA settlement do not justify higher cost or lower quality
 
 ---
 
@@ -181,7 +210,7 @@ For proposals where I want numerical discipline, I use this leaner version:
 > Vote: Yes. This proposal clears my public-value, public-asset, and accountability checks. Cardano receives [specific deliverable/asset/return]. The price is justified by [benchmark/comparison]. I have no material conflict. [Optional: score if used]
 
 **No:**
-> Vote: No. While [acknowledge useful intent if genuine], this proposal fails on [specific issue: public value / price / instrument fit / enforceability / verification / decentralization / opportunity cost]. To earn my support, the applicant would need to [specific changes].
+> Vote: No. While [acknowledge useful intent if genuine], this proposal fails on [specific issue: public value / price / instrument fit / enforceability / verification / decentralization / opportunity cost / productive ecosystem]. To earn my support, the applicant would need to [specific changes].
 
 **Abstain:**
 > Vote: Abstain. After reasonable diligence, I cannot make a reliable Yes/No judgment because [external missing fact / unresolved process / conflict]. Abstain is not support, and it is not rejection on the merits.
@@ -195,26 +224,31 @@ For proposals I vote Yes on, I track:
 - Milestone hit rate
 - Budget discipline
 - Retained impact at 90/180/365 days
+- Whether independent new work emerged (productive ecosystem test)
 - Whether I'd vote to renew
 
 This lives in my notes and informs future votes from the same applicants.
 
 ---
 
-## Differences from v14 Source
+## Differences from v15 Source
 
-| Aspect | v14 Source | My Version |
+| Aspect | v15 Source | My Version |
 |--------|-----------|------------|
 | Layers | 4 layers (0-3) | 2 layers (simpler) |
 | Scorecard | Always 100-point | Checklist for most, scorecard for large only |
+| Productive ecosystem | Full 0-10 diagnostic + 5-pt premium | Simplified question in Layer 0; +0 to +3 multiplier |
+| Productive ADA circulation | Detailed evidence requirements (19.3) | Limited credit (+0 to +2 within multiplier); noted as consideration |
+| Dependency graph | Full analysis with portability tests | Check in Layer 1 Section H |
+| Composability | Hard gate in triage | Considered in public asset and decentralization sections |
 | Commercial bias | Heavy preference for loans/revenue-share | Same principle, but more weight on public asset as alternative |
 | Marketing | Deep skepticism | Conditional support if retention/verification is strong |
 | Abstain | Narrow, decision-reliability only | Same — Abstain is not support, not avoidance |
-| Frontier bets | Small, staged, public | Same — this is where I might be more willing than v14 |
+| Frontier bets | Small, staged, public | Same — this is where I might be more willing than v15 |
 | Governance tools | Treated as general public good | I may weight governance infrastructure higher |
 
 ---
 
 ## Final Rule
 
-The Treasury is finite. A proposal can be honest, useful, and well-intentioned and still not deserve funding. I vote Yes only when the proposal creates clear public value, respects decentralization, and can be held accountable. I vote No when it doesn't. I vote Abstain only when I genuinely cannot tell the difference.
+The Treasury is finite. A proposal can be honest, useful, and well-intentioned and still not deserve funding. I vote Yes only when the proposal creates clear public value, enables productive ecosystem effects, respects decentralization, and can be held accountable. I vote No when it doesn't. I vote Abstain only when I genuinely cannot tell the difference.
