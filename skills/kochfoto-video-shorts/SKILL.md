@@ -68,9 +68,21 @@ cp /root/.openclaw/media/inbound/<char>.jpg /tmp/character.jpg
 cp /root/.openclaw/media/inbound/<prop>.jpg /tmp/prop.jpg
 ```
 
-### Step 2: Generate composite scenes
+### Step 2: Confirm elements before compositing
 
-Use GPT Image 2 with reference images to composite the character into the
+**Before generating composites, ask the user:**
+> "Are you ready to composite? Here are the elements I have:
+> - Background: [description]
+> - Character: [description]
+> - Prop: [description] (if any)
+> 
+> Confirm and I'll generate the composite scenes."
+
+Wait for explicit confirmation before proceeding.
+
+### Step 3: Generate composite scenes
+
+Once confirmed, use GPT Image 2 with reference images to composite the character into the
 background scene. Generate multiple variations with different poses/placements.
 
 ```bash
@@ -96,7 +108,7 @@ curl -sL <result_url> -o /tmp/composite_leaning_against_car.png
 curl -sL <result_url> -o /tmp/composite_sitting_on_steps.png
 ```
 
-### Step 3: Present options to user
+### Step 4: Present options to user
 
 Share the composite images. Ask the user to pick:
 - Which composite(s) look best
