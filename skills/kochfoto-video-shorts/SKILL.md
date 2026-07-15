@@ -1,13 +1,14 @@
 ---
-version: 2.1.0
+version: 2.2.0
 name: kochfoto-video-shorts
 description: |
   Generate short video clips for Kochfoto using Higgsfield AI start/end frame
-  animation. Full pipeline: composite scene generation → frame selection →
-  animate transition. Use when: "make a composite video", "animate this scene",
-  "create a clip", "composite a scene", "animate from start frame to end frame",
-  "make a reels video", "I have a background and character", "composite workflow".
-argument-hint: "[background] [character] [prop] [action+camera]"
+  animation. Structured workflow: collect elements → confirm → composition
+  instructions → generate one scene at a time → approve → repeat → select
+  start/end frames → action description → animate. Use when: "make a composite
+  video", "animate this scene", "create a clip", "composite workflow",
+  "I have a background and character".
+argument-hint: "[background] [character] [prop] [composition] [action]"
 allowed-tools: Bash
 ---
 
@@ -22,21 +23,19 @@ use `skills/kochfoto-character-training/SKILL.md` instead.
 
 ## How to Invoke This Skill
 
-Say any of these to trigger the full composite → animate workflow:
-- "**Let's make a composite video**" — starts the full pipeline
-- "**I have a background and character**" — signals you're ready to composite
-- "**Composite workflow**" — shorthand for the full process
-- "**Animate these frames**" — skips to Phase 3 if you already have composites
-- "**Make a video short**" — general trigger, will ask for background/character
-
-The assistant will guide you through each phase automatically.
+Say any of these to trigger the workflow:
+- "**Let's make a composite video**"
+- "**I have a background and character**"
+- "**Composite workflow**"
+- "**Animate these frames**" — skips to Phase 4 if you already have composites
+- "**Make a video short**"
 
 ---
 
 ## Prerequisites
 
 1. **Higgsfield CLI authenticated** — See `skills/higgsfield-setup/SKILL.md`
-2. **User provides:**
+2. **User provides source images:**
    - Background image (scene/location)
    - Character image(s) (person to place in scene)
    - Optional: Prop image(s) (object for character to hold/interact with)
@@ -46,17 +45,20 @@ The assistant will guide you through each phase automatically.
 ## Workflow Overview
 
 ```
-Background + Character + Prop → Composite Scenes → Select Start/End → Animate
+Collect Elements → Confirm All Present → Composition Instructions →
+Generate Scene 1 → Approve/Revise → Generate Scene 2 → Approve/Revise → ... →
+Select Start/End Frames → Action Description → Animate
 ```
 
-Three phases:
-1. **Composite scene generation** — Combine elements into still frames
-2. **Frame selection** — User picks start frame and end frame
-3. **Animation** — Generate video transitioning between frames
+Four phases:
+1. **Element Collection** — Gather all source images
+2. **Composition** — Generate one scene at a time with explicit approval
+3. **Frame Selection** — Identify start and end frames from approved scenes
+4. **Animation** — Generate video with user-provided action description
 
 ---
 
-## Phase 1 — Composite Scene Generation
+## Phase 1 — Element Collection
 
 ### Step 1: Save the source images
 
@@ -68,74 +70,115 @@ cp /root/.openclaw/media/inbound/<char>.jpg /tmp/character.jpg
 cp /root/.openclaw/media/inbound/<prop>.jpg /tmp/prop.jpg
 ```
 
-### Step 2: Confirm elements before compositing
+### Step 2: Confirm all elements are present
 
-**Before generating composites, ask the user:**
-> "Are you ready to composite? Here are the elements I have:
+**Do NOT generate anything yet.**
+
+List all collected elements and ask for confirmation:
+> "Here are the elements I've collected:
 > - Background: [description]
 > - Character: [description]
-> - Prop: [description] (if any)
-> 
-> Confirm and I'll generate the composite scenes."
+> - Prop: [description] (or 'none')
+>
+> Are all elements accounted for? Let me know if anything is missing."
 
-Wait for explicit confirmation before proceeding.
+**Wait for explicit confirmation** that all elements are present before proceeding.
 
-### Step 3: Generate composite scenes
+---
 
-Once confirmed, use GPT Image 2 with reference images to composite the character into the
-background scene. Generate multiple variations with different poses/placements.
+## Phase 2 — Composition
+
+### Step 3: Ask for composition instructions
+
+Once all elements are confirmed, ask the user:
+> "How would you like the elements arranged? For example:
+> - Where should the character be positioned?
+> - What pose should they be in?
+> - Should they be holding the prop?
+> - Any specific lighting or mood?"
+
+### Step 4: Generate ONE composite scene
+
+Use the composition instructions to craft the prompt. Generate **one scene at a time** using GPT Image 2.
 
 ```bash
 higgsfield generate create gpt_image_2 \
-  --prompt "A teenage boy with tousled blonde hair wearing a grey tank top and blue denim shorts leaning against a vintage red car on a sun-drenched steep cobblestone street in Lisbon, Portugal. Weathered turquoise azulejo-tiled building facade with arched doorway marked number 13. Hard midday Mediterranean sunlight, sharp shadows, photorealistic, cinematic composition." \
+  --prompt "[Use composition instructions to craft detailed scene description]" \
   --image /tmp/background.jpg \
   --image /tmp/character.jpg \
+  --image /tmp/prop.jpg \
   --aspect_ratio 16:9 \
   --resolution 2k \
   --wait
 ```
 
-**Generate multiple variations** by changing the pose/position in the prompt:
-- Character leaning against the car
-- Character sitting on steps in foreground
-- Character standing in doorway
-- Character walking up the street
+### Step 5: Present for approval
 
-Save each variation with a descriptive filename:
+Share the generated composite with the user.
+
+**Do NOT generate the next scene until explicitly approved.**
+
+Ask:
+> "Here's the composite. Does this work for you?
+> - Approve and we'll move to the next scene
+> - Request changes and I'll regenerate
+> - Or tell me if you want a different pose/position"
+
+### Step 6: Repeat for additional scenes
+
+Once approved, ask:
+> "What should the next scene be? Different pose, different position, different action?"
+
+Use their response to craft the next prompt. Repeat Steps 4-5 for each additional scene.
+
+**Typical workflow generates 2-4 scenes** to have options for start/end frames.
+
+Save each approved scene:
 ```bash
-# After each generation, download the result
-curl -sL <result_url> -o /tmp/composite_leaning_against_car.png
-curl -sL <result_url> -o /tmp/composite_sitting_on_steps.png
+curl -sL <result_url> -o /tmp/composite_<description>.png
 ```
-
-### Step 4: Present options to user
-
-Share the composite images. Ask the user to pick:
-- Which composite(s) look best
-- Which one should be the **start frame**
-- Which one should be the **end frame**
 
 ---
 
-## Phase 2 — Frame Selection
+## Phase 3 — Frame Selection
 
-User picks start and end frames from the composites.
+### Step 7: Identify start and end frames
+
+After all scenes are generated and approved, present the collection:
+> "Here are all the approved scenes. Which one should be the start frame and which should be the end frame for the animation?"
+
+User selects:
+- **Start frame** — the beginning of the animation
+- **End frame** — the final frame of the animation
 
 Save the selected frames:
 ```bash
-cp /tmp/composite_leaning_against_car.png /tmp/start_frame.png
-cp /tmp/composite_sitting_on_steps.png /tmp/end_frame.png
+cp /tmp/composite_<start>.png /tmp/start_frame.png
+cp /tmp/composite_<end>.png /tmp/end_frame.png
 ```
 
 ---
 
-## Phase 3 — Animation
+## Phase 4 — Animation
 
-Animate the transition between start and end frames using Seedance 2.0.
+### Step 8: Ask for scene action description
+
+Before animating, ask the user:
+> "What action should happen between the start and end frames? Describe the movement.
+> For example:
+> - 'Character walks toward camera and sits down'
+> - 'Character turns around and walks away'
+> - 'Character approaches holding the prop'
+>
+> Also, any camera movement? (pull back, static, dolly in, etc.)"
+
+### Step 9: Generate animation
+
+Use the action description to craft the animation prompt. Generate the video using Seedance 2.0.
 
 ```bash
 higgsfield generate create seedance_2_0 \
-  --prompt "Character walks toward the camera from start position to end position. Natural walking motion, relaxed gait. Camera pulls back and zooms out simultaneously. Character stays fully visible in frame throughout. Photorealistic cinematic quality." \
+  --prompt "[User's action description]. Camera [movement]. Character stays fully visible in frame throughout. Photorealistic cinematic quality." \
   --start-image /tmp/start_frame.png \
   --end-image /tmp/end_frame.png \
   --duration 5 \
@@ -156,9 +199,9 @@ higgsfield generate create seedance_2_0 \
 
 | What to change | How |
 |---------------|-----|
-| Composite scene | Regenerate with different pose/placement in prompt |
+| Composite scene | Regenerate with revised composition instructions |
 | Camera movement | Add to prompt: "camera dollies in/out", "camera pans left/right", "camera pulls back and zooms out", "static camera with slight zoom" |
-| Character action | Add to prompt: "character walks toward camera", "character sits down", "character looks around", "character performs an action" |
+| Character action | Use user's action description directly in animation prompt |
 | Duration | Change `--duration` to 3, 4, or 5 |
 | Format | Change `--aspect_ratio` to `9:16` for vertical |
 
@@ -187,34 +230,43 @@ higgsfield generate create seedance_2_0 \
 ## Full Example
 
 ```bash
-# Phase 1: Composite scene generation
-# User provided: background.jpg, character.jpg
+# Phase 1: Element Collection
+# User provided: background.jpg, character.jpg, prop.jpg
 
+# Phase 2: Composition
+# User said: "Character leaning against vintage red car, relaxed"
 higgsfield generate create gpt_image_2 \
-  --prompt "Character leaning against vintage red car on Lisbon cobblestone street. Hard midday sunlight, photorealistic, cinematic." \
+  --prompt "Character leaning against vintage red car on Lisbon cobblestone street, relaxed posture. Hard midday sunlight, photorealistic, cinematic." \
   --image /tmp/background.jpg \
   --image /tmp/character.jpg \
   --aspect_ratio 16:9 \
   --resolution 2k \
   --wait
-# → Download result as /tmp/composite_start.png
+# → Share result, get approval
+# → User approves, save as /tmp/composite_leaning.png
 
+# User said: "Now character sitting on steps in foreground"
 higgsfield generate create gpt_image_2 \
-  --prompt "Character sitting on stone steps in foreground of same Lisbon street. Same lighting, same scene, different pose." \
+  --prompt "Character sitting on stone steps in foreground of same Lisbon street. Same lighting, same scene, relaxed seated pose." \
   --image /tmp/background.jpg \
   --image /tmp/character.jpg \
   --aspect_ratio 16:9 \
   --resolution 2k \
   --wait
-# → Download result as /tmp/composite_end.png
+# → Share result, get approval
+# → User approves, save as /tmp/composite_sitting.png
 
-# Phase 2: User selects frames (already done above)
+# Phase 3: Frame Selection
+# User picks: start=leaning, end=sitting
+cp /tmp/composite_leaning.png /tmp/start_frame.png
+cp /tmp/composite_sitting.png /tmp/end_frame.png
 
-# Phase 3: Animation
+# Phase 4: Animation
+# User said: "Character walks from car toward camera and sits on steps"
 higgsfield generate create seedance_2_0 \
-  --prompt "Character walks from car toward camera and sits on steps. Camera pulls back and zooms out." \
-  --start-image /tmp/composite_start.png \
-  --end-image /tmp/composite_end.png \
+  --prompt "Character walks from car toward camera and sits on steps. Camera pulls back and zooms out. Character stays fully visible." \
+  --start-image /tmp/start_frame.png \
+  --end-image /tmp/end_frame.png \
   --duration 5 \
   --aspect_ratio 16:9 \
   --wait \
@@ -226,8 +278,9 @@ higgsfield generate create seedance_2_0 \
 ## Session Learnings
 
 **What works well:**
-- GPT Image 2 composites background + character reliably with `--image` refs
-- Generating 2-4 composite variations gives user options to choose from
+- Generating one scene at a time with explicit approval prevents wasted credits
+- User's composition instructions lead to better prompts than guessing
+- User's action description directly informs the animation prompt
 - Seedance 2.0 handles camera movement prompts reasonably well
 - `--end-image` flag works for controlling the final frame
 - 5-second duration is the sweet spot for short-form content
@@ -236,7 +289,8 @@ higgsfield generate create seedance_2_0 \
 - Character gets cropped if camera doesn't pull back/zoom out during approach
 - Add "character stays fully visible in frame throughout" if cropping is an issue
 - Lighting consistency across composites matters — mention "same lighting" in prompts
-- Always ask user to explicitly confirm start and end frames before animating
+- Always get explicit approval before generating the next scene
+- Always get explicit action description before animating
 
 **Prompt patterns that worked:**
 - "Camera pulls back and zooms out simultaneously" — prevents cropping
@@ -253,7 +307,7 @@ higgsfield generate create seedance_2_0 \
 | Camera precision | "Dolly in" is interpreted loosely — not frame-accurate | Treat prompts as suggestions, not commands |
 | Prop interaction | Character grasping a prop is hit-or-miss | Position prop naturally in composite frame, prompt subtle interaction |
 | Hands | AI video hands are still unreliable | Keep hands out of frame or in natural relaxed poses |
-| Composite quality | GPT Image 2 handles compositing well but not perfectly | Review composites carefully before selecting frames |
+| Composite quality | GPT Image 2 handles compositing well but not perfectly | Review composites carefully before approving |
 
 ---
 
@@ -263,7 +317,7 @@ higgsfield generate create seedance_2_0 \
 |------|-------------|
 | Composite image (GPT Image 2) | ~5-20 credits each |
 | 5-second video (Seedance 2.0) | ~50-150 credits |
-| **Total per clip** | ~60-190 credits |
+| **Total per clip** | ~60-190 credits (varies by number of scenes) |
 
 ---
 
