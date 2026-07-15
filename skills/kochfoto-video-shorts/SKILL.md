@@ -1,210 +1,235 @@
 ---
-version: 1.0.0
+version: 2.1.0
 name: kochfoto-video-shorts
 description: |
-  Generate character-driven video shorts for Kochfoto using Higgsfield AI.
-  Pipeline: character sheet → Soul ID training → scene composition →
-  image-to-video generation with camera moves and action prompts.
-  Use when: "make a video short", "animate this character", "create a scene",
-  "character video", "AI video with camera moves", "generate a clip".
-argument-hint: "[character] [prop] [scene] [action+camera]"
+  Generate short video clips for Kochfoto using Higgsfield AI start/end frame
+  animation. Full pipeline: composite scene generation → frame selection →
+  animate transition. Use when: "make a composite video", "animate this scene",
+  "create a clip", "composite a scene", "animate from start frame to end frame",
+  "make a reels video", "I have a background and character", "composite workflow".
+argument-hint: "[background] [character] [prop] [action+camera]"
 allowed-tools: Bash
 ---
 
-# Kochfoto Video Shorts — Character-Driven AI Video Pipeline
+# Kochfoto Video Shorts — Start/End Frame Animation
 
-Generate 3-5 second cinematic video shorts featuring consistent characters
-using Higgsfield's Soul ID + image-to-video workflow.
+Generate 3-5 second cinematic video shorts by compositing scenes from
+separate elements (background + character + prop), then animating between
+a start frame and an end frame.
+
+For character-consistency across multiple videos (same face in many scenes),
+use `skills/kochfoto-character-training/SKILL.md` instead.
+
+## How to Invoke This Skill
+
+Say any of these to trigger the full composite → animate workflow:
+- "**Let's make a composite video**" — starts the full pipeline
+- "**I have a background and character**" — signals you're ready to composite
+- "**Composite workflow**" — shorthand for the full process
+- "**Animate these frames**" — skips to Phase 3 if you already have composites
+- "**Make a video short**" — general trigger, will ask for background/character
+
+The assistant will guide you through each phase automatically.
 
 ---
 
 ## Prerequisites
 
 1. **Higgsfield CLI authenticated** — See `skills/higgsfield-setup/SKILL.md`
-2. **`higgsfield-soul-id` skill installed** (for character training):
-   ```bash
-   openclaw skills install higgsfield-soul-id
-   ```
-   Skill location: `~/.openclaw/workspace/skills/higgsfield-soul-id/SKILL.md`
-3. **Character reference sheet** from user:
-   - 3 face angles: front, right profile, left profile
-   - 2 body shots: front full-body, back full-body
-   - Optional: side profile body shot
+2. **User provides:**
+   - Background image (scene/location)
+   - Character image(s) (person to place in scene)
+   - Optional: Prop image(s) (object for character to hold/interact with)
 
 ---
 
-## Phase 1 — Character Training (Soul ID)
+## Workflow Overview
 
-Train a personalized face model so the character stays consistent across
-generations. One-time per character.
-
-### 1. Upload face reference images
-
-```bash
-higgsfield upload create ./character_face_front.jpg
-higgsfield upload create ./character_face_left.jpg
-higgsfield upload create ./character_face_right.jpg
+```
+Background + Character + Prop → Composite Scenes → Select Start/End → Animate
 ```
 
-Capture the upload IDs returned.
+Three phases:
+1. **Composite scene generation** — Combine elements into still frames
+2. **Frame selection** — User picks start frame and end frame
+3. **Animation** — Generate video transitioning between frames
 
-### 2. Create Soul Character
+---
+
+## Phase 1 — Composite Scene Generation
+
+### Step 1: Save the source images
+
+User drops images in chat. Save them locally:
+```bash
+cp /root/.openclaw/media/inbound/<bg>.jpg /tmp/background.jpg
+cp /root/.openclaw/media/inbound/<char>.jpg /tmp/character.jpg
+# Optional:
+cp /root/.openclaw/media/inbound/<prop>.jpg /tmp/prop.jpg
+```
+
+### Step 2: Generate composite scenes
+
+Use GPT Image 2 with reference images to composite the character into the
+background scene. Generate multiple variations with different poses/placements.
 
 ```bash
-higgsfield soul-id create \
-  --name "CharacterName" \
-  --image <upload_id_1> \
-  --image <upload_id_2> \
-  --image <upload_id_3> \
+higgsfield generate create gpt_image_2 \
+  --prompt "A teenage boy with tousled blonde hair wearing a grey tank top and blue denim shorts leaning against a vintage red car on a sun-drenched steep cobblestone street in Lisbon, Portugal. Weathered turquoise azulejo-tiled building facade with arched doorway marked number 13. Hard midday Mediterranean sunlight, sharp shadows, photorealistic, cinematic composition." \
+  --image /tmp/background.jpg \
+  --image /tmp/character.jpg \
+  --aspect_ratio 16:9 \
+  --resolution 2k \
   --wait
 ```
 
-Training takes ~10-30 minutes. The command returns a `soul_ref_id` when done.
+**Generate multiple variations** by changing the pose/position in the prompt:
+- Character leaning against the car
+- Character sitting on steps in foreground
+- Character standing in doorway
+- Character walking up the street
 
-### 3. Verify
-
+Save each variation with a descriptive filename:
 ```bash
-higgsfield soul-id list
+# After each generation, download the result
+curl -sL <result_url> -o /tmp/composite_leaning_against_car.png
+curl -sL <result_url> -o /tmp/composite_sitting_on_steps.png
+```
+
+### Step 3: Present options to user
+
+Share the composite images. Ask the user to pick:
+- Which composite(s) look best
+- Which one should be the **start frame**
+- Which one should be the **end frame**
+
+---
+
+## Phase 2 — Frame Selection
+
+User picks start and end frames from the composites.
+
+Save the selected frames:
+```bash
+cp /tmp/composite_leaning_against_car.png /tmp/start_frame.png
+cp /tmp/composite_sitting_on_steps.png /tmp/end_frame.png
 ```
 
 ---
 
-## Phase 2 — Scene Composition (Still Image)
+## Phase 3 — Animation
 
-Generate a hero frame combining character + prop + background.
-
-### Pick the right model:
-
-| Scene type | Model |
-|-----------|-------|
-| Character-focused, fashion/lifestyle | Soul 2.0 |
-| Cinematic still, dramatic lighting | Soul Cinema |
-| General scene, no people | Soul Location |
-| Fast iteration, testing | Z Image |
-
-### Generate with Soul reference:
-
-```bash
-higgsfield generate create text2image_soul_v2 \
-  --prompt "A young woman in a flowing red dress standing in a sunlit forest clearing, holding an antique brass compass, dappled light through trees, cinematic composition" \
-  --soul-id <soul_ref_id> \
-  --aspect_ratio 9:16 \
-  --wait
-```
-
-Capture the resulting image URL or job ID.
-
----
-
-## Phase 3 — Video Generation (Image-to-Video)
-
-Animate the hero frame with camera moves and action.
-
-### Best models for short clips:
-
-| Use case | Model | Notes |
-|----------|-------|-------|
-| All-around best quality | Seedance 2.0 | Most consistent, best motion |
-| Cheaper, single-plane | Kling 3.0 | Good for simple camera moves |
-| Fast batch/volume | Veo 3.1 Lite | Lower fidelity, faster |
-
-### Submit with camera + action prompt:
+Animate the transition between start and end frames using Seedance 2.0.
 
 ```bash
 higgsfield generate create seedance_2_0 \
-  --prompt "camera slowly dollies in toward the character, subtle wind moves her hair, she looks down at the compass then glances up, golden hour light" \
-  --start-image <hero_frame_image_id_or_path> \
+  --prompt "Character walks toward the camera from start position to end position. Natural walking motion, relaxed gait. Camera pulls back and zooms out simultaneously. Character stays fully visible in frame throughout. Photorealistic cinematic quality." \
+  --start-image /tmp/start_frame.png \
+  --end-image /tmp/end_frame.png \
   --duration 5 \
-  --aspect_ratio 9:16 \
+  --aspect_ratio 16:9 \
   --wait \
-  --wait-timeout 15m
+  --wait-timeout 20m
 ```
 
-**Camera move vocabulary that works:**
+**Key parameters:**
+- `--start-image` — First frame (local path or job ID)
+- `--end-image` — Last frame (local path or job ID)
+- `--duration` — 3-5 seconds
+- `--aspect_ratio` — `16:9` for cinematic, `9:16` for Reels/TikTok
+
+---
+
+## Iteration
+
+| What to change | How |
+|---------------|-----|
+| Composite scene | Regenerate with different pose/placement in prompt |
+| Camera movement | Add to prompt: "camera dollies in/out", "camera pans left/right", "camera pulls back and zooms out", "static camera with slight zoom" |
+| Character action | Add to prompt: "character walks toward camera", "character sits down", "character looks around", "character performs an action" |
+| Duration | Change `--duration` to 3, 4, or 5 |
+| Format | Change `--aspect_ratio` to `9:16` for vertical |
+
+---
+
+## Camera + Action Prompt Vocabulary
+
+**Camera moves:**
 - `camera dollies in / out`
 - `camera slowly pans left / right`
 - `camera orbits around the subject`
 - `camera cranes up / down`
+- `camera pulls back and zooms out simultaneously`
 - `static shot with subtle motion`
 - `handheld subtle shake`
 
-**Action vocabulary:**
+**Character actions:**
+- `character walks toward camera`
+- `character sits down`
 - `character looks up / down / left / right`
 - `subtle breathing motion`
 - `wind moves hair / clothing`
-- `character takes a step forward`
-- `slow blink`
 
 ---
 
-## Phase 4 — Iteration Loop
-
-1. **Review the video** — Check character consistency, motion quality, camera feel
-2. **Adjust prompt** — Add/subtract motion descriptors
-3. **Rerun** — Reuse the same `--start-image` for consistency
-4. **Vary duration** — 3s, 4s, 5s depending on platform (TikTok/Reels prefer shorter)
-
----
-
-## Quick Start — When You're Ready
-
-Have your character photos? Here's the compressed version:
+## Full Example
 
 ```bash
-# 1. Upload face photos
-higgsfield upload create ./character_face_front.jpg
-higgsfield upload create ./character_face_left.jpg
-higgsfield upload create ./character_face_right.jpg
+# Phase 1: Composite scene generation
+# User provided: background.jpg, character.jpg
 
-# 2. Train Soul (pick one variant)
-higgsfield soul-id create --name "CharacterName" --soul-2 --image <id1> --image <id2> --image <id3> --wait
-# OR for cinematic/video work:
-higgsfield soul-id create --name "CharacterName" --soul-cinematic --image <id1> --image <id2> --image <id3> --wait
-
-# 3. Generate hero frame (character + prop + scene)
-higgsfield generate create text2image_soul_v2 \
-  --prompt "YOUR SCENE DESCRIPTION HERE" \
-  --soul-id <soul_ref_id> \
-  --aspect_ratio 9:16 \
+higgsfield generate create gpt_image_2 \
+  --prompt "Character leaning against vintage red car on Lisbon cobblestone street. Hard midday sunlight, photorealistic, cinematic." \
+  --image /tmp/background.jpg \
+  --image /tmp/character.jpg \
+  --aspect_ratio 16:9 \
+  --resolution 2k \
   --wait
+# → Download result as /tmp/composite_start.png
 
-# 4. Animate to video
+higgsfield generate create gpt_image_2 \
+  --prompt "Character sitting on stone steps in foreground of same Lisbon street. Same lighting, same scene, different pose." \
+  --image /tmp/background.jpg \
+  --image /tmp/character.jpg \
+  --aspect_ratio 16:9 \
+  --resolution 2k \
+  --wait
+# → Download result as /tmp/composite_end.png
+
+# Phase 2: User selects frames (already done above)
+
+# Phase 3: Animation
 higgsfield generate create seedance_2_0 \
-  --prompt "camera slowly dollies in, subtle motion, YOUR ACTION HERE" \
-  --start-image <hero_frame_id> \
-  --duration 4 \
-  --aspect_ratio 9:16 \
+  --prompt "Character walks from car toward camera and sits on steps. Camera pulls back and zooms out." \
+  --start-image /tmp/composite_start.png \
+  --end-image /tmp/composite_end.png \
+  --duration 5 \
+  --aspect_ratio 16:9 \
   --wait \
-  --wait-timeout 15m
+  --wait-timeout 20m
 ```
 
 ---
 
-## Full Example — End to End
+## Session Learnings
 
-```bash
-# 1. Train character (one-time)
-higgsfield soul-id create --name "Elena" --image ./elena_front.jpg --image ./elena_left.jpg --image ./elena_right.jpg --wait
-# → soul_ref_id: soul_abc123
+**What works well:**
+- GPT Image 2 composites background + character reliably with `--image` refs
+- Generating 2-4 composite variations gives user options to choose from
+- Seedance 2.0 handles camera movement prompts reasonably well
+- `--end-image` flag works for controlling the final frame
+- 5-second duration is the sweet spot for short-form content
 
-# 2. Generate hero frame
-higgsfield generate create text2image_soul_v2 \
-  --prompt "Elena in a vintage 1920s flapper dress standing in an art deco ballroom, holding a crystal champagne glass, warm ambient lighting, reflections on marble floor" \
-  --soul-id soul_abc123 \
-  --aspect_ratio 9:16 \
-  --wait
-# → image_id: img_def456
+**What to watch for:**
+- Character gets cropped if camera doesn't pull back/zoom out during approach
+- Add "character stays fully visible in frame throughout" if cropping is an issue
+- Lighting consistency across composites matters — mention "same lighting" in prompts
+- Always ask user to explicitly confirm start and end frames before animating
 
-# 3. Animate to video
-higgsfield generate create seedance_2_0 \
-  --prompt "camera slowly dollies in, Elena raises the champagne glass slightly and smiles, warm bokeh lights flicker in background, subtle film grain" \
-  --start-image img_def456 \
-  --duration 4 \
-  --aspect_ratio 9:16 \
-  --wait \
-  --wait-timeout 15m
-# → video_url: https://...
-```
+**Prompt patterns that worked:**
+- "Camera pulls back and zooms out simultaneously" — prevents cropping
+- "Same scene, different pose" — keeps composites consistent
+- Reference images as `--image` flags — GPT Image 2 composites them naturally
 
 ---
 
@@ -212,11 +237,11 @@ higgsfield generate create seedance_2_0 \
 
 | Issue | Reality | Mitigation |
 |-------|---------|------------|
-| Character drift | Face stays consistent (Soul ID), but clothing details, hair strands, and body proportions shift slightly frame-to-frame | Use tight framing, keep motion subtle |
+| Character consistency | Face/body may shift between composites since there's no trained model | Use same character reference, keep pose descriptions tight |
 | Camera precision | "Dolly in" is interpreted loosely — not frame-accurate | Treat prompts as suggestions, not commands |
-| Full body consistency | Soul ID trains on face only; body shots help me write prompts but don't lock body proportions | Generate body-focused hero frames, avoid extreme angles |
-| Prop interaction | Character grasping a prop is hit-or-miss | Position prop naturally in hero frame, prompt subtle interaction |
+| Prop interaction | Character grasping a prop is hit-or-miss | Position prop naturally in composite frame, prompt subtle interaction |
 | Hands | AI video hands are still unreliable | Keep hands out of frame or in natural relaxed poses |
+| Composite quality | GPT Image 2 handles compositing well but not perfectly | Review composites carefully before selecting frames |
 
 ---
 
@@ -224,10 +249,9 @@ higgsfield generate create seedance_2_0 \
 
 | Step | Approx Cost |
 |------|-------------|
-| Soul ID training (one-time) | ~50-200 credits |
-| Still image generation | ~5-20 credits |
+| Composite image (GPT Image 2) | ~5-20 credits each |
 | 5-second video (Seedance 2.0) | ~50-150 credits |
-| **Total per character** | ~55-220 credits + training |
+| **Total per clip** | ~60-190 credits |
 
 ---
 
@@ -242,20 +266,8 @@ higgsfield generate create seedance_2_0 \
 
 ---
 
-## File Naming Convention
+## Related Skills
 
-```
-project/
-├── characters/
-│   └── elena/
-│       ├── face_front.jpg
-│       ├── face_left.jpg
-│       ├── face_right.jpg
-│       ├── body_front.jpg
-│       └── body_back.jpg
-├── scenes/
-│   └── art_deco_ballroom/
-│       ├── hero_frame.png
-│       └── video_v1.mp4
-└── prompts.md
-```
+- **`kochfoto-character-training`** — Train consistent characters with Soul ID
+- **`higgsfield-setup`** — Install and authenticate Higgsfield CLI
+- **`higgsfield-soul-id`** — Train Soul characters (lower-level, direct CLI)
