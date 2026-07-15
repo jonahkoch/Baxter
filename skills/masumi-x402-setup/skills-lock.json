@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "masumi-x402-setup": {
+      "source": "/root/.openclaw/workspace/skills/masumi-x402-setup",
+      "sourceType": "local",
+      "computedHash": "66f6814ff1c893ac65c90fdc41c951bb8821577b598a2c8c3ec4046573f7050c"
+    }
+  }
+}
