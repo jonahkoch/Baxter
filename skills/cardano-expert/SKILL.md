@@ -123,6 +123,100 @@ Common API errors:
 4. **Paginate** large result sets (Blockfrost: `count`/`page` params)
 5. **Handle 404s gracefully** - not all addresses/txs are indexed immediately
 
+## Governance Action Assessment (DRep Rubric)
+
+When Jonah asks to assess a governance action (e.g., `gov_action12sumv9...`), use the following workflow based on his DRep Treasury Assessment Rubric v1.2 (derived from v17 Rule Book).
+
+### Assessment Workflow
+
+1. **Fetch proposal data** from Koios:
+   ```bash
+   curl -s "https://api.koios.rest/api/v1/proposal_list?limit=100" | \
+     python3 -c "import sys,json; d=json.load(sys.stdin); \
+     m=[p for p in d if p.get('proposal_id')=='<GOV_ACTION_ID>']; \
+     print(json.dumps(m, indent=2))"
+   ```
+
+2. **Fetch IPFS metadata** if available:
+   ```bash
+   curl -s "https://ipfs.io/ipfs/<CID>"
+   ```
+
+3. **Apply the Two-Layer Framework:**
+
+   **Layer 0 — Priority & Fit Screen (6 questions):**
+   - Is this a real Treasury priority?
+   - What public value does Cardano receive? (use Five Forms of Public Return)
+   - Is the instrument appropriate?
+   - Does this increase or decrease decentralization?
+   - What's the opportunity cost?
+   - Does this create productive ecosystem effects?
+
+   **Layer 1 — Proposal Quality (if Layer 0 passes):**
+   - Section A: Basics (accountable applicant, clear ask, itemized budget, prior funding disclosure, conflict disclosure)
+   - Section B: Value & Impact (public asset quality, productive public value, additionality, critical gap, counterfactual harm, retained impact)
+   - Section C: Execution & Accountability (team evidence, milestones, independent verification, anti-gaming, enforceability)
+   - Section D: Commercial proposals — require repayment, revenue share, Treasury-owned assets, matched funding, or strong public asset transfer
+   - Section E: Marketing & Adoption — pay for retained impact + public rights, not attention/vanity metrics
+   - Section F: Decentralization Delta (positive / neutral / negative-justified / negative-unjustified)
+   - Section G: Risk & Sustainability (ADA volatility discipline, risk register, margin of safety, sustainability, operator reality)
+   - Section H: Subsidy-Loop & Dependency-Graph Check
+
+4. **Classify request size** (Small/Medium/Large/Very large/Systemic) before scoring.
+
+5. **Apply score override discipline** — high score with wrong instrument = No; passing score with failed hard gate = No; missing info = No or Abstain.
+
+6. **Map to vote:** Yes / No / Abstain with specific rationale.
+
+### Five Forms of Public Return
+
+| Return Form | Examples | What Must Be Durable |
+|-------------|----------|---------------------|
+| **Public asset** | Code, standard, research, documentation, curriculum, data | Rights, license, provenance, usability, maintenance or fork/transfer path |
+| **Public service** | Monitoring, maintenance, assurance, education, governance support | Service level, access, accountability, records, quality controls |
+| **Institutional capacity** | Skills, processes, stewardship, independent capability | Transferability, succession, plural participation |
+| **Public learning** | Research findings, pilots, negative results, test data | Method transparency, evidence quality, reusable lessons |
+| **Avoided loss** | Lower security, constitutional, operational, legal risk | Credible threat model, baseline, response capability |
+
+### Mixed-Proposal Rule
+
+If a proposal combines public-good work with commercial benefit:
+- Separate material workstreams, budgets, milestones, risks, rights
+- Score each under its matching scorecard
+- Each must pass its own hard gates
+- Commercial upside cannot hide inside public-good labels
+- Do not average a failed workstream into a passing score
+- If the applicant cannot separate → **No**
+
+### Scorecard Selection (v17)
+
+| Proposal Type | Scorecard |
+|--------------|-----------|
+| Pure public good / civic service | Public-Good and Civic-Service |
+| Open-source infrastructure, API, protocol | Commercial/Hybrid/Infrastructure (public asset as principal return) |
+| Hybrid public/commercial | Commercial/Hybrid/Infrastructure (separate public/private value) |
+| Private commercial expansion | Commercial/Hybrid/Infrastructure (higher return minimum) |
+| Liquidity, DeFi, RWA | Commercial/Hybrid/Infrastructure (with systemic-risk overlays) |
+| Marketing, events, media | Marketing and Adoption (retained impact, not vanity) |
+| Frontier experiment | Matching output scorecard (only if small, failure is cheap) |
+
+### Output Format
+
+Save the assessment to `projects/cardano/drep-votes/<gov_action_id>.md` using this structure:
+- **Proposal ID, Type, Amount, Status**
+- **Summary** (what it does in 2-3 sentences)
+- **Key Details** (deliverables, timeline, budget breakdown, governance structure)
+- **Assessment** (strengths, concerns, comparison to prior proposals if applicable)
+- **Vote Recommendation** (Yes/No/Abstain with specific reasoning)
+- **Data sources** (Koios, IPFS, etc.)
+
+**Rationale templates:**
+- **Yes:** "Vote: Yes. This proposal clears my public-value, public-asset, and accountability checks. Cardano receives [specific deliverable]. The price is justified by [benchmark]."
+- **No:** "Vote: No. While [acknowledge intent], this proposal fails on [specific issue]. To earn my support, the applicant would need to [specific changes]."
+- **Abstain:** "Vote: Abstain. I cannot make a reliable Yes/No judgment because [reason]. Abstain is not support."
+
+---
+
 ## Network Selection
 
 Default to **mainnet** unless user specifies otherwise:
