@@ -1,9 +1,9 @@
 # Jonah's DRep Treasury Assessment Rubric
-## Derived from Commercial Treasury Rule Book v15, aligned with builder/governance values
+## Derived from Treasury Rule Book v17, aligned with builder/governance values
 
-**Version:** 1.1  
-**Date:** 2026-07-11  
-**Source influence:** DRep Commercial Treasury Rule Book v15 by [anonymous DRep]  
+**Version:** 1.2
+**Date:** 2026-07-18
+**Source influence:** Cardano DRep Treasury Rule Book v17 (Unified Commercial, Infrastructure, Marketing and Public-Goods Edition)
 **Philosophy:** The Treasury is finite public capital. It should fund things that make Cardano more decentralized, more usable, or more resilient — with clear accountability, productive ecosystem effects, and without creating private tollbooths.
 
 ---
@@ -20,7 +20,52 @@
 
 ---
 
-## My Two-Layer Framework (Simplified from v15)
+## v17 Unified Framework: Three Scorecards
+
+v17 replaces the commercial-only framing with a unified framework that applies to every proposal, while using **different 100-point scorecards** based on the proposal's economic substance:
+
+| Proposal Type | Scorecard | When to Use |
+|--------------|-----------|-------------|
+| **Pure public good or civic service** | Public-Good and Civic-Service | Constitutional work, research, education, standards, security, maintenance |
+| **Open-source infrastructure, shared tooling, API, protocol** | Commercial/Hybrid/Infrastructure | Public asset, operability and continuity as principal return |
+| **Hybrid public/commercial project** | Commercial/Hybrid/Infrastructure | Separate public and private value; require public rights |
+| **Private commercial expansion** | Commercial/Hybrid/Infrastructure | Higher Treasury-return and risk-sharing minimum |
+| **Liquidity, stablecoin, DeFi, RWA** | Commercial/Hybrid/Infrastructure | With custody, market, legal and systemic-risk overlays |
+| **Marketing, events, sponsorship, media** | Marketing and Adoption | Pay for retained impact and public rights, not vanity metrics |
+| **Frontier experiment** | Matching output scorecard | Only if small by default and failure is cheap |
+
+**Classification follows economic substance, not the title or legal form chosen by the applicant.**
+
+---
+
+## Five Forms of Public Return
+
+Every proposal must deliver at least one durable public return. These are the forms I evaluate:
+
+| Return Form | Examples | What Must Be Durable |
+|-------------|----------|---------------------|
+| **Public asset** | Code, standard, research, documentation, curriculum, data, designs, test suites | Rights, license, provenance, usability, documentation, maintenance or fork/transfer path |
+| **Public service** | Monitoring, maintenance, assurance, education delivery, facilitation, governance support | Service level, access, accountability, records, quality controls and continuity |
+| **Institutional capacity** | Skills, processes, stewardship, independent capability, public records | Transferability, succession, plural participation and reduced key-person dependence |
+| **Public learning** | Research findings, pilots, negative results, test data, postmortems | Method transparency, evidence quality, reusable lessons and dissemination |
+| **Avoided loss** | Lower security, constitutional, operational, legal or reputational risk | Credible threat model, baseline, response capability and evidence that risk is materially reduced |
+
+---
+
+## Mixed-Proposal Rule
+
+When a proposal combines public-good work with commercial benefit, private capture, or product development:
+
+- **Separate** material workstreams, budgets, milestones, risks, rights and beneficiaries
+- **Score each** material workstream under the scorecard matching its economic substance
+- Each workstream must pass **its own hard gates and category minimums**
+- **Commercial upside cannot hide** inside an education, research, standards, community or public-good label
+- **Do not average** a failed workstream into a passing score
+- If the applicant refuses or cannot separate a material mixed budget → **No** for unclear structure and unverifiable value
+
+---
+
+## My Two-Layer Framework (Simplified from v17)
 
 I use **two layers**, not four. Layer 0 handles the "should we?" and Layer 1 handles the "is this specific proposal good enough?" For small/simple proposals, Layer 0 is enough. For large/complex/controversial ones, I go to Layer 1.
 
@@ -69,7 +114,7 @@ I don't use a 100-point scorecard for every proposal. I use a **checklist + judg
 | Check | What I Look For | Weight in My Thinking |
 |-------|----------------|---------------------|
 | **Public asset quality** | Open source (with license/docs/tests), open standards, public data, fork rights | **High** — this is my top priority |
-| **Productive public value** | Reusable capability that enables independent products, services, or operators | **High** — v15 addition |
+| **Productive public value** | Reusable capability that enables independent products, services, or operators | **High** — v17 addition |
 | **Additionality** | Why is Treasury funding needed? Why won't private capital/users solve this? | High |
 | **10x or critical gap** | Is this transformative, or filling a hole that hurts the ecosystem? | Medium-High |
 | **Counterfactual harm** | What breaks or centralizes if Cardano says No? | Medium |
@@ -99,7 +144,7 @@ For commercial or hybrid proposals, I require **at least one** of the following:
 
 #### Section E: Marketing & Adoption (Special Rules)
 
-I agree with v15's marketing annex: pay for **retained impact + public assets**, not attention.
+I agree with v17's marketing approach: pay for **retained impact + public assets**, not attention.
 
 | What I Require | What Gets a No |
 |---------------|----------------|
@@ -129,7 +174,7 @@ I agree with v15's marketing annex: pay for **retained impact + public assets**,
 | **Sustainability** | Maintenance plan, revenue model, handover process, or explicit public-good justification for ongoing support |
 | **Operator reality** | Runbooks, incident process, bus factor >1, handover possible |
 
-#### Section H: Subsidy-Loop & Dependency-Graph Check (v15 Addition)
+#### Section H: Subsidy-Loop & Dependency-Graph Check (v17 Addition)
 
 | Check | What I Look For | Red Flag |
 |-------|----------------|----------|
@@ -145,6 +190,40 @@ I agree with v15's marketing annex: pay for **retained impact + public assets**,
 - Anti-circular-payment controls are in place
 
 I do **not** give credit for: founder salary, affiliate payments, exchange deposits, token purchases, pass-through transfers, or unsupported claims that funds will "stay in the ecosystem."
+
+---
+
+## Request-Size Classification (v17)
+
+Classify before applying score thresholds. Use the **highest band** triggered by nominal ADA, share of active Net Change Limit, or share of relevant category.
+
+| Size | Nominal Request | Share of Active NCL | Share of Relevant Category |
+|------|----------------|---------------------|---------------------------|
+| **Small** | 0–250,000 ADA | Below 0.25% | Below 2% |
+| **Medium** | 250,000–1,000,000 ADA | 0.25% to below 1% | 2% to below 5% |
+| **Large** | 1,000,000–4,000,000 ADA | 1% to below 3% | 5% to below 15% |
+| **Very large** | 4,000,000–20,000,000 ADA | 3% to below 7.5% | 15% to below 30% |
+| **Systemic** | Above 20,000,000 ADA | 7.5% or more | 30% or more |
+
+**Classification rules:**
+- Use the highest category triggered by any test. Do not average.
+- Aggregate linked tranches, affiliates, related parties and parallel requests
+- Move up one band for concentrated custody, full upfront withdrawal, unproven administrator, weak recovery rights, or category dominance
+- Do not move down because the purpose is valuable
+
+---
+
+## Score Override Discipline (v17)
+
+| Situation | Correct Result | Reason |
+|-----------|---------------|--------|
+| High score but wrong priority or instrument | No or defer | The score cannot repair a bad allocation architecture |
+| High score but excessive opportunity cost or concentration | No | Portfolio discipline is a hard part of the decision |
+| Passing score but failed hard gate | No | A score is necessary, not sufficient |
+| Small, staged, public experiment with high uncertainty | May be Yes if frontier lane clears | Cheap failure and public learning can justify uncertainty |
+| Low confidence because applicant omitted normal information | No | Applicant-side disclosure failure is a proposal failure |
+| Low reliability because of external uncertainty or reviewer conflict | Abstain | A fair Yes/No judgment is not possible |
+| Low growth but severe maintenance or security harm if unfunded | Use avoided-loss and public-service analysis | Do not force a growth narrative onto essential work |
 
 ---
 
@@ -180,7 +259,7 @@ For proposals where I want numerical discipline, I use this leaner version:
 
 **Adjustments:**
 - **Productive Ecosystem Multiplier:** +0 to +3 for verified new-work branching, reusable shared inputs, independent adoption, outside demand, productive redundancy, or qualified ADA-denominated ecosystem procurement. Cannot rescue a failed proposal.
-- **Conviction adjustment:** -3 to +3, explained, cannot override failed minimums
+- **Request-size threshold adjustments:** Small proposals can pass at 75+, medium at 80+, large at 85+, very large at 88+, systemic at 90+.
 
 ---
 
@@ -201,6 +280,7 @@ For proposals where I want numerical discipline, I use this leaner version:
 - **Treasury subsidy loop presented as growth** — repeated public funding among same actors is not outside demand
 - **Circular or related-party ecosystem-spending claim** — transfers among controlled wallets do not demonstrate productive circulation
 - **Cardano-native but inferior duplication** — branding and ADA settlement do not justify higher cost or lower quality
+- **Mixed proposal with unseparated budgets** — commercial upside hiding inside public-good labels
 
 ---
 
@@ -231,24 +311,32 @@ This lives in my notes and informs future votes from the same applicants.
 
 ---
 
-## Differences from v15 Source
+## Differences from v17 Source
 
-| Aspect | v15 Source | My Version |
+| Aspect | v17 Source | My Version |
 |--------|-----------|------------|
-| Layers | 4 layers (0-3) | 2 layers (simpler) |
-| Scorecard | Always 100-point | Checklist for most, scorecard for large only |
-| Productive ecosystem | Full 0-10 diagnostic + 5-pt premium | Simplified question in Layer 0; +0 to +3 multiplier |
-| Productive ADA circulation | Detailed evidence requirements (19.3) | Limited credit (+0 to +2 within multiplier); noted as consideration |
+| Layers | 3 parts (I-III) + appendices | 2 layers (simpler) |
+| Scorecards | Three 100-point scorecards (Commercial, Public-Good, Marketing) | Checklist for most, simplified scorecard for large only |
+| Public-good scorecard | Full 100-point with specialist modules | Integrated into checklist/scorecard with five forms of return |
+| Mixed-proposal rule | Mandatory separation and separate scoring | Same principle, enforced in checklist |
+| Request-size classification | 5 bands with NCL/category thresholds | Same bands, simplified application |
+| Score override discipline | 7 situation rules | Same rules, integrated into vote mapping |
+| Five forms of public return | Explicit framework | Adopted fully |
+| Productive ecosystem | Full diagnostic | Simplified question in Layer 0; +0 to +3 multiplier |
+| Productive ADA circulation | Detailed evidence requirements | Limited credit (+0 to +2 within multiplier) |
 | Dependency graph | Full analysis with portability tests | Check in Layer 1 Section H |
 | Composability | Hard gate in triage | Considered in public asset and decentralization sections |
-| Commercial bias | Heavy preference for loans/revenue-share | Same principle, but more weight on public asset as alternative |
+| Commercial bias | Heavy preference for loans/revenue-share | Same principle, more weight on public asset as alternative |
 | Marketing | Deep skepticism | Conditional support if retention/verification is strong |
 | Abstain | Narrow, decision-reliability only | Same — Abstain is not support, not avoidance |
-| Frontier bets | Small, staged, public | Same — this is where I might be more willing than v15 |
+| Frontier bets | Small, staged, public | Same — this is where I might be more willing than v17 |
 | Governance tools | Treated as general public good | I may weight governance infrastructure higher |
+| Constitutional preflight | Mandatory 7-field record | Acknowledged; I check constitutional compliance before scoring |
 
 ---
 
 ## Final Rule
 
 The Treasury is finite. A proposal can be honest, useful, and well-intentioned and still not deserve funding. I vote Yes only when the proposal creates clear public value, enables productive ecosystem effects, respects decentralization, and can be held accountable. I vote No when it doesn't. I vote Abstain only when I genuinely cannot tell the difference.
+
+A score is evidence for judgment, not a substitute for judgment.
