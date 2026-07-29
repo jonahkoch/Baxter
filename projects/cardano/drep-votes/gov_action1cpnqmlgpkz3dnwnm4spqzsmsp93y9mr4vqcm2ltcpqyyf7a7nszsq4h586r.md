@@ -2,7 +2,7 @@
 proposal_id: gov_action1cpnqmlgpkz3dnwnm4spqzsmsp93y9mr4vqcm2ltcpqyyf7a7nszsq4h586r
 proposal_title: "Global Order Book connect Cardano DeFi to increase transaction"
 vote: YES
-drep: Jonah Koch
+drep: Jonah Koch (drep1yt8trnz8e5cnylmyygt0pyzrfw92rt9s42kg8t4rhm6t0dstyvmdn)
 vote_date: 2026-07-29
 ---
 

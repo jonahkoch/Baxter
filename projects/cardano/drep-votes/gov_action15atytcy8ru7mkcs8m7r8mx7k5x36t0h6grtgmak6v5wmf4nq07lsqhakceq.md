@@ -2,7 +2,7 @@
 proposal_id: gov_action15atytcy8ru7mkcs8m7r8mx7k5x36t0h6grtgmak6v5wmf4nq07lsqhakceq
 proposal_title: "Net Change Limit: Cardano Treasury (Epochs 613-713)"
 vote: YES
-drep: Jonah Koch
+drep: Jonah Koch (drep1yt8trnz8e5cnylmyygt0pyzrfw92rt9s42kg8t4rhm6t0dstyvmdn)
 vote_date: 2026-07-29
 ---
 

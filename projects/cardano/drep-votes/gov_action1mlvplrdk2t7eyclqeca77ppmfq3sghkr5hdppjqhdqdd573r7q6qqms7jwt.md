@@ -2,7 +2,7 @@
 proposal_id: gov_action1mlvplrdk2t7eyclqeca77ppmfq3sghkr5hdppjqhdqdd573r7q6qqms7jwt
 proposal_title: "Bifrost: Unlocking Bitcoin DeFi on Cardano — Road to Mainnet (Phase 1 of 2)"
 vote: ABSTAIN
-drep: Jonah Koch
+drep: Jonah Koch (drep1yt8trnz8e5cnylmyygt0pyzrfw92rt9s42kg8t4rhm6t0dstyvmdn)
 vote_date: 2026-07-29
 ---
 
