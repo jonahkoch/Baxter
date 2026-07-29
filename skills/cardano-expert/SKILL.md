@@ -213,18 +213,19 @@ Save the assessment to `projects/cardano/drep-votes/<gov_action_id>.md` using th
 **Vote Rationale Formatting Constraints (CRITICAL):**
 When writing final vote rationales and summaries that Jonah will publish on-chain:
 
-1. **No bullets, dashes, or special characters** in the rationale or summary text. Use only sentences and paragraphs.
-2. **A 300 character summary** must accompany every vote. This is published on-chain alongside the vote.
-3. **Single file per gov_action** containing: detailed assessment + vote rationale + 300 character summary.
-4. **Save to:** `projects/cardano/drep-votes/<gov_action_id>.md`
-5. **Structure:**
-   - Proposal Overview (what it does)
-   - Current Voting Status
-   - Detailed Assessment (strengths, concerns, ecosystem context)
-   - Vote Rationale (full prose explanation, no bullets)
-   - Vote Summary (300 character max, plain sentences)
+1. **The detailed assessment** can use any format: bullets, dashes, tables, special characters as needed for clarity.
+2. **The vote rationale and summary must be plain prose only:** no bullets, no dashes, no special characters. Use only sentences and paragraphs.
+3. **A 300 character summary** must accompany every vote. This is published on-chain alongside the vote.
+4. **Single file per gov_action** containing: detailed assessment (any format) + vote rationale (plain prose) + 300 character summary (plain prose).
+5. **Save to:** `projects/cardano/drep-votes/<gov_action_id>.md`
+6. **Structure:**
+   - Proposal Overview (any format)
+   - Current Voting Status (any format)
+   - Detailed Assessment (any format: bullets, tables, etc.)
+   - Vote Rationale (full prose explanation, no bullets, no dashes, no special characters)
+   - Vote Summary (300 character max, plain sentences only)
 
-**Rationale templates (prose only):**
+**Rationale templates (prose only, no formatting):**
 - **Yes:** "I am voting Yes on this proposal. This clears my public value public asset and accountability checks. Cardano receives specific durable deliverables and the price is justified by benchmark comparisons."
 - **No:** "I am voting No on this proposal. While I acknowledge the intent this proposal fails on specific issue. To earn my support the applicant would need to make specific changes."
 - **Abstain:** "I am voting Abstain. I cannot make a reliable Yes or No judgment because specific reason. Abstain is not support."
