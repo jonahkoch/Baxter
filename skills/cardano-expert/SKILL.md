@@ -215,7 +215,7 @@ When writing final vote rationales and summaries that Jonah will publish on-chai
 
 1. **The detailed assessment** can use any format: bullets, dashes, tables, special characters as needed for clarity.
 2. **The vote rationale and summary must be plain prose only:** no bullets, no dashes, no special characters. Use only sentences and paragraphs.
-3. **A 300 character summary** must accompany every vote. This is published on-chain alongside the vote.
+3. **A 300 character summary** must accompany every vote. This is published on-chain alongside the vote. MUST be under 300 characters. Count carefully.
 4. **Single file per gov_action** containing: detailed assessment (any format) + vote rationale (plain prose) + 300 character summary (plain prose).
 5. **Save to:** `projects/cardano/drep-votes/<gov_action_id>.md`
 6. **Structure:**
