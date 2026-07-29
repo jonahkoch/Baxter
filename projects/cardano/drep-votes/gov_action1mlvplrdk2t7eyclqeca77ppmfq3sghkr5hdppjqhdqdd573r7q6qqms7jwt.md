@@ -1,7 +1,7 @@
 ---
 proposal_id: gov_action1mlvplrdk2t7eyclqeca77ppmfq3sghkr5hdppjqhdqdd573r7q6qqms7jwt
 proposal_title: "Bifrost: Unlocking Bitcoin DeFi on Cardano — Road to Mainnet (Phase 1 of 2)"
-vote: PENDING
+vote: ABSTAIN
 drep: Jonah Koch
 vote_date: 2026-07-29
 ---
@@ -116,12 +116,10 @@ The primary drawbacks are the very large price tag the competitive urgency and t
 
 On balance this is a strong infrastructure proposal with appropriate risk management. The Phase 1 and Phase 2 separation is particularly well designed as it forces proof of delivery before operational funding.
 
-## Preliminary Recommendation
-
-Based on the rubric assessment this proposal scores as a **conditional Yes**. The public value is clear the accountability structure is excellent and the technical approach is sound. The concerns are primarily around cost and execution risk rather than fundamental flaws.
-
-The final vote should consider whether the 12.3 million ADA price tag is justified relative to other Treasury priorities and whether the team has earned sufficient trust from prior grants. Social signals from the community and SPOs may also inform the decision.
-
 ## Vote Rationale
 
-PENDING. Awaiting social signals and final voter judgment before drafting the published rationale and 300 character summary.
+I am voting Abstain on this proposal. While I strongly support the Bifrost vision and believe the team has delivered excellent accountability and technical rigor, the current Net Change Limit leaves only approximately twelve point six million ADA in remaining headroom after the recently enacted Daedalus proposal. Bifrost requests twelve point three million ADA which would consume virtually all remaining fiscal capacity under the current three hundred fifty million ADA limit. This would leave no room for the DeFi Kernel proposal and other pending Treasury requests that I also support. I do not oppose Bifrost on its merits. The public value is clear, the SPO secured custody model is innovative, and the accountability framework is best in class. However fiscal stewardship requires me to prioritize proposals that fit within the available budget while preserving headroom for other ecosystem needs. The DeFi Kernel proposal at three point three million ADA leaves substantially more room for additional proposals compared to Bifrost at twelve point three million. I strongly encourage the Bifrost team to resubmit this proposal once the Net Change Limit increase to five hundred million ADA is approved. At that point the fiscal constraint is resolved and I would enthusiastically support this proposal on its merits.
+
+## Vote Summary
+
+I abstain with strong support for Bifrost. Current NCL has only twelve point six million ADA remaining and Bifrost at twelve point three million would exhaust it. I encourage the team to resubmit after the NCL increase passes when I will support enthusiastically.
