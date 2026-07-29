@@ -1,0 +1,25 @@
+title: "Cardano Governance Context Feed"
+description: "Curated on-chain data + social context for Cardano governance proposals"
+baseurl: "/governance-feed"
+url: "https://jonahkoch.github.io"
+
+markdown: kramdown
+highlighter: rouge
+
+collections:
+  proposals:
+    output: true
+    permalink: /:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: proposals
+    values:
+      layout: proposal
+
+exclude:
+  - scripts/
+  - README.md
+  - Gemfile
+  - Gemfile.lock

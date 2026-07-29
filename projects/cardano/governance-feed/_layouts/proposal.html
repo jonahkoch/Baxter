@@ -1,0 +1,121 @@
+---
+layout: default
+---
+
+<article class="proposal">
+  <header class="proposal-header">
+    <h1>{{ page.title }}</h1>
+    <div class="meta">
+      <span class="id">{{ page.proposal_id }}</span>
+      <span class="type">{{ page.proposal_type }}</span>
+      <span class="amount">{{ page.amount_ada | default: "?" }} ADA</span>
+      <span class="status {{ page.status }}">{{ page.status | default: "active" }}</span>
+    </div>
+  </header>
+
+  {% if page.context and page.context.size > 0 %}
+  <section class="context-alerts">
+    <h2>Social Context</h2>
+    {% for item in page.context %}
+    <div class="context-item {{ item.type }}">
+      <div class="context-meta">
+        <span class="date">{{ item.date }}</span>
+        <span class="source">{{ item.source }}</span>
+        <span class="badge">{{ item.type }}</span>
+      </div>
+      <p class="summary">{{ item.summary }}</p>
+      {% if item.impact %}
+      <p class="impact"><strong>Impact:</strong> {{ item.impact }}</p>
+      {% endif %}
+      {% if item.link %}
+      <a href="{{ item.link }}" target="_blank" rel="noopener">Source →</a>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  <section class="on-chain">
+    <h2>On-Chain State</h2>
+    <div class="vote-summary">
+      <div class="vote-bar">
+        <div class="yes" style="width: {{ page.drep_yes_pct | default: 0 }}%"></div>
+        <div class="no" style="width: {{ page.drep_no_pct | default: 0 }}%"></div>
+      </div>
+      <div class="vote-labels">
+        <span class="yes">Yes: {{ page.drep_yes_pct | default: "?" }}%</span>
+        <span class="no">No: {{ page.drep_no_pct | default: "?" }}%</span>
+        <span class="abstain">Abstain: {{ page.drep_abstain_pct | default: "?" }}%</span>
+      </div>
+    </div>
+    <dl>
+      <dt>Proposed Epoch</dt>
+      <dd>{{ page.proposed_epoch | default: "?" }}</dd>
+      <dt>Expires Epoch</dt>
+      <dd>{{ page.expiration | default: "?" }}</dd>
+      <dt>DRep Yes Votes</dt>
+      <dd>{{ page.drep_yes_votes | default: "?" }} ({{ page.drep_yes_power | default: "?" }} ADA)</dd>
+      <dt>DRep No Votes</dt>
+      <dd>{{ page.drep_no_votes | default: "?" }} ({{ page.drep_no_power | default: "?" }} ADA)</dd>
+      <dt>Committee</dt>
+      <dd>{{ page.committee_yes | default: "?" }} Yes / {{ page.committee_no | default: "?" }} No</dd>
+    </dl>
+  </section>
+
+  <section class="description">
+    <h2>Summary</h2>
+    {{ page.abstract | markdownify }}
+  </section>
+
+  <section class="assessment">
+    <h2>Assessment</h2>
+    {% if page.assessment %}
+      {{ page.assessment | markdownify }}
+    {% else %}
+      <p><em>No assessment recorded yet.</em></p>
+    {% endif %}
+  </section>
+
+  {% if page.tags and page.tags.size > 0 %}
+  <section class="ecosystem-overlap">
+    <h2>Ecosystem Overlap</h2>
+    <p class="overlap-note">Proposals tagged with similar focus areas. Check for parallel efforts or funding crossover.</p>
+    <div class="tag-list">
+      {% for tag in page.tags %}
+        <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% for tag in page.tags %}
+      {% assign related = site.proposals | where_exp: "p", "p.tags contains tag" | where_exp: "p", "p.proposal_id != page.proposal_id" %}
+      {% if related.size > 0 %}
+        <div class="overlap-group">
+          <h3>{{ tag | capitalize }}</h3>
+          <ul>
+            {% for r in related %}
+            <li>
+              <a href="{{ r.url | relative_url }}">{{ r.title }}</a>
+              <span class="amount">{{ r.amount_ada | default: "?" }} ADA</span>
+              <span class="status-badge {{ r.status }}">{{ r.status | capitalize }}</span>
+              {% if r.proposal_id == page.related_proposal_id %}
+              <span class="overlap-badge">Noted overlap</span>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  <section class="links">
+    <h2>Links</h2>
+    <ul>
+      <li><a href="https://gov.tools/governance_actions/{{ page.proposal_id }}" target="_blank">gov.tools</a></li>
+      <li><a href="https://cardanoscan.io/governanceAction/{{ page.proposal_id }}" target="_blank">Cardanoscan</a></li>
+      {% if page.meta_url %}
+      <li><a href="{{ page.meta_url }}" target="_blank">Proposal Metadata</a></li>
+      {% endif %}
+    </ul>
+  </section>
+</article>

@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "skills": {
+    "higgsfield-generate": {
+      "version": "1.0.0",
+      "installedAt": 1783910308914
+    },
+    "higgsfield-soul-id": {
+      "version": "1.0.0",
+      "installedAt": 1783941773146
+    }
+  }
+}

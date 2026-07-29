@@ -1,7 +1,8 @@
 # HEARTBEAT.md
 
-## Token Usage Monitoring
+## Checklist (rotate through these)
 
+### 1. Token Usage Monitoring
 Check session status periodically and alert Jonah when thresholds are hit:
 
 **Alerts to send:**
@@ -9,6 +10,24 @@ Check session status periodically and alert Jonah when thresholds are hit:
 - Daily input tokens >100k — heads up on usage
 - Daily output tokens >10k — heads up on usage
 
-**Check frequency:** Every 3 hours during active hours (skip late night unless urgent)
+### 2. Email Check (Gmail)
+Check `baxterclawbot@gmail.com` for unread emails. Alert Jonah if:
+- New unread emails from important contacts
+- Emails that look urgent (keywords: urgent, asap, deadline, payment, booking)
+- Unread count >0 (summarize, don't spam)
 
-**Last check:** 2026-03-18 16:36 CET
+**How:** `python3 ~/.openclaw/workspace/tools/gmail.py unread` and `recent --n 5`
+
+### 3. Calendar Check
+- Any events in next 24-48h?
+- Remind Jonah if something's coming up
+
+## Schedule
+
+**Check frequency:** Every 4 hours during active hours (skip late night unless urgent)
+
+**Last check:** 2026-07-27 17:52 CEST
+
+**Status:** Context 15% · 37k in / 630 out — healthy
+
+**Note:** Session compacted at 19:28 CEST. Context cleared from 68% → 15%.

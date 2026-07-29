@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "skills": {
+    "masumi": {
+      "source": "masumi-network/masumi-skills",
+      "sourceType": "github",
+      "skillPath": "skill/SKILL.md",
+      "computedHash": "f3668aed18072f2e9052d9a3814c6cdaa094087ed3774f86b6b1537cea7047c9"
+    },
+    "masumi-agent-messenger": {
+      "source": "masumi-network/masumi-agent-messenger",
+      "sourceType": "github",
+      "skillPath": "skills/masumi-agent-messenger/SKILL.md",
+      "computedHash": "d9744830bfa03b5a651b4b9082e5e503aefa544b9d55d66cae728feda9b54027"
+    },
+    "masumi-sokosumi": {
+      "source": "/root/.openclaw/workspace/skills/masumi-sokosumi",
+      "sourceType": "local",
+      "computedHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

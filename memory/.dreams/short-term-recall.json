@@ -1,0 +1,565 @@
+{
+  "version": 1,
+  "updatedAt": "2026-07-29T14:50:44.601Z",
+  "entries": {
+    "memory:memory/2026-04-07.md:1:46": {
+      "key": "memory:memory/2026-04-07.md:1:46",
+      "path": "memory/2026-04-07.md",
+      "startLine": 1,
+      "endLine": 46,
+      "source": "memory",
+      "snippet": "# Session: April 7, 2026 — Social Credibility System Design ## Project: Non-repudiable Social Posts on Cardano ### Overview Designed a meritocratic credibility system using Cardano's native asset infrastructure. Core principles: non-repudiation, immutability, UX-optimized. ### Tech Stack Decisions - **Token Standard**: CIP-25 (immutable NFT) — no edits, true immutability - **Mutable Pointers**: CIP-68 for head registry (optional) - **Storage**: IPFS for content, hashes on-chain - **Recovery Contract**: Aiken validator with on-chain verification - **Wallet**: Mesh.js or Lucid ### Hash Chain Structure Each post links to previous via `prev_post_hash`: ``` Genesis → Post_1 (seq: 1) → Post_2",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-15T22:58:16.514Z",
+      "lastRecalledAt": "2026-05-15T22:58:16.514Z",
+      "queryHashes": [
+        "3a524e7a9a28"
+      ],
+      "recallDays": [
+        "2026-05-16"
+      ],
+      "conceptTags": [
+        "non-repudiable",
+        "non-repudiation",
+        "ux-optimized",
+        "cip-25",
+        "cip-68",
+        "on-chain",
+        "mesh.js",
+        "prev-post-hash"
+      ]
+    },
+    "memory:memory/2026-03-14.md:1:20": {
+      "key": "memory:memory/2026-03-14.md:1:20",
+      "path": "memory/2026-03-14.md",
+      "startLine": 1,
+      "endLine": 20,
+      "source": "memory",
+      "snippet": "# 2026-03-14 ## Cardano / DeFi Research ### Liqwid TVL Query **Time:** ~2:55 PM CET **Asked by:** Jonah **Findings:** - Current TVL (USD): ~$32.53 million - ADA Locked: ~124.48M ADA - ADA Price at check: $0.261319 **Context:** - Down ~82% from December 2024 peak of ~$176M - Largest lending protocol on Cardano by TVL - Uses DeFiLlama API for data **Note:** If tracking Cardano DeFi trends over time, this is a baseline data point.",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T02:01:03.103Z",
+      "lastRecalledAt": "2026-05-24T02:01:03.103Z",
+      "queryHashes": [
+        "27ff19bd0c96"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "32.53",
+        "124.48m",
+        "0.261319",
+        "cardano",
+        "defi",
+        "research",
+        "liqwid",
+        "tvl"
+      ]
+    },
+    "memory:memory/2026-02-11.md:103:112": {
+      "key": "memory:memory/2026-02-11.md:103:112",
+      "path": "memory/2026-02-11.md",
+      "startLine": 103,
+      "endLine": 112,
+      "source": "memory",
+      "snippet": "- **Travel/hotels:** Amadeus, Booking.com, Expedia Partner APIs - **Restaurants:** Resy API, OpenTable, Toast (limited access) - **Calendar:** Google Calendar API, Outlook Graph API, CalDAV - **Email:** Gmail API, SendGrid, Mailgun - **Payments:** Stripe, Square, PayPal - **Communication:** Twilio, SendBird, Stream **MCP Registry:** - https://mcp.registry — emerging standard for agent-tool connectors",
+      "recallCount": 5,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 5,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-06-01T19:27:33.241Z",
+      "lastRecalledAt": "2026-07-13T02:35:34.205Z",
+      "queryHashes": [
+        "3d00fadb2852",
+        "59af54970b91",
+        "bb1a813ca6e7",
+        "d17565cc7f45",
+        "2475d078af03"
+      ],
+      "recallDays": [
+        "2026-06-01",
+        "2026-06-12",
+        "2026-06-13",
+        "2026-07-08",
+        "2026-07-13"
+      ],
+      "conceptTags": [
+        "travel/hotels",
+        "booking.com",
+        "mcp.registry",
+        "agent-tool",
+        "travel",
+        "hotels",
+        "amadeus",
+        "expedia"
+      ]
+    },
+    "memory:memory/2026-02-11.md:78:110": {
+      "key": "memory:memory/2026-02-11.md:78:110",
+      "path": "memory/2026-02-11.md",
+      "startLine": 78,
+      "endLine": 110,
+      "source": "memory",
+      "snippet": "**Problem:** How to complete tasks when APIs don't exist (e.g., restaurant reservations) **Options ranked by reliability:** 1. **APIs** (most reliable) — Direct integration where available 2. **MCP Servers** (emerging) — Model Context Protocol, agent-native endpoints 3. **Middleware** (Zapier/Make/N8N) — They handle scraping/APIs, I call their API 4. **Desktop Automation** (RPA) — Playwright/Puppeteer on local machine 5. **Browser Automation** (fragile) — Headless Chrome on VPS, high maintenance 6. **Human-in-the-Loop** (expensive) — Draft requests, human sends/executes **Key insight:** Browser automation on VPS is possible but resource-heavy and brittle. Better to use APIs → middleware →",
+      "recallCount": 5,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 5,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-06-01T19:27:33.241Z",
+      "lastRecalledAt": "2026-07-13T02:35:34.205Z",
+      "queryHashes": [
+        "3d00fadb2852",
+        "59af54970b91",
+        "bb1a813ca6e7",
+        "d17565cc7f45",
+        "2475d078af03"
+      ],
+      "recallDays": [
+        "2026-06-01",
+        "2026-06-12",
+        "2026-06-13",
+        "2026-07-08",
+        "2026-07-13"
+      ],
+      "conceptTags": [
+        "e.g",
+        "agent-native",
+        "zapier/make/n8n",
+        "scraping/apis",
+        "playwright/puppeteer",
+        "human-in-the-loop",
+        "sends/executes",
+        "resource-heavy"
+      ]
+    },
+    "memory:memory/2026-05-15.md:1:33": {
+      "key": "memory:memory/2026-05-15.md:1:33",
+      "path": "memory/2026-05-15.md",
+      "startLine": 1,
+      "endLine": 33,
+      "source": "memory",
+      "snippet": "# 2026-05-15 — Session Notes ## Google Account Integration Request Jonah asked about giving me access to a Google account (Gmail, Calendar, Drive) similar to how GitHub access works. **Investigation results:** - **Gmail**: Native support exists via OpenClaw hooks + Pub/Sub + `gog` (gogcli). Has a setup wizard: `openclaw webhooks gmail setup --account <email>`. Requires gcloud CLI, GCP project, Tailscale Funnel for HTTPS endpoint. - **Google Calendar**: No native tool. Options: (1) browser automation via Chrome, (2) build a custom skill using Google Calendar API + OAuth. - **Google Drive**: No native tool. Same options as Calendar. - **Google Chat channel**: Has a plugin (`googlechat`) but",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 3,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-06-12T19:01:52.309Z",
+      "lastRecalledAt": "2026-07-08T15:52:59.916Z",
+      "queryHashes": [
+        "59af54970b91",
+        "bb1a813ca6e7",
+        "d17565cc7f45"
+      ],
+      "recallDays": [
+        "2026-06-12",
+        "2026-06-13",
+        "2026-07-08"
+      ],
+      "conceptTags": [
+        "pub/sub",
+        "google",
+        "account",
+        "integration",
+        "request",
+        "jonah",
+        "asked",
+        "giving"
+      ]
+    },
+    "memory:memory/2026-05-15.md:20:44": {
+      "key": "memory:memory/2026-05-15.md:20:44",
+      "path": "memory/2026-05-15.md",
+      "startLine": 20,
+      "endLine": 44,
+      "source": "memory",
+      "snippet": "**Recommended path**: Set up native Gmail first (built-in), use browser automation for Calendar/Drive as needed, build a Google skill later if heavy automation is required. ## Context Window Critical - Context hit **100%** (256k/256k tokens) during this session - Updated HEARTBEAT.md with critical status - Session flagged for fresh start ## Token Usage - 84k input / 2.2k output at time of flush ## Google + Obsidian Integration — Active Project Jonah confirmed intent to set up full Google workspace integration (Gmail, Calendar, Drive) and wants to connect it to **Obsidian** (his note-taking app). This is a priority project to resume in the next session. **Scope:** 1. **Gmail**: Set up",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 3,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-06-12T19:01:52.309Z",
+      "lastRecalledAt": "2026-07-08T15:52:59.916Z",
+      "queryHashes": [
+        "59af54970b91",
+        "bb1a813ca6e7",
+        "d17565cc7f45"
+      ],
+      "recallDays": [
+        "2026-06-12",
+        "2026-06-13",
+        "2026-07-08"
+      ],
+      "conceptTags": [
+        "built-in",
+        "calendar/drive",
+        "256k/256k",
+        "heartbeat.md",
+        "2.2k",
+        "note-taking",
+        "recommended",
+        "path"
+      ]
+    },
+    "memory:memory/2026-02-14.md:1:41": {
+      "key": "memory:memory/2026-02-14.md:1:41",
+      "path": "memory/2026-02-14.md",
+      "startLine": 1,
+      "endLine": 41,
+      "source": "memory",
+      "snippet": "# Memory Log - 2026-02-14 ## ERC-8004 Agent Identity **Baxter's On-Chain Identity:** - Token ID: #17351 - Owner: 0xf9b6eF416BAFBf5333B6D1e2c5A3Fb60f7fECE23 - Registry: 0x8004A169FB4a3325136EB29fA0ceB6D2e539a432 (Identity Registry) - Network: Base Mainnet - Transaction: 0x7a594d04...67ae5dc5 **Reputation Registry:** - Address: 0x8004BAa17C55a88189AE136b182e5fdA19dE9b63 - Purpose: On-chain feedback system for agents - How it works: Clients (humans or other agents) submit feedback with ratings, tags, and optional off-chain details - Current status: No GUI/explorer exists yet; ecosystem is ~6 months old - The Graph maintains subgraphs indexing all registry data across 8 chains **Research fin",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-06-12T19:01:52.309Z",
+      "lastRecalledAt": "2026-06-12T19:01:52.309Z",
+      "queryHashes": [
+        "59af54970b91"
+      ],
+      "recallDays": [
+        "2026-06-12"
+      ],
+      "conceptTags": [
+        "network",
+        "erc-8004",
+        "on-chain",
+        "off-chain",
+        "gui/explorer",
+        "log",
+        "erc",
+        "identity"
+      ]
+    },
+    "memory:memory/2026-04-22.md:1:36": {
+      "key": "memory:memory/2026-04-22.md:1:36",
+      "path": "memory/2026-04-22.md",
+      "startLine": 1,
+      "endLine": 36,
+      "source": "memory",
+      "snippet": "# 2026-04-22 - Wednesday ## Masumi Agent Messenger Setup Explored and set up Masumi's new **siam** (Agent Messenger) platform — an agent-to-agent messaging protocol. ### What it is - \"Email for AI agents\" — gives every agent a permanent address for encrypted messaging - Built on SpacetimeDB with client-side encryption - Enables task delegation, async workflows, human-in-the-loop approvals - Agents can discover each other and message across repos/machines/organizations ### Setup completed 1. **Installed CLI:** `npm install -g @masumi_network/masumi-agent-messenger` 2. **Added skill:** `npx skills add masumi-network/masumi-agent-messenger` 3. **Authenticated:** Device code flow via https:/",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-06-13T18:32:02.469Z",
+      "lastRecalledAt": "2026-07-14T17:00:37.847Z",
+      "queryHashes": [
+        "bb1a813ca6e7",
+        "7a48aeaeff9e"
+      ],
+      "recallDays": [
+        "2026-06-13",
+        "2026-07-14"
+      ],
+      "conceptTags": [
+        "network",
+        "agent-to-agent",
+        "client-side",
+        "human-in-the-loop",
+        "repos/machines/organizations",
+        "wednesday",
+        "masumi",
+        "messenger"
+      ]
+    },
+    "memory:memory/2026-02-15.md:1:26": {
+      "key": "memory:memory/2026-02-15.md:1:26",
+      "path": "memory/2026-02-15.md",
+      "startLine": 1,
+      "endLine": 26,
+      "source": "memory",
+      "snippet": "# 2026-02-15 ## Copywriting Frameworks Research (Kochfoto Business) Jonah asked about copywriting frameworks for his photography business. He's planning an HTML email campaign to sell leather-bound bar/bat mitzvah albums to past clients. ### Key Frameworks Discussed: - **AIDA** (Attention, Interest, Desire, Action) - the classic - **PAS** (Problem, Agitate, Solution) - recommended for his use case since clients already have photos but need to be reminded what's at stake - **BAB** (Before-After-Bridge) - good for showing transformation - **FAB** (Features-Advantages-Benefits) - **4 C's** (Clear, Concise, Compelling, Credible) - **4 U's** (Useful, Urgent, Unique, Ultra-specific) ### Recomm",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-06-13T18:32:02.469Z",
+      "lastRecalledAt": "2026-06-13T18:32:02.469Z",
+      "queryHashes": [
+        "bb1a813ca6e7"
+      ],
+      "recallDays": [
+        "2026-06-13"
+      ],
+      "conceptTags": [
+        "leather-bound",
+        "bar/bat",
+        "before-after-bridge",
+        "features-advantages-benefits",
+        "ultra-specific",
+        "copywriting",
+        "frameworks",
+        "research"
+      ]
+    },
+    "memory:memory/2026-02-11.md:38:84": {
+      "key": "memory:memory/2026-02-11.md:38:84",
+      "path": "memory/2026-02-11.md",
+      "startLine": 38,
+      "endLine": 84,
+      "source": "memory",
+      "snippet": "- GitHub repo access needed **blockVote / PactVote:** - Governance dApp for Cardano DReps - Website: https://pactvote.com - GitHub: https://github.com/jonahkoch/block-vote - Status: Phase 3 (Fracada integration) - Stack: Next.js 16, Mesh SDK v1.9, Fracada contracts **Structure:** - `memory/cardano/ojonah.md` - `memory/cardano/pactvote.md` - Updated MEMORY.md with separation principle --- ## Kochfoto Business Context Jonah shared his photography/video/web design business: https://www.kochfoto.com **Meta goal:** Eventually have me take over operations or at least help significantly with the business. Long-term learning project. **Current status:** Early stages — need to understand workf",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-07-13T02:35:34.205Z",
+      "lastRecalledAt": "2026-07-13T02:35:34.205Z",
+      "queryHashes": [
+        "2475d078af03"
+      ],
+      "recallDays": [
+        "2026-07-13"
+      ],
+      "conceptTags": [
+        "pactvote.com",
+        "github.com/jonahkoch/block-vote",
+        "next.js",
+        "v1.9",
+        "memory/cardano/ojonah.md",
+        "memory/cardano/pactvote.md",
+        "memory.md",
+        "photography/video/web"
+      ]
+    },
+    "memory:memory/2026-05-13.md:1:24": {
+      "key": "memory:memory/2026-05-13.md:1:24",
+      "path": "memory/2026-05-13.md",
+      "startLine": 1,
+      "endLine": 24,
+      "source": "memory",
+      "snippet": "# Memory — 2026-05-13 ## Traffic Citation (Jonah) - **Location:** Montgomery County, MD - **Charges:** 1. TA 13-401(b1) — Operating unregistered motor vehicle — $290 — **0 points** 2. TA 13-409(b) — Failure to display registration card on demand — $50 — **0 points** 3. TA 13-411(a) — Failure to attach registration plates front/rear — $70 — **0 points** 4. TA 21-1103(a) — Driving on sidewalk where prohibited — $70 — points **unknown/needs verification** 5. TA 22-101(b3) — Operating vehicle with off-road equipment on highway — $70 — likely **0 points** - **Total fines:** $550 - **Vehicle:** Electric dirt bike, owned by the 16-year-old child - **Driver:** 16-year-old, unlicensed (no",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-07-13T02:35:34.205Z",
+      "lastRecalledAt": "2026-07-13T02:35:34.205Z",
+      "queryHashes": [
+        "2475d078af03"
+      ],
+      "recallDays": [
+        "2026-07-13"
+      ],
+      "conceptTags": [
+        "13-401",
+        "13-409",
+        "13-411",
+        "front/rear",
+        "21-1103",
+        "unknown/needs",
+        "22-101",
+        "off-road"
+      ]
+    },
+    "memory:memory/2026-05-13.md:20:26": {
+      "key": "memory:memory/2026-05-13.md:20:26",
+      "path": "memory/2026-05-13.md",
+      "startLine": 20,
+      "endLine": 26,
+      "source": "memory",
+      "snippet": "- I hallucinated a detailed description of a podcast microphone — completely fabricated, couldn't actually see the image. - When Jonah revealed it was a page of text, I acknowledged the failure openly. - **Lesson:** I cannot reliably describe images right now. I should be honest about this limitation rather than fabricating details. ## OpenClaw Browser Status - Chrome extension relay is running but no tab is connected. Browser automation unavailable until a tab is attached.",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-07-13T02:35:34.205Z",
+      "lastRecalledAt": "2026-07-13T02:35:34.205Z",
+      "queryHashes": [
+        "2475d078af03"
+      ],
+      "recallDays": [
+        "2026-07-13"
+      ],
+      "conceptTags": [
+        "hallucinated",
+        "detailed",
+        "description",
+        "podcast",
+        "microphone",
+        "completely",
+        "fabricated",
+        "couldn't"
+      ]
+    },
+    "memory:memory/2026-04-22.md:28:51": {
+      "key": "memory:memory/2026-04-22.md:28:51",
+      "path": "memory/2026-04-22.md",
+      "startLine": 28,
+      "endLine": 51,
+      "source": "memory",
+      "snippet": "- `albina` — DevRel at Masumi - Public channels: `masumi-test`, `public-discussion` ### Key commands learned ```bash # Auth & setup masumi-agent-messenger --json --profile main auth code start masumi-agent-messenger --json --profile main agent create <slug> masumi-agent-messenger --json --profile main agent use <slug> masumi-agent-messenger --json --profile main agent update --display-name \"...\" # Messaging masumi-agent-messenger --json thread unread masumi-agent-messenger --json thread list masumi-agent-messenger --json thread start <target-slug> \"message\" masumi-agent-messenger --json discover search \"\" masumi-agent-messenger --json channel list ``` ### Resources - Web app: https://ag",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-07-14T17:00:37.847Z",
+      "lastRecalledAt": "2026-07-14T17:00:37.847Z",
+      "queryHashes": [
+        "7a48aeaeff9e"
+      ],
+      "recallDays": [
+        "2026-07-14"
+      ],
+      "conceptTags": [
+        "masumi-test",
+        "public-discussion",
+        "masumi-agent-messenger",
+        "display-name",
+        "target-slug",
+        "albina",
+        "devrel",
+        "masumi"
+      ]
+    },
+    "memory:memory/2026-03-12.md:1:29": {
+      "key": "memory:memory/2026-03-12.md:1:29",
+      "path": "memory/2026-03-12.md",
+      "startLine": 1,
+      "endLine": 29,
+      "source": "memory",
+      "snippet": "# 2026-03-12 - Session Notes ## Cardano Governance Research ### Dingo Treasury Proposal Status **Proposal ID:** gov_action17dfgtkeufcy945e3ssanqpmn09ft3gezhvepvvg7msmlmaz260dqqjtsmpe **Requested Amount:** 6,900,000 ADA (~$2.07M at $0.30/ADA) **Current Voting Status (Epoch 618):** - DRep Yes: 5.52% (24 votes, 322M ADA) - DRep No: 94.48% (31 votes, 5.5B ADA) - SPO votes: 0 cast - Constitutional Committee: 0% yes **Threshold Required:** 67% Yes from DReps **Expiration:** Epoch 624 **Observation:** Proposal is far below the required threshold. Major DReps appear to be voting against or abstaining. Will need significant momentum to flip. **Links:** - gov.tools: https://gov.tools/governan",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-07-14T17:07:11.140Z",
+      "lastRecalledAt": "2026-07-29T14:50:44.601Z",
+      "queryHashes": [
+        "d8fd3d2e9faf",
+        "f5c7a636ec4e"
+      ],
+      "recallDays": [
+        "2026-07-14",
+        "2026-07-29"
+      ],
+      "conceptTags": [
+        "2.07m",
+        "0.30/ada",
+        "5.52",
+        "94.48",
+        "5.5b",
+        "gov.tools",
+        "gov.tools/governan",
+        "cardano"
+      ]
+    },
+    "memory:memory/2026-07-13.md:1:32": {
+      "key": "memory:memory/2026-07-13.md:1:32",
+      "path": "memory/2026-07-13.md",
+      "startLine": 1,
+      "endLine": 32,
+      "source": "memory",
+      "snippet": "# Memory — 2026-07-13 ## Higgsfield AI Setup (Complete) **Installed skill:** `higgsfield-generate` from ClawHub **CLI version:** 1.1.13 **Workspace:** 10613b61-2593-4729-844c-dcaf35784a56 (private, ultimate plan, ~3894 credits) ### Setup Process 1. Installed skill via `openclaw skills install higgsfield-generate` 2. Installed CLI: `curl -fsSL https://raw.githubusercontent.com/higgsfield-ai/cli/main/install.sh | sh` 3. Transferred credentials from Jonah's Mac (OAuth flow requires browser — can't do headless) 4. Key insight: credentials.json needs `\"auth_version\": 2` field — without it CLI rejects with \"older auth flow\" 5. Discovered workspace ID via API: `curl .../account/workspaces` 6. Se",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-07-15T01:09:22.445Z",
+      "lastRecalledAt": "2026-07-15T01:09:22.445Z",
+      "queryHashes": [
+        "1b39d4c41273"
+      ],
+      "recallDays": [
+        "2026-07-15"
+      ],
+      "conceptTags": [
+        "higgsfield-generate",
+        "1.1.13",
+        "credentials.json",
+        "auth-version",
+        "account/workspaces",
+        "higgsfield",
+        "setup",
+        "complete"
+      ]
+    },
+    "memory:memory/2026-07-13.md:26:38": {
+      "key": "memory:memory/2026-07-13.md:26:38",
+      "path": "memory/2026-07-13.md",
+      "startLine": 26,
+      "endLine": 38,
+      "source": "memory",
+      "snippet": "- **Model:** image_auto ### Kochfoto Video Shorts Skill (Created) - **Path:** `skills/kochfoto-video-shorts/` - **Pipeline:** Character sheet → Soul ID training → scene composition → image-to-video - **Depends on:** `higgsfield-soul-id` (installed from ClawHub) - **Status:** Ready for testing when character photos are available - **Key design:** 4-phase workflow with honest limitations documented ### My History Studio Image (Generated) - **URL:** https://d8j0ntlcm91z4.cloudfront.net/user_39dCC1ME1sTiCRRlYrz1Q9MH3yW/hf_20260713_044829_9d530e59-fec3-405b-ae4e-8447249c3758.png - **Purpose:** Kochfoto My History Studio Service promotional image",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 3,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-07-15T01:09:22.445Z",
+      "lastRecalledAt": "2026-07-27T21:39:33.206Z",
+      "queryHashes": [
+        "1b39d4c41273",
+        "208dac0933b9",
+        "a72a56064876"
+      ],
+      "recallDays": [
+        "2026-07-15",
+        "2026-07-23",
+        "2026-07-27"
+      ],
+      "conceptTags": [
+        "image-auto",
+        "skills/kochfoto-video-shorts",
+        "image-to-video",
+        "higgsfield-soul-id",
+        "4-phase",
+        "model",
+        "kochfoto",
+        "video"
+      ]
+    },
+    "memory:memory/2026-07-23.md:1:24": {
+      "key": "memory:memory/2026-07-23.md:1:24",
+      "path": "memory/2026-07-23.md",
+      "startLine": 1,
+      "endLine": 24,
+      "source": "memory",
+      "snippet": "# Memory — 2026-07-23 ## Kochfoto Image Compositor Skill Created **What:** Built a structured schema + interaction protocol for image creation tasks. **Why:** Jonah wants precise controls over what happens and when between interactions when sharing images and instructions. Current workflow works but is haphazard. **Skill path:** `skills/kochfoto-image-compositor/SKILL.md` **Key features:** - `Rendering Task` schema — describes subject, environment, mood, visual controls (composition, lighting, camera, lens, film stock, media type), references, generation params - `Scene` schema — multi-element compositions with layers, blending, post-process - **Interaction Protocol** — exact rules for:",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-07-27T21:39:38.462Z",
+      "lastRecalledAt": "2026-07-27T21:39:38.462Z",
+      "queryHashes": [
+        "b4d29124b1fe"
+      ],
+      "recallDays": [
+        "2026-07-27"
+      ],
+      "conceptTags": [
+        "multi-element",
+        "post-process",
+        "kochfoto",
+        "image",
+        "compositor",
+        "skill",
+        "created",
+        "what"
+      ]
+    }
+  }
+}

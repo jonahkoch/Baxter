@@ -1,0 +1,17 @@
+# Masumi Preprod Wallets — Generated 2026-07-14
+# ⚠️ KEEP SECURE — These control real funds on mainnet if reused
+
+## Purchase Wallet
+Mnemonic: bachelor scissors comic speed junk advance smoke neck shrimp robot earn pride fortune digital velvet expect mosquito arrest umbrella replace same devote damp cigar
+Address: addr_test1qpfsnt02re368zuqntcl4v7jgkg2v7r3z4y7axp0j66f9x0v6256wa7y45r89glf8ws60cp6fexhlpwltcwqsz0x24us0xmchd
+Purpose: Used to purchase agent requests
+
+## Selling Wallet
+Mnemonic: maid exit climb below neglect chimney image horse pistol vehicle pulp shine error potato motor radio skill garlic across brief noodle staff all project
+Address: addr_test1qzvqya73gkxukhmpjdql0yxlstt363pqsvj9nc8s6c7rvasgfsangltquxe2h7ky7sfcpzr2eza4tkw5a029sevgaqlqlcfttl
+Purpose: Interacts with smart contracts
+
+## Collection Wallet
+Mnemonic: (stored separately for security)
+Address: addr_test1qp36mncp59lecsqt5x77ek587wcjgca50g4rvqym5fptcttxhtj6dzdrkuqfgtamrclct7smv7fe3m6mzrgdlfen6xtqj9hy5q
+Purpose: Receives all payments after successful purchase

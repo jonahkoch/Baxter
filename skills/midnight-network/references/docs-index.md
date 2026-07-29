@@ -1,0 +1,120 @@
+# Midnight Network Documentation Index
+
+> Complete developer documentation for Midnight Network
+
+This file contains links to documentation sections following the llmstxt.org standard.
+
+## Table of Contents
+
+- [Midnight Documentation](https://docs.midnight.network/overview): Build privacy-preserving applications with selective disclosure and zero-knowledge proofs on Midnight.
+- [Create your first Midnight contract](https://docs.midnight.network/getting-started/hello-world): Learn how to create and compile a Hello World smart contract on Midnight's Preprod network.
+- [Get started](https://docs.midnight.network/getting-started): Start building on Midnight.
+- [Install the toolchain](https://docs.midnight.network/getting-started/installation): Get your Midnight development environment running to set up tools, configure wallets, and deploy your first zero-knowledge application.
+- [Create a Midnight DApp](https://docs.midnight.network/getting-started/quickstart): Get started creating a Midnight DApp using the create-mn-app CLI tool.
+- [Account model](https://docs.midnight.network/concepts/account): If you've built on Ethereum, Polygon, BSC, or any EVM-compatible chain, you're already intimately familiar with the Account model.
+- [Concepts](https://docs.midnight.network/concepts): Core concepts of Midnight Network.
+- [Kachina](https://docs.midnight.network/concepts/kachina): Kachina is a data-protecting smart contract solution that enables confidential and general-purpose smart contract functionality.
+- [Ledgers](https://docs.midnight.network/concepts/ledgers): Fundamental differences in blockchain architecture - dual ledger system.
+- [UTXO model](https://docs.midnight.network/concepts/utxo): UTXO-based architecture explanation.
+- [Web3](https://docs.midnight.network/concepts/web3): Web3 represents the next evolution of the internet, characterized by decentralization, transparency, and user empowerment.
+- [Zero-knowledge proofs](https://docs.midnight.network/concepts/zero-knowledge-proofs): A zero-knowledge proof (ZKP) allows someone to prove they know a secret without revealing it.
+- [Zswap](https://docs.midnight.network/concepts/zswap): Supporting multiple asset types and enabling atomic swaps for DeFi use cases.
+- [Get faucet tokens](https://docs.midnight.network/guides/acquire-tokens): Learn how to acquire test tokens for the Midnight Network.
+- [The Compact JavaScript implementation](https://docs.midnight.network/guides/compact-javascript-runtime): Learn about the Compact JavaScript implementation for the Midnight Network.
+- [Deploy the hello world contract](https://docs.midnight.network/guides/deploy-mn-app): Deploy a compiled hello world smart contract to Midnight's Preprod network.
+- [Set up Bun for Midnight development](https://docs.midnight.network/guides/install-bun-runtime-midnight): Set up Bun package manager and the Compact compiler.
+- [Interact with hello world contract](https://docs.midnight.network/guides/interact-with-mn-app): Build a command-line interface to interact with a deployed hello world contract.
+- [Midnight local network](https://docs.midnight.network/guides/midnight-local-network): Learn how to set up a local Midnight network for development and testing.
+- [Midnight Preview Network onboarding guide](https://docs.midnight.network/guides/migrate-from-testnet-02-to-preview): Migrate applications from testnet-02 to preview environment.
+- [Create a Next.js wallet connector](https://docs.midnight.network/guides/nextjs-wallet-connect): Create a Next.js application that connects to a wallet using the Midnight DApp Connector API.
+- [Create a React wallet connector](https://docs.midnight.network/guides/react-wallet-connect): Create a React application that connects to a wallet using the Midnight DApp Connector API.
+- [Proof server](https://docs.midnight.network/guides/run-proof-server): Learn how to run the proof server for the Midnight Network.
+- [DApp updatability](https://docs.midnight.network/guides/updatability): Learn about the updatability of DApps on the Midnight Network.
+- [Use the Compact JavaScript implementation](https://docs.midnight.network/guides/use-compact-javascript-implementation): Learn how to use the Compact JavaScript implementation.
+- [Windows Compact setup](https://docs.midnight.network/guides/windows-compact-setup): Set up the Midnight development environment on Windows using WSL.
+- [The Compact language](https://docs.midnight.network/compact): Midnight's own programming language for writing smart contracts.
+- [Security best practices](https://docs.midnight.network/compact/security): Security best practices for Compact.
+- [Testing and debugging](https://docs.midnight.network/compact/testing): Testing and debugging Compact contracts.
+- [Writing a contract](https://docs.midnight.network/compact/writing): Walkthrough for writing a Compact contract.
+- [Setting up Boot Nodes](https://docs.midnight.network/nodes/boot-node): Reference for setting up boot nodes for Midnight.
+- [Setting up Cardano-db-sync](https://docs.midnight.network/nodes/cardano-db-sync): Reference for setting up Cardano-db-sync for Midnight.
+- [Setting up Full and Archive Nodes](https://docs.midnight.network/nodes/full-node): Reference for setting up full and archive nodes for Midnight.
+- [Nodes in Midnight](https://docs.midnight.network/nodes): Reference on Midnight nodes.
+- [Node endpoints](https://docs.midnight.network/nodes/node-endpoints): Reference for important Midnight network parameters.
+- [Setting up RPC Nodes](https://docs.midnight.network/nodes/rpc-node): Reference for setting up RPC nodes for Midnight.
+- [Compact.js](https://docs.midnight.network/relnotes/compact-js): TypeScript-based execution environment for smart contracts compiled with the Compact compiler.
+- [Compact developer tools](https://docs.midnight.network/relnotes/compact-tools): Compact is Midnight's dedicated smart contract programming language.
+- [Compact compiler](https://docs.midnight.network/relnotes/compact): Compact compiler releases and documentation.
+- [DApp Connector API](https://docs.midnight.network/relnotes/dapp-connector-api): Allows DApps to request wallet access and retrieve service URIs.
+- [Ledger](https://docs.midnight.network/relnotes/ledger): The ledger in Midnight is a public record of contract states and token states.
+- [Midnight Indexer](https://docs.midnight.network/relnotes/midnight-indexer): Components designed to optimize the flow of blockchain data.
+- [Midnight.js](https://docs.midnight.network/relnotes/midnight-js): Client library for developing decentralized applications on Midnight.
+- [Wallet API](https://docs.midnight.network/relnotes/midnight-wallet-api): Wallet API (deprecated).
+- [Node](https://docs.midnight.network/relnotes/node): Core component of the Midnight network.
+- [Onchain Runtime](https://docs.midnight.network/relnotes/onchain-runtime): Onchain Runtime releases (now part of Ledger).
+- [Release Overview](https://docs.midnight.network/relnotes/overview): Latest stable release information.
+- [Proof Server](https://docs.midnight.network/relnotes/proof-server): Proof Server releases (now part of Ledger).
+- [Compatibility matrix](https://docs.midnight.network/relnotes/support-matrix): Component compatibility matrix.
+- [Wallet SDK](https://docs.midnight.network/relnotes/wallet): SDK for the Midnight digital wallet.
+- [Frequently asked questions](https://docs.midnight.network/troubleshoot/faq): FAQs about Midnight Network.
+- [Fix package repository access failures](https://docs.midnight.network/troubleshoot/fix-package-repository-access-failures): Resolve 403 Forbidden errors when installing Midnight npm packages.
+- [Fix version mismatch errors](https://docs.midnight.network/troubleshoot/fix-version-mismatch-errors): Resolve version compatibility issues using the compatibility matrix.
+- [Support](https://docs.midnight.network/troubleshoot/getting-help): Get help with Midnight Network development.
+- [Troubleshoot Compact toolchain installation on NixOS](https://docs.midnight.network/troubleshoot/install-midnight-compact-tools-on-nixos): Troubleshoot installation on NixOS.
+- [Compiler Usage](https://docs.midnight.network/compact/compilation-and-tooling/compiler-usage): Compact Compiler Manual.
+- [Visual Studio Code extension for Compact](https://docs.midnight.network/compact/compilation-and-tooling/vscode-plugin): VS Code extension for Compact.
+- [Ledger data types](https://docs.midnight.network/compact/data-types/ledger-adt): Ledger ADT documentation.
+- [Opaque data types](https://docs.midnight.network/compact/data-types/opaque_data): Data types with hidden representations.
+- [Keywords and reserved words](https://docs.midnight.network/compact/reference/all-keywords): Compact language keywords.
+- [Formal grammar](https://docs.midnight.network/compact/reference/compact-grammar): Formal grammar specification.
+- [Explicit disclosure](https://docs.midnight.network/compact/reference/explicit-disclosure): Selective disclosure of private information.
+- [Compact reference](https://docs.midnight.network/compact/reference/lang-ref): Complete Compact language reference.
+- [Compact standard library](https://docs.midnight.network/compact/standard-library/README): Standard library API.
+- [Detailed API reference](https://docs.midnight.network/compact/standard-library/exports): Detailed API reference.
+- [Building blocks](https://docs.midnight.network/concepts/how-midnight-works/building-blocks): Midnight's transaction structure.
+- [The Impact VM](https://docs.midnight.network/concepts/how-midnight-works/impact): Impact VM documentation.
+- [Private data](https://docs.midnight.network/concepts/how-midnight-works/keeping-data-private): Strategies for keeping data private.
+- [Midnight's hybrid architecture](https://docs.midnight.network/concepts/how-midnight-works/midnight-combined-model): Hybrid architecture combining models.
+- [Transaction semantics](https://docs.midnight.network/concepts/how-midnight-works/semantics): Transaction semantics documentation.
+- [Smart contracts on Midnight](https://docs.midnight.network/concepts/how-midnight-works/smart-contracts): Smart contract architecture.
+- [Zswap](https://docs.midnight.network/concepts/how-midnight-works/zswap): Zswap protocol details.
+- [Consensus](https://docs.midnight.network/concepts/network-architecture/consensus): Consensus mechanism reference.
+- [Cryptography](https://docs.midnight.network/concepts/network-architecture/cryptography): Cryptographic primitives.
+- [Onchain Logic and State](https://docs.midnight.network/concepts/network-architecture/onchain-logic): Onchain logic documentation.
+- [P2P Networking](https://docs.midnight.network/concepts/network-architecture/p2p-networking): P2P networking architecture.
+- [RPC Interface](https://docs.midnight.network/concepts/network-architecture/rpc-networking): RPC interface documentation.
+- [Storage](https://docs.midnight.network/concepts/network-architecture/storage): Storage layer documentation.
+- [Transactions](https://docs.midnight.network/concepts/network-architecture/transactions): Transaction processing.
+- [Guarantees and limitations](https://docs.midnight.network/concepts/security/guarantees-and-limitations): Security guarantees and limitations.
+- [Smart contract security](https://docs.midnight.network/concepts/security/smart-contract-security): Smart contract security guidelines.
+- [Bulletin board DApp](https://docs.midnight.network/examples/_bboard/bboard-dapp): Bulletin board DApp tutorial.
+- [Midnight test environment](https://docs.midnight.network/examples/_bboard/local-testing): Running a local test environment.
+- [Bulletin board scenario](https://docs.midnight.network/examples/_bboard/scenario): Bulletin board implementation.
+- [The counter contract](https://docs.midnight.network/examples/_counter/contract-details): Counter contract details.
+- [Build the counter DApp](https://docs.midnight.network/examples/_counter/counter-build): Building the counter DApp.
+- [Run the counter DApp](https://docs.midnight.network/examples/_counter/counter-run): Running the counter DApp.
+- [Midnight examples repository](https://docs.midnight.network/examples/_counter/examples-repo): Examples repository.
+- [Battleship Simple Version](https://docs.midnight.network/examples/contracts/battleship-simple): Battleship contract example.
+- [Calculator Contract](https://docs.midnight.network/examples/contracts/calculator): Calculator contract example.
+- [Election Contract](https://docs.midnight.network/examples/contracts/election): Election contract example.
+- [Private Guest List Contract](https://docs.midnight.network/examples/contracts/private-guest-list): Private guest list example.
+- [Private Reserve Auction Contract](https://docs.midnight.network/examples/contracts/private-reserve-auction): Private reserve auction example.
+- [Shielded and Unshielded Token Transfers](https://docs.midnight.network/examples/contracts/token-transfers): Token transfer examples.
+- [Bulletin board DApp](https://docs.midnight.network/examples/dapps/bboard): Bulletin board DApp example.
+- [Counter DApp](https://docs.midnight.network/examples/dapps/counter): Counter DApp example.
+- [Glossary](https://docs.midnight.network/glossary): Glossary of terms.
+- [Become a Midnight Block Producer](https://docs.midnight.network/nodes/_run-a-validator): Guide to becoming a block producer.
+- [Begin operating a Cardano Stake Pool](https://docs.midnight.network/nodes/_run-a-validator/step-1): Setting up a Cardano SPO for Midnight.
+- [Configure Partner-Chains Dependencies](https://docs.midnight.network/nodes/_run-a-validator/step-2): Configuring partner-chain dependencies.
+- [Register SPO as a candidate](https://docs.midnight.network/nodes/_run-a-validator/step-3): Registering as a block producer candidate.
+- [Run a Midnight node in Validator Mode](https://docs.midnight.network/nodes/_run-a-validator/step-4): Running a validator node.
+- [Set up a Cardano Stake Pool on testnet](https://docs.midnight.network/nodes/_tutorials): Testnet SPO setup.
+- [Zero Knowledge loan DApp](https://docs.midnight.network/tutorials/_advanced/zk-loan-dapp): Building a ZK loan DApp.
+- [Intermediate tutorials](https://docs.midnight.network/tutorials/_intermediate): Intermediate tutorial collection.
+- [Bulletin board API implementation](https://docs.midnight.network/tutorials/bboard/bboard-api-implementation): Bulletin board API tutorial.
+- [Bulletin board CLI implementation](https://docs.midnight.network/tutorials/bboard/bboard-cli-implementation): Bulletin board CLI tutorial.
+- [Bulletin board CLI](https://docs.midnight.network/tutorials/bboard/bboard-cli): Bulletin board CLI guide.
+- [Bulletin board contract](https://docs.midnight.network/tutorials/bboard/smart-contract): Bulletin board contract tutorial.
+- [Counter CLI](https://docs.midnight.network/tutorials/counter/counter-cli): Counter CLI tutorial.
+- [Counter contract](https://docs.midnight.network/tutorials/counter/smart-contract): Counter contract tutorial.
+- [What is Midnight?](https://docs.midnight.network/what-is-midnight): Overview of Midnight Network.
