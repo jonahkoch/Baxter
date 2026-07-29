@@ -210,10 +210,24 @@ Save the assessment to `projects/cardano/drep-votes/<gov_action_id>.md` using th
 - **Vote Recommendation** (Yes/No/Abstain with specific reasoning)
 - **Data sources** (Koios, IPFS, etc.)
 
-**Rationale templates:**
-- **Yes:** "Vote: Yes. This proposal clears my public-value, public-asset, and accountability checks. Cardano receives [specific deliverable]. The price is justified by [benchmark]."
-- **No:** "Vote: No. While [acknowledge intent], this proposal fails on [specific issue]. To earn my support, the applicant would need to [specific changes]."
-- **Abstain:** "Vote: Abstain. I cannot make a reliable Yes/No judgment because [reason]. Abstain is not support."
+**Vote Rationale Formatting Constraints (CRITICAL):**
+When writing final vote rationales and summaries that Jonah will publish on-chain:
+
+1. **No bullets, dashes, or special characters** in the rationale or summary text. Use only sentences and paragraphs.
+2. **A 300 character summary** must accompany every vote. This is published on-chain alongside the vote.
+3. **Single file per gov_action** containing: detailed assessment + vote rationale + 300 character summary.
+4. **Save to:** `projects/cardano/drep-votes/<gov_action_id>.md`
+5. **Structure:**
+   - Proposal Overview (what it does)
+   - Current Voting Status
+   - Detailed Assessment (strengths, concerns, ecosystem context)
+   - Vote Rationale (full prose explanation, no bullets)
+   - Vote Summary (300 character max, plain sentences)
+
+**Rationale templates (prose only):**
+- **Yes:** "I am voting Yes on this proposal. This clears my public value public asset and accountability checks. Cardano receives specific durable deliverables and the price is justified by benchmark comparisons."
+- **No:** "I am voting No on this proposal. While I acknowledge the intent this proposal fails on specific issue. To earn my support the applicant would need to make specific changes."
+- **Abstain:** "I am voting Abstain. I cannot make a reliable Yes or No judgment because specific reason. Abstain is not support."
 
 ---
 
