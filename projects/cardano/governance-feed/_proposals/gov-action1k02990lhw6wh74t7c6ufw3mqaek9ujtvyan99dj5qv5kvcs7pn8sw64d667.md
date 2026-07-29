@@ -3,7 +3,7 @@ layout: proposal
 title: "Withdraw 540,750 ada for Oura by TxPipe: Maintaining Cardano’s Event Pipeline"
 proposal_id: gov_action1k02990lhw6wh74t7c6ufw3mqaek9ujtvyan99dj5qv5kvcs7pn8sw64d667
 proposal_type: TreasuryWithdrawals
-status: active
+status: enacted
 tags: ["developer-tools", "infrastructure", "maintenance"]
 amount_ada: 540,750
 proposed_epoch: 638
@@ -20,6 +20,8 @@ drep_no_power: 1,513,565,069
 committee_yes: 6
 committee_no: 1
 ---
+
+**Status Update:** This proposal was enacted in epoch 645.
 
 This Treasury Withdrawal funds Oura by TxPipe: Maintaining Cardano’s Event Pipeline.
 

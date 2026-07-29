@@ -3,7 +3,7 @@ layout: proposal
 title: "Increase Transaction and Block Memory Units (Part 1 of 2)"
 proposal_id: gov_action1cgdsp7g0rr7wgqp7maptpvx525fxuqwfgm5qe3f5r20ew5x2772sq0m5y83
 proposal_type: ParameterChange
-status: active
+status: enacted
 tags: ["scaling", "parameter-change", "plutus"]
 amount_ada: 0
 proposed_epoch: 606
@@ -20,6 +20,8 @@ drep_no_power: 782,759,232
 committee_yes: 6
 committee_no: 0
 ---
+
+**Status Update:** This proposal was enacted in epoch 614.
 
 Intersect's Parameter Committee proposes the first of two Parameter Update governance actions. The following change is proposed together in this rationale, but will require two separate, linked governance actions as per guardrail MTEU-M-04.
 

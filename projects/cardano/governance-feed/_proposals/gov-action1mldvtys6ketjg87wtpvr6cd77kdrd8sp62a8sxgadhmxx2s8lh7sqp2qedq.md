@@ -3,7 +3,7 @@ layout: proposal
 title: "Reduce minimum Constitutional Committee size (committeeMinSize) from 7 to 5"
 proposal_id: gov_action1mldvtys6ketjg87wtpvr6cd77kdrd8sp62a8sxgadhmxx2s8lh7sqp2qedq
 proposal_type: ParameterChange
-status: active
+status: dropped
 tags: ["governance", "parameter-change"]
 amount_ada: 0
 proposed_epoch: 612
@@ -20,5 +20,7 @@ drep_no_power: 4,608,886,896
 committee_yes: 1
 committee_no: 0
 ---
+
+**Status Update:** This proposal was dropped in epoch 614.
 
 Reduce the minimum Constitutional Committee size (`committeeMinSize`) from 7 to 5 in order to improve operational resilience while maintaining constitutional safeguards.

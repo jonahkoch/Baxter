@@ -3,7 +3,7 @@ layout: proposal
 title: "Dingo: a Production-Grade Block Producer in Go by Blink Labs"
 proposal_id: gov_action17dfgtkeufcy945e3ssanqpmn09ft3gezhvepvvg7msmlmaz260dqqjtsmpe
 proposal_type: TreasuryWithdrawals
-status: active
+status: enacted
 tags: ["node", "infrastructure", "go", "consensus"]
 amount_ada: 6,900,000
 proposed_epoch: 617
@@ -20,5 +20,7 @@ drep_no_power: 1,672,351,678
 committee_yes: 7
 committee_no: 0
 ---
+
+**Status Update:** This proposal was enacted in epoch 625.
 
 Blink Labs is requesting 6,900,000 ADA from the Cardano Treasury to fund twelve months of full-time engineering on Dingo, our Go Cardano node. Dingo is a work in progress, and that's the whole point of this proposal. But it's a substantial one: 1,290+ non-dependency PRs merged in the past year, Plutus V1/V2/V3 at 100% conformance, 314 passing conformance tests, VRF/KES crypto, ChainSync, mempool, and governance transaction support. This funding gets Dingo the rest of the way to mainnet block-production readiness: Ouroboros Praos consensus completion, Dijkstra hard fork support, CIP-0164 Linear Leios built alongside IO Engineering, a proper security audit, and the operational hardening that makes a node reliable at scale.

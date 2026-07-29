@@ -3,7 +3,7 @@ layout: proposal
 title: "IO: Cardano High Assurance Technical Collaboration"
 proposal_id: gov_action1w0shrfxqwv95kk0v4cn34wylz25a2cmqkq5jpc0e2yrahhqava3q2yd5rxu
 proposal_type: TreasuryWithdrawals
-status: active
+status: enacted
 tags: ["security", "formal-verification", "developer-tools", "research"]
 amount_ada: 13,078,578
 proposed_epoch: 626
@@ -20,6 +20,8 @@ drep_no_power: 844,686,875
 committee_yes: 7
 committee_no: 0
 ---
+
+**Status Update:** This proposal was enacted in epoch 634.
 
 **Proposal as pdf: [https://ipnso-com.ipns.dweb.link/?cid=QmQBhjELHaMKhYZjwuskHS9NRyvUdiGv69aK8C1H787c5A](https://ipnso-com.ipns.dweb.link/?cid=QmQBhjELHaMKhYZjwuskHS9NRyvUdiGv69aK8C1H787c5A)**
 

@@ -3,7 +3,7 @@ layout: proposal
 title: "IO: Developer Experience Initiative"
 proposal_id: gov_action1w0shrfxqwv95kk0v4cn34wylz25a2cmqkq5jpc0e2yrahhqava3qqfu3vtv
 proposal_type: TreasuryWithdrawals
-status: active
+status: enacted
 tags: ["developer-tools", "developer-experience", "documentation", "education"]
 amount_ada: 3,601,926
 proposed_epoch: 626
@@ -20,6 +20,8 @@ drep_no_power: 1,758,242,895
 committee_yes: 7
 committee_no: 0
 ---
+
+**Status Update:** This proposal was enacted in epoch 634.
 
 **Proposal as pdf: [https://ipnso-com.ipns.dweb.link/?cid=QmQPLwjTwZeGrzsgs2QiC6crJLcMg64fU2kDYZmPZ9o7wf](https://ipnso-com.ipns.dweb.link/?cid=QmQPLwjTwZeGrzsgs2QiC6crJLcMg64fU2kDYZmPZ9o7wf)**
 

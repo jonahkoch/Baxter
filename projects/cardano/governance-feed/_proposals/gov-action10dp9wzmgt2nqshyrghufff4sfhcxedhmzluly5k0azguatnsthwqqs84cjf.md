@@ -3,7 +3,7 @@ layout: proposal
 title: "Revised Cardano Summit 2026 Singapore"
 proposal_id: gov_action10dp9wzmgt2nqshyrghufff4sfhcxedhmzluly5k0azguatnsthwqqs84cjf
 proposal_type: TreasuryWithdrawals
-status: active
+status: dropped
 tags: ["marketing", "events"]
 related_proposal_id: gov_action1hkgl5l4fknsf7aktmcatkz6kfl7xpvn7rzh5vnxwexl0n3cc6zrsqt5459v
 amount_ada: 7,800,000
@@ -21,6 +21,8 @@ drep_no_power: 1,481,021,838
 committee_yes: 6
 committee_no: 0
 ---
+
+**Status Update:** This proposal was dropped in epoch 635.
 
 This proposal as [PDF](https://ipnso-com.ipns.dweb.link/?cid=QmagzPnHcrRPC5MKpp3fHSJjz7xbTzEmfQq8Z697suYjq2). 
 

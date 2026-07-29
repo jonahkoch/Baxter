@@ -3,7 +3,7 @@ layout: proposal
 title: "Cardano Summit 2026 and TOKEN2049 Singapore"
 proposal_id: gov_action1hkgl5l4fknsf7aktmcatkz6kfl7xpvn7rzh5vnxwexl0n3cc6zrsqt5459v
 proposal_type: TreasuryWithdrawals
-status: active
+status: dropped
 tags: ["marketing", "events"]
 related_proposal_id: gov_action1kj6ghzuz9wcq88f3y72cyyeekdcemlq0dqk4zpjd4eck5assuypqq0pckkw
 amount_ada: 14,076,539
@@ -21,6 +21,8 @@ drep_no_power: 4,283,795,224
 committee_yes: 5
 committee_no: 1
 ---
+
+**Status Update:** This proposal was dropped in epoch 631.
 
 **Treasury Withdrawal Proposal**  
 By: Cardano Foundation & EMURGO 

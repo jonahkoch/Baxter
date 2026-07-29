@@ -3,7 +3,7 @@ layout: proposal
 title: "Withdraw 1,684,050 ada for Tx3 by TxPipe: Open API Layer for Cardano's dApp P..."
 proposal_id: gov_action1k02990lhw6wh74t7c6ufw3mqaek9ujtvyan99dj5qv5kvcs7pn8sj72rg72
 proposal_type: TreasuryWithdrawals
-status: active
+status: enacted
 tags: ["developer-tools", "infrastructure", "api"]
 amount_ada: 1,684,050
 proposed_epoch: 638
@@ -20,6 +20,8 @@ drep_no_power: 1,313,249,573
 committee_yes: 6
 committee_no: 1
 ---
+
+**Status Update:** This proposal was enacted in epoch 645.
 
 This Treasury Withdrawal funds Tx3 by TxPipe: Open API Layer for Cardano's dApp Protocols.
 

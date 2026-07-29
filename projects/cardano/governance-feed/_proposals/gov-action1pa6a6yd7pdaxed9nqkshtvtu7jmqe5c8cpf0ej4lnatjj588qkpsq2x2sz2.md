@@ -3,7 +3,7 @@ layout: proposal
 title: "Alchemy by Sundial x Charms: Cardano-Native Bitcoin Treasury Protocol"
 proposal_id: gov_action1pa6a6yd7pdaxed9nqkshtvtu7jmqe5c8cpf0ej4lnatjj588qkpsq2x2sz2
 proposal_type: TreasuryWithdrawals
-status: active
+status: expired
 tags: ["btcfi", "bitcoin", "defi", "treasury", "infrastructure"]
 amount_ada: 10,000,000
 proposed_epoch: 639
@@ -27,6 +27,8 @@ context:
     impact: "Signals active team communication and community building around the proposal."
     link: "https://x.com/sundialprotocol"
 ---
+
+**Status Update:** This proposal was expired in epoch 646.
 
 Alchemy is a Cardano-native Bitcoin treasury protocol and BTCfi infrastructure layer proposed by a collaboration between Sundial Protocol and Charms. It gives Cardano reusable infrastructure for transparent, on-chain Bitcoin-backed structured exposure: reserve architecture, composable FIRE (BTC+) and ICE (BTC-) assets, public dashboards, integration adapters, monthly reporting, and staged launch liquidity.
 

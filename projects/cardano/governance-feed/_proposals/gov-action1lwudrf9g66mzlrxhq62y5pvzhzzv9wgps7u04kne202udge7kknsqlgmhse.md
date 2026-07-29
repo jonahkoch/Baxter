@@ -3,7 +3,7 @@ layout: proposal
 title: "Eternl: Path to Sustainability - v2"
 proposal_id: gov_action1lwudrf9g66mzlrxhq62y5pvzhzzv9wgps7u04kne202udge7kknsqlgmhse
 proposal_type: TreasuryWithdrawals
-status: active
+status: enacted
 tags: ["wallet", "maintenance"]
 related_proposal_id: gov_action1ngpqafax5rvp8lcgey4asvqtycrh4e56fwp8cn2r9trx2ysryhtsqdm3w3z
 amount_ada: 2,350,000
@@ -21,6 +21,8 @@ drep_no_power: 1,069,027,817
 committee_yes: 6
 committee_no: 1
 ---
+
+**Status Update:** This proposal was enacted in epoch 645.
 
 ## Preamble
 

@@ -3,7 +3,7 @@ layout: proposal
 title: "Scalus 2026: Maintenance, Dijkstra Readiness, Interoperability & Application Runtime"
 proposal_id: gov_action1xg69v73lfzkwyhhuz583x6geyc2ewn3r96sxuqj3wqvrrk0yfpksqqa63yc
 proposal_type: TreasuryWithdrawals
-status: active
+status: dropped
 tags: ["developer-tools", "jvm", "smart-contract-language", "maintenance"]
 related_proposal_id: gov_action1uzgqlh049u0j7epel29r425vyf9ttxmqwngw9kemyly0q6cwt5esqpwp09a
 amount_ada: 2,464,844
@@ -21,6 +21,8 @@ drep_no_power: 3,077,291,831
 committee_yes: 2
 committee_no: 0
 ---
+
+**Status Update:** This proposal was dropped in epoch 638.
 
 **Scalus** is an established, open-source Cardano development platform, built by **Lantr Engineering** over three years of continuous delivery. 
 

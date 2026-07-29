@@ -3,7 +3,7 @@ layout: proposal
 title: "IO: Hydra"
 proposal_id: gov_action1fah9m7dxu99af8jqdc4mkrgs3va790nyh9tfhycq2wsvrm47p4rsqtcm6ry
 proposal_type: TreasuryWithdrawals
-status: active
+status: enacted
 tags: ["scaling", "l2", "infrastructure"]
 amount_ada: 5,100,781
 proposed_epoch: 635
@@ -20,6 +20,8 @@ drep_no_power: 1,062,455,619
 committee_yes: 5
 committee_no: 0
 ---
+
+**Status Update:** This proposal was enacted in epoch 643.
 
 **Proposal as pdf: [https://ipnso-com.ipns.inbrowser.link/?cid=Qmbk3jHKKLQ1VrniKaD7sGMscJxCKvoXqt1sQoEnRLTku4](https://ipnso-com.ipns.inbrowser.link/?cid=Qmbk3jHKKLQ1VrniKaD7sGMscJxCKvoXqt1sQoEnRLTku4)**
 

@@ -3,7 +3,7 @@ layout: proposal
 title: "Cardano dOSPO and OMF Program"
 proposal_id: gov_action1pv7g8d0x9f3kqw2gcfrmgl8aqy38jat05wx0wwcvdsvuuclss6xqqhpzemv
 proposal_type: TreasuryWithdrawals
-status: active
+status: dropped
 tags: ["open-source", "funding", "governance"]
 related_proposal_id: gov_action19apfhh339syqd0gkrxw6zr6pghdfspckr6vagjrpwnr0hx53lxpsq637y3t
 amount_ada: 12,000,000
@@ -21,6 +21,8 @@ drep_no_power: 4,503,469,175
 committee_yes: 3
 committee_no: 3
 ---
+
+**Status Update:** This proposal was dropped in epoch 638.
 
 Cardano's infrastructure depends on open source software maintained by a handful of individuals with no formal support, succession planning, or continuity funding. Research shows 96% of commercial codebases contain OSS with fewer than 10 contributors. Critical protocol libraries, wallet SDKs, developer tooling, and indexing infrastructure have single maintainers, no succession plans, and no stable funding beyond episodic grants.
 

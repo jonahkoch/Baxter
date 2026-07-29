@@ -3,7 +3,7 @@ layout: proposal
 title: "Withdraw 3,810,423 ada for Mithril Protocol"
 proposal_id: gov_action1k02990lhw6wh74t7c6ufw3mqaek9ujtvyan99dj5qv5kvcs7pn8s24l0u4y
 proposal_type: TreasuryWithdrawals
-status: active
+status: enacted
 tags: ["infrastructure", "scaling", "maintenance"]
 amount_ada: 3,810,423
 proposed_epoch: 638
@@ -20,6 +20,8 @@ drep_no_power: 960,761,146
 committee_yes: 6
 committee_no: 1
 ---
+
+**Status Update:** This proposal was enacted in epoch 646.
 
 This Treasury Withdrawal funds Mithril Protocol.
 

@@ -3,7 +3,7 @@ layout: proposal
 title: "Cardano at TOKEN2049 Singapore 2026: Baseline ‘Platinum' Sponsorship Proposal"
 proposal_id: gov_action18u8lpkzge2csxe3plynn9lh4agwtv3nrqkyfwalwj4ykjv7l68jqqzmul9z
 proposal_type: TreasuryWithdrawals
-status: active
+status: enacted
 tags: ["marketing", "events"]
 related_proposal_id: gov_action1kj6ghzuz9wcq88f3y72cyyeekdcemlq0dqk4zpjd4eck5assuypqq0pckkw
 amount_ada: 3,303,750
@@ -21,6 +21,8 @@ drep_no_power: 1,696,179,808
 committee_yes: 7
 committee_no: 0
 ---
+
+**Status Update:** This proposal was enacted in epoch 635.
 
 This proposal seeks to catapult the Cardano ecosystem into the global spotlight at TOKEN2049 Singapore, the world’s premier crypto event and the ultimate nexus for industry amplification. The proposal requests **3,303,750 ada** (equivalent to **$792,900 USD**, calculated at an estimated rate of $0.24 per ada) to establish a high-impact, community-centric presence that serves as a dedicated stage for Cardano’s builders.
 

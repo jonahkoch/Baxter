@@ -3,7 +3,7 @@ layout: proposal
 title: "Cardano DeFi Liquidity Budget - Withdrawal 1"
 proposal_id: gov_action1fvgw27fjpr9c7g582mszzyez0jgkqgjgatzdnyngrg8wwc9kcn3qqxtz8r7
 proposal_type: TreasuryWithdrawals
-status: active
+status: enacted
 tags: ["defi", "liquidity", "stablecoin", "treasury-deployment"]
 related_proposal_id: gov_action1uhzd06a26qavzflvrx3gvcz6rzxkl6su2ns8t3seef5e8dl6nlgsqcgtufg
 amount_ada: 500,000
@@ -21,6 +21,8 @@ drep_no_power: 1,938,809,416
 committee_yes: 0
 committee_no: 6
 ---
+
+**Status Update:** This proposal was enacted in epoch 625.
 
 As outline in the DeFi Liquidity Budget Info Action, this first withdrawal action requests 500,000 ADA from the Cardano Treasury to establish the legal framework and smart contract infrastructure required for the Stablecoin DeFi Liquidity Budget as approved by the Cardano Community. This withdrawal covers three critical components: (1) establishment of a Cayman Islands Foundation Company as the legal vehicle for fund management, (2) development of the administrating smart contract and user interfaces, and (3) comprehensive security audit of the smart contract system.
 

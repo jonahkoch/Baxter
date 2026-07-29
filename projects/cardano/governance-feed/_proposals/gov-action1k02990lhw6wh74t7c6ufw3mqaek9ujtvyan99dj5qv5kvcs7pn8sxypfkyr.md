@@ -3,7 +3,7 @@ layout: proposal
 title: "Withdraw 1,193,000 ada for Intersect Technical Steering Committee Support"
 proposal_id: gov_action1k02990lhw6wh74t7c6ufw3mqaek9ujtvyan99dj5qv5kvcs7pn8sxypfkyr
 proposal_type: TreasuryWithdrawals
-status: active
+status: enacted
 tags: ["governance", "infrastructure"]
 amount_ada: 1,193,000
 proposed_epoch: 638
@@ -20,6 +20,8 @@ drep_no_power: 1,371,976,700
 committee_yes: 6
 committee_no: 1
 ---
+
+**Status Update:** This proposal was enacted in epoch 646.
 
 This Treasury Withdrawal funds Intersect Technical Steering Committee Support.
 

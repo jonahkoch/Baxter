@@ -3,7 +3,7 @@ layout: proposal
 title: "Hard Fork to Protocol Version 11 ('van Rossem' Hard Fork)"
 proposal_id: gov_action1lh2x3kjucjkggvwu6l3txggkvmrnhs3flpv8j35lvlcan4gax3xsq3cxfjc
 proposal_type: HardForkInitiation
-status: active
+status: enacted
 tags: ["hard-fork", "protocol-upgrade", "plutus"]
 amount_ada: 0
 proposed_epoch: 637
@@ -20,6 +20,8 @@ drep_no_power: 1,183,461,492
 committee_yes: 7
 committee_no: 0
 ---
+
+**Status Update:** This proposal was enacted in epoch 644.
 
 We propose to upgrade Cardano Mainnet to Protocol Version 11. This upgrade will be achieved via an intra-era Hard Fork (called "van Rossem"). Following the upgrade:
 

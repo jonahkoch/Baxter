@@ -3,7 +3,7 @@ layout: proposal
 title: "IO & Midgard Labs: L2 Scalability Initiative"
 proposal_id: gov_action1w0shrfxqwv95kk0v4cn34wylz25a2cmqkq5jpc0e2yrahhqava3qghg4q43
 proposal_type: TreasuryWithdrawals
-status: active
+status: dropped
 tags: ["scaling", "l2", "infrastructure"]
 amount_ada: 10,425,871
 proposed_epoch: 626
@@ -20,6 +20,8 @@ drep_no_power: 2,530,895,682
 committee_yes: 7
 committee_no: 0
 ---
+
+**Status Update:** This proposal was dropped in epoch 634.
 
 **Proposal as pdf: [https://ipnso-com.ipns.dweb.link/?cid=QmYfHrmfTKYGK9YR95ewXSwEruEfGPAtpnp1qwoEUekJa7](https://ipnso-com.ipns.dweb.link/?cid=QmYfHrmfTKYGK9YR95ewXSwEruEfGPAtpnp1qwoEUekJa7)**
 

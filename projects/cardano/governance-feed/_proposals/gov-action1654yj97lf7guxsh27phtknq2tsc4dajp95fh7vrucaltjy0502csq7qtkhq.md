@@ -3,7 +3,7 @@ layout: proposal
 title: "Reimburse Ikigai Info Governance Action Deposit."
 proposal_id: gov_action1654yj97lf7guxsh27phtknq2tsc4dajp95fh7vrucaltjy0502csq7qtkhq
 proposal_type: TreasuryWithdrawals
-status: active
+status: dropped
 tags: ["reimbursement", "governance"]
 amount_ada: 103,000
 proposed_epoch: 636
@@ -20,6 +20,8 @@ drep_no_power: 1,600,476,392
 committee_yes: 6
 committee_no: 0
 ---
+
+**Status Update:** This proposal was dropped in epoch 644.
 
 In September 2024, only weeks after the Chang hard fork to introduce on-chain governance, an Info governance action titled Cardanoの生きがい - Ikigai - was submitted. This was only a symbolic governance action, as it simply asked the community whether they agreed with a statement thanking those that helped get Cardano to this point and expressing a sense of hope for the future.
 

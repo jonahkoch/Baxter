@@ -7,7 +7,7 @@ Run this after fetch-proposals.py to capture enacted/expired/dropped proposals.
 import json
 import urllib.request
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 
 KOIOS = "https://api.koios.rest/api/v1"
 PROPOSALS_DIR = Path(__file__).parent.parent / "_proposals"
@@ -88,12 +88,12 @@ def generate_epoch_summary(epoch, changes):
         f"layout: default",
         f'title: "Epoch {epoch} Summary"',
         f"epoch: {epoch}",
-        f"date: {datetime.utcnow().strftime('%Y-%m-%d')}",
+        f"date: {datetime.now(timezone.utc).strftime('%Y-%m-%d')}",
         "---",
         "",
         f"# Epoch {epoch} Governance Summary",
         "",
-        f"Generated: {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')}",
+        f"Generated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
         "",
         "## Overview",
         "",
@@ -197,8 +197,9 @@ def main():
         
         if status != prev_status and status != "active":
             # Status changed!
-            meta = p.get("meta_json", {}).get("body", {})
-            title = meta.get("title", "Untitled")
+            meta_json = p.get("meta_json") or {}
+            meta = meta_json.get("body", {}) if isinstance(meta_json, dict) else {}
+            title = meta.get("title", "Untitled") if isinstance(meta, dict) else "Untitled"
             
             amount = 0
             withdrawals = p.get("withdrawal", [])

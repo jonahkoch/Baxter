@@ -3,7 +3,7 @@ layout: proposal
 title: "The first node in the browser; a Cardano USP"
 proposal_id: gov_action1guz68e8zkwphcdc8wnp40cclkv92qgnel7xnffmsmp2ljp09qtwqq596k4c
 proposal_type: TreasuryWithdrawals
-status: active
+status: dropped
 tags: ["developer-tools", "light-node", "infrastructure"]
 related_proposal_id: gov_action1ky2j077de82par6f0hny5q56rpnn5hh0csfhrpzeq3hsk7s6vetqquz3scv
 amount_ada: 4,600,000
@@ -21,6 +21,8 @@ drep_no_power: 2,086,601,583
 committee_yes: 7
 committee_no: 0
 ---
+
+**Status Update:** This proposal was dropped in epoch 637.
 
 
 Harmonic Laboratories (HLabs for short) is an R&D firm born and focused solely on the Cardano ecosystem.

@@ -3,7 +3,7 @@ layout: proposal
 title: "Cardano at TOKEN2049 Singapore 2026: Top-Up ‘Title’ Sponsorship Upgrade"
 proposal_id: gov_action1kj6ghzuz9wcq88f3y72cyyeekdcemlq0dqk4zpjd4eck5assuypqq0pckkw
 proposal_type: TreasuryWithdrawals
-status: active
+status: dropped
 tags: ["marketing", "events"]
 amount_ada: 1,768,167
 proposed_epoch: 628
@@ -20,6 +20,8 @@ drep_no_power: 3,699,454,824
 committee_yes: 7
 committee_no: 0
 ---
+
+**Status Update:** This proposal was dropped in epoch 636.
 
 Modular top-up unlocks the ‘**Title’ Sponsorship** tier, the highest level of visibility at TOKEN2049. This is an incremental request of  **1,768,167 ada (equivalent to $424,360 USD, calculated at an estimated rate of $0.24 per ada)** to upgrade Cardano’s presence from a 108 sqm booth to a massive 144 sqm footprint and secure a Mainstage Keynote.
 

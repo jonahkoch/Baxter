@@ -3,7 +3,7 @@ layout: proposal
 title: "Cardano Budget Process Framework (facilitated by Intersect)"
 proposal_id: gov_action1a95na44kgedjk3k64ajpfp4p9d9jj3sgzc6tt9nmnkvgj7c9nraqq7g4d2u
 proposal_type: InfoAction
-status: active
+status: dropped
 tags: ["governance", "info-action", "budget-process"]
 amount_ada: 0
 proposed_epoch: 616
@@ -20,5 +20,7 @@ drep_no_power: 1,791,938,096
 committee_yes: 5
 committee_no: 2
 ---
+
+**Status Update:** This proposal was dropped in epoch 624.
 
 This Governance Information Action provides the formal description of the Intersect Budget Process Framework for the 2026 and future cycles, until modified, administered by Intersect. It outlines a structured, multi-step workflow used to collect, review, consolidate, and execute Treasury-funded activities, and records the improvements introduced for the 2026 budgeting year.

@@ -3,7 +3,7 @@ layout: proposal
 title: "Approve Cardano Foundation as New Managing Entity of Project Catalyst"
 proposal_id: gov_action1k5vwlfrxtyusd2ec37tckd54gjvqn2kd72xj4t6wkkapdv7zfg0qq468n2r
 proposal_type: InfoAction
-status: active
+status: dropped
 tags: ["governance", "catalyst", "info-action"]
 amount_ada: 0
 proposed_epoch: 619
@@ -20,6 +20,8 @@ drep_no_power: 972,537,251
 committee_yes: 6
 committee_no: 0
 ---
+
+**Status Update:** This proposal was dropped in epoch 627.
 
 The Cardano Foundation (CF), supported by Input Output Group (IOG), is requesting community approval to be appointed as the new managing entity for Project Catalyst. 
 

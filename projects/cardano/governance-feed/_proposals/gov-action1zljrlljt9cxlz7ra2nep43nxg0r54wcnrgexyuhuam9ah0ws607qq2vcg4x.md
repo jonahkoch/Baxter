@@ -3,7 +3,7 @@ layout: proposal
 title: "Tweag Core Cardano Infrastructure: Treasury Withdrawal 2026–2027"
 proposal_id: gov_action1zljrlljt9cxlz7ra2nep43nxg0r54wcnrgexyuhuam9ah0ws607qq2vcg4x
 proposal_type: TreasuryWithdrawals
-status: active
+status: enacted
 tags: ["scaling", "consensus", "infrastructure", "research"]
 amount_ada: 18,263,496
 proposed_epoch: 634
@@ -20,6 +20,8 @@ drep_no_power: 1,478,127,875
 committee_yes: 5
 committee_no: 0
 ---
+
+**Status Update:** This proposal was enacted in epoch 641.
 
 This treasury withdrawal requests **₳18,263,496.00** (USD $4,565,874.00) to fund Tweag by Modus Create's delivery of 3 work packages across core infrastructure areas for the Cardano ecosystem over 2026–2027.
 

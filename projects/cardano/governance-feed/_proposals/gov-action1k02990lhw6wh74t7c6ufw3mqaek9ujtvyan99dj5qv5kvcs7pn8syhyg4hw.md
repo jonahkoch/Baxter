@@ -3,7 +3,7 @@ layout: proposal
 title: "Withdraw 1,310,960 ada for Hardware Wallet Maintenance 2026"
 proposal_id: gov_action1k02990lhw6wh74t7c6ufw3mqaek9ujtvyan99dj5qv5kvcs7pn8syhyg4hw
 proposal_type: TreasuryWithdrawals
-status: active
+status: enacted
 tags: ["wallet", "hardware-wallet", "security", "maintenance"]
 amount_ada: 1,310,960
 proposed_epoch: 638
@@ -20,6 +20,8 @@ drep_no_power: 1,304,222,362
 committee_yes: 6
 committee_no: 1
 ---
+
+**Status Update:** This proposal was enacted in epoch 646.
 
 This Treasury Withdrawal funds Hardware Wallet Maintenance 2026.
 

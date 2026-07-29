@@ -3,7 +3,7 @@ layout: proposal
 title: "Name Protocol Version 11 hard fork - van Rossem"
 proposal_id: gov_action13pzmlsmmktmfareqpl3gzj9nm63ugwvmp3y7urkjhd8rf89tn6msq95mp3f
 proposal_type: InfoAction
-status: active
+status: dropped
 tags: ["hard-fork", "info-action"]
 amount_ada: 0
 proposed_epoch: 606
@@ -20,5 +20,7 @@ drep_no_power: 868,943,686
 committee_yes: 5
 committee_no: 0
 ---
+
+**Status Update:** This proposal was dropped in epoch 614.
 
 Intersect’s Hard Fork Working Group proposes to name the next Cardano hard fork, to Protocol Version 11, the “van Rossem Hard Fork” in memory of Cardano community contributor Max van Rossem.

@@ -3,7 +3,7 @@ layout: proposal
 title: "Cardano Defi Liquidity Budget - Withdrawal 1"
 proposal_id: gov_action1uhzd06a26qavzflvrx3gvcz6rzxkl6su2ns8t3seef5e8dl6nlgsqcgtufg
 proposal_type: TreasuryWithdrawals
-status: active
+status: enacted
 tags: ["defi", "liquidity", "treasury-deployment"]
 amount_ada: 800,000
 proposed_epoch: 617
@@ -20,6 +20,8 @@ drep_no_power: 1,411,942,183
 committee_yes: 7
 committee_no: 0
 ---
+
+**Status Update:** This proposal was enacted in epoch 625.
 
 ## Executive Summary
 

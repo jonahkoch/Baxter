@@ -3,7 +3,7 @@ layout: proposal
 title: "Withdraw 540,750 ada for Pallas by TxPipe: Maintaining Cardano's Core Rust Li..."
 proposal_id: gov_action1k02990lhw6wh74t7c6ufw3mqaek9ujtvyan99dj5qv5kvcs7pn8ssd0ztd8
 proposal_type: TreasuryWithdrawals
-status: active
+status: enacted
 tags: ["developer-tools", "rust", "infrastructure", "maintenance"]
 amount_ada: 540,750
 proposed_epoch: 638
@@ -20,6 +20,8 @@ drep_no_power: 1,350,842,422
 committee_yes: 6
 committee_no: 1
 ---
+
+**Status Update:** This proposal was enacted in epoch 645.
 
 This Treasury Withdrawal funds Pallas by TxPipe: Maintaining Cardano's Core Rust Libraries, Year 2.
 

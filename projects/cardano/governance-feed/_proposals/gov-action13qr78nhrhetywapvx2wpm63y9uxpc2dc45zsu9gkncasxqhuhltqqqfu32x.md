@@ -3,7 +3,7 @@ layout: proposal
 title: "Cardano x Draper Dragon: Orion Fund"
 proposal_id: gov_action13qr78nhrhetywapvx2wpm63y9uxpc2dc45zsu9gkncasxqhuhltqqqfu32x
 proposal_type: TreasuryWithdrawals
-status: active
+status: enacted
 tags: ["investment", "fund", "ecosystem", "treasury-deployment"]
 amount_ada: 50,000,000
 proposed_epoch: 618
@@ -20,6 +20,8 @@ drep_no_power: 1,390,420,957
 committee_yes: 7
 committee_no: 0
 ---
+
+**Status Update:** This proposal was enacted in epoch 624.
 
 The Draper Dragon Orion Fund, L.P. (“Orion Fund”), managed by Draper Dragon Orion GP, LLC (“General Partner” or “GP”), is proposed as a multi-year, tranche-based ecosystem investment fund designed to support Cardano-native and Cardano-integrated companies, grow on-chain usage, and return capital to the Cardano Treasury (“Treasury”) over time. Importantly, the Orion Fund is structured so that Treasury exposure is incremental, capped, and fully governed.
 

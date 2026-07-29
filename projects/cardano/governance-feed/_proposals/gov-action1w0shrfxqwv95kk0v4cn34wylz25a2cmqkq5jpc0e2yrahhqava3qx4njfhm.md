@@ -3,7 +3,7 @@ layout: proposal
 title: "IO & Ensurable Systems: Cardano Maintenance Initiative"
 proposal_id: gov_action1w0shrfxqwv95kk0v4cn34wylz25a2cmqkq5jpc0e2yrahhqava3qx4njfhm
 proposal_type: TreasuryWithdrawals
-status: active
+status: enacted
 tags: ["infrastructure", "maintenance", "security"]
 amount_ada: 62,134,630
 proposed_epoch: 626
@@ -20,6 +20,8 @@ drep_no_power: 926,895,194
 committee_yes: 7
 committee_no: 0
 ---
+
+**Status Update:** This proposal was enacted in epoch 634.
 
 **Proposal as pdf: [https://ipnso-com.ipns.dweb.link/?cid=QmYKV7vbX9pwNxst2qWpmtM2k6LRJB4NKKNFJSQyh7zojz](https://ipnso-com.ipns.dweb.link/?cid=QmYKV7vbX9pwNxst2qWpmtM2k6LRJB4NKKNFJSQyh7zojz)**
 

@@ -3,7 +3,7 @@ layout: proposal
 title: "Cardano Vision 2026: Human Centred, Scalable, Post Quantum Secure - IO Research"
 proposal_id: gov_action1ttgs45ulfxs0jwkfrecystc3flduhszmyzk8wnd7yw5za77tsg9qq4afmus
 proposal_type: TreasuryWithdrawals
-status: active
+status: enacted
 tags: ["research", "scaling", "security", "infrastructure"]
 amount_ada: 32,916,000
 proposed_epoch: 629
@@ -20,6 +20,8 @@ drep_no_power: 1,372,810,174
 committee_yes: 7
 committee_no: 0
 ---
+
+**Status Update:** This proposal was enacted in epoch 637.
 
 **Proposal as pdf:** [here](https://ipnso-com.ipns.dweb.link/?cid=QmbrCWbfcJYUeBVzTkqRFUNej86YAcEwiDkQNgY2gWrq1X)
 

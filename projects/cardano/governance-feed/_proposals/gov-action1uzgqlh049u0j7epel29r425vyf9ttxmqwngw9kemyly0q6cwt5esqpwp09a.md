@@ -3,7 +3,7 @@ layout: proposal
 title: "Scalus: Cardano’s Application Platform for Building, Launching, and Scaling"
 proposal_id: gov_action1uzgqlh049u0j7epel29r425vyf9ttxmqwngw9kemyly0q6cwt5esqpwp09a
 proposal_type: TreasuryWithdrawals
-status: active
+status: dropped
 tags: ["developer-tools", "jvm", "smart-contract-language", "application-platform"]
 related_proposal_id: gov_action1xg69v73lfzkwyhhuz583x6geyc2ewn3r96sxuqj3wqvrrk0yfpksqqa63yc
 amount_ada: 8,503,000
@@ -21,6 +21,8 @@ drep_no_power: 4,184,105,803
 committee_yes: 5
 committee_no: 0
 ---
+
+**Status Update:** This proposal was dropped in epoch 638.
 
 Cardano is moving. Protocol upgrades, critical integrations, DeFi liquidity, and VC capital are aligning. But the next bottleneck is no longer core infrastructure, it is application delivery.
 

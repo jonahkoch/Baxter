@@ -3,7 +3,7 @@ layout: proposal
 title: "IO: Consensus Initiative"
 proposal_id: gov_action1w0shrfxqwv95kk0v4cn34wylz25a2cmqkq5jpc0e2yrahhqava3qyxkn2yk
 proposal_type: TreasuryWithdrawals
-status: active
+status: enacted
 tags: ["scaling", "consensus", "infrastructure", "research"]
 amount_ada: 27,714,342
 proposed_epoch: 626
@@ -20,6 +20,8 @@ drep_no_power: 699,509,135
 committee_yes: 7
 committee_no: 0
 ---
+
+**Status Update:** This proposal was enacted in epoch 634.
 
 **Proposal as pdf: [https://ipnso-com.ipns.dweb.link/?cid=QmPdBp8QjKaPdYdvwLxzDiCxX85hGx8H6rxbSvTTuLkcx2](https://ipnso-com.ipns.dweb.link/?cid=QmPdBp8QjKaPdYdvwLxzDiCxX85hGx8H6rxbSvTTuLkcx2)**
 

@@ -3,7 +3,7 @@ layout: proposal
 title: "Withdraw 25,400,000 ada for Intersect: Governance coordination and technical ..."
 proposal_id: gov_action1k02990lhw6wh74t7c6ufw3mqaek9ujtvyan99dj5qv5kvcs7pn8sgx6wlxf
 proposal_type: TreasuryWithdrawals
-status: active
+status: enacted
 tags: ["governance", "infrastructure", "ecosystem"]
 amount_ada: 25,400,000
 proposed_epoch: 638
@@ -20,6 +20,8 @@ drep_no_power: 1,094,044,844
 committee_yes: 6
 committee_no: 1
 ---
+
+**Status Update:** This proposal was enacted in epoch 646.
 
 This Treasury Withdrawal funds Intersect: Governance coordination and technical stewardship for the Cardano ecosystem.
 

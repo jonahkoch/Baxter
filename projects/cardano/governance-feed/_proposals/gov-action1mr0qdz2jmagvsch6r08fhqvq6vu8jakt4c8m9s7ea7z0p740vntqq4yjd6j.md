@@ -3,7 +3,7 @@ layout: proposal
 title: "Se7en Labs: Daedalus Wallet Maintenance and Improvements 2026-2027"
 proposal_id: gov_action1mr0qdz2jmagvsch6r08fhqvq6vu8jakt4c8m9s7ea7z0p740vntqq4yjd6j
 proposal_type: TreasuryWithdrawals
-status: active
+status: ratified
 tags: ["wallet", "infrastructure", "maintenance"]
 amount_ada: 1,785,333
 proposed_epoch: 639
@@ -20,6 +20,8 @@ drep_no_power: 1,427,074,194
 committee_yes: 3
 committee_no: 0
 ---
+
+**Status Update:** This proposal was ratified in epoch 646.
 
 This Treasury Withdrawal funds Daedalus Wallet Maintenance and Improvements
 2026–2027, delivered by Se7en Labs, Inc.

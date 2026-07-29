@@ -3,7 +3,7 @@ layout: proposal
 title: "Cardano Builder DAO"
 proposal_id: gov_action1fdatlfcdnzzcw5x9pnt9r42v992nqw65zze57s8tyk0jll78eyusqccn9gc
 proposal_type: TreasuryWithdrawals
-status: active
+status: expired
 tags: ["dao", "governance", "funding", "ecosystem"]
 amount_ada: 20,000,000
 proposed_epoch: 639
@@ -20,5 +20,7 @@ drep_no_power: 3,470,023,791
 committee_yes: 3
 committee_no: 0
 ---
+
+**Status Update:** This proposal was expired in epoch 646.
 
 The Cardano Builder DAO is an ecosystem-wide, purpose-built, smart contract-governed funding mechanism to support projects advancing Cardano’s Vision 2030 through measurable ecosystem KPIs. Its role is to allocate capital to builders who can drive growth in the metrics that matter most to Cardano’s long-term success, including monthly active users, monthly on-chain transactions, and TVL.

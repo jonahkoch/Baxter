@@ -3,7 +3,7 @@ layout: proposal
 title: "Pebble + Gerolamo - HLabs 2026 Budget"
 proposal_id: gov_action1ky2j077de82par6f0hny5q56rpnn5hh0csfhrpzeq3hsk7s6vetqquz3scv
 proposal_type: TreasuryWithdrawals
-status: active
+status: dropped
 tags: ["developer-tools", "typescript", "light-node", "infrastructure"]
 amount_ada: 8,035,714
 proposed_epoch: 621
@@ -20,6 +20,8 @@ drep_no_power: 1,560,235,435
 committee_yes: 6
 committee_no: 1
 ---
+
+**Status Update:** This proposal was dropped in epoch 629.
 
 
 Harmonic Laboratories (HLabs for short) is an R&D firm born and focused solely on the Cardano ecosystem.

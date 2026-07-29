@@ -3,7 +3,7 @@ layout: proposal
 title: "Pogun: Capital Without Compromise"
 proposal_id: gov_action1w0shrfxqwv95kk0v4cn34wylz25a2cmqkq5jpc0e2yrahhqava3qsuae57l
 proposal_type: TreasuryWithdrawals
-status: active
+status: dropped
 tags: ["btcfi", "bitcoin", "defi", "lending"]
 amount_ada: 12,290,000
 proposed_epoch: 626
@@ -20,6 +20,8 @@ drep_no_power: 2,670,134,736
 committee_yes: 7
 committee_no: 0
 ---
+
+**Status Update:** This proposal was dropped in epoch 634.
 
 *Proposal as pdf: https://ipnso-com.ipns.dweb.link/?cid=bafybeibbrhuis55rl52hsp5rboooobjg4rvq7q5ly2mern7s7f3xcbjzwi*
 

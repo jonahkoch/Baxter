@@ -3,7 +3,7 @@ layout: proposal
 title: "Pebble & Ecosystem maintenance: TypeScript core of Cardano"
 proposal_id: gov_action1ggr2uz7prwn5l84cdn2krwngfez0p7wluy4u3u3ez9pz5ls2whesqnsjly8
 proposal_type: TreasuryWithdrawals
-status: active
+status: enacted
 tags: ["developer-tools", "typescript", "smart-contract-language", "infrastructure"]
 related_proposal_id: gov_action1ky2j077de82par6f0hny5q56rpnn5hh0csfhrpzeq3hsk7s6vetqquz3scv
 amount_ada: 4,600,000
@@ -21,6 +21,8 @@ drep_no_power: 1,661,999,563
 committee_yes: 6
 committee_no: 0
 ---
+
+**Status Update:** This proposal was enacted in epoch 635.
 
 
 Harmonic Laboratories (HLabs for short) is an R&D firm born and focused solely on the Cardano ecosystem.

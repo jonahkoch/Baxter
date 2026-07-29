@@ -3,7 +3,7 @@ layout: proposal
 title: "Rare Evo and Dev Gov Day 2026: Cardano Title Sponsorship"
 proposal_id: gov_action18a9sytyez02jl8ee4ryz5xu7heg587m5tu6nr7fkd3ex30umnnjqq27e7ey
 proposal_type: TreasuryWithdrawals
-status: active
+status: dropped
 tags: ["marketing", "events"]
 amount_ada: 2,750,000
 proposed_epoch: 633
@@ -20,6 +20,8 @@ drep_no_power: 2,830,135,470
 committee_yes: 3
 committee_no: 3
 ---
+
+**Status Update:** This proposal was dropped in epoch 641.
 
 The primary mission of this proposal is to strengthen and expand Cardano's global ecosystem presence through Rare Evo 2026 and Rare Dev Gov Day 2026, two established community-led initiatives that have become major coordination, onboarding, networking, governance, and industry outreach platforms for the Cardano ecosystem. 
 

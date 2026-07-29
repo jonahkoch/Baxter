@@ -3,7 +3,7 @@ layout: proposal
 title: "Reduce the committeeMinSize parameter from 7 to 5"
 proposal_id: gov_action1cadmygtqv6r64pvwezw859wg36wpwp209cz94cc7ej9fdp7dyphqq58n5ur
 proposal_type: ParameterChange
-status: active
+status: enacted
 tags: ["governance", "parameter-change"]
 amount_ada: 0
 proposed_epoch: 635
@@ -20,6 +20,8 @@ drep_no_power: 962,233,364
 committee_yes: 6
 committee_no: 0
 ---
+
+**Status Update:** This proposal was enacted in epoch 643.
 
 Intersect’s Civics Committee and Technical Steering Committee propose to change the **minimum** Constitutional Committee size (`committeeMinSize`) from 7 to 5 in order to improve operational resilience while maintaining constitutional safeguards.
 

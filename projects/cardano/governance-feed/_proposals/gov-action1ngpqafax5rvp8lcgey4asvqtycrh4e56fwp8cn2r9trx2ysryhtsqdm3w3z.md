@@ -3,7 +3,7 @@ layout: proposal
 title: "Eternl: Path to Sustainability (2026-2027)"
 proposal_id: gov_action1ngpqafax5rvp8lcgey4asvqtycrh4e56fwp8cn2r9trx2ysryhtsqdm3w3z
 proposal_type: TreasuryWithdrawals
-status: active
+status: dropped
 tags: ["wallet", "maintenance"]
 related_proposal_id: gov_action1mr0qdz2jmagvsch6r08fhqvq6vu8jakt4c8m9s7ea7z0p740vntqq4yjd6j
 amount_ada: 1,680,000
@@ -21,6 +21,8 @@ drep_no_power: 1,560,291,458
 committee_yes: 3
 committee_no: 4
 ---
+
+**Status Update:** This proposal was dropped in epoch 639.
 
 Eternl is a non-custodial Cardano light wallet for the web, browser extension, Android, and iOS.
 

@@ -3,7 +3,7 @@ layout: proposal
 title: "Withdraw 3,961,538 ada for Bringing Real-World Payments to Cardano with Wirex"
 proposal_id: gov_action1k02990lhw6wh74t7c6ufw3mqaek9ujtvyan99dj5qv5kvcs7pn8sqcw2nc5
 proposal_type: TreasuryWithdrawals
-status: active
+status: dropped
 tags: ["payments", "real-world", "integration"]
 amount_ada: 3,961,538
 proposed_epoch: 638
@@ -20,6 +20,8 @@ drep_no_power: 1,932,763,611
 committee_yes: 6
 committee_no: 1
 ---
+
+**Status Update:** This proposal was dropped in epoch 646.
 
 This Treasury Withdrawal funds Bringing Real-World Payments to Cardano with Wirex.
 

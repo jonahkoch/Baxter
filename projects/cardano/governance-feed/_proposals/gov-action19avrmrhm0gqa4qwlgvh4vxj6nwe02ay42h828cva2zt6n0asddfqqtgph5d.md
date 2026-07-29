@@ -3,7 +3,7 @@ layout: proposal
 title: "[OriLife × TonFarm] Identifying 180 Million Durians Without Physical Labels"
 proposal_id: gov_action19avrmrhm0gqa4qwlgvh4vxj6nwe02ay42h828cva2zt6n0asddfqqtgph5d
 proposal_type: TreasuryWithdrawals
-status: active
+status: dropped
 tags: ["real-world", "supply-chain", "agriculture"]
 amount_ada: 2,400,000
 proposed_epoch: 628
@@ -20,6 +20,8 @@ drep_no_power: 5,195,409,882
 committee_yes: 1
 committee_no: 5
 ---
+
+**Status Update:** This proposal was dropped in epoch 636.
 
 **OriLife Alliance proposes 2,400,000 ADA from the Cardano Treasury to deploy tamper-evident traceability across 12,000 hectares of durian in Đắk Lắk, Vietnam — before the December 1, 2026 deadline ([Article 15, Circular 11/2026/TT-BCT](https://chinhphu.vn/?pageid=27160&docid=217126&classid=0)).**
 

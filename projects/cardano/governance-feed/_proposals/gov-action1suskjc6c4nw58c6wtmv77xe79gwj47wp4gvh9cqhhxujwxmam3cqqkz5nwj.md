@@ -3,7 +3,7 @@ layout: proposal
 title: "Strike Finance Liquidity Deployment"
 proposal_id: gov_action1suskjc6c4nw58c6wtmv77xe79gwj47wp4gvh9cqhhxujwxmam3cqqkz5nwj
 proposal_type: TreasuryWithdrawals
-status: active
+status: dropped
 tags: ["defi", "liquidity", "perpetuals", "treasury-deployment"]
 amount_ada: 9,000,000
 proposed_epoch: 637
@@ -20,6 +20,8 @@ drep_no_power: 2,394,835,560
 committee_yes: 5
 committee_no: 2
 ---
+
+**Status Update:** This proposal was dropped in epoch 645.
 
 # Strike Finance V2 Treasury Deployment Proposal
 
