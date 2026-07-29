@@ -20,11 +20,13 @@ This proposal was submitted in Epoch 640 and expires in Epoch 647. Detailed voti
 
 According to Ace Alliance Constitutional Committee analysis, the current 350 million ADA Net Change Limit enacted for epochs 613 through 713 has approximately 335.6 million ADA already consumed by enacted withdrawals. This leaves roughly 14.4 million ADA in remaining headroom under the current limit.
 
-Bifrost requests 12.3 million ADA. Under the current 350 million ADA limit this leaves only about 2.1 million ADA of headroom after Bifrost. This is extremely tight.
+Since that analysis the Daedalus wallet maintenance proposal for 1.785 million ADA has reportedly passed based on social signals from the SE7EN Labs team. If enacted this further reduces remaining headroom to approximately 12.6 million ADA.
 
-The Net Change Limit increase to 500 million ADA was also proposed in epoch 640 and expires in epoch 647 the same expiration as Bifrost. If the NCL increase is enacted at the epoch 646 to 647 boundary, Bifrost would then have approximately 165 million ADA in available headroom. If the NCL increase fails, Bifrost would barely fit under the current limit with almost no room for other proposals.
+Bifrost requests 12.3 million ADA. Under the current 350 million ADA limit this leaves only about 0.3 million ADA of headroom after Bifrost. This is essentially zero fiscal capacity remaining.
 
-This creates a sequencing dependency. Bifrost voters who support the proposal may also need to consider their position on the NCL increase, because without it the fiscal runway for this and subsequent proposals is nearly exhausted.
+The Net Change Limit increase to 500 million ADA was also proposed in epoch 640 and expires in epoch 647 the same expiration as Bifrost. If the NCL increase is enacted at the epoch 646 to 647 boundary, Bifrost would then have approximately 163 million ADA in available headroom. If the NCL increase fails, Bifrost would consume virtually the entire remaining limit with no room for any subsequent proposals until epoch 713.
+
+This creates a critical sequencing dependency. Bifrost voters who support the proposal should also strongly support the NCL increase, because without it this proposal effectively locks the Treasury for months.
 
 ## Detailed Assessment
 
