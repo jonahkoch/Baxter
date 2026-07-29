@@ -17,12 +17,19 @@ committee_yes: ?
 committee_no: ?
 context:
   - date: "2026-07-29"
+    source: "Ace Alliance CC Analysis"
+    author: "Ace Alliance Constitutional Committee"
+    type: "constitutional-analysis"
+    summary: "Current 350M NCL has ~14.4M ADA remaining. Bifrost (12.3M) would consume nearly all remaining headroom. Without NCL increase, fiscal runway is exhausted."
+    link: "https://github.com/ace-alliance/ace-voting/blob/359bd49abe7a39604303d4999c71608f968b01e7/202607/epoch646_voting_statement.md"
+    impact: "NCL constraint is critical for this proposal's feasibility"
+  - date: "2026-07-29"
     source: "DRep Advisor Assessment"
     author: "Jonah Koch / DRep Advisor"
     type: "assessment"
-    summary: "Very large infrastructure proposal for Bitcoin-Cardano bridge. Strong public value, no token, SPO-secured custody, excellent accountability structure. Concerns: 12.3M ADA price tag, delivery complexity, competitive landscape."
+    summary: "Very large infrastructure proposal for Bitcoin-Cardano bridge. Strong public value, no token, SPO-secured custody, excellent accountability structure. Concerns: 12.3M ADA price tag, delivery complexity, competitive landscape, NCL constraint."
     link: "./assessment-bifrost.md"
-    impact: "Infrastructure assessment with cost and execution concerns"
+    impact: "Infrastructure assessment with cost, execution, and fiscal concerns"
 ---
 
 This Treasury Withdrawal funds **Phase 1 of 2** for Bifrost, a permissionless Bitcoin-Cardano bridge secured by Cardano's SPO ecosystem via FROST threshold signatures. The request is **12,332,031 ADA** (~$1.97M at $0.16/ADA) for a 9-month delivery period (July 2026 - March 2027), plus a 10% refundable contingency.

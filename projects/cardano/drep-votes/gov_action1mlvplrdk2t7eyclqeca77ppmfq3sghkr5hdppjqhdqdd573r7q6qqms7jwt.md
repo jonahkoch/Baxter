@@ -16,6 +16,16 @@ This Treasury Withdrawal requests 12,332,031 ADA approximately 1.97 million US d
 
 This proposal was submitted in Epoch 640 and expires in Epoch 647. Detailed voting percentages were not available at the time of this assessment.
 
+## Net Change Limit Analysis
+
+According to Ace Alliance Constitutional Committee analysis, the current 350 million ADA Net Change Limit enacted for epochs 613 through 713 has approximately 335.6 million ADA already consumed by enacted withdrawals. This leaves roughly 14.4 million ADA in remaining headroom under the current limit.
+
+Bifrost requests 12.3 million ADA. Under the current 350 million ADA limit this leaves only about 2.1 million ADA of headroom after Bifrost. This is extremely tight.
+
+The Net Change Limit increase to 500 million ADA was also proposed in epoch 640 and expires in epoch 647 the same expiration as Bifrost. If the NCL increase is enacted at the epoch 646 to 647 boundary, Bifrost would then have approximately 165 million ADA in available headroom. If the NCL increase fails, Bifrost would barely fit under the current limit with almost no room for other proposals.
+
+This creates a sequencing dependency. Bifrost voters who support the proposal may also need to consider their position on the NCL increase, because without it the fiscal runway for this and subsequent proposals is nearly exhausted.
+
 ## Detailed Assessment
 
 ### Layer 0: Priority and Fit Screen
@@ -92,7 +102,9 @@ The proposal creates some dependencies. Bridge operations depend on SPO particip
 
 **4. Adoption risk.** The bridge is only valuable if Bitcoin holders actually use it. The proposal acknowledges that security concerns are the main barrier to Bitcoin DeFi adoption. Bifrost's SPO secured model is architecturally stronger than custodial alternatives but it remains unproven at scale. The base case of 1,200 BTC by Year 2 requires significant dApp integration and user onboarding.
 
-**5. Execution complexity.** Delivering four workstreams across two teams in nine months while undergoing multiple external audits and formal verification is ambitious. The 10 percent contingency provides some buffer but schedule risk is material.
+**5. NCL constraint.** The current 350 million ADA limit has only about 14.4 million ADA remaining according to Ace Alliance Constitutional Committee analysis. Bifrost at 12.3 million ADA would consume nearly all of it. Without the NCL increase passing first, this proposal leaves virtually no fiscal capacity for other pending Treasury requests. This is not a flaw in the proposal itself but it creates a real sequencing constraint for voters.
+
+**6. Execution complexity.** Delivering four workstreams across two teams in nine months while undergoing multiple external audits and formal verification is ambitious. The 10 percent contingency provides some buffer but schedule risk is material.
 
 ### Overall Assessment
 
