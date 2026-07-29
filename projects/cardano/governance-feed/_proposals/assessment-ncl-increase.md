@@ -80,6 +80,59 @@ SPO hix (@hix_coffeepool, Japanese community) made a raw, honest case: *"A cap i
 
 ---
 
+## The Unaddressed Question: ADA Purchasing Power
+
+**This may be the most important dimension missing from the public debate.**
+
+The original 350M NCL was agreed around Epoch 613 (February 2026), when ADA was trading at approximately **$0.30**. Today, proposals reference **$0.16/ADA** — a **~47% drop in USD terms**.
+
+What this means in practice:
+
+| Metric | Feb 2026 | Jul 2026 | Change |
+|--------|----------|----------|--------|
+| ADA price | ~$0.30 | ~$0.16 | -47% |
+| 350M NCL in USD | ~$105M | ~$56M | -$49M |
+| USD value of a ₳120M proposal | ~$36M | ~$19.2M | -$16.8M |
+
+**The disconnect:** The NCL caps ADA outflows, but project budgets are constructed in USD. When ADA drops, the same project requires more ADA to deliver equivalent value. Proposers aren't being greedy — they're maintaining scope against a falling currency.
+
+### Why this matters for the vote
+
+If the NCL's *purpose* is to constrain Treasury spending power, then a 47% drop in purchasing power without a cap adjustment means the constraint has tightened *accidentally*, not by design. A principled DRep might support a **purchasing-power-adjusted increase** while rejecting an **open-ended ceiling raise**.
+
+**Rough math:** To restore the original ~$105M USD equivalent at $0.16/ADA, the NCL would need to be **~650M ADA** — far above the proposed 500M.
+
+**A potential middle ground:** If the goal is merely to restore *some* of the lost purchasing power (not all), a smaller increase — say 350M → **420M or 450M** — could be defended as macro-adjustment rather than fiscal expansion.
+
+### The counter-argument
+
+The NCL is explicitly ADA-denominated by design. The Constitution and CIP-1694 do not reference USD or purchasing-power adjustment. If ADA appreciates, no one proposes *lowering* the NCL to maintain USD parity. Creating an implicit USD peg for the NCL could introduce procyclical pressure: bear markets → automatic NCL increases → more Treasury selling pressure → further ADA price decline.
+
+---
+
+## Reframed Decision Framework
+
+| Question | If YES → | If NO → |
+|----------|----------|---------|
+| **Should NCL reflect purchasing power?** | Support some increase; debate the size | Keep 350M; let USD value fluctuate |
+| **Is 500M justified by project pipeline?** | Full YES | NO; counter-propose smaller number |
+| **Should NCL be rigid or adjustable?** | Rigid → hix's position | Adjustable → Pi's position |
+| **Do you trust DReps to evaluate individual proposals?** | Higher ceiling acceptable | Lower ceiling as safety valve |
+
+### My refined take
+
+The **purchasing-power argument** is the most intellectually honest case for increasing the NCL. It's not about spending more — it's about preventing an *accidental* tightening of fiscal capacity due to price action.
+
+However, the proposed 500M figure appears to be a round number, not a purchasing-power calculation. A DRep who wants to honor both the constraint *and* the reality of USD-denominated project costs might:
+
+1. **Vote NO on 500M** as arbitrary
+2. **Propose or support a smaller increase** (e.g., 400M–420M) explicitly framed as purchasing-power restoration
+3. **Demand future NCL proposals include price-adjustment methodology** rather than round numbers
+
+This would preserve the integrity of the NCL system while acknowledging the macroeconomic reality that the original 350M constraint was set at a different price level.
+
+---
+
 ## My Assessment
 
 **This is a governance-structure question masquerading as a fiscal question.**

@@ -34,6 +34,13 @@ context:
     summary: "Strong NO position. Argues raising NCL mid-period renders the system meaningless — a cap exists to be upheld, not raised when restrictive. Warns of slippery slope (500M → 650M → meaningless) and DRep burnout."
     link: "https://x.com/hix_coffeepool/status/2072870023635640626"
     impact: "Represents SPO perspective and long-term governance participant fatigue; signals risk of principled DRep exodus"
+  - date: "2026-07-29"
+    source: "DRep Advisor Analysis"
+    author: "Jonah Koch / DRep Advisor"
+    type: "analytical"
+    summary: "Purchasing power argument: original 350M NCL set at ~$0.30/ADA (~$105M USD). At current ~$0.16/ADA, same NCL = ~$56M USD — a 47% drop in real capacity. Projects budget in USD but NCL caps ADA, creating an accidental tightening. A smaller increase (e.g., 400M–420M) could restore partial purchasing power without full 500M expansion."
+    link: "./assessment-ncl-increase.md"
+    impact: "Introduces macro-adjustment framing that hasn't been addressed in public debate; may justify partial increase on principled grounds"
 ---
 
 By this Info action, the DReps agree a new Net Change Limit of 500,000,000 ada (500,000,000,000,000 lovelace) for the Cardano Treasury, for the period beginning at the start of Epoch 613 (February 13, 2026) and ending at the close of Epoch 713 (on or about July 3, 2027). This Net Change Limit is a fixed cap on the total ada removed from the Treasury through Treasury Withdrawals during the period; it does not count Treasury inflows. This is a newly agreed Net Change Limit: it is the applicable Net Change Limit for the period and supersedes any prior Net Change Limit for the same period. Because the period begins at the start of Epoch 613, all Treasury Withdrawals already debited during the period count toward this 500,000,000 ada limit. This Info action records the DReps' agreement to this 
