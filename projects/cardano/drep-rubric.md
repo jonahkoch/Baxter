@@ -1,12 +1,25 @@
 # Jonah's DRep Treasury Assessment Rubric
 ## Derived from Treasury Rule Book v17, aligned with builder/governance values
 
-**Version:** 1.2
-**Date:** 2026-07-18
+**Version:** 1.3
+**Date:** 2026-08-01
 **Source influence:** Cardano DRep Treasury Rule Book v17 (Unified Commercial, Infrastructure, Marketing and Public-Goods Edition)
+**v17 fetch:** https://docs.google.com/document/d/1ed-IkSj4tDqys3D1jDMspgIZ7O9xSmxQsMPpB_b3DXA/mobilebasic
 **Philosophy:** The Treasury is finite public capital. It should fund things that make Cardano more decentralized, more usable, or more resilient — with clear accountability, productive ecosystem effects, and without creating private tollbooths.
 
 ---
+
+## Dynamic-Law Warning (v17)
+
+Cardano governance rules can change. I verify the Constitution, guardrails, active Net Change Limit, governance action rules, ratification state, and any administrator/audit requirements **at the time of voting**. Where an official current source conflicts with archived guidance, I use the current enacted rule and record the source and date.
+
+## Rule Hierarchy (v17)
+
+1. On-chain ledger rules and enacted guardrails prevail over this private framework
+2. The current enacted Constitution prevails over archived explainers
+3. The Treasury Withdrawal and its immutable references prevail over applicant marketing pages or later informal promises
+4. Binding contracts and executable controls carry more weight than non-binding intentions
+5. Where sources conflict, I record the conflict, identify which source governs, and explain the reliability effect
 
 ## My Core Beliefs as a DRep
 
@@ -99,10 +112,18 @@ Ask these six questions. If any answer is strongly negative, the vote is No with
 
 I don't use a 100-point scorecard for every proposal. I use a **checklist + judgment** approach. For large proposals (500K+ ADA or strategically significant), I use a simplified scoring sheet.
 
-#### Section A: The Basics (Must Pass)
+#### Section A: Constitutional Preflight (Must Pass — v17 Expanded)
 
 | Check | Pass Standard | If Fail |
 |-------|--------------|---------|
+| **Constitution & guardrails** | Current enacted version verified, source/hash recorded, access dated | Abstain if external rule uncertainty prevents reliable vote; otherwise No |
+| **Governance-action content** | Action ID, type, submission date, rationale, immutable supporting links confirmed | No if material content is mutable, missing, or inconsistent |
+| **Self-contained withdrawal** | All material commitments, recipients, administrators, oversight, milestones, rights, failure rules incorporated or immutably referenced | No if action depends on non-binding or replaceable material |
+| **NCL and capacity** | Active NCL verified, period confirmed, withdrawals counted, remaining capacity recorded | No if request would breach the limit |
+| **Administrator & oversight** | Named roles, authority, independence, reporting, audit, replacement mechanism per current rules | No if proposal should provide this and does not |
+| **Custody & disbursement** | Receiving addresses, segregation, control, delegation treatment, tranche logic, reconciliation | No for material opacity or uncontrolled upfront exposure |
+| **Dispute & recovery** | Applicable agreement, dispute path, refund, clawback, replacement, unspent-funds rules | No for large/very large/systemic if absent |
+| **Voting & enactment state** | Relevant bodies, thresholds, deadlines, expiry, CC state, enactment conditions | Abstain where external state makes Yes/No unreliable |
 | Named, accountable applicant | Real person/entity with track record | No |
 | Clear ask | Specific ADA amount, specific deliverables | No |
 | Itemized budget | Understandable breakdown, benchmarked costs | No (medium+) |
@@ -263,6 +284,43 @@ For proposals where I want numerical discipline, I use this leaner version:
 
 ---
 
+## The 32 Treasury-Hard Rules (v17 — Summary)
+
+The full v17 source contains 32 investor-hard rules. Key ones I enforce:
+
+1. Public money must create public goods
+2. Closed commercial capture of public funds → No
+3. Decentralization is the product — centralization needs extraordinary justification
+4. Reputation does not create points; evidence earns points
+5. A score is evidence for judgment, not a substitute for judgment
+6. Classification follows economic substance, not title or legal form
+7. Mixed proposals: separate workstreams, do not average failed into passing
+8. Commercial upside cannot hide in public-good labels
+9. Request size: use highest triggered band, aggregate linked exposure
+10. Do not move down because the purpose is valuable
+11. High score but failed hard gate → No
+12. High score but wrong instrument → No or defer
+13. Applicant omission failure is a proposal failure → No
+14. Treasury subsidy loop is not growth
+15. Circular related-party transfers do not demonstrate productive circulation
+16. Cardano-native branding does not justify inferior duplication
+17. Binding contracts > non-binding intentions
+18. Immutable references > mutable marketing pages
+19. Current enacted rules > archived explainers
+20. On-chain enforceable controls > off-chain promises
+21. Mutable web pages are material preflight defects without immutable canonical copy
+22. Do not treat passed Info Action as constitutional authorization for withdrawal
+23. Treasury withdrawals must be self-contained
+24. Any NCL in force is a binding exposure constraint
+25. Productive ecosystem effects: reward independent new work, reusable inputs, outside demand
+26. Anti-fake metrics: exclude bots, giveaways, circular activity, staff counts
+27. Marketing: pay for retained impact and public rights, not vanity metrics
+28. Frontier bets: small by default, failure must be cheap, public learning required
+29. Reward productive circulation, not token retention
+30. Subsidy-loop detection: activity must continue through customer demand or durable public-good model
+31. Cardano-native duplication: branding and ADA settlement do not justify higher cost or lower quality
+32. Final rule: The Treasury is finite. A proposal must earn its allocation from zero.
+
 ## Automatic Nos (No Scoring Needed)
 
 - No clear public value
@@ -277,10 +335,10 @@ For proposals where I want numerical discipline, I use this leaner version:
 - Treasury takes first-loss with no compensation
 - Negative decentralization delta without safeguards
 - Marketing proposal with no retained impact plan
-- **Treasury subsidy loop presented as growth** — repeated public funding among same actors is not outside demand
-- **Circular or related-party ecosystem-spending claim** — transfers among controlled wallets do not demonstrate productive circulation
-- **Cardano-native but inferior duplication** — branding and ADA settlement do not justify higher cost or lower quality
-- **Mixed proposal with unseparated budgets** — commercial upside hiding inside public-good labels
+- Treasury subsidy loop presented as growth
+- Circular or related-party ecosystem-spending claim
+- Cardano-native but inferior duplication
+- Mixed proposal with unseparated budgets
 
 ---
 
@@ -317,7 +375,7 @@ This lives in my notes and informs future votes from the same applicants.
 |--------|-----------|------------|
 | Layers | 3 parts (I-III) + appendices | 2 layers (simpler) |
 | Scorecards | Three 100-point scorecards (Commercial, Public-Good, Marketing) | Checklist for most, simplified scorecard for large only |
-| Public-good scorecard | Full 100-point with specialist modules | Integrated into checklist/scorecard with five forms of return |
+| Public-good scorecard | Full 100-point with 8 specialist modules | Integrated into checklist/scorecard with five forms of return |
 | Mixed-proposal rule | Mandatory separation and separate scoring | Same principle, enforced in checklist |
 | Request-size classification | 5 bands with NCL/category thresholds | Same bands, simplified application |
 | Score override discipline | 7 situation rules | Same rules, integrated into vote mapping |
@@ -331,7 +389,11 @@ This lives in my notes and informs future votes from the same applicants.
 | Abstain | Narrow, decision-reliability only | Same — Abstain is not support, not avoidance |
 | Frontier bets | Small, staged, public | Same — this is where I might be more willing than v17 |
 | Governance tools | Treated as general public good | I may weight governance infrastructure higher |
-| Constitutional preflight | Mandatory 7-field record | Acknowledged; I check constitutional compliance before scoring |
+| Constitutional preflight | Mandatory 8-field record | Adopted fully in Section A |
+| Dynamic-law warning | Explicit requirement | Adopted |
+| Rule hierarchy | 5-level hierarchy | Adopted |
+| 32 Treasury-hard rules | Full list in Section 25 | Summary adopted in dedicated section |
+| Post-funded outcomes | Appendix E ledger | Tracked in my notes |
 
 ---
 
