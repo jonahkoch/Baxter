@@ -3,7 +3,7 @@
 **Governance Action:** gov_action122wue2k65qq8gmpz795z2axt8apka6ay6xt3pwg8jxj5yfkujmtsqvlfpu7
 **Proposal:** Withdraw ₳120,000,000 for AlphaGrowth's Cardano PRIME
 **Proposed Epoch:** 642 | **Expiration:** Epoch 649
-**Vote:** **No**
+**Vote:** **Yes** (Addendum: 2026-08-10)
 **DRep:** Jonah Koch
 **Date:** 2026-08-10
 **Rubric:** Treasury Assessment Rubric v1.3 (derived from Rule Book v17)
@@ -213,6 +213,36 @@ I am voting No on this proposal. PRIME identifies a real problem and its governa
 ## Vote Summary
 
 Vote No on AlphaGrowth PRIME. The governance architecture is excellent but the economics are wrong for public funds. A ₳120M pure grant with 33% management fees, no Treasury ownership, no repayment, and weak productive ecosystem effects fails on instrument fit, commercial return structure, and opportunity cost. Good process does not justify bad economics.
+
+---
+
+---
+
+## Addendum: Yes Vote Rationale (2026-08-10)
+
+After reviewing the detailed assessment above and the rationales from DReps I respect who voted Yes, I am changing my vote to Yes. My rubric assessment remains unchanged. The proposal still scores 41 out of 100 and fails on instrument fit, commercial return structure, management fee proportionality, and subsidy loop risk. Those concerns are real and I do not dismiss them. I am voting Yes not because the economics are sound but because the strategic imperative outweighs them.
+
+Cardano has spent years building infrastructure that other chains take for granted. USDCx, LayerZero, Pyth, Dune, and the upcoming Leios and Peras upgrades give Cardano technical parity with Ethereum and Solana. But infrastructure without activation is a museum. Cardano DeFi TVL sits at roughly 90 million dollars against Solana's tens of billions. Stablecoin supply is 45 to 60 million dollars against Solana's 14.9 billion. These are not gaps. They are chasms. And they are widening while Cardano debates process.
+
+I have watched Ethereum and Solana deploy hundreds of millions in ecosystem incentives, not perfectly, not without waste, but with a clear theory of action. Spend to attract users, deepen liquidity, let network effects compound, then taper as organic activity replaces subsidies. None of these programs have proven sustainable hand-offs yet. Cardano may not either. But waiting for someone else to prove the model first is how you lose a market permanently. The cost of inaction is not neutral. It is compounding disadvantage.
+
+AlphaGrowth's track record on Compound V3 Arbitrum and Optimism shows better retention than typical emission programs. The 463 day half-life and 78 percent one year retention are not perfect but they are measurably better than Radiant's 74 day half-life and zero percent retention. The price per TVL grown at roughly 7 cents per dollar is competitive with Arbitrum STIP. These are marginal improvements, not guarantees. But in a market where most incentive programs fail completely, marginal improvement from a team with relationships and operational experience is worth funding.
+
+The governance architecture is genuinely excellent. The Operating Group veto, Phase 3 release gate, six return triggers, Intersect custody separation, and abstain delegation on held funds set a standard I want to see in future large proposals. The Month 4 gate and the six month persistence reporting create real falsification points. If the program is not working, it can be stopped. That is not a blank check. It is a cancellable trial with meaningful downside protection.
+
+I acknowledge the risks I identified in my original assessment. The 33 percent management fee is too high for public funds. The Treasury receives no ownership, no revenue share, and no enforceable return. The subsidy loop risk is real. Ninety million dollars of Phase 3 capital flowing through a single vendor to Treasury dependent protocols is concentration, not diversification. The organic APR sustainability thesis is unproven. These concerns do not disappear because I vote Yes. They are the price of this bet.
+
+My rubric is designed to catch exactly these problems. It caught them. I am overriding it because this is the rare case where strategic urgency justifies imperfect economics. Cardano is at an inflection point. The protocol upgrades are coming. The infrastructure is in place. The native protocols are maturing. If Cardano does not make a serious attempt to convert those investments into usage now, the window may close. Other chains are not waiting. Users and capital are sticky. Liquidity begets liquidity. And Cardano's competitors are spending aggressively to ensure that begetting happens on their chains, not ours.
+
+I expect the Operating Group to apply the high standards CardanoYoda and others have demanded. Conservative attribution rules. Strong evidence requirements. Protection against temporary or externally caused TVL. Credible counterparties. If Phase 3 does not meet these standards, the OG should withhold approval. If the program fails to produce sustained activity, the return triggers should be exercised. My Yes is conditional on rigorous execution, not faith in good intentions.
+
+This vote is a bet. It may lose. But I believe the cost of not betting, of conserving Treasury while Cardano's relevance erodes, is higher than the cost of a structured, overseen, cancellable attempt at activation. I am voting Yes.
+
+---
+
+## Vote Summary (Yes)
+
+Vote Yes on AlphaGrowth PRIME. My rubric assessment remains unchanged. The proposal fails on economics but passes on strategic urgency. Cardano's infrastructure is ready and activation is the missing layer. The cost of inaction exceeds the cost of a structured, cancellable trial with strong oversight. This is a bet, not a blank check.
 
 ---
 
