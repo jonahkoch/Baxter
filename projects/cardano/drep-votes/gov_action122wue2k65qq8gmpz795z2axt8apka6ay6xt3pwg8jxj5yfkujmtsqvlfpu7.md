@@ -1,194 +1,233 @@
 # DRep Vote Rationale: Cardano PRIME (AlphaGrowth)
 
-**Governance Action:** gov_action122wue2k65qq8gmpz795z2axt8apka6ay6xt3pwg8jxj5yfkujmtsqvlfpu7  
-**Proposal:** Withdraw ₳120,000,000 for AlphaGrowth's Cardano PRIME  
-**Proposed Epoch:** 642 | **Expiration:** Epoch 649  
-**Vote:** **No**  
-**DRep:** Jonah Koch  
-**Date:** 2026-07-11  
+**Governance Action:** gov_action122wue2k65qq8gmpz795z2axt8apka6ay6xt3pwg8jxj5yfkujmtsqvlfpu7
+**Proposal:** Withdraw ₳120,000,000 for AlphaGrowth's Cardano PRIME
+**Proposed Epoch:** 642 | **Expiration:** Epoch 649
+**Vote:** **No**
+**DRep:** Jonah Koch
+**Date:** 2026-08-10
+**Rubric:** Treasury Assessment Rubric v1.3 (derived from Rule Book v17)
+**Prior Assessment:** 2026-07-11 (original rationale archived below)
 
 ---
 
 ## Summary
 
-Vote: **No.**
-
-Cardano PRIME addresses a real problem — low DeFi liquidity, fragmented capital, and limited LP participation. The governance architecture (Operating Group oversight, Phase 3 release gate, Intersect custody, return triggers, conflict recusal) is among the most thoughtfully structured I have reviewed. However, the **scale of the ask does not match the value Cardano captures**, and **the compensation structure is inappropriate for public funds**. I cannot support a ₳120M withdrawal where the primary deliverables are time-bounded incentives, vendor-managed reports, and a management fee that would be high even by venture capital standards.
+Vote No. PRIME addresses real DeFi liquidity gaps and its governance architecture is among the best I have reviewed, but ₳120M for time-bounded incentives, vendor-managed subsidy distribution, and a 33% management fee fails on instrument fit, productive ecosystem effects, and commercial return structure. The updated rubric sharpens the analysis but does not change the verdict.
 
 ---
 
-## What This Proposal Does Well
+## Current Status
 
-Before addressing the blocking issues, I want to acknowledge what PRIME gets right — these are standards I hope to see in future large proposals:
-
-- **Phase 3 release gate:** Holding back ₳90M until Month 4 OG approval is excellent structural discipline.
-- **Six return triggers:** Unused funds, termination, market-change triggers, and excess attribution carve-outs create meaningful downside protection.
-- **Operating Group with veto authority:** A 5-member oversight body with recusal standards and published decision records is a genuine governance innovation.
-- **Intersect custody (not AlphaGrowth):** Proper separation of recommendations, approvals, and fund custody.
-- **Performance fee alignment:** Tying compensation to verified TVL growth is better than a pure grant.
-- **Abstain delegation for held funds:** No SPO capture risk on undisbursed capital.
-- **Public reporting requirements:** Quarterly updates, milestone reports, and audit publication.
-- **Conflict-of-interest protections:** Mandatory recusal for counterparty, beneficiary, and instructor matters.
-
-These structures should become the baseline for any large Treasury withdrawal. But good governance architecture does not, by itself, justify the allocation.
+| Field | Value |
+|-------|-------|
+| Current epoch | 648 |
+| Expiration epoch | 649 |
+| Time remaining | ~55 hours |
+| Ratified | No |
+| Enacted | No |
+| Submitted by | Intersect |
+| Withdrawal address | stake1784sdxt6jjennmstphgdu7l7c2scf5d02a6cve2dgn5s2kq5u3j9v |
+| Smart contract framework | Sundae Labs treasury-contracts (audited by TxPipe and MLabs) |
 
 ---
 
-## Blocking Issues
+## Rubric Assessment (v1.3)
 
-### 1. Scale vs. Value Capture: ₳120M Is Not Proportional to Public Return
+### 1. Constitutional Preflight
 
-Cardano PRIME requests **₳120,000,000** — approximately **$19.2 million** at the planning assumption. For context, the entire Cardano DeFi ecosystem currently holds approximately $90M in TVL. This single withdrawal could increase that figure meaningfully, but the question is what Cardano **keeps** after the 12-month program ends.
+| Check | Finding | Verdict |
+|-------|---------|---------|
+| Governance-action content | ID, type, submission date, rationale confirmed. Immutable references: IPFS PDF, GitHub repo for smart contracts | Pass |
+| Self-contained withdrawal | OG structure, return triggers, audit allocation, disbursement process all incorporated | Pass |
+| Administrator & oversight | Intersect as Constitutional Administrator, 5-member Operating Group with veto, published records | Pass |
+| Custody & disbursement | Intersect custody via Sundae Labs smart contract framework. Separate auditable account. Phase 3 release gate at Month 4 | Pass |
+| Dispute & recovery | Six return triggers for unused/unearned/unreleased funds | Pass |
+| NCL & capacity | Conditional on applicable NCL under TREASURY-01a. Not independently verified | Concern |
 
-The primary "return" is TVL growth. Historically, TVL driven by incentive subsidies is **merenary capital** — it arrives when rewards flow and exits when they stop. The proposal acknowledges this risk with the "organic APR" concept and 6-month persistence metrics, but these are **unproven hypotheses**, not demonstrated outcomes. Cardano gets no open-source infrastructure, no protocol ownership, no revenue share on the bulk of the program, and no guarantee that liquidity persists beyond Month 12.
+No hard-gate failures, but NCL verification was not independently confirmed.
 
-A ₳120M allocation should create **durable public assets** — open standards, forkable infrastructure, Treasury-owned positions, or enforceable revenue rights. PRIME delivers primarily time-bounded incentives and vendor-produced reports.
+### 2. Request-Size Classification
 
-### 2. AlphaGrowth Compensation: 33% Management Fee on Public Funds
+| Test | Result | Band |
+|------|--------|------|
+| Nominal request | ₳120,000,000 | Systemic (>₳20M) |
+| Required score for Yes | — | 90+ |
+| Your score | 39/100 | Far below threshold |
 
-AlphaGrowth's maximum compensation is **$6.4 million** ($1.76M fixed + up to $4.64M performance) on a **$19.2 million** program. That is a **33% management fee**.
+Systemic proposals require extraordinary public value and near-perfect structure. This does not meet that bar.
 
-To put this in context:
-- The **entire Ecosystem Grants envelope** is $5.6M. AG's compensation exceeds all grants combined.
-- A typical venture capital fund charges 2% management fee + 20% carry — on **LP capital that chose to invest**.
-- This is **Treasury capital** — public funds with no opt-in mechanism.
+### 3. Five Forms of Public Return
 
-The performance fee creates alignment, but the fixed floor ($1.76M) is guaranteed regardless of outcome. If PRIME delivers zero qualifying TVL growth, AlphaGrowth still walks away with $1.76M. That is not an acceptable risk-sharing posture for public funds.
+| Form | Present? | Durability | Assessment |
+|------|----------|-----------|------------|
+| Public asset | Partial | Fragile | Phase 1/2 reports are public, but no open-source infrastructure, no protocol ownership, no enforceable rights |
+| Public service | Partial | Conditional | OG governance model is a transferable service, but time-bounded to 12 months |
+| Institutional capacity | Partial | Conditional | OG structure could be replicated for future programs |
+| Public learning | Yes | Durable | Audit, gap analysis, attribution methodology are genuine public learning |
+| Avoided loss | Partial | Fragile | DeFi liquidity stagnation is a risk, but this program does not guarantee avoidance |
 
-For a program of this type, I would expect:
-- **Fixed fee under 10%** of total program
-- **Performance fee tied to sustained metrics** (6-12 month persistence, not quarterly snapshots)
-- **Clawback provisions on fixed fee** if program is terminated for underperformance
+Public learning is the strongest return form. It is not sufficient to justify ₳120M.
 
-### 3. Opportunity Cost: Crowding Out Ecosystem Diversity
+### 4. Layer 0 — Priority & Fit Screen
 
-₳120M represents a **massive concentration** of Treasury capacity in a single vendor, a single strategy, and a single 12-month window. The opportunity cost is not abstract — it is:
-- **50-100 smaller builder grants** that could seed parallel experiments
-- **Core infrastructure funding** (wallet standards, developer tooling, security audits)
-- **Emergency reserves** for unforeseen ecosystem needs
-- **Multiple independent liquidity programs** with different approaches and executors
+| Question | Assessment | Red Flag? |
+|----------|-----------|-----------|
+| 1. Real Treasury priority? | Yes — DeFi liquidity is a genuine ecosystem gap | No |
+| 2. Public value? | Weak for the scale. Reports and temporary incentives are not ₳120M public goods | **Yes** |
+| 3. Appropriate instrument? | No. Commercial liquidity bootstrapping via pure grant/incentive is the wrong instrument. Should be loan, revenue-share, or Treasury-owned LP position | **Yes** |
+| 4. Decentralization? | Negative. Concentrates ₳120M through single vendor allocator. Creates dependency on AlphaGrowth methodology and relationships | **Yes** |
+| 5. Opportunity cost? | Massive. Could fund 50-100 smaller experiments, core infrastructure, or multiple independent liquidity programs | **Yes** |
+| 6. Productive ecosystem effects? | Low. New work enabled is more trading on existing protocols, not independent downstream operators. No reusable inputs, no composability gains, no post-Treasury reproduction | **Yes** |
 
-Concentration risk is real. If AlphaGrowth underperforms, if market conditions shift, if the TVL attribution methodology proves gameable — a huge slice of Treasury is consumed with limited recourse. A portfolio approach (3-4 smaller programs with different teams and strategies) would reduce this risk and increase learning.
+**Layer 0 outcome: Clear No.** Four of six questions raise red flags, including instrument fit, decentralization, opportunity cost, and productive ecosystem effects.
 
-### 4. Sustainability: No Year 2, No Protocol Commitments
+### 5. Layer 1 — Proposal Quality
 
-PRIME is explicitly a **12-month program with no Year 2**. The theory of change depends on "organic APR" — fee generation and user activity that makes LPs want to stay after incentives taper. This is a plausible hypothesis. It is not a plan.
+#### Section A: Basics
+- Accountable applicant: Intersect submitting, AlphaGrowth executing. AG has not received Treasury funding in prior 24 months. Pass.
+- Clear ask: ₳120M, 12-month program, three phases. Pass.
+- Itemized budget: Understandable breakdown with USD planning references at $0.16/ADA. Pass.
+- Conflict disclosure: Related-party and recusal rules in OG charter. Pass.
 
-There are **no commitments from recipient protocols** to maintain liquidity post-incentives. There is no mechanism (reduced fee structures, protocol co-funding, lockup requirements) to ensure capital stays. The entire sustainability thesis rests on market behavior that may or may not materialize.
+#### Section B: Value & Impact
+- Public asset quality: Weak. The bulk of the budget flows to temporary incentives ($27M), grants ($35M), AG fees ($6.4M), and marketing ($2.4M). No commitment that grant recipients must open-source deliverables or contribute to shared standards.
+- Productive public value: Low. No reusable capability that enables independent products or operators outside the Treasury-funded loop.
+- Additionality: Medium. Private capital is not flowing to Cardano DeFi at scale, so Treasury funding may be needed. But the instrument is wrong.
+- Retained impact: Unproven. Entire sustainability thesis rests on "organic APR" hypothesis with no protocol commitments to maintain liquidity post-incentives.
 
-If "organic APR" fails to materialize, Cardano will have spent ₳120M to temporarily rent liquidity that departs when the subsidy ends. That is not a good use of finite Treasury capital.
+#### Section C: Execution & Accountability
+- Team evidence: AlphaGrowth has DeFi growth experience but limited Cardano-specific track record.
+- Milestones: Good structure — Phase gates, OG approval required for Phase 3, quarterly reporting.
+- Independent verification: ₳2M audit allocation, published disbursement records.
+- Anti-gaming: Attribution methodology excludes non-PRIME TVL and ADA price effects.
+- Enforceability: Return triggers exist, but clawback on AG's $1.76M fixed fee is limited.
 
-### 5. Marketing Spend: $2.4M With Weak Retained Impact Discipline
+#### Section D: Commercial Return Structure
+This is a commercial/hybrid proposal. v1.3 requires at least one of: repayment, revenue share, Treasury-owned assets, matched funding, or warrants.
 
-The $2.4M / ₳15M marketing budget includes:
-- Conference sponsorships ($750K)
-- Content production ($650K)
-- Distribution partnerships ($450K)
-- Co-marketing ($350K)
-- Research and surveys ($200K)
+| Requirement | Present? |
+|-------------|----------|
+| Repayment or revenue share | No |
+| Treasury-owned assets or LP position | Minimal (small seed LP and solver loan pilots only) |
+| Strong public asset transfer | No open-source mandates for grant recipients |
+| Matched funding | No |
+| Warrants or token rights | No |
 
-These are **attention-based expenditures**, not conversion-based investments. The proposal does not define retained impact KPIs for marketing: no commitments to retained developers, retained LPs, or measurable protocol integrations attributable to marketing spend. "Awareness" without conversion is not a Treasury return.
+**Fail.** Commercial proposal with no return mechanism. Automatic No under v1.3.
 
-I support marketing that can demonstrate **verified retained organic impact** — e.g., "X developers onboarded who deployed Y contracts within 90 days, verified by on-chain data." This proposal does not meet that standard.
+#### Section E: Marketing & Adoption
+- $2.4M marketing budget for conferences, content, distribution partnerships, co-marketing, research
+- No retained impact KPIs (retained developers, retained LPs, protocol integrations)
+- No public content rights commitments
+- Payment tied to activity, not verified conversion
 
-### 6. Limited Public Asset Creation
+#### Section F: Decentralization Delta
+| Factor | Assessment |
+|--------|-----------|
+| Positive | Multi-member OG with veto, Intersect custody separation, published records, abstain delegation on held funds |
+| Negative | Single vendor (AlphaGrowth) as central allocator for ₳90M Phase 3 capital. Single custody framework (Sundae Labs/Intersect). Single attribution methodology. No protocol commitments post-incentives. |
+| **Net delta** | **Negative and unjustified** — the centralization is for convenience, not necessity. A portfolio of 3-4 smaller independent programs would achieve similar coverage with lower concentration risk. |
 
-For ₳120M, I expect **open, forkable, reusable infrastructure** — code, standards, SDKs, documentation. PRIME's public outputs are:
-- Phase 1: Current-State Analysis (report)
-- Phase 2: Gap Analysis and Recommendations (report)
-- Phase 3: Incentive campaigns (temporary)
+#### Section G: Risk & Sustainability
+- ADA volatility discipline: USD figures are "planning references" at $0.16/ADA. No explicit conversion policy or excess-return rule.
+- Risk register: Not explicitly provided.
+- Margin of safety: Phase 3 gate at Month 4 is good structural discipline. But ₳30M (Phases 1-2 + fixed fees) is released before the gate.
+- Sustainability: Unproven 12-month program with no Year 2, no protocol lockup commitments, no co-funding requirements.
+- Operator reality: AlphaGrowth is a real entity. Bus factor on Cardano-specific execution is unclear.
 
-Reports are useful public goods. But they are not $19.2M public goods. The bulk of the budget flows to:
-- Incentives ($27M / ₳27M) — temporary, no Treasury ownership
-- Grants ($35M / ₳35M) — may produce public assets, but not guaranteed
-- AG fees ($6.4M / ₳40M) — private compensation
-- Marketing ($2.4M / ₳15M) — ephemeral
+#### Section H: Subsidy-Loop & Dependency-Graph Check
+| Check | Finding | Risk Level |
+|-------|---------|------------|
+| Subsidy-loop | ₳90M Phase 3 capital flows through AlphaGrowth to DeFi protocols. Those protocols are part of the same Treasury-dependent ecosystem. This is vendor-managed subsidy, not independent new-work branching. Treasury-funded teams paying each other is not growth. | **HIGH** |
+| Dependency-graph | Single allocator (AlphaGrowth), single custody framework (Sundae Labs/Intersect), single attribution methodology. If any fails, the program fails. | **HIGH** |
+| Productive ADA circulation | AG fees ($6.4M) are private capture. Incentives may be farmed and exited. Marketing goes to external vendors. Limited evidence of procurement from unaffiliated Cardano actors at competitive prices. | **LOW** |
 
-There is no commitment that grant recipients must open-source their deliverables, contribute to shared standards, or make their infrastructure publicly available. This is a significant gap.
+### 6. Simplified Scorecard
 
----
+| Category | Max | Score | Notes |
+|----------|-----|-------|-------|
+| Public value, additionality & productive value | 15 | 7 | Real problem identified, weak durable value created |
+| Public asset / open-source / continuity | 15 | 4 | Reports only, no infrastructure ownership |
+| Team evidence & integrity | 10 | 6 | Real team, limited Cardano-specific delivery |
+| Price & value (including ADA volatility) | 10 | 3 | ₳120M for temporary incentives is poor value |
+| Treasury return / risk sharing | 15 | 2 | No repayment, minimal recoverable capital, no ownership |
+| Milestones & verification | 15 | 10 | Good gate structure and audit allocation |
+| Decentralization delta & dependency graph | 10 | 3 | OG is positive but concentration is overwhelming |
+| Risk management & sustainability | 10 | 4 | Phase 3 gate helps, sustainability unproven |
+| **Total** | **100** | **39** | Systemic threshold: 90+. Not close. |
 
-## What Would Earn My Support
+**Productive Ecosystem Multiplier:** +0. No verified independent new work, no reusable shared inputs, no post-Treasury reproduction, no qualified ADA-denominated ecosystem procurement.
 
-If this proposal is resubmitted, I would need to see the following changes. I do not expect all of them, but the more that are addressed, the more likely I am to vote Yes.
+**Final score: 39/100.**
 
-### 1. Reduce the Ask Significantly
+### 7. Score Override Discipline
 
-| Current | Target |
-|---------|--------|
-| ₳120M / $19.2M | **₳60-80M / $9.6-12.8M** |
-
-A smaller allocation reduces opportunity cost, limits concentration risk, and creates room for parallel experiments. If PRIME proves successful in Year 1, a follow-on proposal with demonstrated results would face a much lower bar.
-
-### 2. Restructure AlphaGrowth Compensation
-
-| Current | Target |
-|---------|--------|
-| $6.4M max (33% of program) | **Under $2M total (<15% of program)** |
-| $1.76M fixed floor | **Lower fixed fee with clawback on underperformance** |
-| Performance fee capped at $4.64M | **Tie to 12-month sustained metrics, not quarterly snapshots** |
-
-Public funds should not pay venture-capital-style management fees. AG should share more downside risk.
-
-### 3. Increase Recoverable Capital and Treasury Ownership
-
-| Current | Target |
-|---------|--------|
-| Small seed LP and solver loan pilots | **Significant portion as Treasury-owned LP positions, protocol tokens, or revenue-share rights** |
-
-If Treasury provides liquidity incentives, it should **own the resulting positions** or receive **enforceable revenue participation**. The current recoverable capital envelope is too small relative to the total ask.
-
-### 4. Mandate Open-Source Deliverables
-
-Require that all grant recipients:
-- Publish code under MIT/Apache 2.0 or similar
-- Provide documentation, tests, and deployment instructions
-- Contribute to shared standards (CIPs) where applicable
-- Make infrastructure publicly available and forkable
-
-Reports alone are not ₳120M public goods. Infrastructure is.
-
-### 5. Strengthen Marketing KPIs
-
-Replace impression/attendance-based metrics with:
-- **Retained developers:** Number of developers who build and deploy on Cardano within 90 days of onboarding, verified on-chain
-- **Retained LPs:** Liquidity providers who remain active 90 days after incentive start, excluding subsidized positions
-- **Protocol integrations:** New protocols launching on Cardano with measurable TVL, verified independently
-- **Content rights:** All marketing content becomes public domain or CC-licensed, reusable by the ecosystem
-
-Payment should be tied to verified conversion, not activity.
-
-### 6. Add Protocol Sustainability Commitments
-
-Require grant/incentive recipients to commit to:
-- Maintaining liquidity at or above pre-incentive levels for 6 months post-program
-- Co-funding liquidity pools with matching capital
-- Publishing post-program retention data
-- Returning a portion of fees generated to the Treasury (even a small percentage)
-
-This ensures the program creates durable value, not temporary subsidies.
-
-### 7. Diversify Execution (Preferred Alternative)
-
-Rather than a single ₳120M program, I would prefer to see:
-- **₳30-40M for PRIME** (reduced scope, focused on audit + gap analysis + targeted incentives)
-- **₳30-40M for a separate, independent liquidity program** with a different executor and strategy
-- **₳30-40M reserved** for the best-performing program or emergent needs in 6-12 months
-
-This reduces single-vendor dependency, creates competition, and generates comparative learning.
+| Situation | Application | Result |
+|-----------|-------------|--------|
+| High score but wrong instrument | Grant structure for commercial liquidity bootstrapping | No |
+| Commercial proposal with no return | No repayment, no revenue share, no Treasury ownership | No |
+| Excessive opportunity cost | ₳120M crowds out infrastructure, smaller experiments, emergency reserves | No |
+| Negative decentralization delta | Single-vendor concentration for systemic-scale allocation | No |
+| Treasury subsidy loop | ₳90M through AG to Treasury-dependent protocols ≠ growth | No |
 
 ---
 
-## Final Statement
+## What Would Change My Vote
 
-Cardano PRIME is a serious, well-structured proposal from a capable team. The governance innovations (OG oversight, release gates, return triggers, conflict recusal) should become the standard for large Treasury withdrawals. I genuinely appreciate the effort that went into this design.
+If this proposal is resubmitted, I would need to see:
 
-But **good process does not justify bad economics**. ₳120M for time-bounded incentives, vendor reports, and a 33% management fee is not a proportionate use of finite Treasury capital. The opportunity cost is too high, the sustainability thesis is unproven, and the value Cardano captures is too uncertain for the scale of the risk.
+1. **Reduced ask:** ₳60-80M maximum, with the remainder held for a follow-on proposal contingent on demonstrated results.
+2. **Restructured instrument:** Convert from pure grant to Treasury-owned LP positions, revenue-share rights, or enforceable loan structure. The Treasury should own the liquidity it provides, not rent it temporarily.
+3. **Restructured AlphaGrowth compensation:** Fixed fee under 10% of program, performance fee tied to 12-month sustained metrics (not quarterly snapshots), clawback provisions on fixed fee for underperformance.
+4. **Mandated open-source deliverables:** All grant recipients must publish code under MIT/Apache 2.0, contribute to shared standards (CIPs), and make infrastructure publicly available.
+5. **Protocol sustainability commitments:** Recipients must commit to maintaining liquidity at or above pre-incentive levels for 6 months post-program, with co-funding requirements and published retention data.
+6. **Portfolio approach:** Split into 3-4 independent programs with different executors and strategies, rather than single-vendor concentration.
 
-I am voting **No**.
+---
 
-If the applicant resubmits with a significantly reduced ask, restructured compensation, stronger public asset requirements, and evidence that the community supports the revised scope, I will evaluate it with an open mind.
+## Prior Funding Disclosure
+
+AlphaGrowth has not received Cardano Treasury funding within the prior 24 months. This is their first Treasury request.
+
+---
+
+## Aligned DRep References
+
+This assessment is independent. No DRep consultation was conducted for this vote.
+
+---
+
+## Post-Funded Tracking Commitment
+
+Not applicable — vote is No.
+
+---
+
+## Vote Rationale
+
+I am voting No on this proposal. PRIME identifies a real problem and its governance architecture is genuinely thoughtful. The Operating Group oversight, Phase 3 release gate, six return triggers, and Intersect custody separation set a standard I hope future large proposals adopt. But good process does not justify bad economics. This is a ₳120M commercial liquidity program structured as a pure grant with no repayment, no Treasury ownership, and no revenue share. AlphaGrowth's maximum compensation of $6.4 million represents a 33 percent management fee on public funds, with a $1.76 million fixed floor that is guaranteed regardless of outcome. That is not an acceptable risk-sharing posture for Treasury capital. The productive ecosystem analysis is weak. The ₳90 million Phase 3 capital flows through a single vendor to DeFi protocols that are themselves Treasury-dependent, creating a subsidy loop presented as growth rather than independent new-work branching. The dependency graph is dangerously concentrated. One allocator, one custody framework, one attribution methodology. If any fails, the program fails. For a systemic-scale ask, I expect systemic-scale public value. Durable open-source infrastructure, Treasury-owned positions, enforceable revenue rights, or at minimum a portfolio approach that distributes risk across independent executors. PRIME delivers primarily time-bounded incentives, vendor-produced reports, and private management fees. The opportunity cost is too high, the instrument is wrong for the economic substance, and the value Cardano captures is too uncertain for the scale of the risk. If the applicant resubmits with a significantly reduced ask, a restructured instrument that gives the Treasury ownership or return, lower management fees with genuine downside sharing, mandated open-source commitments, and a diversified execution model, I will evaluate it with an open mind.
+
+---
+
+## Vote Summary
+
+Vote No on AlphaGrowth PRIME. The governance architecture is excellent but the economics are wrong for public funds. A ₳120M pure grant with 33% management fees, no Treasury ownership, no repayment, and weak productive ecosystem effects fails on instrument fit, commercial return structure, and opportunity cost. Good process does not justify bad economics.
 
 ---
 
 *This rationale reflects my independent assessment as a Cardano DRep. I have no material conflict of interest regarding this proposal.*
+
+---
+
+## Original Assessment (Archived — 2026-07-11)
+
+The original assessment reached the same conclusion using Rubric v1.0. Key additions in v1.3 that sharpen the analysis:
+
+- **Layer 0 Q6 (productive ecosystem effects):** PRIME scores low on new-work branching, reusable inputs, and post-Treasury reproduction. The "new work" enabled is more trading on existing protocols, not independent downstream operators.
+- **Section H (subsidy-loop check):** The ₳90M Phase 3 capital flowing through AlphaGrowth to Treasury-dependent protocols is vendor-managed subsidy, not independent growth.
+- **Dependency-graph concentration:** Single-point-of-failure risk across allocator, custody, and methodology.
+- **Sharper commercial-return requirements:** v1.3 explicitly requires at least one return mechanism for commercial proposals. PRIME has none.
+- **Automatic Nos:** "Treasury subsidy loop presented as growth" and "Private capture of public funding" both apply.
+
+The updated framework strengthens the original verdict with more precise analytical language. The vote remains No.
