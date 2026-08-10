@@ -3,7 +3,7 @@
 **Governance Action:** gov_action122wue2k65qq8gmpz795z2axt8apka6ay6xt3pwg8jxj5yfkujmtsqvlfpu7
 **Proposal:** Withdraw ₳120,000,000 for AlphaGrowth's Cardano PRIME
 **Proposed Epoch:** 642 | **Expiration:** Epoch 649
-**Vote:** **Yes** (Addendum: 2026-08-10)
+**Vote:** **Yes** (Addendum: 2026-08-10) — **Cast: 2026-08-10**
 **DRep:** Jonah Koch
 **Date:** 2026-08-10
 **Rubric:** Treasury Assessment Rubric v1.3 (derived from Rule Book v17)
@@ -242,7 +242,7 @@ This vote is a bet. It may lose. But I believe the cost of not betting, of conse
 
 ## Vote Summary (Yes)
 
-Vote Yes on AlphaGrowth PRIME. My rubric assessment remains unchanged. The proposal fails on economics but passes on strategic urgency. Cardano's infrastructure is ready and activation is the missing layer. The cost of inaction exceeds the cost of a structured, cancellable trial with strong oversight. This is a bet, not a blank check.
+Vote Yes on PRIME. Rubric concerns remain: high fee, no Treasury ownership, subsidy-loop risk. But Cardano's infrastructure is ready and activation is the missing layer. Cost of inaction exceeds cost of a structured, cancellable, overseen trial.
 
 ---
 
