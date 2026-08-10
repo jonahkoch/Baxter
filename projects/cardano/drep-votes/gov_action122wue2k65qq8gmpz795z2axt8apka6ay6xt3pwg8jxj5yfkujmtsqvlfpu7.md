@@ -261,3 +261,30 @@ The original assessment reached the same conclusion using Rubric v1.0. Key addit
 - **Automatic Nos:** "Treasury subsidy loop presented as growth" and "Private capture of public funding" both apply.
 
 The updated framework strengthens the original verdict with more precise analytical language. The vote remains No.
+
+---
+
+## Post-Vote Updates (2026-08-10)
+
+### AlphaGrowth Proposal Changes
+
+Following community feedback, AlphaGrowth announced material changes via X posts after the vote was cast. Per our rubric's Rule Hierarchy, these are off-chain promises, not changes to the immutable governance action. They signal responsiveness but are not enforceable as written.
+
+**Performance fee structure:**
+- Back-loaded unlocks: 30% after 30 days, 30% after 3 months, 40% after 6 months
+- Accelerated payouts for over-performance removed
+- TVL observation window: 12 months → **24 months**
+
+**Operating Group:**
+- Term limits to be introduced
+- Expansion and diversification of member composition
+
+**Marketing budget:**
+- Reduced: $2.4M → **$648,720** (73% cut)
+- Restructured: 40% content creators, 50% activations/ads, 10% tooling
+
+### DRep Sentiment Shift
+
+**Dr. Navjit Dhaliwal (NaVi_GaT0R)** switched from No to Yes following the updates. His rationale mirrors our addendum: strategic bet with conditions. He explicitly states his vote is "with the expectation that PRIME follows through on the commitments it has now made" and continues to demand OG neutrality, diversity, and transparency.
+
+These changes would improve our rubric score if incorporated into a revised governance action. As off-chain promises, they remain unenforceable but welcome signals.
