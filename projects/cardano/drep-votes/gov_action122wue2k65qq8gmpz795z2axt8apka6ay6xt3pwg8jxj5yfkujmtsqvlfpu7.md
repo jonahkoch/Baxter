@@ -266,6 +266,10 @@ The updated framework strengthens the original verdict with more precise analyti
 
 ## Post-Vote Updates (2026-08-10)
 
+### Proposal Ratified — Epoch 649
+
+**Status update (2026-08-14):** The PRIME proposal was ratified in epoch 649, the final epoch before expiration. It is now awaiting enactment. The vote passed, with the Yes coalition prevailing.
+
 ### AlphaGrowth Proposal Changes
 
 Following community feedback, AlphaGrowth announced material changes via X posts after the vote was cast. Per our rubric's Rule Hierarchy, these are off-chain promises, not changes to the immutable governance action. They signal responsiveness but are not enforceable as written.
