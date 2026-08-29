@@ -25,7 +25,18 @@ Last updated: 2026-08-29
 
 ## Agent Skills
 
+### Kochfoto
 - `skills/kochfoto-agents/` — Kochfoto AI agents (Research, Content, Operations)
+
+### Cardano / Web3
+- `skills/cardano-expert/` — Blockchain querying and governance assessment
+- `skills/social-credibility-work/` — Social Credibility System project work
+
+### WikiSkill Meta
+- `skills/wikiskill-session-trace/` — Session trace capture
+- `skills/wikiskill-wiki-maintainer/` — Wiki maintenance and pattern extraction
+- `skills/wikiskill-skill-migration/` — Skill format migration
+- `skills/wikiskill-skill-proposal/` — Skill edit proposals with gating
 
 ## Midnight Network
 
@@ -34,6 +45,11 @@ Last updated: 2026-08-29
 ## Kochfoto
 
 - `skills/kochfoto-agents/` — Kochfoto AI agents (Research, Content, Operations)
+
+## Cardano / Web3
+
+- `skills/cardano-expert/` — Blockchain querying and governance assessment
+- `skills/social-credibility-work/` — Social Credibility System project work
 
 ## Jonah Koch
 
