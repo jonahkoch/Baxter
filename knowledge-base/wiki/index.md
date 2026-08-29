@@ -1,13 +1,13 @@
 ---
 title: Knowledge Base Index
 created: 2026-04-09
-last_updated: 2026-04-09
-status: draft
+last_updated: 2026-08-29
+status: active
 ---
 
 # Knowledge Base Index
 
-Last updated: 2026-04-09
+Last updated: 2026-08-29
 
 ## Cardano Ecosystem
 
@@ -16,6 +16,16 @@ Last updated: 2026-04-09
 ## Knowledge Base Meta
 
 - [[session-continuity]] — How to use this knowledge base across sessions
+- [[skill-impact]] — Audit trail of skill proposals and acceptance decisions
+
+## WikiSkill System
+
+- [[wikiskill-architecture]] — Three-layer architecture: Raw → Wiki → Skills
+- [[wikiskill-session-filtering]] — Distinguishing casual vs. task-oriented sessions
+
+## Agent Skills
+
+- `skills/kochfoto-agents/` — Kochfoto AI agents (Research, Content, Operations)
 
 ## Midnight Network
 
@@ -23,7 +33,7 @@ Last updated: 2026-04-09
 
 ## Kochfoto
 
-*No pages yet — add as sources are ingested*
+- `skills/kochfoto-agents/` — Kochfoto AI agents (Research, Content, Operations)
 
 ## Jonah Koch
 
