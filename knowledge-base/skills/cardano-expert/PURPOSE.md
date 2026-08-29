@@ -26,5 +26,4 @@ provides helper scripts for common operations so that blockchain lookups are fas
 ## Known Limitations
 
 - Blockfrost requires API key (not always configured)
-- Scripts live in `skills/cardano-expert/scripts/` (legacy location)
 - Governance rubric section was large; consider splitting to separate skill if it grows

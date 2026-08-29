@@ -89,6 +89,8 @@ python3 scripts/drep_rankings.py 210 dreps_top_210.csv
 
 ## Helper Scripts
 
+Located in `knowledge-base/skills/cardano-expert/scripts/`:
+
 - `scripts/query_address.sh <address>` — Address balance and UTXOs
 - `scripts/query_tx.sh <tx_hash>` — Transaction details
 - `scripts/query_pool.sh <pool_id>` — Pool information
