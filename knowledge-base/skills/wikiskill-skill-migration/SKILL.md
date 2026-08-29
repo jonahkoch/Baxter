@@ -1,14 +1,24 @@
 ---
 name: wikiskill-skill-migration
-description: Migrate an existing skill from legacy format to WikiSkill format (SKILL.md + PURPOSE.md). Use when converting old skills to the new structure, or when creating a new skill that should follow WikiSkill conventions.
+description: Migrate an existing skill from legacy format to WikiSkill format, or load a WikiSkill from the knowledge base. Use when converting old skills, creating new skills, or loading a skill from baxter-repo/knowledge-base/skills/.
 triggers:
   - "migrate skill"
   - "convert skill to wikiskill"
   - "create new skill"
   - "skill restructure"
+  - "wikiskill"
+  - "WikiSkill"
+  - "WikiSkills"
+  - "wikiskills"
+  - "wikiSkill"
+  - "wikiSkills"
+  - "Wikiskill"
+  - "Wikiskills"
+  - "load the wikiskill"
+  - "load the WikiSkill"
 ---
 
-# Skill Migration — Skill
+# Skill Migration & Loading — Skill
 
 ## When to Use
 
@@ -18,9 +28,13 @@ triggers:
 - An existing skill's SKILL.md has no YAML frontmatter
 - A new skill is being created and should follow WikiSkill format
 
+**LOAD when:**
+- User says "Load the WikiSkill [name]" or any WikiSkill trigger phrase
+- User wants to use a skill from `baxter-repo/knowledge-base/skills/`
+
 **SKIP when:**
 - Skill already has SKILL.md + PURPOSE.md with proper frontmatter
-- Skill already lives in `knowledge-base/skills/`
+- Skill already lives in `knowledge-base/skills/` and user didn't ask to load it
 
 ## Migration Steps
 
@@ -111,6 +125,21 @@ Why this skill exists. What problem it solves.
 - [ ] Wiki index updated
 - [ ] skill-impact.md logged
 - [ ] Old skill location noted (don't delete until validated)
+
+## Loading a WikiSkill
+
+When the user says "Load the WikiSkill [name]" or triggers with any WikiSkill variant:
+
+1. **Parse the skill name** from the user's request (e.g., "kochfoto-agents", "cardano-expert")
+2. **Read the SKILL.md** from `baxter-repo/knowledge-base/skills/{name}/SKILL.md`
+3. **Read the PURPOSE.md** from `baxter-repo/knowledge-base/skills/{name}/PURPOSE.md`
+4. **Load the skill** — follow the pre-execution checklist and workflow from SKILL.md
+5. **Note the source** — tell the user "Loaded WikiSkill {name} from knowledge base"
+
+**If the skill doesn't exist:**
+- Check `workspace/skills/` for a legacy version
+- Offer to migrate it on the spot
+- Or suggest available WikiSkills from `knowledge-base/skills/`
 
 ## New Skill Creation
 

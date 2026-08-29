@@ -5,7 +5,7 @@
 All skills must live in a consistent format and location to be discoverable and evolvable.
 Legacy skills scattered across `workspace/skills/` with varying formats make the system
 unmaintainable. This skill provides the canonical process for bringing skills into the WikiSkill
-system.
+system — and for loading them on demand when the user requests a WikiSkill by name.
 
 ## Wiki Patterns Addressed
 
