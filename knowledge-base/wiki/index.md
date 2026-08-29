@@ -46,6 +46,12 @@ Last updated: 2026-08-29
 
 - `skills/kochfoto-agents/` — Kochfoto AI agents (Research, Content, Operations)
 
+## Higgsfield AI
+
+- `skills/higgsfield-setup/` — CLI install, auth, workspace config
+- `skills/higgsfield-generate/` — Image/video generation via 30+ models
+- `skills/higgsfield-soul-id/` — Soul Character face training
+
 ## Cardano / Web3
 
 - `skills/cardano-expert/` — Blockchain querying and governance assessment
