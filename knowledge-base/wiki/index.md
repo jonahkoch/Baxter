@@ -21,6 +21,7 @@ Last updated: 2026-08-29
 ## WikiSkill System
 
 - [[wikiskill-architecture]] — Three-layer architecture: Raw → Wiki → Skills
+- [[repository-architecture]] — How the two-branch Git setup works
 - [[wikiskill-session-filtering]] — Distinguishing casual vs. task-oriented sessions
 
 ## Agent Skills
