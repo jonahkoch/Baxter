@@ -26,8 +26,8 @@ Check `baxterclawbot@gmail.com` for unread emails. Alert Jonah if:
 
 **Check frequency:** Every 4 hours during active hours (skip late night unless urgent)
 
-**Last check:** 2026-08-01 17:53 CEST
+**Last check:** 2026-09-09 17:52 CEST
 
-**Status:** Context 12% · 30k in / 1.2k out — healthy
+**Status:** Context 26% · 69k in / 493 out — healthy
 
-**Note:** Session compacted at 19:28 CEST. Context cleared from 68% → 15%.
+**Note:** 0 unread emails. gcalcli not available for calendar check.

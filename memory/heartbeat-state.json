@@ -1,14 +1,14 @@
 {
   "lastChecks": {
-    "tokenUsage": 1752772320,
-    "email": 1784389995,
-    "calendar": 1784389995,
-    "token_usage": 1784389995
+    "tokenUsage": 1754314320,
+    "email": 1754314320,
+    "calendar": 1754314320,
+    "token_usage": 1754314320
   },
   "dailyStats": {
-    "date": "2026-07-17",
-    "inputTokens": 2800,
-    "outputTokens": 296
+    "date": "2026-08-28",
+    "inputTokens": 65000,
+    "outputTokens": 959
   },
   "thresholds": {
     "contextWarningPercent": 80,

@@ -116,6 +116,33 @@ Building three autonomous AI agents for Kochfoto photography business operations
 
 <!-- Add new entries at the TOP (newest first) -->
 
+### Session: Scaffold all three agent frameworks
+
+**Phase:** All phases (framework setup)  
+**Date:** 2026-08-25  
+**What we did:** Built complete file structure and templates for all three agents so Jonah can start with any phase immediately.  
+**Files created:**
+- `competitors.md` — Competitor tracking template
+- `sources.md` — Industry sources + search queries
+- `brief-template.md` — Weekly intelligence brief format
+- `brand-voice.md` — Voice guide derived from SOUL.md
+- `content-pillars.md` — 4 content pillars + seasonal rotation
+- `templates/instagram-caption.md` — Caption template + voice check
+- `templates/blog-post.md` — Blog post template + SEO check
+- `templates/newsletter.md` — Newsletter template + example
+- `quality-gates.md` — Scoring rubric + auto-rewrite rules
+- `email-triage-rules.md` — Triage logic + response templates
+- `meeting-prep-template.md` — Client meeting prep format
+- `weekly-report-template.md` — Business metrics dashboard
+- `client-tracking.md` — Lead pipeline + touchpoint schedule
+- `shared-kb/handoff-protocols.md` — Agent-to-agent signaling
+- `shared-kb/kochfoto-basics.md` — Shared agent memory
+**Decisions made:** All frameworks ready. No actual competitor data or client info populated yet — waiting for Jonah's input.  
+**Blockers:** None  
+**Next session:** Pick a phase and start filling in real data.
+
+---
+
 ### Session: Initial setup
 
 **Phase:** Planning  

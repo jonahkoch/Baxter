@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-29T14:50:44.601Z",
+  "updatedAt": "2026-08-29T02:21:07.794Z",
   "entries": {
     "memory:memory/2026-04-07.md:1:46": {
       "key": "memory:memory/2026-04-07.md:1:46",
@@ -40,18 +40,20 @@
       "endLine": 20,
       "source": "memory",
       "snippet": "# 2026-03-14 ## Cardano / DeFi Research ### Liqwid TVL Query **Time:** ~2:55 PM CET **Asked by:** Jonah **Findings:** - Current TVL (USD): ~$32.53 million - ADA Locked: ~124.48M ADA - ADA Price at check: $0.261319 **Context:** - Down ~82% from December 2024 peak of ~$176M - Largest lending protocol on Cardano by TVL - Uses DeFiLlama API for data **Note:** If tracking Cardano DeFi trends over time, this is a baseline data point.",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 2,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-24T02:01:03.103Z",
-      "lastRecalledAt": "2026-05-24T02:01:03.103Z",
+      "lastRecalledAt": "2026-08-10T15:04:31.607Z",
       "queryHashes": [
-        "27ff19bd0c96"
+        "27ff19bd0c96",
+        "d477a31c5d71"
       ],
       "recallDays": [
-        "2026-05-24"
+        "2026-05-24",
+        "2026-08-10"
       ],
       "conceptTags": [
         "32.53",
@@ -71,26 +73,28 @@
       "endLine": 112,
       "source": "memory",
       "snippet": "- **Travel/hotels:** Amadeus, Booking.com, Expedia Partner APIs - **Restaurants:** Resy API, OpenTable, Toast (limited access) - **Calendar:** Google Calendar API, Outlook Graph API, CalDAV - **Email:** Gmail API, SendGrid, Mailgun - **Payments:** Stripe, Square, PayPal - **Communication:** Twilio, SendBird, Stream **MCP Registry:** - https://mcp.registry — emerging standard for agent-tool connectors",
-      "recallCount": 5,
+      "recallCount": 6,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 5,
+      "totalScore": 6,
       "maxScore": 1,
       "firstRecalledAt": "2026-06-01T19:27:33.241Z",
-      "lastRecalledAt": "2026-07-13T02:35:34.205Z",
+      "lastRecalledAt": "2026-08-27T15:53:12.768Z",
       "queryHashes": [
         "3d00fadb2852",
         "59af54970b91",
         "bb1a813ca6e7",
         "d17565cc7f45",
-        "2475d078af03"
+        "2475d078af03",
+        "a74f49a0b2a5"
       ],
       "recallDays": [
         "2026-06-01",
         "2026-06-12",
         "2026-06-13",
         "2026-07-08",
-        "2026-07-13"
+        "2026-07-13",
+        "2026-08-27"
       ],
       "conceptTags": [
         "travel/hotels",
@@ -110,26 +114,28 @@
       "endLine": 110,
       "source": "memory",
       "snippet": "**Problem:** How to complete tasks when APIs don't exist (e.g., restaurant reservations) **Options ranked by reliability:** 1. **APIs** (most reliable) — Direct integration where available 2. **MCP Servers** (emerging) — Model Context Protocol, agent-native endpoints 3. **Middleware** (Zapier/Make/N8N) — They handle scraping/APIs, I call their API 4. **Desktop Automation** (RPA) — Playwright/Puppeteer on local machine 5. **Browser Automation** (fragile) — Headless Chrome on VPS, high maintenance 6. **Human-in-the-Loop** (expensive) — Draft requests, human sends/executes **Key insight:** Browser automation on VPS is possible but resource-heavy and brittle. Better to use APIs → middleware →",
-      "recallCount": 5,
+      "recallCount": 6,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 5,
+      "totalScore": 6,
       "maxScore": 1,
       "firstRecalledAt": "2026-06-01T19:27:33.241Z",
-      "lastRecalledAt": "2026-07-13T02:35:34.205Z",
+      "lastRecalledAt": "2026-08-27T15:53:12.768Z",
       "queryHashes": [
         "3d00fadb2852",
         "59af54970b91",
         "bb1a813ca6e7",
         "d17565cc7f45",
-        "2475d078af03"
+        "2475d078af03",
+        "a74f49a0b2a5"
       ],
       "recallDays": [
         "2026-06-01",
         "2026-06-12",
         "2026-06-13",
         "2026-07-08",
-        "2026-07-13"
+        "2026-07-13",
+        "2026-08-27"
       ],
       "conceptTags": [
         "e.g",
@@ -149,22 +155,24 @@
       "endLine": 33,
       "source": "memory",
       "snippet": "# 2026-05-15 — Session Notes ## Google Account Integration Request Jonah asked about giving me access to a Google account (Gmail, Calendar, Drive) similar to how GitHub access works. **Investigation results:** - **Gmail**: Native support exists via OpenClaw hooks + Pub/Sub + `gog` (gogcli). Has a setup wizard: `openclaw webhooks gmail setup --account <email>`. Requires gcloud CLI, GCP project, Tailscale Funnel for HTTPS endpoint. - **Google Calendar**: No native tool. Options: (1) browser automation via Chrome, (2) build a custom skill using Google Calendar API + OAuth. - **Google Drive**: No native tool. Same options as Calendar. - **Google Chat channel**: Has a plugin (`googlechat`) but",
-      "recallCount": 3,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 3,
+      "totalScore": 4,
       "maxScore": 1,
       "firstRecalledAt": "2026-06-12T19:01:52.309Z",
-      "lastRecalledAt": "2026-07-08T15:52:59.916Z",
+      "lastRecalledAt": "2026-08-27T15:53:12.768Z",
       "queryHashes": [
         "59af54970b91",
         "bb1a813ca6e7",
-        "d17565cc7f45"
+        "d17565cc7f45",
+        "a74f49a0b2a5"
       ],
       "recallDays": [
         "2026-06-12",
         "2026-06-13",
-        "2026-07-08"
+        "2026-07-08",
+        "2026-08-27"
       ],
       "conceptTags": [
         "pub/sub",
@@ -184,22 +192,24 @@
       "endLine": 44,
       "source": "memory",
       "snippet": "**Recommended path**: Set up native Gmail first (built-in), use browser automation for Calendar/Drive as needed, build a Google skill later if heavy automation is required. ## Context Window Critical - Context hit **100%** (256k/256k tokens) during this session - Updated HEARTBEAT.md with critical status - Session flagged for fresh start ## Token Usage - 84k input / 2.2k output at time of flush ## Google + Obsidian Integration — Active Project Jonah confirmed intent to set up full Google workspace integration (Gmail, Calendar, Drive) and wants to connect it to **Obsidian** (his note-taking app). This is a priority project to resume in the next session. **Scope:** 1. **Gmail**: Set up",
-      "recallCount": 3,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 3,
+      "totalScore": 4,
       "maxScore": 1,
       "firstRecalledAt": "2026-06-12T19:01:52.309Z",
-      "lastRecalledAt": "2026-07-08T15:52:59.916Z",
+      "lastRecalledAt": "2026-08-27T15:53:12.768Z",
       "queryHashes": [
         "59af54970b91",
         "bb1a813ca6e7",
-        "d17565cc7f45"
+        "d17565cc7f45",
+        "a74f49a0b2a5"
       ],
       "recallDays": [
         "2026-06-12",
         "2026-06-13",
-        "2026-07-08"
+        "2026-07-08",
+        "2026-08-27"
       ],
       "conceptTags": [
         "built-in",
@@ -314,18 +324,22 @@
       "endLine": 84,
       "source": "memory",
       "snippet": "- GitHub repo access needed **blockVote / PactVote:** - Governance dApp for Cardano DReps - Website: https://pactvote.com - GitHub: https://github.com/jonahkoch/block-vote - Status: Phase 3 (Fracada integration) - Stack: Next.js 16, Mesh SDK v1.9, Fracada contracts **Structure:** - `memory/cardano/ojonah.md` - `memory/cardano/pactvote.md` - Updated MEMORY.md with separation principle --- ## Kochfoto Business Context Jonah shared his photography/video/web design business: https://www.kochfoto.com **Meta goal:** Eventually have me take over operations or at least help significantly with the business. Long-term learning project. **Current status:** Early stages — need to understand workf",
-      "recallCount": 1,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 3,
       "maxScore": 1,
       "firstRecalledAt": "2026-07-13T02:35:34.205Z",
-      "lastRecalledAt": "2026-07-13T02:35:34.205Z",
+      "lastRecalledAt": "2026-08-01T14:28:02.528Z",
       "queryHashes": [
-        "2475d078af03"
+        "2475d078af03",
+        "a334cf207034",
+        "8ed94540b8a0"
       ],
       "recallDays": [
-        "2026-07-13"
+        "2026-07-13",
+        "2026-07-31",
+        "2026-08-01"
       ],
       "conceptTags": [
         "pactvote.com",
@@ -376,18 +390,20 @@
       "endLine": 26,
       "source": "memory",
       "snippet": "- I hallucinated a detailed description of a podcast microphone — completely fabricated, couldn't actually see the image. - When Jonah revealed it was a page of text, I acknowledged the failure openly. - **Lesson:** I cannot reliably describe images right now. I should be honest about this limitation rather than fabricating details. ## OpenClaw Browser Status - Chrome extension relay is running but no tab is connected. Browser automation unavailable until a tab is attached.",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 2,
       "maxScore": 1,
       "firstRecalledAt": "2026-07-13T02:35:34.205Z",
-      "lastRecalledAt": "2026-07-13T02:35:34.205Z",
+      "lastRecalledAt": "2026-08-10T15:03:32.980Z",
       "queryHashes": [
-        "2475d078af03"
+        "2475d078af03",
+        "0e468ff713c8"
       ],
       "recallDays": [
-        "2026-07-13"
+        "2026-07-13",
+        "2026-08-10"
       ],
       "conceptTags": [
         "hallucinated",
@@ -438,20 +454,22 @@
       "endLine": 29,
       "source": "memory",
       "snippet": "# 2026-03-12 - Session Notes ## Cardano Governance Research ### Dingo Treasury Proposal Status **Proposal ID:** gov_action17dfgtkeufcy945e3ssanqpmn09ft3gezhvepvvg7msmlmaz260dqqjtsmpe **Requested Amount:** 6,900,000 ADA (~$2.07M at $0.30/ADA) **Current Voting Status (Epoch 618):** - DRep Yes: 5.52% (24 votes, 322M ADA) - DRep No: 94.48% (31 votes, 5.5B ADA) - SPO votes: 0 cast - Constitutional Committee: 0% yes **Threshold Required:** 67% Yes from DReps **Expiration:** Epoch 624 **Observation:** Proposal is far below the required threshold. Major DReps appear to be voting against or abstaining. Will need significant momentum to flip. **Links:** - gov.tools: https://gov.tools/governan",
-      "recallCount": 2,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2,
+      "totalScore": 3,
       "maxScore": 1,
       "firstRecalledAt": "2026-07-14T17:07:11.140Z",
-      "lastRecalledAt": "2026-07-29T14:50:44.601Z",
+      "lastRecalledAt": "2026-08-29T02:21:07.794Z",
       "queryHashes": [
         "d8fd3d2e9faf",
-        "f5c7a636ec4e"
+        "f5c7a636ec4e",
+        "80f2a6077637"
       ],
       "recallDays": [
         "2026-07-14",
-        "2026-07-29"
+        "2026-07-29",
+        "2026-08-29"
       ],
       "conceptTags": [
         "2.07m",
@@ -559,6 +577,235 @@
         "skill",
         "created",
         "what"
+      ]
+    },
+    "memory:memory/2026-02-11.md:1:49": {
+      "key": "memory:memory/2026-02-11.md:1:49",
+      "path": "memory/2026-02-11.md",
+      "startLine": 1,
+      "endLine": 49,
+      "source": "memory",
+      "snippet": "# February 11, 2026 ## Polymarket Trading Research - COMPLETE Comprehensive research on Polymarket arbitrage/trading strategies completed and tabled. **Key findings:** - Pure CLOB arbitrage requires HFT infrastructure, not viable for retail - Value-based strategies with domain expertise may work (10-30% returns, high variance) - Kalshi more retail-friendly than Polymarket - Minimum capital: $1k-5k for meaningful returns **Documents created:** - `memory/polymarket-research-summary.md` (master index) - `memory/polymarket-arbitrage-research.md` (22KB) - `memory/polymarket-operations-research.md` - `memory/polymarket-retail-viability.md` **Status:** Tabled pending new information. Research",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-07-31T02:11:51.508Z",
+      "lastRecalledAt": "2026-08-27T12:50:27.237Z",
+      "queryHashes": [
+        "a334cf207034",
+        "43557d8d01c9"
+      ],
+      "recallDays": [
+        "2026-07-31",
+        "2026-08-27"
+      ],
+      "conceptTags": [
+        "arbitrage/trading",
+        "value-based",
+        "10-30",
+        "retail-friendly",
+        "1k-5k",
+        "february",
+        "polymarket",
+        "trading"
+      ]
+    },
+    "memory:memory/2026-07-29.md:23:37": {
+      "key": "memory:memory/2026-07-29.md:23:37",
+      "path": "memory/2026-07-29.md",
+      "startLine": 23,
+      "endLine": 37,
+      "source": "memory",
+      "snippet": "- `projects/cardano/drep-votes/gov_action1cpnqmlgpkz3dnwnm4spqzsmsp93y9mr4vqcm2ltcpqyyf7a7nszsq4h586r.md` — DeFi Kernel YES - `projects/cardano/drep-votes/gov_action1mlvplrdk2t7eyclqeca77ppmfq3sghkr5hdppjqhdqdd573r7q6qqms7jwt.md` — Bifrost ABSTAIN - `projects/cardano/drep-votes/gov_action1xg69v73lfzkwyhhuz583x6geyc2ewn3r96sxuqj3wqvrrk0yfpksqqa63yc.md` — Scalus YES - `skills/cardano-expert/SKILL.md` — Updated vote formatting constraints (300 char summary cap) - `scripts/epoch-check.py` — Auto-generates epoch summaries - `.github/workflows/update.yml` — Runs epoch-check after fetch ## Social Context Archived - Pi Lanningham (SundaeSwap CTO) endorsing NCL + AlphaGrowth - hix_coffeepool (Japan",
+      "recallCount": 9,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 9,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-08-10T14:47:04.984Z",
+      "lastRecalledAt": "2026-08-10T15:04:31.607Z",
+      "queryHashes": [
+        "b591eeb756f8",
+        "caccf37e2533",
+        "52fa2f0ac29e",
+        "d46d4288c5cf",
+        "18e8105a0cae",
+        "0e468ff713c8",
+        "2d45f5e7880c",
+        "12f2628ebed9",
+        "d477a31c5d71"
+      ],
+      "recallDays": [
+        "2026-08-10"
+      ],
+      "conceptTags": [
+        "skills/cardano-expert/skill.md",
+        "scripts/epoch-check.py",
+        "auto-generates",
+        "github/workflows/update.yml",
+        "epoch-check",
+        "hix-coffeepool",
+        "projects",
+        "cardano"
+      ]
+    },
+    "memory:memory/2026-08-01.md:1:25": {
+      "key": "memory:memory/2026-08-01.md:1:25",
+      "path": "memory/2026-08-01.md",
+      "startLine": 1,
+      "endLine": 25,
+      "source": "memory",
+      "snippet": "# 2026-08-01 — Saturday ## Dave's BlockchainEvents Release Jonah shared that Dave (Cardano dev / DRep) released OgmiosDotnet.BlockchainEvents v1.0.0 — an open source rule-based transaction filtering, pub/sub, and event delivery layer for Cardano. - Connects to Ogmios, evaluates transactions against customizable rules - Emits CloudEvents via HTTP, gRPC, SSE, or Dapr pub/sub - Durable queue with at-least-once delivery - 1,100+ TPS in stress tests, ~1ms p99 latency - Built-in rules: AddressMatch, PolicyIdAsset, MetadataKeyValue, GovernanceTreasury, AllTransactions - Repo: https://github.com/ItsDaveB/OgmiosDotnet.BlockchainEvents ## Governance Assessment Pipeline Discussion Jonah's current",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-08-10T14:47:16.233Z",
+      "lastRecalledAt": "2026-08-29T02:21:07.794Z",
+      "queryHashes": [
+        "caccf37e2533",
+        "80f2a6077637"
+      ],
+      "recallDays": [
+        "2026-08-10",
+        "2026-08-29"
+      ],
+      "conceptTags": [
+        "ogmiosdotnet.blockchainevents",
+        "v1.0.0",
+        "rule-based",
+        "pub/sub",
+        "at-least-once",
+        "built-in",
+        "saturday",
+        "dave's"
+      ]
+    },
+    "memory:memory/2026-04-07.md:37:66": {
+      "key": "memory:memory/2026-04-07.md:37:66",
+      "path": "memory/2026-04-07.md",
+      "startLine": 37,
+      "endLine": 66,
+      "source": "memory",
+      "snippet": "- Challenger provides: `later_post`, `merkle_path`, `merkle_root`, `mint_reference` - Contract verifies: path proves ancestry + CIP-25 mint is valid Merkle tree: - Leaves: `hash(0x00 || content_hash)` - Branches: `hash(0x01 || left || right)` ### UX Optimizations - Session signing (1 hour, batch posts) - Gasless submission (platform pays, user signs intent) - Batch minting (5-10 posts/tx, ~0.05 ADA/post) - Draft → commit flow (local storage until publish) ### Repository Pushed to: https://github.com/jonahkoch/Baxter - `projects/social-credibility-system/architecture.md` — full design doc - `projects/social-credibility-system/recovery.ak` — Aiken contract ### Open Questions 1. Merkle tree",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-08-10T15:03:07.853Z",
+      "lastRecalledAt": "2026-08-10T15:03:07.853Z",
+      "queryHashes": [
+        "18e8105a0cae"
+      ],
+      "recallDays": [
+        "2026-08-10"
+      ],
+      "conceptTags": [
+        "later-post",
+        "merkle-path",
+        "merkle-root",
+        "mint-reference",
+        "cip-25",
+        "content-hash",
+        "5-10",
+        "posts/tx"
+      ]
+    },
+    "memory:memory/2026-02-12.md:32:45": {
+      "key": "memory:memory/2026-02-12.md:32:45",
+      "path": "memory/2026-02-12.md",
+      "startLine": 32,
+      "endLine": 45,
+      "source": "memory",
+      "snippet": "**Next steps:** Create project → Generate wallet → Share credentials with me → Install CDP SDK ## Cardano Ecosystem News Jonah shared: LayerZero interoperability coming to Cardano - Source: https://www.essentialcardano.io/article/bridging-the-gap-cardano-goes-multichain-with-layerzero - Significance: Bridges gap between Cardano and EVM ecosystems - Relevance to PactVote/OJonah: Cross-chain governance participation, NFT interoperability ## Copywriter Skill Reference Retrieved Humanize Check refinement rules from `kochfoto-copywriter-skill.md` at Jonah's request. --- *Token usage context: Day started with ~1k input tokens, now at 112k context used (44%). Multiple search queries performed wi",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-08-10T15:04:31.607Z",
+      "lastRecalledAt": "2026-08-10T15:04:31.607Z",
+      "queryHashes": [
+        "d477a31c5d71"
+      ],
+      "recallDays": [
+        "2026-08-10"
+      ],
+      "conceptTags": [
+        "pactvote/ojonah",
+        "cross-chain",
+        "kochfoto-copywriter-skill.md",
+        "steps",
+        "create",
+        "project",
+        "generate",
+        "wallet"
+      ]
+    },
+    "memory:memory/2026-07-29.md:1:25": {
+      "key": "memory:memory/2026-07-29.md:1:25",
+      "path": "memory/2026-07-29.md",
+      "startLine": 1,
+      "endLine": 25,
+      "source": "memory",
+      "snippet": "# 2026-07-29 — Cardano Governance Voting Session ## Votes Cast DRep ID: `drep1yt8trnz8e5cnylmyygt0pyzrfw92rt9s42kg8t4rhm6t0dstyvmdn` | Proposal | Vote | Summary | |---|---|---| | NCL increase (350M → 500M) | **YES** | Purchasing power argument. Original limit set at $0.30/ADA, now $0.16. 47% drop in real capacity. | | DeFi Kernel (Dano Finance) | **YES** | Supports global orderbook vision. $18M TVL team, registry+SDK are public goods. | | Bifrost (Bitcoin bridge) | **ABSTAIN** | Strong support on merits but NCL constraint. 12.3M would exhaust ~12.6M remaining. Encourages resubmit after NCL increase. | | Scalus 2026 | **YES** | Developer infrastructure, Dijkstra readiness. Ask reduced 71%",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-08-10T15:04:31.607Z",
+      "lastRecalledAt": "2026-08-10T15:04:31.607Z",
+      "queryHashes": [
+        "d477a31c5d71"
+      ],
+      "recallDays": [
+        "2026-08-10"
+      ],
+      "conceptTags": [
+        "0.30/ada",
+        "0.16",
+        "12.3m",
+        "12.6m",
+        "cardano",
+        "governance",
+        "voting",
+        "votes"
+      ]
+    },
+    "memory:memory/2026-08-10.md:1:19": {
+      "key": "memory:memory/2026-08-10.md:1:19",
+      "path": "memory/2026-08-10.md",
+      "startLine": 1,
+      "endLine": 19,
+      "source": "memory",
+      "snippet": "# 2026-08-10 — Monday ## PRIME Vote Cast **Proposal:** gov_action122wue2k65qq8gmpz795z2axt8apka6ay6xt3pwg8jxj5yfkujmtsqvlfpu7 **Vote:** Yes (strategic override of rubric concerns) **Rubric score:** 41/100 (unchanged) **Time remaining when cast:** ~55 hours before epoch 649 expiration **Decision arc:** 1. Original assessment (July 11): No — scale vs. value mismatch, 33% mgmt fee, unproven sustainability 2. Updated assessment (Aug 10): No with v1.3 rubric — added subsidy-loop check, dependency-graph analysis, productive ecosystem multiplier. Still 41/100. 3. Reviewed 5 Yes DRep rationales: Pi Lanningham, Socious, Yuta (with data), CardanoYoda (most honest), Dori 4. Verdict: Rubric not missi",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-08-27T13:14:42.970Z",
+      "lastRecalledAt": "2026-08-27T13:14:42.970Z",
+      "queryHashes": [
+        "dfa7742d21a5"
+      ],
+      "recallDays": [
+        "2026-08-27"
+      ],
+      "conceptTags": [
+        "41/100",
+        "v1.3",
+        "subsidy-loop",
+        "dependency-graph",
+        "monday",
+        "prime",
+        "vote",
+        "cast"
       ]
     }
   }
