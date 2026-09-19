@@ -37,6 +37,19 @@ RFP Category: Community & Engagement
 
 > **Context on metrics:** Flashbots research documents that MEV bots consume >50% of blockspace on major EVM chains, artificially inflating "active addresses" and volume. Cardano's eUTxO model structurally prevents this — no mempool visibility for reordering, no transaction-level expressivity for on-chain probing. Cardano's 11,527 active addresses represent genuine human decisions, not bot scripts. The engagement gap is real, but the baseline is cleaner.
 
+**A sophisticated builder community already exists:**
+
+Cardano's low volume numbers mask an active, technically capable builder base that has already deployed automated trading infrastructure:
+
+- **Surge** (live Jan 2026) — automated trading platform with cross-DEX arbitrage strategies across Minswap, SundaeSwap, WingRiders, and Splash
+- **Open-source arbitrage bots** — CEX-DEX arbitrage (Gleec Exchange), EMA-band trading bots using Minswap Aggregator
+- **DexHunter** — DEX aggregator comparing 10+ venues because price discrepancies are persistent
+- **Community documentation** — r/cardano users actively track and discuss cross-DEX arbitrage opportunities
+
+These builders represent exactly the kind of engaged, technically literate community that PRIME needs as early adopters, educators, and power users. The content and engagement program would serve this community while also onboarding newcomers.
+
+**The untapped opportunity:** More arbitrage infrastructure (bridges, concentrated liquidity, vault standards) would unlock significantly more healthy automated trading — improving price efficiency and creating genuine volume without the MEV spam that plagues EVM chains.**
+
 ---
 
 ## Slide 3: The Solution

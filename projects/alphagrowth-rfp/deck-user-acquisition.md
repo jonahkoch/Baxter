@@ -39,6 +39,19 @@ RFP Category: User Acquisition & Distribution
 
 > **Context on metrics:** Flashbots research shows MEV bots consume >50% of gas on EVM chains like Base and OP Mainnet, with just 2 entities responsible for >80% of spam. Cardano's eUTxO model eliminates MEV spam structurally — no front-running, no sandwich attacks, no mempool probing. This means Cardano's 11,527 active addresses are genuine users, not bot wallets. The gap with Ethereum is smaller than it appears when you strip out automated activity.
 
+**The flip side — untapped automated trading potential:**
+
+While Cardano avoids predatory MEV, it also hasn't attracted enough *healthy* automated trading — like arbitrage — that improves price efficiency and creates genuine volume.
+
+- **Surge** (live since Jan 2026) is an automated trading platform for Cardano DEXs with explicit **cross-DEX arbitrage** strategies
+- **Open-source CEX-DEX arbitrage bots** are actively maintained (e.g., Gleec Exchange integration)
+- **DexHunter** aggregates across 10+ Cardano DEXs because prices diverge frequently enough to matter
+- The Cardano community documents cross-DEX price gaps as *"real" and "constant"* — manual traders miss them
+
+The issue isn't that arbitrage is impossible on Cardano. It's that infrastructure gaps — limited bridging (audit gap 2.1: 41.3/100), no concentrated liquidity (2.7: 27.5/100), no vault standard (2.5: 36.3/100) — constrain its scale.
+
+**PRIME-funded infrastructure would unlock significantly more healthy, non-predatory arbitrage volume — improving prices for all users while adding genuine economic activity to chain metrics.**
+
 ---
 
 ## Slide 3: The Solution
