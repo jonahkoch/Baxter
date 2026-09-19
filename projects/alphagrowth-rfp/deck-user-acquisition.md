@@ -37,6 +37,8 @@ RFP Category: User Acquisition & Distribution
 
 **PRIME's $200M TVL target cannot be met by competing for the same 11,500 users.**
 
+> **Context on metrics:** Flashbots research shows MEV bots consume >50% of gas on EVM chains like Base and OP Mainnet, with just 2 entities responsible for >80% of spam. Cardano's eUTxO model eliminates MEV spam structurally — no front-running, no sandwich attacks, no mempool probing. This means Cardano's 11,527 active addresses are genuine users, not bot wallets. The gap with Ethereum is smaller than it appears when you strip out automated activity.
+
 ---
 
 ## Slide 3: The Solution

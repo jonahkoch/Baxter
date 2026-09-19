@@ -35,6 +35,8 @@ RFP Category: Community & Engagement
 
 > PRIME is funding infrastructure. But infrastructure without users is just code.
 
+> **Context on metrics:** Flashbots research documents that MEV bots consume >50% of blockspace on major EVM chains, artificially inflating "active addresses" and volume. Cardano's eUTxO model structurally prevents this — no mempool visibility for reordering, no transaction-level expressivity for on-chain probing. Cardano's 11,527 active addresses represent genuine human decisions, not bot scripts. The engagement gap is real, but the baseline is cleaner.
+
 ---
 
 ## Slide 3: The Solution
