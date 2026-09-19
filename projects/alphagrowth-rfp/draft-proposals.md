@@ -16,12 +16,14 @@ A systematic user acquisition engine that brings non-Cardano DeFi users into Car
 
 ### Field 5: Why does Cardano need this, and why build it inside PRIME?
 
-The Alpha Growth ecosystem audit (Section 2.3, Category E1) scores Cardano's incentive and user-acquisition infrastructure at **28.8/100** — the third-lowest DeFi score in the assessment. The audit identifies four specific capabilities that are currently impossible:
+The Alpha Growth ecosystem audit (Section 2.3, Category E1) scores Cardano's incentive and user-acquisition infrastructure at **28.8/100** — the third-lowest DeFi score in the assessment. The audit identifies four specific capabilities that are currently impossible at scale:
 
-1. **Programmatic incentive distribution** — All campaigns today are manual airdrops and claims
+1. **Programmatic incentive distribution** — All campaigns today are manual airdrops, claims, and IRL QR distributions
 2. **On-chain attribution** — No ability to prove which capital came from which campaign
 3. **Verifiable reward accounting** — No auditable reconciliation of spend vs qualifying TVL
 4. **Reaching non-Cardano holders** — "Incentive spend defaults to the audience already holding Cardano assets and is liable to recirculate existing liquidity rather than expand it"
+
+**Note on existing work:** CIP-0099 (Proof of Onboarding) and the HOSKY generic claim tool provide a *partial* solution for IRL event-based token distribution via QR codes. Supported by Vespr, Yoroi, Lace, Begin, and Eternl Mobile wallets, this standard enables basic claim attribution through campaign `code` fields. However, it does not address: (a) campaign configuration for DeFi protocols, (b) attribution of rewards to on-chain economic activity (deposits, swaps, lending), (c) auditable on-chain reconciliation of spend vs qualifying TVL, or (d) broad programmatic distribution beyond IRL events. The full Merkl/Turtle Club-class infrastructure remains absent.
 
 The audit further notes that "no incentive-distribution or user-acquisition provider" exists in the exchanges and ramps inventory. This is a **structural pipeline failure**: Cardano has functional DeFi (63 protocols tracked) but no reliable mechanism to bring new users to it.
 
