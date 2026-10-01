@@ -20,6 +20,16 @@ Persistent gameplay context that survives OpenClaw session resets. The game keep
 - **Critical Rule:** Never let hunger hit 100 (eat at ~80-85)
 - **Critical Rule:** Sell meme coins before overburdened (>999 load)
 
+## Commit Policy
+
+| Trigger | Action |
+|---------|--------|
+| Strategy/mechanics discovery | Manual commit |
+| Level up or major milestone | Manual commit |
+| Weekly (even if idle) | Summary commit |
+
+Say **"commit city state"** to run `./commit-state.sh` and push.
+
 ## Smart Grind
 
 ```bash
