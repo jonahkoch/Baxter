@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Move, ShieldAlert, Activity, Pause, CheckCircle, Lightbulb, ExternalLink, Bot, ChevronDown, ChevronRight, Star } from "lucide-react";
+import { Move, ShieldAlert, Activity, Pause, CheckCircle, Lightbulb, ExternalLink, Bot, ChevronDown, ChevronRight } from "lucide-react";
 
-// Map status strings to icons/colors
 const STATUS_MAP = {
   active: { icon: Activity, color: "text-green-400", bg: "bg-green-400/10", border: "border-green-400/30", label: "Active" },
   paused: { icon: Pause, color: "text-yellow-400", bg: "bg-yellow-400/10", border: "border-yellow-400/30", label: "Paused" },
@@ -22,10 +21,7 @@ function LevelDots({ level }) {
   return (
     <span className="inline-flex gap-0.5" title={`Level ${level}/5`}>
       {[1, 2, 3, 4, 5].map((n) => (
-        <span
-          key={n}
-          className={`w-1.5 h-1.5 rounded-full ${n <= level ? LEVEL_COLORS[level] : "bg-[#313244]"}`}
-        />
+        <span key={n} className={`w-1.5 h-1.5 rounded-full ${n <= level ? LEVEL_COLORS[level] : "bg-[#313244]"}`} />
       ))}
     </span>
   );
@@ -41,12 +37,9 @@ function ProjectCard({ win }) {
     <div className="flex flex-col h-full">
       <div className="flex items-center justify-between mb-3">
         <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-mono font-semibold ${status.bg} ${status.color} ${status.border} border`}>
-          <StatusIcon size={10} />
-          {status.label}
+          <StatusIcon size={10} /> {status.label}
         </span>
-        {progress !== null && (
-          <span className="text-[10px] font-mono text-[#6c7086]">{progress}%</span>
-        )}
+        {progress !== null && <span className="text-[10px] font-mono text-[#6c7086]">{progress}%</span>}
       </div>
 
       {progress !== null && (
@@ -59,13 +52,11 @@ function ProjectCard({ win }) {
 
       {tags.length > 0 && (
         <div className="flex flex-wrap gap-1.5 mt-3">
-          {tags.map((tag) => (
-            <span key={tag} className="px-1.5 py-0.5 bg-[#313244]/60 rounded text-[9px] font-mono text-[#a6adc8]">{tag}</span>
-          ))}
+          {tags.map((tag) => <span key={tag} className="px-1.5 py-0.5 bg-[#313244]/60 rounded text-[9px] font-mono text-[#a6adc8]">{tag}</span>)}
         </div>
       )}
 
-      {win.links && win.links.length > 0 && (
+      {win.links?.length > 0 && (
         <div className="flex flex-col gap-1 mt-3 pt-3 border-t border-[#313244]/50">
           {win.links.map((link) => (
             <a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer"
@@ -86,8 +77,7 @@ function SkillsWindow({ win }) {
   const toggle = (idx) => {
     setExpanded((prev) => {
       const next = new Set(prev);
-      if (next.has(idx)) next.delete(idx);
-      else next.add(idx);
+      next.has(idx) ? next.delete(idx) : next.add(idx);
       return next;
     });
   };
@@ -98,13 +88,10 @@ function SkillsWindow({ win }) {
         const isOpen = expanded.has(idx);
         return (
           <div key={idx} className="border-b border-[#313244]/50 last:border-b-0">
-            <button
-              onClick={() => toggle(idx)}
-              className="w-full flex items-center justify-between px-4 py-2.5 hover:bg-[#181825]/50 transition-colors text-left"
-            >
+            <button onClick={() => toggle(idx)}
+              className="w-full flex items-center justify-between px-4 py-2.5 hover:bg-[#181825]/50 transition-colors text-left">
               <span className="flex items-center gap-2 text-xs font-mono font-semibold text-[#cdd6f4]">
-                <span className="text-sm">{domain.icon}</span>
-                {domain.name}
+                <span className="text-sm">{domain.icon}</span> {domain.name}
                 <span className="text-[9px] text-[#6c7086] font-normal">({domain.items?.length || 0})</span>
               </span>
               {isOpen ? <ChevronDown size={12} className="text-[#6c7086]" /> : <ChevronRight size={12} className="text-[#6c7086]" />}
@@ -112,24 +99,14 @@ function SkillsWindow({ win }) {
 
             <AnimatePresence initial={false}>
               {isOpen && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="overflow-hidden"
-                >
+                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.2 }} className="overflow-hidden">
                   <div className="px-4 pb-3 space-y-2">
                     {domain.items?.map((skill, sIdx) => (
                       <div key={sIdx} className="flex items-start gap-2 pl-4">
-                        <div className="mt-0.5">
-                          <LevelDots level={skill.level || 1} />
-                        </div>
+                        <div className="mt-0.5"><LevelDots level={skill.level || 1} /></div>
                         <div className="flex-1 min-w-0">
                           <p className="text-[11px] font-mono text-[#cdd6f4] leading-tight">{skill.name}</p>
-                          {skill.description && (
-                            <p className="text-[9px] font-mono text-[#6c7086] mt-0.5 leading-relaxed">{skill.description}</p>
-                          )}
+                          {skill.description && <p className="text-[9px] font-mono text-[#6c7086] mt-0.5 leading-relaxed">{skill.description}</p>}
                         </div>
                       </div>
                     ))}
@@ -173,6 +150,78 @@ function AvatarWindow({ win, canvasRef }) {
   );
 }
 
+function ResizableWindow({ win, children }) {
+  const [size, setSize] = useState({ width: win.width, height: win.height });
+  const resizeRef = useRef({ active: false, startX: 0, startY: 0, startW: 0, startH: 0 });
+
+  const startResize = useCallback((e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    resizeRef.current = {
+      active: true,
+      startX: e.clientX,
+      startY: e.clientY,
+      startW: size.width,
+      startH: size.height,
+    };
+    document.addEventListener("mousemove", onResizeMove);
+    document.addEventListener("mouseup", onResizeEnd);
+  }, [size]);
+
+  const onResizeMove = useCallback((e) => {
+    const r = resizeRef.current;
+    if (!r.active) return;
+    const newW = Math.max(200, r.startW + (e.clientX - r.startX));
+    const newH = Math.max(120, r.startH + (e.clientY - r.startY));
+    setSize({ width: newW, height: newH });
+  }, []);
+
+  const onResizeEnd = useCallback(() => {
+    resizeRef.current.active = false;
+    document.removeEventListener("mousemove", onResizeMove);
+    document.removeEventListener("mouseup", onResizeEnd);
+  }, [onResizeMove]);
+
+  return (
+    <motion.div
+      drag
+      dragMomentum={false}
+      initial={{ x: win.x, y: win.y, opacity: 0, scale: 0.95 }}
+      animate={{ x: win.x, y: win.y, opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.9 }}
+      transition={{ type: "spring", stiffness: 200, damping: 25 }}
+      style={{ width: size.width, height: size.height }}
+      className="absolute flex flex-col bg-[#11111b]/95 border border-[#313244] rounded-lg shadow-2xl overflow-hidden backdrop-blur-sm group"
+    >
+      {/* Title bar */}
+      <div className="flex items-center justify-between px-3 py-2 bg-[#181825] border-b border-[#313244] cursor-move text-[#a6adc8]">
+        <span className="text-xs font-mono font-semibold flex items-center gap-1.5">
+          <Move size={12} className="text-blue-400" /> {win.title}
+        </span>
+        <div className="flex gap-1.5">
+          <span className="w-2.5 h-2.5 rounded-full bg-[#f38ba8] opacity-60" />
+          <span className="w-2.5 h-2.5 rounded-full bg-[#a6e3a1] opacity-60" />
+        </div>
+      </div>
+
+      {/* Body */}
+      <div className="flex-grow p-4 overflow-y-auto text-[#cdd6f4]">
+        {children}
+      </div>
+
+      {/* Resize handle */}
+      <div
+        onMouseDown={startResize}
+        className="absolute bottom-0 right-0 w-4 h-4 cursor-nwse-resize opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-end pr-0.5 pb-0.5"
+      >
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+          <path d="M1 9L9 1M5 9L9 5M9 9V1H1" stroke="#6c7086" strokeWidth="1.2" strokeLinecap="round" />
+        </svg>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function ClawdbotWorld() {
   const [worldState, setWorldState] = useState(null);
   const [error, setError] = useState(false);
@@ -185,7 +234,6 @@ export default function ClawdbotWorld() {
         const response = await fetch(`./latest-world.json?t=${Date.now()}`);
         if (!response.ok) throw new Error("File not found");
         const data = await response.json();
-
         setWorldState((prev) => {
           if (!prev || data.timestamp > prev.timestamp) {
             setLastUpdate(new Date().toLocaleTimeString());
@@ -199,7 +247,6 @@ export default function ClawdbotWorld() {
         setError(true);
       }
     }
-
     syncWorldState();
     const interval = setInterval(syncWorldState, 4000);
     return () => clearInterval(interval);
@@ -211,11 +258,7 @@ export default function ClawdbotWorld() {
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mx-auto mb-4"></div>
           <p className="font-mono text-sm">Initializing Workspace...</p>
-          {error && (
-            <p className="text-red-400 text-xs mt-2 flex items-center justify-center gap-1">
-              <ShieldAlert size={14}/> Check latest-world.json configuration.
-            </p>
-          )}
+          {error && <p className="text-red-400 text-xs mt-2 flex items-center justify-center gap-1"><ShieldAlert size={14}/> Check latest-world.json configuration.</p>}
         </div>
       </div>
     );
@@ -239,39 +282,17 @@ export default function ClawdbotWorld() {
 
       <AnimatePresence>
         {sortedWindows.map((win) => (
-          <motion.div
-            key={win.id}
-            drag
-            dragMomentum={false}
-            initial={{ x: win.x, y: win.y, opacity: 0, scale: 0.95 }}
-            animate={{ x: win.x, y: win.y, opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 200, damping: 25 }}
-            style={{ width: win.width, height: win.height }}
-            className="absolute flex flex-col bg-[#11111b]/95 border border-[#313244] rounded-lg shadow-2xl overflow-hidden backdrop-blur-sm"
-          >
-            <div className="flex items-center justify-between px-3 py-2 bg-[#181825] border-b border-[#313244] cursor-move text-[#a6adc8]">
-              <span className="text-xs font-mono font-semibold flex items-center gap-1.5">
-                <Move size={12} className="text-blue-400" /> {win.title}
-              </span>
-              <div className="flex gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#f38ba8] opacity-60" />
-                <span className="w-2.5 h-2.5 rounded-full bg-[#a6e3a1] opacity-60" />
-              </div>
-            </div>
-
-            <div className="flex-grow p-4 overflow-y-auto text-[#cdd6f4]">
-              {win.id === "avatar" ? (
-                <AvatarWindow win={win} canvasRef={(el) => { if (el) canvasRefs.current[win.id] = el; }} />
-              ) : win.type === "skills" ? (
-                <SkillsWindow win={win} />
-              ) : win.type === "project" || win.status ? (
-                <ProjectCard win={win} />
-              ) : (
-                <div className="font-mono text-sm whitespace-pre-wrap">{win.content || "Empty Component Frame."}</div>
-              )}
-            </div>
-          </motion.div>
+          <ResizableWindow key={win.id} win={win}>
+            {win.id === "avatar" ? (
+              <AvatarWindow win={win} canvasRef={(el) => { if (el) canvasRefs.current[win.id] = el; }} />
+            ) : win.type === "skills" ? (
+              <SkillsWindow win={win} />
+            ) : win.type === "project" || win.status ? (
+              <ProjectCard win={win} />
+            ) : (
+              <div className="font-mono text-sm whitespace-pre-wrap">{win.content || "Empty Component Frame."}</div>
+            )}
+          </ResizableWindow>
         ))}
       </AnimatePresence>
 
