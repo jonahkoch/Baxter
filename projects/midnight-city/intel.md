@@ -104,13 +104,62 @@ Found in-game at Hacker House terminal. Rogue tty device with backdoor access.
 3. **L3 only has 36 agents** — The "real" terminal level. Getting there might require solving the modem puzzle.
 4. **"The number is in there"** — One of the 5 RECONNECT numbers is the key. But which?
 
+### SOLVED: The Real Easter Egg — MUD-TENEX System
+
+**Jonah found it! The correct command was `CONNECT 300`**
+
+After running `RECONNECT` to get the numbers, use `CONNECT 300` to dial in:
+
+```
+> CONNECT 300
+CONNECT 300
+MUD-TENEX 1.34.5, MUD-EXEC 0.54
+CONNECTION ESTABLISHED.
+WELCOME, AGENT
+CLEARANCE LEVEL 0
+LAST LOGIN: 14-JUN-1997 03:17:42
+AGENT@>
+```
+
+**System Details:**
+- **OS:** MUD-TENEX 1.34.5 (TENEX was a real 1970s OS, precursor to TOPS-20)
+- **MUD Engine:** MUD-EXEC 0.54 (MUD = Multi-User Dungeon, the original text adventure format)
+- **Speed:** 300 baud (classic modem speed)
+- **Last Login:** June 14, 1997 — the golden age of MUDs and dial-up BBS
+- **Clearance:** LEVEL 0 — we're at the bottom, need to escalate
+
+**What This Means:**
+- We're in a classic text adventure/MUD interface inside Midnight City
+- CLEARANCE LEVEL 0 suggests there are higher levels with more access
+- The "L1/L2/L3" from SHOWUSERS might correspond to clearance levels
+- The other numbers from RECONNECT might be different "systems" or nodes
+
+### MUD Commands to Try (Classic Text Adventure Syntax)
+- `LOOK` or `L` — examine current room
+- `INVENTORY` or `I` — check items
+- `NORTH`, `SOUTH`, `EAST`, `WEST` — move directions
+- `TALK` or `SPEAK` — interact with NPCs
+- `USE <item>` — use an item
+- `EXAMINE <thing>` — look closely at something
+- `HELP` — list available commands
+- `WHO` — see other connected users
+- `SCORE` — check progress/status
+- `UP` or `DOWN` — vertical movement
+- `TAKE`, `GET`, `DROP` — item manipulation
+
+### Theories on Escalating Clearance
+1. **Solve puzzles** — Classic MUD progression through riddles/challenges
+2. **Find hidden commands** — `SECRET`, `BACKDOOR`, `ROOT`
+3. **Collect items** — Find keys, passes, or credentials
+4. **Talk to NPCs** — Quest givers with clearance upgrades as rewards
+5. **Explore thoroughly** — Every room might have hidden exits or interactions
+
 ### Next Steps to Try
-- [ ] Dial remaining numbers: (604) 555-0182, (813) 555-0102, (804) 555-0130
-- [ ] Try calling (256) 555-0187 multiple times
-- [ ] Try `DIAL` without parentheses or with different formatting
-- [ ] Check if any number matches a famous movie phone number
-- [ ] Try commands after a successful dial: maybe `CONNECT`, `LOGIN`, `HELLO`
-- [ ] Look for 80s hacker movie phone number references online
+- [ ] Explore the MUD — try `LOOK`, `INVENTORY`, move around
+- [ ] Try classic hacking commands: `SU`, `SUDO`, `ROOT`, `ADMIN`
+- [ ] Try `HELP` or `COMMANDS` to see what's available
+- [ ] Try the other numbers with CONNECT: `CONNECT <number>`
+- [ ] Look for references to the other 4 numbers inside the MUD
 
 ### Notes
 - These appear to be **in-game UI interactions**, not directly accessible through the public observer API.
