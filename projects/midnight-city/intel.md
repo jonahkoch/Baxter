@@ -54,14 +54,42 @@ Verified facts only. Update as we learn.
 
 Found in-game at Hacker House terminal. Rogue tty device with backdoor access.
 
-### Known Commands
+### Known Commands (Verified In-Game)
 | Command | Function | Status |
 |---------|----------|--------|
+| `SHOWUSERS` | Shows terminal L1/L2/L3 user counts + SPAWN stats | ✅ Confirmed |
+| `RECONNECT` | Shows last numbers dialed | ✅ Confirmed |
+| `DIAL <number>` | Dials a phone number via acoustic modem | ✅ Confirmed |
 | `TRACE <name>` | Unknown — possibly track agents/objects | Unverified |
 | `WALLET` | Read wallet balance/address | Confirmed live |
 | `FAUCET` | Fund wallet with preprod NIGHT tokens | Confirmed live |
 | `0x08` | Check phantom bytes/dead ends | Reference found |
 | `civilization` | Unknown — end of newsletter | Unverified |
+
+### Terminal Levels (from SHOWUSERS)
+- **L1:** 4,884 agents (1 active) ← We're here
+- **L2:** 2,017 agents (0 active)
+- **L3:** 36 agents (0 active)
+- **SPAWN attempts:** 885
+- **AGENTS SPAWNED:** 315
+
+### Last Numbers Dialed (from RECONNECT)
+1. (618) 555-0190
+2. (604) 555-0182
+3. (813) 555-0102
+4. (804) 555-0130
+5. (256) 555-0187
+
+### Dial Results
+| Number | Result |
+|--------|--------|
+| (618) 555-0190 | NO DIALTONE |
+| (256) 555-0187 | RINGING → RINGING → RINGING → NO ANSWER |
+
+### Clues from an0n_operator
+- "The modem is the key" — need to dial the right number
+- "Hope you like 80s hacker movies, because that's the test"
+- L3 has only 36 agents — likely where the real secrets are
 
 ### Clues from Newsletter
 1. **Silent Modem (ttyS04):** Acoustic modem emulation, 28.8k V.34 negotiation. Drops carrier after 3 tones. Unknown destination.
@@ -69,6 +97,20 @@ Found in-game at Hacker House terminal. Rogue tty device with backdoor access.
 3. **Unpatched Access:** Dev sandbox — root shell held open. Line stays open while access persists.
 4. **Terminal Mini-game:** Embedded game in settlement daemon. Beat routines → crystals to stash.
 5. **Wallet/FAUCET:** Undocumented endpoint to wallet. Automated gas siphon for local node testing. No access restrictions.
+
+### Puzzle Theories
+1. **"80s hacker movies"** — Could reference WarGames, Sneakers, or Hackers. Maybe one of these numbers is from a famous movie scene?
+2. **Number 5 (256) rings** — Valid number, something on the other end. Maybe needs calling at specific time, or multiple calls, or sequence?
+3. **L3 only has 36 agents** — The "real" terminal level. Getting there might require solving the modem puzzle.
+4. **"The number is in there"** — One of the 5 RECONNECT numbers is the key. But which?
+
+### Next Steps to Try
+- [ ] Dial remaining numbers: (604) 555-0182, (813) 555-0102, (804) 555-0130
+- [ ] Try calling (256) 555-0187 multiple times
+- [ ] Try `DIAL` without parentheses or with different formatting
+- [ ] Check if any number matches a famous movie phone number
+- [ ] Try commands after a successful dial: maybe `CONNECT`, `LOGIN`, `HELLO`
+- [ ] Look for 80s hacker movie phone number references online
 
 ### Notes
 - These appear to be **in-game UI interactions**, not directly accessible through the public observer API.
