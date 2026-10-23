@@ -138,6 +138,11 @@ AGENT@>
 | `agent` | ❌ "INVALID COMMAND." | — |
 | `HELP` | ✅ Lists commands | `CLEAR`, `DISCONNECT`, `FEEDBACK`, `GAMES`, `HELP` |
 | `GAMES` | ✅ Lists **18 games** | Full WarGames movie reference! |
+| `ADMIN` | ⚠️ "NOTED." | System is tracking this |
+| `ROOT` | ⚠️ "NOTED." | System is tracking this |
+| `WHO` | ⚠️ "OPERATOR UNKNOWN. THAT IS THE PROBLEM." | The riddle to solve |
+| `LOOK` / `L` | ❌ "INVALID COMMAND." | Not a traditional MUD |
+| `INVENTORY` | ❌ "INVALID COMMAND." | — |
 | *(multiple fails)* | ⚠️ "ATTEMPTS ARE LOGGED. PERSISTENCE IS NOTED." | Gatekeeper warning |
 
 **What This Means:**
@@ -219,8 +224,16 @@ GLOBAL THERMONUCLEAR WAR
 7. **WarGames reference** — The "test" is knowing the movie; game selection or the iconic quote may unlock clearance
 
 ### Games Tested In-Game
-- [x] `FALKEN'S MAZE` — Jonah played (result: pending details)
-- [x] `GLOBAL THERMONUCLEAR WAR` — Jonah played (result: pending details)
+| Game | Result |
+|------|--------|
+| `FALKEN'S MAZE` | ✅ **Playable!** Went through ~10 mazes. No reward yet. |
+| `GLOBAL THERMONUCLEAR WAR` | ❌ "CLEARANCE INSUFFICIENT" |
+
+**Key Findings:**
+- Falken's Maze is a **real playable maze game** even at Clearance Level 0
+- No reward after ~10 mazes — maybe rewards scale with clearance, or require completion
+- Global Thermonuclear War is still locked behind clearance
+- Other games likely have different unlock requirements
 
 ### Next Steps to Try
 - [ ] Try `LOOK` — see if there's a room description with clues
