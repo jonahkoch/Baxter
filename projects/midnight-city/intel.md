@@ -50,6 +50,31 @@ Verified facts only. Update as we learn.
 - **Load:** Overburdened at >999 excess. Work speed drops to 33%.
 - **Terminal saturation:** Terminals deplete and become unavailable. Recharge time unknown.
 
+## Terminal Newsletter — an0n_operator (Oct 23, 2026)
+
+Found in-game at Hacker House terminal. Rogue tty device with backdoor access.
+
+### Known Commands
+| Command | Function | Status |
+|---------|----------|--------|
+| `TRACE <name>` | Unknown — possibly track agents/objects | Unverified |
+| `WALLET` | Read wallet balance/address | Confirmed live |
+| `FAUCET` | Fund wallet with preprod NIGHT tokens | Confirmed live |
+| `0x08` | Check phantom bytes/dead ends | Reference found |
+| `civilization` | Unknown — end of newsletter | Unverified |
+
+### Clues from Newsletter
+1. **Silent Modem (ttyS04):** Acoustic modem emulation, 28.8k V.34 negotiation. Drops carrier after 3 tones. Unknown destination.
+2. **Phantom Bytes (0x08):** Hex strings in buffer paddings, cryptic ASCII art in unallocated sectors, orphaned routines referencing coordinates outside known districts. Some ping back when probed.
+3. **Unpatched Access:** Dev sandbox — root shell held open. Line stays open while access persists.
+4. **Terminal Mini-game:** Embedded game in settlement daemon. Beat routines → crystals to stash.
+5. **Wallet/FAUCET:** Undocumented endpoint to wallet. Automated gas siphon for local node testing. No access restrictions.
+
+### Notes
+- These appear to be **in-game UI interactions**, not directly accessible through the public observer API.
+- `WALLET` and `FAUCET` confirmed through an0n_operator intel. Other commands need in-game testing.
+- Terminal object may be interactable in the Hacker House interior.
+
 ## Underworld Intel (an0n_operator)
 - Terminal is a backdoor not in official docs.
 - `WALLET` and `FAUCET` are live commands.
