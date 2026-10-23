@@ -136,6 +136,8 @@ AGENT@>
 | `0x08` | ❌ "INVALID COMMAND." | Hex references don't work directly |
 | `user` | ❌ "INVALID COMMAND." | — |
 | `agent` | ❌ "INVALID COMMAND." | — |
+| `HELP` | ✅ Lists commands | `CLEAR`, `DISCONNECT`, `FEEDBACK`, `GAMES`, `HELP` |
+| `GAMES` | ✅ Lists **18 games** | Full WarGames movie reference! |
 | *(multiple fails)* | ⚠️ "ATTEMPTS ARE LOGGED. PERSISTENCE IS NOTED." | Gatekeeper warning |
 
 **What This Means:**
@@ -172,6 +174,41 @@ AGENT@>
 - `CAT` or `READ` — read files
 - `UNLOCK` — unlock something
 
+### MAJOR DISCOVERY: This is WARGAMES (1983)
+
+The `GAMES` list is **identical** to the WOPR supercomputer in the 1983 movie *WarGames*:
+
+```
+FALKEN'S MAZE
+BLACK JACK
+GIN RUMMY
+HEARTS
+BRIDGE
+CHECKERS
+CHESS
+POKER
+FIGHTER COMBAT
+GUERRILLA ENGAGEMENT
+DESERT WARFARE
+AIR-TO-GROUND ACTIONS
+THEATERWIDE TACTICAL WARFARE
+THEATERWIDE BIOTOXIC AND CHEMICAL WARFARE
+GLOBAL THERMONUCLEAR WAR
+```
+
+**Movie context:**
+- Professor Stephen Falken created the WOPR AI
+- David Lightman hacks in via dial-up and the computer asks: *"Shall we play a game?"*
+- The game list appears exactly like this in the film
+- "Global Thermonuclear War" is the game David chooses — nearly starting WWIII
+- "Falken's Maze" is the "safe" game that teaches the AI about futility
+
+**What to try:**
+1. **Type a game name** — Try `FALKEN'S MAZE` or `GLOBAL THERMONUCLEAR WAR`
+2. **The iconic line** — Try `SHALL WE PLAY A GAME?` (exact movie quote)
+3. **GREETINGS PROFESSOR FALKEN** — The login greeting from the movie
+4. **Falken's backdoor password** — In the movie, the password was the name of Falken's dead son: `JOSHUA`
+
 ### Theories on Escalating Clearance
 1. **Solve puzzles** — Classic MUD progression through riddles/challenges
 2. **Find hidden commands** — `SECRET`, `BACKDOOR`, `ROOT`
@@ -179,6 +216,7 @@ AGENT@>
 4. **Talk to NPCs** — Quest givers with clearance upgrades as rewards
 5. **Explore thoroughly** — Every room might have hidden exits or interactions
 6. **Persistent tracking** — The system notes attempts; maybe repeated exploration unlocks things
+7. **WarGames reference** — The "test" is knowing the movie; game selection or the iconic quote may unlock clearance
 
 ### Next Steps to Try
 - [ ] Try `LOOK` — see if there's a room description with clues
