@@ -218,6 +218,10 @@ GLOBAL THERMONUCLEAR WAR
 6. **Persistent tracking** — The system notes attempts; maybe repeated exploration unlocks things
 7. **WarGames reference** — The "test" is knowing the movie; game selection or the iconic quote may unlock clearance
 
+### Games Tested In-Game
+- [x] `FALKEN'S MAZE` — Jonah played (result: pending details)
+- [x] `GLOBAL THERMONUCLEAR WAR` — Jonah played (result: pending details)
+
 ### Next Steps to Try
 - [ ] Try `LOOK` — see if there's a room description with clues
 - [ ] Try `HELP` or `COMMANDS` — discover available commands
@@ -225,6 +229,8 @@ GLOBAL THERMONUCLEAR WAR
 - [ ] Try `WHO` — see if other agents are connected to this MUD
 - [ ] Try the other numbers with CONNECT: `CONNECT <number>`
 - [ ] Look for references to the other 4 numbers inside the MUD
+- [ ] Try `SHALL WE PLAY A GAME?` — Iconic movie quote
+- [ ] Try `JOSHUA` — Backdoor password from the film
 
 ### Notes
 - These appear to be **in-game UI interactions**, not directly accessible through the public observer API.
