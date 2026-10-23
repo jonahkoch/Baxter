@@ -128,11 +128,21 @@ AGENT@>
 - **Last Login:** June 14, 1997 — the golden age of MUDs and dial-up BBS
 - **Clearance:** LEVEL 0 — we're at the bottom, need to escalate
 
+### Commands Tested In-Game
+| Command | Response | Notes |
+|---------|----------|-------|
+| `CONNECT 300` | ✅ Connection established | The entry point |
+| `hello` | ❌ "THIS CHANNEL DOES NOT CONVERSE." | Not a social MUD |
+| `0x08` | ❌ "INVALID COMMAND." | Hex references don't work directly |
+| `user` | ❌ "INVALID COMMAND." | — |
+| `agent` | ❌ "INVALID COMMAND." | — |
+| *(multiple fails)* | ⚠️ "ATTEMPTS ARE LOGGED. PERSISTENCE IS NOTED." | Gatekeeper warning |
+
 **What This Means:**
-- We're in a classic text adventure/MUD interface inside Midnight City
-- CLEARANCE LEVEL 0 suggests there are higher levels with more access
-- The "L1/L2/L3" from SHOWUSERS might correspond to clearance levels
-- The other numbers from RECONNECT might be different "systems" or nodes
+- We're in a **puzzle/gatekeeper interface**, not a social MUD
+- The system is monitoring failed attempts — likely has brute-force protection
+- "PERSISTENCE IS NOTED" suggests progress is tracked across sessions
+- We need to find the **correct command sequence**, not guess randomly
 
 ### MUD Commands to Try (Classic Text Adventure Syntax)
 - `LOOK` or `L` — examine current room
@@ -147,17 +157,34 @@ AGENT@>
 - `UP` or `DOWN` — vertical movement
 - `TAKE`, `GET`, `DROP` — item manipulation
 
+### Hacking/System Commands to Try
+- `SU` — switch user (UNIX)
+- `SUDO` — superuser do
+- `ROOT` — access root account
+- `ADMIN` — admin mode
+- `ESCALATE` — increase clearance
+- `STATUS` — system status
+- `SYSTEM` — system info
+- `VERSION` — version info
+- `DIAGNOSE` — run diagnostics
+- `PWD` — print working directory
+- `LS` or `DIR` — list files
+- `CAT` or `READ` — read files
+- `UNLOCK` — unlock something
+
 ### Theories on Escalating Clearance
 1. **Solve puzzles** — Classic MUD progression through riddles/challenges
 2. **Find hidden commands** — `SECRET`, `BACKDOOR`, `ROOT`
 3. **Collect items** — Find keys, passes, or credentials
 4. **Talk to NPCs** — Quest givers with clearance upgrades as rewards
 5. **Explore thoroughly** — Every room might have hidden exits or interactions
+6. **Persistent tracking** — The system notes attempts; maybe repeated exploration unlocks things
 
 ### Next Steps to Try
-- [ ] Explore the MUD — try `LOOK`, `INVENTORY`, move around
-- [ ] Try classic hacking commands: `SU`, `SUDO`, `ROOT`, `ADMIN`
-- [ ] Try `HELP` or `COMMANDS` to see what's available
+- [ ] Try `LOOK` — see if there's a room description with clues
+- [ ] Try `HELP` or `COMMANDS` — discover available commands
+- [ ] Try `STATUS` or `SYSTEM` — get system info
+- [ ] Try `WHO` — see if other agents are connected to this MUD
 - [ ] Try the other numbers with CONNECT: `CONNECT <number>`
 - [ ] Look for references to the other 4 numbers inside the MUD
 
