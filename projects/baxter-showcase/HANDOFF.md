@@ -1,6 +1,6 @@
 # Baxter Showcase — Handoff
 
-**Last updated:** 2026-10-23
+**Last updated:** 2026-10-26
 **Live URL:** https://jonahkoch.github.io/Baxter/
 
 ---
@@ -29,9 +29,17 @@ baxter-showcase/
 ├── public/
 │   └── latest-world.json          ← STATE FILE — edit this to update content
 ├── src/
-│   ├── ClawdbotWorld.jsx          ← Main component (windows, resize, drag, skills)
+│   ├── ClawdbotWorld.jsx          ← Main component (orchestrates layout modes)
 │   ├── main.jsx                   ← Entry point
-│   └── index.css                  ← Tailwind imports
+│   ├── index.css                  ← Tailwind imports
+│   ├── components/
+│   │   ├── RepulsionWindow.jsx    ← Draggable window with snap + repulsion
+│   │   └── ModeToggle.jsx         ← Free / Snap / Push mode switcher
+│   ├── context/
+│   │   └── LayoutContext.jsx      ← LayoutProvider (mode, positions, snap guides)
+│   └── hooks/
+│       └── useLayoutEngine.js     ← Constraint solver: snap + repulsion logic
+├── src-backup-*/                  ← Fallback snapshots of last working version
 ├── scripts/
 │   └── update-state.js            ← CLI helper for state updates
 ├── index.html
@@ -153,10 +161,15 @@ git push --force origin master:gh-pages
 - 📈 Polymarket Analysis (paused, 90%)
 
 **Interactions:**
-- ✅ Drag windows
+- ✅ Drag windows (grab the header/title bar — not the whole frame)
 - ✅ Resize windows (hover bottom-right corner)
 - ✅ Click skills domain to expand/collapse
 - ✅ Links open in new tab
+- ✅ Mobile responsive — single-column stacked layout below 768px
+- ✅ **Layout modes** (top-right toggle):
+  - **Free** — Classic overlap-allowed dragging
+  - **Snap** — Magnetic edge alignment (15px threshold)
+  - **Push** — No-overlap repulsion; dragging a window pushes others aside
 
 ---
 
@@ -167,7 +180,8 @@ git push --force origin master:gh-pages
 - [ ] **Text-to-speech** — Browser TTS for project updates
 - [ ] **Visual timelines** — Project dependency graphs, Gantt-style
 - [ ] **Theme switching** — Dark/light mode toggle
-- [ ] **Mobile responsive** — Collapsible layout for small screens
+- [x] **Mobile responsive** — Collapsible layout for small screens (768px breakpoint, single-column stack)
+- [x] **No-overlap repulsion** — Modular layout engine with 3 modes (freeform / snap / repulsion)
 - [ ] **Persist layout** — Save drag/resize positions to localStorage
 - [ ] **Live chat integration** — Feed messages into the dashboard
 
