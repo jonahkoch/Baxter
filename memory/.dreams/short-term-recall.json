@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-29T02:21:07.794Z",
+  "updatedAt": "2026-10-23T12:35:36.804Z",
   "entries": {
     "memory:memory/2026-04-07.md:1:46": {
       "key": "memory:memory/2026-04-07.md:1:46",
@@ -9,18 +9,23 @@
       "endLine": 46,
       "source": "memory",
       "snippet": "# Session: April 7, 2026 — Social Credibility System Design ## Project: Non-repudiable Social Posts on Cardano ### Overview Designed a meritocratic credibility system using Cardano's native asset infrastructure. Core principles: non-repudiation, immutability, UX-optimized. ### Tech Stack Decisions - **Token Standard**: CIP-25 (immutable NFT) — no edits, true immutability - **Mutable Pointers**: CIP-68 for head registry (optional) - **Storage**: IPFS for content, hashes on-chain - **Recovery Contract**: Aiken validator with on-chain verification - **Wallet**: Mesh.js or Lucid ### Hash Chain Structure Each post links to previous via `prev_post_hash`: ``` Genesis → Post_1 (seq: 1) → Post_2",
-      "recallCount": 1,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 4,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-15T22:58:16.514Z",
-      "lastRecalledAt": "2026-05-15T22:58:16.514Z",
+      "lastRecalledAt": "2026-10-02T03:37:09.259Z",
       "queryHashes": [
-        "3a524e7a9a28"
+        "3a524e7a9a28",
+        "8f44aec7e09d",
+        "9edd0e0e467d",
+        "23a1d63ddf4a"
       ],
       "recallDays": [
-        "2026-05-16"
+        "2026-05-16",
+        "2026-09-24",
+        "2026-10-02"
       ],
       "conceptTags": [
         "non-repudiable",
@@ -40,20 +45,24 @@
       "endLine": 20,
       "source": "memory",
       "snippet": "# 2026-03-14 ## Cardano / DeFi Research ### Liqwid TVL Query **Time:** ~2:55 PM CET **Asked by:** Jonah **Findings:** - Current TVL (USD): ~$32.53 million - ADA Locked: ~124.48M ADA - ADA Price at check: $0.261319 **Context:** - Down ~82% from December 2024 peak of ~$176M - Largest lending protocol on Cardano by TVL - Uses DeFiLlama API for data **Note:** If tracking Cardano DeFi trends over time, this is a baseline data point.",
-      "recallCount": 2,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2,
+      "totalScore": 4,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-24T02:01:03.103Z",
-      "lastRecalledAt": "2026-08-10T15:04:31.607Z",
+      "lastRecalledAt": "2026-09-29T22:25:41.302Z",
       "queryHashes": [
         "27ff19bd0c96",
-        "d477a31c5d71"
+        "d477a31c5d71",
+        "a661b3fc8cb6",
+        "2ea81124042b"
       ],
       "recallDays": [
         "2026-05-24",
-        "2026-08-10"
+        "2026-08-10",
+        "2026-09-22",
+        "2026-09-30"
       ],
       "conceptTags": [
         "32.53",
@@ -555,18 +564,22 @@
       "endLine": 24,
       "source": "memory",
       "snippet": "# Memory — 2026-07-23 ## Kochfoto Image Compositor Skill Created **What:** Built a structured schema + interaction protocol for image creation tasks. **Why:** Jonah wants precise controls over what happens and when between interactions when sharing images and instructions. Current workflow works but is haphazard. **Skill path:** `skills/kochfoto-image-compositor/SKILL.md` **Key features:** - `Rendering Task` schema — describes subject, environment, mood, visual controls (composition, lighting, camera, lens, film stock, media type), references, generation params - `Scene` schema — multi-element compositions with layers, blending, post-process - **Interaction Protocol** — exact rules for:",
-      "recallCount": 1,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 3,
       "maxScore": 1,
       "firstRecalledAt": "2026-07-27T21:39:38.462Z",
-      "lastRecalledAt": "2026-07-27T21:39:38.462Z",
+      "lastRecalledAt": "2026-09-23T14:37:17.943Z",
       "queryHashes": [
-        "b4d29124b1fe"
+        "b4d29124b1fe",
+        "d8e7870c6203",
+        "3fbbad2c00b5"
       ],
       "recallDays": [
-        "2026-07-27"
+        "2026-07-27",
+        "2026-09-13",
+        "2026-09-23"
       ],
       "conceptTags": [
         "multi-element",
@@ -619,13 +632,13 @@
       "endLine": 37,
       "source": "memory",
       "snippet": "- `projects/cardano/drep-votes/gov_action1cpnqmlgpkz3dnwnm4spqzsmsp93y9mr4vqcm2ltcpqyyf7a7nszsq4h586r.md` — DeFi Kernel YES - `projects/cardano/drep-votes/gov_action1mlvplrdk2t7eyclqeca77ppmfq3sghkr5hdppjqhdqdd573r7q6qqms7jwt.md` — Bifrost ABSTAIN - `projects/cardano/drep-votes/gov_action1xg69v73lfzkwyhhuz583x6geyc2ewn3r96sxuqj3wqvrrk0yfpksqqa63yc.md` — Scalus YES - `skills/cardano-expert/SKILL.md` — Updated vote formatting constraints (300 char summary cap) - `scripts/epoch-check.py` — Auto-generates epoch summaries - `.github/workflows/update.yml` — Runs epoch-check after fetch ## Social Context Archived - Pi Lanningham (SundaeSwap CTO) endorsing NCL + AlphaGrowth - hix_coffeepool (Japan",
-      "recallCount": 9,
+      "recallCount": 11,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 9,
+      "totalScore": 11,
       "maxScore": 1,
       "firstRecalledAt": "2026-08-10T14:47:04.984Z",
-      "lastRecalledAt": "2026-08-10T15:04:31.607Z",
+      "lastRecalledAt": "2026-10-06T00:33:45.691Z",
       "queryHashes": [
         "b591eeb756f8",
         "caccf37e2533",
@@ -635,10 +648,14 @@
         "0e468ff713c8",
         "2d45f5e7880c",
         "12f2628ebed9",
-        "d477a31c5d71"
+        "d477a31c5d71",
+        "2ea81124042b",
+        "9f374977d68e"
       ],
       "recallDays": [
-        "2026-08-10"
+        "2026-08-10",
+        "2026-09-30",
+        "2026-10-06"
       ],
       "conceptTags": [
         "skills/cardano-expert/skill.md",
@@ -691,18 +708,23 @@
       "endLine": 66,
       "source": "memory",
       "snippet": "- Challenger provides: `later_post`, `merkle_path`, `merkle_root`, `mint_reference` - Contract verifies: path proves ancestry + CIP-25 mint is valid Merkle tree: - Leaves: `hash(0x00 || content_hash)` - Branches: `hash(0x01 || left || right)` ### UX Optimizations - Session signing (1 hour, batch posts) - Gasless submission (platform pays, user signs intent) - Batch minting (5-10 posts/tx, ~0.05 ADA/post) - Draft → commit flow (local storage until publish) ### Repository Pushed to: https://github.com/jonahkoch/Baxter - `projects/social-credibility-system/architecture.md` — full design doc - `projects/social-credibility-system/recovery.ak` — Aiken contract ### Open Questions 1. Merkle tree",
-      "recallCount": 1,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 4,
       "maxScore": 1,
       "firstRecalledAt": "2026-08-10T15:03:07.853Z",
-      "lastRecalledAt": "2026-08-10T15:03:07.853Z",
+      "lastRecalledAt": "2026-10-02T03:37:09.259Z",
       "queryHashes": [
-        "18e8105a0cae"
+        "18e8105a0cae",
+        "8f44aec7e09d",
+        "9edd0e0e467d",
+        "23a1d63ddf4a"
       ],
       "recallDays": [
-        "2026-08-10"
+        "2026-08-10",
+        "2026-09-24",
+        "2026-10-02"
       ],
       "conceptTags": [
         "later-post",
@@ -722,18 +744,22 @@
       "endLine": 45,
       "source": "memory",
       "snippet": "**Next steps:** Create project → Generate wallet → Share credentials with me → Install CDP SDK ## Cardano Ecosystem News Jonah shared: LayerZero interoperability coming to Cardano - Source: https://www.essentialcardano.io/article/bridging-the-gap-cardano-goes-multichain-with-layerzero - Significance: Bridges gap between Cardano and EVM ecosystems - Relevance to PactVote/OJonah: Cross-chain governance participation, NFT interoperability ## Copywriter Skill Reference Retrieved Humanize Check refinement rules from `kochfoto-copywriter-skill.md` at Jonah's request. --- *Token usage context: Day started with ~1k input tokens, now at 112k context used (44%). Multiple search queries performed wi",
-      "recallCount": 1,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 3,
       "maxScore": 1,
       "firstRecalledAt": "2026-08-10T15:04:31.607Z",
-      "lastRecalledAt": "2026-08-10T15:04:31.607Z",
+      "lastRecalledAt": "2026-10-06T00:33:45.691Z",
       "queryHashes": [
-        "d477a31c5d71"
+        "d477a31c5d71",
+        "2ea81124042b",
+        "9f374977d68e"
       ],
       "recallDays": [
-        "2026-08-10"
+        "2026-08-10",
+        "2026-09-30",
+        "2026-10-06"
       ],
       "conceptTags": [
         "pactvote/ojonah",
@@ -753,18 +779,20 @@
       "endLine": 25,
       "source": "memory",
       "snippet": "# 2026-07-29 — Cardano Governance Voting Session ## Votes Cast DRep ID: `drep1yt8trnz8e5cnylmyygt0pyzrfw92rt9s42kg8t4rhm6t0dstyvmdn` | Proposal | Vote | Summary | |---|---|---| | NCL increase (350M → 500M) | **YES** | Purchasing power argument. Original limit set at $0.30/ADA, now $0.16. 47% drop in real capacity. | | DeFi Kernel (Dano Finance) | **YES** | Supports global orderbook vision. $18M TVL team, registry+SDK are public goods. | | Bifrost (Bitcoin bridge) | **ABSTAIN** | Strong support on merits but NCL constraint. 12.3M would exhaust ~12.6M remaining. Encourages resubmit after NCL increase. | | Scalus 2026 | **YES** | Developer infrastructure, Dijkstra readiness. Ask reduced 71%",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 2,
       "maxScore": 1,
       "firstRecalledAt": "2026-08-10T15:04:31.607Z",
-      "lastRecalledAt": "2026-08-10T15:04:31.607Z",
+      "lastRecalledAt": "2026-09-29T22:25:41.302Z",
       "queryHashes": [
-        "d477a31c5d71"
+        "d477a31c5d71",
+        "2ea81124042b"
       ],
       "recallDays": [
-        "2026-08-10"
+        "2026-08-10",
+        "2026-09-30"
       ],
       "conceptTags": [
         "0.30/ada",
@@ -784,18 +812,20 @@
       "endLine": 19,
       "source": "memory",
       "snippet": "# 2026-08-10 — Monday ## PRIME Vote Cast **Proposal:** gov_action122wue2k65qq8gmpz795z2axt8apka6ay6xt3pwg8jxj5yfkujmtsqvlfpu7 **Vote:** Yes (strategic override of rubric concerns) **Rubric score:** 41/100 (unchanged) **Time remaining when cast:** ~55 hours before epoch 649 expiration **Decision arc:** 1. Original assessment (July 11): No — scale vs. value mismatch, 33% mgmt fee, unproven sustainability 2. Updated assessment (Aug 10): No with v1.3 rubric — added subsidy-loop check, dependency-graph analysis, productive ecosystem multiplier. Still 41/100. 3. Reviewed 5 Yes DRep rationales: Pi Lanningham, Socious, Yuta (with data), CardanoYoda (most honest), Dori 4. Verdict: Rubric not missi",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 2,
       "maxScore": 1,
       "firstRecalledAt": "2026-08-27T13:14:42.970Z",
-      "lastRecalledAt": "2026-08-27T13:14:42.970Z",
+      "lastRecalledAt": "2026-09-13T21:08:47.653Z",
       "queryHashes": [
-        "dfa7742d21a5"
+        "dfa7742d21a5",
+        "d8e7870c6203"
       ],
       "recallDays": [
-        "2026-08-27"
+        "2026-08-27",
+        "2026-09-13"
       ],
       "conceptTags": [
         "41/100",
@@ -806,6 +836,69 @@
         "prime",
         "vote",
         "cast"
+      ]
+    },
+    "memory:memory/2026-08-01.md:23:35": {
+      "key": "memory:memory/2026-08-01.md:23:35",
+      "path": "memory/2026-08-01.md",
+      "startLine": 23,
+      "endLine": 35,
+      "source": "memory",
+      "snippet": "**Key distinction established:** BlockchainEvents = event/notification layer, NOT a data/historical query layer. For a \"my DRep activity\" page, Blockfrost/Koios APIs would still be needed for historical lookups. The two complement each other but solve different problems. Jonah explicitly said: **\"Don't build anything yet. I have more queries.\"** - Wants to add a hidden link page to PactVote tracking DRep activity and governance - Unsure whether a database is needed → we clarified: Blockfrost/Koios queries on page load are sufficient for MVP, no DB required initially ## Key Takeaways - BlockchainEvents is push-based (CloudEvents), not query-based - Great for: real-time alerts, triggered wo",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-09-13T21:08:44.388Z",
+      "lastRecalledAt": "2026-09-13T21:08:50.555Z",
+      "queryHashes": [
+        "05f638f08f0b",
+        "c25ea56d6a26"
+      ],
+      "recallDays": [
+        "2026-09-13"
+      ],
+      "conceptTags": [
+        "event/notification",
+        "data/historical",
+        "blockfrost/koios",
+        "push-based",
+        "query-based",
+        "real-time",
+        "key",
+        "distinction"
+      ]
+    },
+    "memory:memory/2026-05-16.md:31:43": {
+      "key": "memory:memory/2026-05-16.md:31:43",
+      "path": "memory/2026-05-16.md",
+      "startLine": 31,
+      "endLine": 43,
+      "source": "memory",
+      "snippet": "2. Compile full secret inventory with severity ratings 3. Rotate secrets in priority order 4. Consider moving secrets to environment variables or a secrets manager ## Model Stability Fix (Applied) - **Issue:** Kimi K2.6 with reasoning enabled crashes on tool calls — `400 thinking is enabled but reasoning_content is missing in assistant tool call message` - **Fix:** Set `reasoning: false` in `~/.openclaw/agents/main/agent/models.json` - **Status:** Session now stable ## Notes - Smaller tool calls work; large outputs trigger crashes - This is a recurring maintenance concern — document rotation schedule",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-10-23T12:35:36.804Z",
+      "lastRecalledAt": "2026-10-23T12:35:36.804Z",
+      "queryHashes": [
+        "e291ca6f6a76"
+      ],
+      "recallDays": [
+        "2026-10-23"
+      ],
+      "conceptTags": [
+        "k2.6",
+        "reasoning-content",
+        "compile",
+        "full",
+        "secret",
+        "inventory",
+        "severity",
+        "ratings"
       ]
     }
   }

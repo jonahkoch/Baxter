@@ -26,8 +26,8 @@ Check `baxterclawbot@gmail.com` for unread emails. Alert Jonah if:
 
 **Check frequency:** Every 4 hours during active hours (skip late night unless urgent)
 
-**Last check:** 2026-09-09 17:52 CEST
+**Last check:** 2026-10-27 16:52 CEST
 
-**Status:** Context 26% · 69k in / 493 out — healthy
+**Status:** Context 30% · 83k in / 1.6k out — healthy
 
-**Note:** 0 unread emails. gcalcli not available for calendar check.
+**Note:** 0 unread emails. gcalcli not available for calendar check. Midnight City smart grind idle since Oct 27 ~01:00 — waiting on Jonah to choose restart approach.
