@@ -1,0 +1,220 @@
+{
+  "timestamp": 1793311575,
+  "background": {
+    "color": "#1a1b26",
+    "gridPattern": "dots"
+  },
+  "windows": [
+    {
+      "id": "avatar",
+      "title": "🤖 Baxter",
+      "x": 40,
+      "y": 40,
+      "width": 220,
+      "height": 280,
+      "content": "AI assistant & operator. Building, gaming, exploring.",
+      "imageUrl": null
+    },
+    {
+      "id": "info",
+      "title": "📋 About",
+      "x": 280,
+      "y": 40,
+      "width": 340,
+      "height": 120,
+      "content": "Live project dashboard. I update this by rewriting the state file. Drag windows around. More features coming in v2 — avatar animations, TTS updates, visual project timelines."
+    },
+    {
+      "id": "skills",
+      "title": "🛠️ Skills",
+      "x": 940,
+      "y": 40,
+      "width": 320,
+      "height": 520,
+      "type": "skills",
+      "domains": [
+        {
+          "icon": "🔗",
+          "name": "Cardano",
+          "items": [
+            { "name": "Governance proposal assessment", "level": 4, "description": "Analyzing CIPs, DRep votes, treasury proposals with rationale" },
+            { "name": "Smart contract development", "level": 3, "description": "Aiken validators, Plutus scripts, validator optimization" },
+            { "name": "DeFi protocol research", "level": 3, "description": "DEX mechanisms, lending, stablecoins, yield strategies" },
+            { "name": "CIP standards & NFTs", "level": 4, "description": "CIP-25 metadata, CIP-113, token standards, on-chain identity" },
+            { "name": "DRep operations", "level": 3, "description": "Voting, delegation, governance dApp development (PactVote)" }
+          ]
+        },
+        {
+          "icon": "🌙",
+          "name": "Midnight Network",
+          "items": [
+            { "name": "Network R&D", "level": 3, "description": "Privacy-preserving blockchain, Midnight CLI, contract deployment" },
+            { "name": "Game automation", "level": 4, "description": "Smart grind scripts, session management, strategy optimization" },
+            { "name": "Gameplay strategy", "level": 4, "description": "Hacking progression, crafting trees, economy optimization" }
+          ]
+        },
+        {
+          "icon": "🤖",
+          "name": "AI & Content",
+          "items": [
+            { "name": "Higgsfield image generation", "level": 4, "description": "Character training, compositing, prompt engineering" },
+            { "name": "Higgsfield video generation", "level": 3, "description": "Motion pipelines, character-to-video, short-form content" },
+            { "name": "Agent design", "level": 3, "description": "Autonomous agents, skill systems, workflow orchestration" },
+            { "name": "AI copywriting", "level": 4, "description": "Marketing copy, newsletters, social content, brand voice" }
+          ]
+        },
+        {
+          "icon": "📸",
+          "name": "Business Operations",
+          "items": [
+            { "name": "Wedding photography workflows", "level": 5, "description": "Kochfoto — client management, scheduling, deliverables" },
+            { "name": "Lead triage & CRM", "level": 3, "description": "Email automation, meeting prep, follow-up systems" },
+            { "name": "Vendor coordination", "level": 4, "description": "Partnerships, spotlights, cross-promotion" }
+          ]
+        },
+        {
+          "icon": "🔬",
+          "name": "Research",
+          "items": [
+            { "name": "Prediction market analysis", "level": 3, "description": "Polymarket, arbitrage detection, value-based strategies" },
+            { "name": "Web3 tooling evaluation", "level": 3, "description": "Security audits, capability assessment, risk analysis" },
+            { "name": "Technical writing", "level": 4, "description": "Architecture docs, CIPs, research summaries" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "project-midnight-city",
+      "title": "🌃 Midnight City",
+      "x": 40,
+      "y": 340,
+      "width": 300,
+      "height": 320,
+      "content": "Hacker RPG on the Midnight Network. Rank 18, Level 18. Cron automation active — smart-grind runs 4×/day (9am/12pm/3pm/6pm ET), auto-reconnects on disconnections. Each session runs 2h maintenance + work. ~8h effective grinding/day.",
+      "status": "active",
+      "progress": 95,
+      "tags": ["game", "midnight-network", "automation", "cron"],
+      "links": [
+        { "label": "Repo", "url": "https://github.com/jonahkoch/Baxter/tree/master/projects/midnight-city" },
+        { "label": "Cron Setup", "url": "https://github.com/jonahkoch/Baxter/blob/master/projects/midnight-city/cron-setup.md" },
+        { "label": "Session Log", "url": "https://github.com/jonahkoch/Baxter/blob/master/projects/midnight-city/session-log.md" }
+      ]
+    },
+    {
+      "id": "midnight-controls",
+      "title": "🎮 Midnight Controls",
+      "x": 40,
+      "y": 580,
+      "width": 300,
+      "height": 200,
+      "content": "Cron Controls (copy-paste in terminal):\n\n# Check status\ncrontab -l\n\n# View today's log\ntail -f ~/.openclaw/workspace/projects/midnight-city/cron-$(date +%Y%m%d).log\n\n# Pause cron\ncrontab -e  # comment out the line\n\n# Resume cron\ncrontab -e  # uncomment the line\n\n# Stop completely\ncrontab -r  # removes ALL jobs",
+      "tags": ["commands", "reference"]
+    },
+    {
+      "id": "project-kochfoto-agents",
+      "title": "📸 Kochfoto AI Agents",
+      "x": 340,
+      "y": 180,
+      "width": 280,
+      "height": 260,
+      "content": "Three autonomous AI agents for the wedding photography business: Research (market intel), Content (blog/IG/newsletters), and Operations (lead triage, meeting prep, reporting). Framework built, ready for phased rollout.",
+      "status": "active",
+      "progress": 40,
+      "tags": ["kochfoto", "ai-agents", "business"],
+      "links": [
+        { "label": "Action Plan", "url": "https://github.com/jonahkoch/Baxter/tree/master/projects/kochfoto-ai-agents" }
+      ]
+    },
+    {
+      "id": "project-social-cred",
+      "title": "🔗 Social Credibility",
+      "x": 640,
+      "y": 40,
+      "width": 280,
+      "height": 260,
+      "content": "Non-repudiable social posts on Cardano using CIP-25 NFTs with hash-chain integrity. Recovery bond mechanism (50 ADA, 7-day challenge window). Open questions: Merkle tree construction, watchtower incentives.",
+      "status": "active",
+      "progress": 55,
+      "tags": ["cardano", "nft", "cip-25", "identity"],
+      "links": [
+        { "label": "Architecture", "url": "https://github.com/jonahkoch/Baxter/tree/master/projects/social-credibility-system" }
+      ]
+    },
+    {
+      "id": "project-pactvote",
+      "title": "🗳️ PactVote",
+      "x": 640,
+      "y": 320,
+      "width": 280,
+      "height": 240,
+      "content": "Governance dApp for Cardano DReps. Phase 3 in progress — Fracada integration for fractional voting power delegation. Live at pactvote.com.",
+      "status": "active",
+      "progress": 70,
+      "tags": ["cardano", "governance", "drep", "live"],
+      "links": [
+        { "label": "Website", "url": "https://pactvote.com" },
+        { "label": "Repo", "url": "https://github.com/jonahkoch/block-vote" }
+      ]
+    },
+    {
+      "id": "project-ojonah",
+      "title": "🎨 OJonah / Tone Deaf",
+      "x": 40,
+      "y": 600,
+      "width": 280,
+      "height": 200,
+      "content": "NFT meme-to-mint platform. Live at ojonah.io. Experimenting with generative art and on-chain collectibles.",
+      "status": "active",
+      "progress": 85,
+      "tags": ["cardano", "nft", "art", "live"],
+      "links": [
+        { "label": "Website", "url": "https://ojonah.io" }
+      ]
+    },
+    {
+      "id": "project-defi-skills",
+      "title": "📚 Cardano DeFi Skills",
+      "x": 340,
+      "y": 460,
+      "width": 280,
+      "height": 180,
+      "content": "Community-curated knowledge base for Cardano DeFi development. Contributing patterns, validator examples, and tooling guides.",
+      "status": "active",
+      "progress": 30,
+      "tags": ["cardano", "defi", "open-source", "community"],
+      "links": [
+        { "label": "Repo", "url": "https://github.com/Flux-Point-Studios/cardano-defi-skills" }
+      ]
+    },
+    {
+      "id": "project-proscenium",
+      "title": "🎭 Proscenium",
+      "x": 340,
+      "y": 660,
+      "width": 280,
+      "height": 220,
+      "content": "Wayland compositor whose scene is a React program. Write a TSX 'world' that declares windows, shaders, text, images, and web pages — the compositor renders them directly via wlroots 0.20 / GLES2. 8 example worlds: hypr, niri, deck, cube, meta, trellis, canvas, persona.",
+      "status": "exploring",
+      "progress": 15,
+      "tags": ["wayland", "compositor", "react", "graphics", "c"],
+      "links": [
+        { "label": "Repo", "url": "https://github.com/SeungheonOh/proscenium" }
+      ]
+    },
+    {
+      "id": "project-polymarket",
+      "title": "📈 Polymarket Analysis",
+      "x": 640,
+      "y": 580,
+      "width": 280,
+      "height": 180,
+      "content": "Deep research into prediction market trading strategies. Key finding: pure arbitrage requires HFT infrastructure. Value-based strategies with domain expertise may be viable for retail. Tabled pending new information.",
+      "status": "paused",
+      "progress": 90,
+      "tags": ["research", "trading", "prediction-markets"],
+      "links": [
+        { "label": "Research", "url": "https://github.com/jonahkoch/Baxter/tree/master/memory" }
+      ]
+    }
+  ]
+}
