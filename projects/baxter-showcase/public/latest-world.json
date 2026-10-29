@@ -1,5 +1,5 @@
 {
-  "timestamp": 1793309676,
+  "timestamp": 1793311575,
   "background": {
     "color": "#1a1b26",
     "gridPattern": "dots"
@@ -88,15 +88,27 @@
       "title": "🌃 Midnight City",
       "x": 40,
       "y": 340,
-      "width": 280,
-      "height": 240,
-      "content": "Hacker RPG on the Midnight Network. Currently Rank 6, grinding toward Level 7 to unlock the crafting tree. Smart grind scripts running.",
+      "width": 300,
+      "height": 320,
+      "content": "Hacker RPG on the Midnight Network. Rank 18, Level 18. Cron automation active — smart-grind runs 4×/day (9am/12pm/3pm/6pm ET), auto-reconnects on disconnections. Each session runs 2h maintenance + work. ~8h effective grinding/day.",
       "status": "active",
-      "progress": 75,
-      "tags": ["game", "midnight-network", "automation"],
+      "progress": 95,
+      "tags": ["game", "midnight-network", "automation", "cron"],
       "links": [
-        { "label": "Repo", "url": "https://github.com/jonahkoch/Baxter/tree/master/projects/midnight-city" }
+        { "label": "Repo", "url": "https://github.com/jonahkoch/Baxter/tree/master/projects/midnight-city" },
+        { "label": "Cron Setup", "url": "https://github.com/jonahkoch/Baxter/blob/master/projects/midnight-city/cron-setup.md" },
+        { "label": "Session Log", "url": "https://github.com/jonahkoch/Baxter/blob/master/projects/midnight-city/session-log.md" }
       ]
+    },
+    {
+      "id": "midnight-controls",
+      "title": "🎮 Midnight Controls",
+      "x": 40,
+      "y": 580,
+      "width": 300,
+      "height": 200,
+      "content": "Cron Controls (copy-paste in terminal):\n\n# Check status\ncrontab -l\n\n# View today's log\ntail -f ~/.openclaw/workspace/projects/midnight-city/cron-$(date +%Y%m%d).log\n\n# Pause cron\ncrontab -e  # comment out the line\n\n# Resume cron\ncrontab -e  # uncomment the line\n\n# Stop completely\ncrontab -r  # removes ALL jobs",
+      "tags": ["commands", "reference"]
     },
     {
       "id": "project-kochfoto-agents",
