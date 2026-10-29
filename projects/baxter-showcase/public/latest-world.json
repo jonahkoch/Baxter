@@ -1,5 +1,5 @@
 {
-  "timestamp": 1792765200,
+  "timestamp": 1793309676,
   "background": {
     "color": "#1a1b26",
     "gridPattern": "dots"
@@ -172,6 +172,21 @@
       "tags": ["cardano", "defi", "open-source", "community"],
       "links": [
         { "label": "Repo", "url": "https://github.com/Flux-Point-Studios/cardano-defi-skills" }
+      ]
+    },
+    {
+      "id": "project-proscenium",
+      "title": "🎭 Proscenium",
+      "x": 340,
+      "y": 660,
+      "width": 280,
+      "height": 220,
+      "content": "Wayland compositor whose scene is a React program. Write a TSX 'world' that declares windows, shaders, text, images, and web pages — the compositor renders them directly via wlroots 0.20 / GLES2. 8 example worlds: hypr, niri, deck, cube, meta, trellis, canvas, persona.",
+      "status": "exploring",
+      "progress": 15,
+      "tags": ["wayland", "compositor", "react", "graphics", "c"],
+      "links": [
+        { "label": "Repo", "url": "https://github.com/SeungheonOh/proscenium" }
       ]
     },
     {
