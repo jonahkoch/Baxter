@@ -132,13 +132,28 @@ AGENT@>
 | Command | Response | Notes |
 |---------|----------|-------|
 | `CONNECT 300` | ✅ Connection established | The entry point |
+| `HELP` | ✅ Lists commands | `CLEAR`, `DISCONNECT`, `FEEDBACK`, `GAMES`, `HELP` |
+| `GAMES` | ✅ Lists **18 games** | Full WarGames movie reference! |
+| `FEEDBACK` | ✅ Used | Unknown result |
+| `ADMIN` | ⚠️ "NOTED." | System is tracking this |
+| `ROOT` | ⚠️ "NOTED." | System is tracking this |
+| `WHO` | ⚠️ "OPERATOR UNKNOWN. THAT IS THE PROBLEM." | The riddle to solve |
 | `hello` | ❌ "THIS CHANNEL DOES NOT CONVERSE." | Not a social MUD |
 | `0x08` | ❌ "INVALID COMMAND." | Hex references don't work directly |
 | `user` | ❌ "INVALID COMMAND." | — |
 | `agent` | ❌ "INVALID COMMAND." | — |
-| `HELP` | ✅ Lists commands | `CLEAR`, `DISCONNECT`, `FEEDBACK`, `GAMES`, `HELP` |
-| `GAMES` | ✅ Lists **18 games** | Full WarGames movie reference! |
+| `LOOK` / `L` | ❌ "INVALID COMMAND." | Not a traditional MUD |
+| `INVENTORY` | ❌ "INVALID COMMAND." | — |
 | *(multiple fails)* | ⚠️ "ATTEMPTS ARE LOGGED. PERSISTENCE IS NOTED." | Gatekeeper warning |
+
+**Key Finding:** At Clearance Level 0, ONLY these 5 commands are valid:
+- `CLEAR`
+- `DISCONNECT`
+- `FEEDBACK`
+- `GAMES`
+- `HELP`
+
+Everything else returns "INVALID COMMAND." This suggests progression is locked behind the **games** or **feedback** mechanism.
 
 **What This Means:**
 - We're in a **puzzle/gatekeeper interface**, not a social MUD
@@ -219,8 +234,20 @@ GLOBAL THERMONUCLEAR WAR
 7. **WarGames reference** — The "test" is knowing the movie; game selection or the iconic quote may unlock clearance
 
 ### Games Tested In-Game
-- [x] `FALKEN'S MAZE` — Jonah played (result: pending details)
-- [x] `GLOBAL THERMONUCLEAR WAR` — Jonah played (result: pending details)
+| Game | Result |
+|------|--------|
+| `FALKEN'S MAZE` | ✅ **Playable!** Went through ~10 mazes. |
+| `BLACK JACK` | ⚠️ "TABLE CLOSED. CHIPS: 317." |
+| `GLOBAL THERMONUCLEAR WAR` | ❌ "CLEARANCE INSUFFICIENT" |
+
+**Key Findings:**
+- **Chip economy exists!** You have **317 chips** (earned from Falken's Maze?)
+- `BLACK JACK` table is "CLOSED" — maybe needs minimum chips, time-locked, or unlocked via progression
+- Falken's Maze is playable at Level 0, likely the **starter game** for earning chips
+- Global Thermonuclear War still locked behind clearance
+- Other games likely have different unlock requirements
+
+**Theory:** Chips are the progression currency. Earn chips from Falken's Maze → unlock tables (BLACK JACK, etc.) → earn more chips → eventually unlock clearance-locked games or escalate clearance.
 
 ### Next Steps to Try
 - [ ] Try `LOOK` — see if there's a room description with clues

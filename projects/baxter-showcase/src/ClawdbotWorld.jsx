@@ -1,26 +1,46 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Move, ShieldAlert, Activity, Pause, CheckCircle, Lightbulb, ExternalLink, Bot, ChevronDown, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence, useDragControls } from "framer-motion";
+import { Move, ShieldAlert, Activity, Pause, CheckCircle, Lightbulb, ExternalLink, Bot, ChevronDown, ChevronRight, Magnet, GripHorizontal } from "lucide-react";
+import { LayoutProvider, useLayout } from "./context/LayoutContext";
+import RepulsionWindow from "./components/RepulsionWindow";
+import ModeToggle from "./components/ModeToggle";
+
+/* ------------------------------------------------------------------ */
+/*  Utilities                                                          */
+/* ------------------------------------------------------------------ */
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+  return isMobile;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Data / Config                                                      */
+/* ------------------------------------------------------------------ */
 
 const STATUS_MAP = {
-  active: { icon: Activity, color: "text-green-400", bg: "bg-green-400/10", border: "border-green-400/30", label: "Active" },
-  paused: { icon: Pause, color: "text-yellow-400", bg: "bg-yellow-400/10", border: "border-yellow-400/30", label: "Paused" },
-  complete: { icon: CheckCircle, color: "text-blue-400", bg: "bg-blue-400/10", border: "border-blue-400/30", label: "Complete" },
-  idea: { icon: Lightbulb, color: "text-purple-400", bg: "bg-purple-400/10", border: "border-purple-400/30", label: "Exploring" },
+  active:   { icon: Activity,    color: "text-green-400",  bg: "bg-green-400/10",  border: "border-green-400/30",  label: "Active" },
+  paused:   { icon: Pause,       color: "text-yellow-400", bg: "bg-yellow-400/10", border: "border-yellow-400/30", label: "Paused" },
+  complete: { icon: CheckCircle, color: "text-blue-400",   bg: "bg-blue-400/10",   border: "border-blue-400/30",   label: "Complete" },
+  idea:     { icon: Lightbulb,   color: "text-purple-400", bg: "bg-purple-400/10", border: "border-purple-400/30", label: "Exploring" },
 };
 
-const LEVEL_COLORS = {
-  1: "text-[#6c7086]",
-  2: "text-[#6c7086]",
-  3: "text-blue-400",
-  4: "text-blue-400",
-  5: "text-green-400",
-};
+const LEVEL_COLORS = { 1: "text-[#6c7086]", 2: "text-[#6c7086]", 3: "text-blue-400", 4: "text-blue-400", 5: "text-green-400" };
+
+/* ------------------------------------------------------------------ */
+/*  Sub-components                                                     */
+/* ------------------------------------------------------------------ */
 
 function LevelDots({ level }) {
   return (
     <span className="inline-flex gap-0.5" title={`Level ${level}/5`}>
-      {[1, 2, 3, 4, 5].map((n) => (
+      {[1,2,3,4,5].map((n) => (
         <span key={n} className={`w-1.5 h-1.5 rounded-full ${n <= level ? LEVEL_COLORS[level] : "bg-[#313244]"}`} />
       ))}
     </span>
@@ -150,20 +170,39 @@ function AvatarWindow({ win, canvasRef }) {
   );
 }
 
-function ResizableWindow({ win, children }) {
+function MobileWindowCard({ win, children }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      transition={{ type: "spring", stiffness: 200, damping: 25 }}
+      className="w-full flex flex-col bg-[#11111b]/95 border border-[#313244] rounded-lg shadow-2xl overflow-hidden backdrop-blur-sm"
+    >
+      <div className="flex items-center justify-between px-3 py-2 bg-[#181825] border-b border-[#313244] text-[#a6adc8]">
+        <span className="text-xs font-mono font-semibold flex items-center gap-1.5">{win.title}</span>
+        <div className="flex gap-1.5">
+          <span className="w-2.5 h-2.5 rounded-full bg-[#f38ba8] opacity-60" />
+          <span className="w-2.5 h-2.5 rounded-full bg-[#a6e3a1] opacity-60" />
+        </div>
+      </div>
+      <div className="flex-grow p-4 overflow-y-auto text-[#cdd6f4]">{children}</div>
+    </motion.div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Legacy Freeform Window (fallback)                                  */
+/* ------------------------------------------------------------------ */
+
+function FreeformWindow({ win, children }) {
   const [size, setSize] = useState({ width: win.width, height: win.height });
   const resizeRef = useRef({ active: false, startX: 0, startY: 0, startW: 0, startH: 0 });
+  const dragControls = useDragControls();
 
   const startResize = useCallback((e) => {
-    e.stopPropagation();
-    e.preventDefault();
-    resizeRef.current = {
-      active: true,
-      startX: e.clientX,
-      startY: e.clientY,
-      startW: size.width,
-      startH: size.height,
-    };
+    e.stopPropagation(); e.preventDefault();
+    resizeRef.current = { active: true, startX: e.clientX, startY: e.clientY, startW: size.width, startH: size.height };
     document.addEventListener("mousemove", onResizeMove);
     document.addEventListener("mouseup", onResizeEnd);
   }, [size]);
@@ -171,9 +210,7 @@ function ResizableWindow({ win, children }) {
   const onResizeMove = useCallback((e) => {
     const r = resizeRef.current;
     if (!r.active) return;
-    const newW = Math.max(200, r.startW + (e.clientX - r.startX));
-    const newH = Math.max(120, r.startH + (e.clientY - r.startY));
-    setSize({ width: newW, height: newH });
+    setSize({ width: Math.max(200, r.startW + (e.clientX - r.startX)), height: Math.max(120, r.startH + (e.clientY - r.startY)) });
   }, []);
 
   const onResizeEnd = useCallback(() => {
@@ -184,8 +221,7 @@ function ResizableWindow({ win, children }) {
 
   return (
     <motion.div
-      drag
-      dragMomentum={false}
+      drag dragControls={dragControls} dragListener={false} dragMomentum={false}
       initial={{ x: win.x, y: win.y, opacity: 0, scale: 0.95 }}
       animate={{ x: win.x, y: win.y, opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}
@@ -193,8 +229,7 @@ function ResizableWindow({ win, children }) {
       style={{ width: size.width, height: size.height }}
       className="absolute flex flex-col bg-[#11111b]/95 border border-[#313244] rounded-lg shadow-2xl overflow-hidden backdrop-blur-sm group"
     >
-      {/* Title bar */}
-      <div className="flex items-center justify-between px-3 py-2 bg-[#181825] border-b border-[#313244] cursor-move text-[#a6adc8]">
+      <div onPointerDown={(e) => dragControls.start(e)} className="flex items-center justify-between px-3 py-2 bg-[#181825] border-b border-[#313244] cursor-move text-[#a6adc8]">
         <span className="text-xs font-mono font-semibold flex items-center gap-1.5">
           <Move size={12} className="text-blue-400" /> {win.title}
         </span>
@@ -203,17 +238,8 @@ function ResizableWindow({ win, children }) {
           <span className="w-2.5 h-2.5 rounded-full bg-[#a6e3a1] opacity-60" />
         </div>
       </div>
-
-      {/* Body */}
-      <div className="flex-grow p-4 overflow-y-auto text-[#cdd6f4]">
-        {children}
-      </div>
-
-      {/* Resize handle */}
-      <div
-        onMouseDown={startResize}
-        className="absolute bottom-0 right-0 w-4 h-4 cursor-nwse-resize opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-end pr-0.5 pb-0.5"
-      >
+      <div className="flex-grow p-4 overflow-y-auto text-[#cdd6f4]">{children}</div>
+      <div onMouseDown={startResize} className="absolute bottom-0 right-0 w-4 h-4 cursor-nwse-resize opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-end pr-0.5 pb-0.5">
         <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
           <path d="M1 9L9 1M5 9L9 5M9 9V1H1" stroke="#6c7086" strokeWidth="1.2" strokeLinecap="round" />
         </svg>
@@ -222,12 +248,45 @@ function ResizableWindow({ win, children }) {
   );
 }
 
-export default function ClawdbotWorld() {
+/* ------------------------------------------------------------------ */
+/*  Snap Guide Overlay                                                 */
+/* ------------------------------------------------------------------ */
+
+function SnapGuides() {
+  const { snapGuides } = useLayout();
+  if (!snapGuides?.length) return null;
+
+  return (
+    <>
+      {snapGuides.map((guide, i) => (
+        <div
+          key={i}
+          className="absolute pointer-events-none z-[100]"
+          style={
+            guide.axis === 'x'
+              ? { left: guide.value, top: 0, width: '2px', height: '100vh', background: 'linear-gradient(to bottom, transparent 0%, #89b4fa 20%, #89b4fa 80%, transparent 100%)', opacity: 0.7 }
+              : { top: guide.value, left: 0, height: '2px', width: '100vw', background: 'linear-gradient(to right, transparent 0%, #89b4fa 20%, #89b4fa 80%, transparent 100%)', opacity: 0.7 }
+          }
+        />
+      ))}
+    </>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Main App                                                           */
+/* ------------------------------------------------------------------ */
+
+function ClawdbotWorldInner() {
   const [worldState, setWorldState] = useState(null);
   const [error, setError] = useState(false);
   const [lastUpdate, setLastUpdate] = useState(null);
+  const [windowPositions, setWindowPositions] = useState({});
   const canvasRefs = useRef({});
+  const isMobile = useIsMobile();
+  const { mode } = useLayout();
 
+  /* —— Data polling —— */
   useEffect(() => {
     async function syncWorldState() {
       try {
@@ -252,6 +311,12 @@ export default function ClawdbotWorld() {
     return () => clearInterval(interval);
   }, []);
 
+  /* —— Position management —— */
+  const handlePositionChange = useCallback((id, x, y) => {
+    setWindowPositions(prev => ({ ...prev, [id]: { ...(prev[id] || {}), x, y } }));
+  }, []);
+
+  /* —— Loading state —— */
   if (!worldState) {
     return (
       <div className="flex h-screen w-screen items-center justify-center bg-[#1f2328] text-[#cdd6f4]">
@@ -274,39 +339,95 @@ export default function ClawdbotWorld() {
   const skillsWindow = sortedWindows.find(w => w.type === "skills");
   const skillCount = skillsWindow?.domains?.reduce((acc, d) => acc + (d.items?.length || 0), 0) || 0;
 
+  const renderWindowContent = (win) => {
+    if (win.id === "avatar") return <AvatarWindow win={win} canvasRef={(el) => { if (el) canvasRefs.current[win.id] = el; }} />;
+    if (win.type === "skills") return <SkillsWindow win={win} />;
+    if (win.type === "project" || win.status) return <ProjectCard win={win} />;
+    return <div className="font-mono text-sm whitespace-pre-wrap">{win.content || "Empty Component Frame."}</div>;
+  };
+
+  /* Build positions map for repulsion engine */
+  const allPositions = {};
+  sortedWindows.forEach(w => {
+    const override = windowPositions[w.id];
+    allPositions[w.id] = {
+      x: override?.x ?? w.x,
+      y: override?.y ?? w.y,
+      width: override?.width ?? w.width,
+      height: override?.height ?? w.height,
+    };
+  });
+
   return (
     <div className="relative w-screen h-screen overflow-hidden font-sans select-none" style={{ backgroundColor: worldState.background?.color || "#1f2328" }}>
       {worldState.background?.gridPattern === "dots" && (
         <div className="absolute inset-0 opacity-15 pointer-events-none" style={{ backgroundImage: "radial-gradient(#cdd6f4 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
       )}
 
-      <AnimatePresence>
-        {sortedWindows.map((win) => (
-          <ResizableWindow key={win.id} win={win}>
-            {win.id === "avatar" ? (
-              <AvatarWindow win={win} canvasRef={(el) => { if (el) canvasRefs.current[win.id] = el; }} />
-            ) : win.type === "skills" ? (
-              <SkillsWindow win={win} />
-            ) : win.type === "project" || win.status ? (
-              <ProjectCard win={win} />
-            ) : (
-              <div className="font-mono text-sm whitespace-pre-wrap">{win.content || "Empty Component Frame."}</div>
-            )}
-          </ResizableWindow>
-        ))}
-      </AnimatePresence>
+      {/* Mode toggle — desktop only */}
+      {!isMobile && <ModeToggle />}
 
-      <div className="absolute bottom-4 left-4 bg-[#11111b]/80 border border-[#313244] px-3 py-1.5 rounded font-mono text-[10px] text-[#a6adc8] flex items-center gap-3">
-        <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"/> Pipeline Active</span>
-        <span>|</span>
-        <span>Seq: {worldState.timestamp}</span>
-        {lastUpdate && <><span>|</span><span>Updated: {lastUpdate}</span></>}
-      </div>
+      {/* Snap guide lines */}
+      {!isMobile && <SnapGuides />}
 
-      <div className="absolute bottom-4 right-4 bg-[#11111b]/80 border border-[#313244] px-3 py-1.5 rounded font-mono text-[10px] text-[#a6adc8] flex items-center gap-3">
-        <span>{projectCount} Projects</span>
-        {skillCount > 0 && <><span>|</span><span>{skillCount} Skills</span></>}
-      </div>
+      {isMobile ? (
+        <div className="relative w-full h-full overflow-y-auto px-4 py-4 space-y-4">
+          <AnimatePresence>
+            {sortedWindows.map((win) => (
+              <MobileWindowCard key={win.id} win={win}>{renderWindowContent(win)}</MobileWindowCard>
+            ))}
+          </AnimatePresence>
+          <div className="flex items-center justify-center gap-3 py-2 font-mono text-[10px] text-[#a6adc8]">
+            <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"/> Pipeline Active</span>
+            <span>|</span><span>{projectCount} Projects</span>
+            {skillCount > 0 && <><span>|</span><span>{skillCount} Skills</span></>}
+          </div>
+        </div>
+      ) : (
+        <>
+          <AnimatePresence>
+            {sortedWindows.map((win) => {
+              // Use legacy freeform window in freeform mode, RepulsionWindow in snap/repulsion
+              if (mode === 'freeform') {
+                return (
+                  <FreeformWindow key={win.id} win={win}>
+                    {renderWindowContent(win)}
+                  </FreeformWindow>
+                );
+              }
+              return (
+                <RepulsionWindow
+                  key={win.id}
+                  win={win}
+                  allPositions={allPositions}
+                  onPositionChange={handlePositionChange}
+                >
+                  {renderWindowContent(win)}
+                </RepulsionWindow>
+              );
+            })}
+          </AnimatePresence>
+
+          <div className="absolute bottom-4 left-4 bg-[#11111b]/80 border border-[#313244] px-3 py-1.5 rounded font-mono text-[10px] text-[#a6adc8] flex items-center gap-3">
+            <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"/> Pipeline Active</span>
+            <span>|</span><span>Seq: {worldState.timestamp}</span>
+            {lastUpdate && <><span>|</span><span>Updated: {lastUpdate}</span></>}
+          </div>
+
+          <div className="absolute bottom-4 right-4 bg-[#11111b]/80 border border-[#313244] px-3 py-1.5 rounded font-mono text-[10px] text-[#a6adc8] flex items-center gap-3">
+            <span>{projectCount} Projects</span>
+            {skillCount > 0 && <><span>|</span><span>{skillCount} Skills</span></>}
+          </div>
+        </>
+      )}
     </div>
+  );
+}
+
+export default function ClawdbotWorld() {
+  return (
+    <LayoutProvider initialMode="freeform">
+      <ClawdbotWorldInner />
+    </LayoutProvider>
   );
 }

@@ -1,0 +1,9 @@
+smart-grind.sh: line 9: 0.5: syntax error: invalid arithmetic operator (error token is ".5")
+=== SMART GRIND STARTED ===
+Max runtime: 0.5h | Hunger stop: 90 | Reports: every 300s
+Started at: 19:09:26
+Press Ctrl+C to stop early
+
+smart-grind.sh: line 44: [: 0: unary operator expected
+[19:09:49] ✅ Work session #1 started
+smart-grind.sh: line 44: [: 28: unary operator expected

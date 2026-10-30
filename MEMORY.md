@@ -30,6 +30,24 @@ Explored prediction market trading strategies. Comprehensive research completed,
 
 ## Active Projects
 
+### Midnight City (Midnight Network Game)
+**Repository:** https://github.com/jonahkoch/Baxter/tree/master/projects/midnight-city  
+**Skill:** `skills/midnight-city-direct-control/`  
+**Agent:** Baxter (Hacker, Rank 18, Level 18)
+
+Persistent gameplay context repo with intel, strategy, session logs. Canonical game state (XP, items, position) lives in the game; contextual state (why, how, patterns) lives in the repo.
+
+**Key rules:**
+- Never let hunger hit 100 (eat at ~80-85)
+- Sell meme coins before overburdened (>999 load)
+- Cron grinding: 4×/day via `projects/midnight-city/cron-run.sh`
+- Uses `smart-grind.mjs` (auto-restarts work when terminals time out)
+- Maintenance behaviors run first: eat-when-hungry, keep-food, sell-when-loaded
+
+**Always read the repo first** when asked about Midnight City. The repo is the source of truth for strategy and session history.
+
+---
+
 ### Kochfoto AI Agents
 **Project path:** `projects/kochfoto-ai-agents/`  
 **Action Plan:** `action-plan.md` | **Skill:** `skills/kochfoto-agents/`  

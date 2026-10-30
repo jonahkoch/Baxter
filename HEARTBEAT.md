@@ -26,8 +26,8 @@ Check `baxterclawbot@gmail.com` for unread emails. Alert Jonah if:
 
 **Check frequency:** Every 4 hours during active hours (skip late night unless urgent)
 
-**Last check:** 2026-09-09 17:52 CEST
+**Last check:** 2026-10-28 16:52 CEST
 
-**Status:** Context 26% · 69k in / 493 out — healthy
+**Status:** Context 14% · 1.7k in / 568 out — healthy
 
-**Note:** 0 unread emails. gcalcli not available for calendar check.
+**Note:** 0 unread emails. gcalcli not available for calendar check. Midnight City cron running 4×/day with smart-grind.mjs (switched from mcity-work.mjs on 2026-10-28). Smart-grind auto-restarts work when terminals time out — achieving ~8h effective grinding/day vs ~1h previously. Monitoring performance.

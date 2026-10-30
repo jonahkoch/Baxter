@@ -11,6 +11,8 @@ Quick reference for all active workstreams.
 | **Midnight** | `memory/midnight/session-handoff.md` | New — Cardano partner chain |
 | **Kochfoto** | `memory/kochfoto/session-handoff.md` | — |
 | **Proscenium** | `memory/proscenium/session-handoff.md` | Exploring |
+| **Engineering Workflow** | `skills/engineering-workflow/SKILL.md` | Active — Matt Pocock-inspired dev process |
+| **Skills Catalog** | `memory/engineering/skills-catalog.md` | Reference index of all available skills |
 
 ## How to Switch
 
