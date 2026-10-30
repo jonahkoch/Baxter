@@ -11,6 +11,25 @@ Template for each session:
 **Next:** 
 ```
 
+## 2026-10-28 21:13
+**Duration:** 2h+ (cron production run)
+**Grind:** Hacking Level 18 (1,669,017 → 1,671,739+) — smart-grind active
+**Delta:** +2,722+ XP, continuous grinding achieved
+**Actions:**
+- **Major architecture change:** Switched cron from `mcity-work.mjs` to `smart-grind.mjs`
+- `mcity-work.mjs` quit on terminal timeouts (normal game mechanic) after ~13-24 minutes
+- `smart-grind.mjs` auto-restarts work when terminals time out, auto-reconnects on lease expiry
+- 22:00 UTC run: completed full 2 hours with multiple auto-recoveries
+- Maintenance behaviors still run first (eat, buy food, sell)
+**Observations:**
+- Smart-grind pattern: work for ~4-6 min → terminal times out → detects `working=false` → restarts work
+- Occasional 404 errors when lease expires → reconnects within 2-3 seconds
+- With 4×/day schedule, expect ~8 hours of effective grinding daily
+- Old mcity-work.mjs achieved ~1 hour/day (sessions died quickly)
+**Next:** Monitor 4×/day cron performance, consider 30-min interval if terminal competition is low
+
+---
+
 ## 2026-10-28 00:16
 **Duration:** 5m (cron test)
 **Grind:** Hacking Level 18 — test run
