@@ -10,6 +10,7 @@ Quick reference for all active workstreams.
 | **Cardano / Web3** | `memory/cardano/session-handoff.md` | Active projects |
 | **Midnight** | `memory/midnight/session-handoff.md` | New — Cardano partner chain |
 | **Kochfoto** | `memory/kochfoto/session-handoff.md` | — |
+| **Proscenium** | `memory/proscenium/session-handoff.md` | Exploring |
 | **Engineering Workflow** | `skills/engineering-workflow/SKILL.md` | Active — Matt Pocock-inspired dev process |
 
 ## How to Switch
