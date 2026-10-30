@@ -1,6 +1,8 @@
 # Engineering Workflow
 
-A composable, skill-based approach to real engineering work. Inspired by Matt Pocock's agent skills, adapted for OpenClaw.
+A composable, skill-based approach to real engineering work.  
+**Inspired by:** [mattpocock/skills](https://github.com/mattpocock/skills) — adapted for OpenClaw.  
+**Catalog:** See `memory/engineering/skills-catalog.md` for the full skill index (ported on-demand).
 
 **Philosophy:** Plan before doing. Clarify before building. Validate before committing. Compose skills as needed — don't follow a rigid process.
 
