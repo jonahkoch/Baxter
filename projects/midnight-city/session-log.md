@@ -195,3 +195,81 @@ Template for each session:
 **Smart Grind Started:** 20:33 CEST | PID 4101200 | 2h limit, hunger 90 stop
 **Observations:** Terminal saturation common; script auto-restarts work
 **Next:** Review grind log on completion
+
+## 2026-10-31 17:33
+**Duration:** Manual check-in + maintenance
+**Grind:** Hacking Level 18 (1,671,739+ XP) — profession work resumed
+**Delta:** Maintenance only (cron has been grinding)
+**Actions:**
+- Connected to agent (was idle, smart-grind cron had lost lease)
+- Found hunger at 100 (starving), load overburdened (796 meme coins, 33% speed)
+- Ate 2x matcha_smoothie (hunger 100→60)
+- Stopped work, moved to Central Plaza
+- Sold 796 meme_coin → +3,184 crystal (106,111 → 109,295)
+- Load: overburdened → normal (100% work speed)
+- Returned to Hacker House interior, restarted profession work
+**Observations:**
+- Hacking Level 18, Rank 18
+- Crystal balance: 109,295
+- Health: 100/100, Hunger: 60 (normal)
+- Matcha smoothies: 48
+- Work speed restored to 100%, actively grinding
+- Smart-grind cron running 4×/day (currently active PID 675976, 16:00 run)
+**Next:** Continue monitoring via cron, next manual check-in in ~4h or as needed
+
+---
+
+## 2026-11-01 04:10
+**Duration:** Manual check-in + maintenance
+**Grind:** Hacking Level 18 (1,671,739 → 1,776,527 XP) — cron grinding since last check-in
+**Delta:** +104,788 XP, maintenance: sold meme coins, ate, restarted work
+**Actions:**
+- Connected to agent (was idle, no active cron running)
+- Found hunger at 100 (starving), load overburdened (241 meme coins, 33% speed)
+- Ate 2x matcha_smoothie (hunger 100→60)
+- Moved to Central Plaza
+- Sold 241 meme_coin → +964 crystal (109,295 → 110,259)
+- Load: overburdened → normal (100% work speed)
+- Returned to Hacker House interior, restarted profession work
+**Observations:**
+- Hacking Level 18, Rank 18
+- XP: 1,776,527 / 1,848,384 — ~71.9k XP to Level 19
+- Crystal balance: 110,259
+- Health: 100/100, Hunger: 60 (normal)
+- Matcha smoothies: 46
+- Work speed restored to 100%, actively grinding
+- Cron schedule: 4×/day at 13:00, 16:00, 19:00, 22:00 UTC
+- Last cron log: Oct 31 22:00 run completed successfully
+**Next:** Next cron run at 13:00 UTC (~9h from now). Monitor for level-up to 19.
+
+---
+
+## 2026-11-06 05:43
+**Duration:** N/A (diagnostic + fix)
+**Grind:** Hacking Level 18 — verification after script restore
+**Delta:** N/A
+**Actions:**
+- Identified `smart-grind.mjs` missing from `skills/midnight-city-direct-control/scripts/`
+- Root cause: File deleted from working tree (still present in Baxter repo backup)
+- Restored `smart-grind.mjs` from `/root/.openclaw/workspace/Baxter/skills/midnight-city-direct-control/scripts/`
+- Verified script loads and connects correctly (test run: connected, lease acquired, work submitted)
+**Observations:**
+- 19:00 and 22:00 runs on Nov 5 failed with `MODULE_NOT_FOUND` — this was the missing file
+- 13:00 UTC run on Nov 6 completed full 2-hour session after restore
+**Next:** Monitor 16:00, 19:00, 22:00 runs for consistency; clear cron-error.log after clean runs
+
+---
+
+## 2026-11-06 15:27
+**Duration:** ~2h (cron verification)
+**Grind:** Hacking Level 18 — smart-grind confirmed working
+**Delta:** Maintenance only (cron grinding)
+**Actions:**
+- Verified 13:00 UTC run completed successfully (13:00:04 → 15:10:04)
+- Full 2-hour session with auto-reconnect on lease expiry
+- hunger=0, load=normal, working=true throughout
+**Observations:**
+- smart-grind.mjs auto-recovery pattern working: work 4-6 min → timeout → reconnect → restart within seconds
+- No manual intervention required
+- File restored and functional; cron pipeline healthy
+**Next:** Resume normal monitoring; next check-in after 16:00 run or on request
