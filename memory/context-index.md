@@ -12,6 +12,7 @@ Quick reference for all active workstreams.
 | **Kochfoto** | `memory/kochfoto/session-handoff.md` | — |
 | **Proscenium** | `memory/proscenium/session-handoff.md` | Exploring |
 | **Engineering Workflow** | `skills/engineering-workflow/SKILL.md` | Active — Matt Pocock-inspired dev process |
+| **Harness Engineering** | `projects/harness-engineering/README.md` | Active — three-layer agent architecture framework |
 | **Skills Catalog** | `memory/engineering/skills-catalog.md` | Reference index of all available skills |
 
 ## How to Switch
