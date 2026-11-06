@@ -374,12 +374,87 @@ review_task = Task(
 
 ---
 
+## Memory and Checkpointing
+
+By default, an agent forgets everything once a run ends. Come back tomorrow to fix another bug in the same project, and it starts from zero.
+
+Two mechanisms let an agent carry information across runs, and each serves a different purpose:
+
+| Mechanism | Purpose | When to Use |
+|-----------|---------|-------------|
+| **Checkpointing** | Saves agent state during a run | Resume after interruption, explore different paths from same point |
+| **Persistent memory** | Stores facts across separate conversations | Project preferences, conventions, learned patterns |
+
+Example: "Always format the final code before finishing" — a preference that should persist across sessions.
+
+---
+
+## Testing and Evaluation
+
+Agent harnesses are easiest to evaluate when success can be checked automatically. A test suite gives the agent a concrete objective, so it can plan, edit, test, and repeat until everything passes.
+
+**Example from the source:** A BankAccount class with two real bugs and five tests (three failing). The rule: fix only the implementation, not the tests.
+
+This mirrors how Anthropic evaluates coding agents internally. One published example has Claude rebuilding a clone of the claude.ai interface against a large suite of failing tests.
+
+**The harness took the project from 3 failing and 2 passing to all 5 passing**, with the implementation-only rule closing off the shortcut of editing or removing the failing tests.
+
+---
+
+## What's Still Your Job
+
+Some parts of the system aren't things the framework builds for you:
+
+| Your Responsibility | Why |
+|---------------------|-----|
+| **The prompts** | Each agent's behavior comes from its role, goal, and backstory. Getting those right takes testing and iteration. No configuration flag substitutes for it. |
+| **The execution environment** | The sandbox (E2B or self-managed VM) has to be set up and wired in. |
+| **Tool selection** | Which tools each agent gets, and which agent should have access to what, is a design decision the framework doesn't make. |
+
+---
+
+## Cost Considerations
+
+Planning, subagents, and looping all add API calls. A complex agent setup can end up more expensive than a task a single model call would have solved directly.
+
+**The tradeoff:** harness complexity vs. model capability. Sometimes a simpler approach is more cost-effective.
+
+---
+
+## Long-Term Limitation
+
+As models improve, some scaffolding stops being necessary. Some of what gets built into a harness today is a **workaround for today's model limits** rather than a permanent requirement.
+
+**Example:** Anthropic originally used context resets to keep Claude Sonnet 4.5 from ending tasks too early. They weren't needed anymore with the more capable Claude Opus 4.5.
+
+> **Build for today's models, but design so you can remove scaffolding tomorrow.**
+
+---
+
+## Wrapping Up
+
+A coding agent's capability lives mostly in the harness, and an orchestration framework hands you more of that harness than you'd guess.
+
+The loop, planning, delegation, sandboxing, and memory all arrive as configuration, while the prompts, the execution environment, and the tool choices remain yours.
+
+---
+
+## Resources
+
+| Resource | URL |
+|----------|-----|
+| CrewAI Documentation | https://docs.crewai.com/ |
+| AI Engineering Hub (GitHub) | https://github.com/patchy631/ai-engineering-hub/tree/main/build-code-harness |
+
+---
+
 ## Open Questions
 
 - How does this map to Baxter's current architecture (OpenClaw-based, not CrewAI)?
 - Which layers from Claude's harness are missing or underdeveloped in Baxter?
 - Should we adopt the brain/hands mental model explicitly in documentation?
 - Should we evaluate CrewAI as a potential harness framework for Baxter?
+- What's our test suite for evaluating Baxter's harness improvements?
 
 ---
 

@@ -83,3 +83,5 @@
 | 2026-11-06 | Jonah transferred full Harness Engineering framework | Await direction on Phase 1 |
 | 2026-11-06 | Part 2 (10-step implementation guide) received and filed | Await direction on Phase 1 |
 | 2026-11-06 | Part 3 (Claude harness architecture) received and filed | Await direction on Phase 1 |
+| 2026-11-06 | Part 3 expanded: reasoning, planning, subagent delegation | Await direction on Phase 1 |
+| 2026-11-06 | Part 3 expanded: sandboxing, human-in-the-loop, hierarchical crews | Await direction on Phase 1 |
