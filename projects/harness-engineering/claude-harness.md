@@ -291,6 +291,66 @@ manager = Agent(
 
 This is how you scale beyond one context window without losing coherence.
 
+### Hierarchical Crew Setup
+
+```python
+from crewai import Crew, Process
+
+crew = Crew(
+    agents=[explorer, coder, tester],
+    tasks=[task],
+    manager_agent=manager,
+    process=Process.hierarchical,
+)
+```
+
+**Note:** `allow_delegation` is **disabled by default**, so it must be explicitly enabled on the manager.
+
+---
+
+## Sandboxing: Securing Agent Execution
+
+An agent with shell access can run a destructive command, and telling the model not to do something isn't a safeguard.
+
+**Real protection comes from two layers:**
+1. A permission system that requires approval for sensitive actions
+2. A sandbox that isolates execution, so even approved commands can't touch the host machine
+
+Anthropic uses the same approach. Moving code execution into a sandbox cuts down how often a user needs to approve actions while still protecting the host system.
+
+### Sandboxing in CrewAI
+
+Executing code inside a sandbox rather than on the host machine applies that second layer. In this setup, code runs inside **E2B**, which spins up a fresh VM per session and destroys it afterward.
+
+Shell commands and Python run entirely inside that isolated environment.
+
+```python
+from crewai_tools import E2BExecTool, E2BPythonTool
+
+sandbox_tools = [E2BExecTool(), E2BPythonTool()]  # run tests / run code
+```
+
+---
+
+## Human-in-the-Loop Approval
+
+Setting `human_input=True` on a Task pauses the crew after it generates an answer. You review the output, then approve it or send it back for another iteration.
+
+When execution reaches that task, CrewAI waits for your feedback through standard input.
+
+```python
+from crewai import Task
+
+review_task = Task(
+    description="Review the code changes for correctness.",
+    human_input=True,  # pauses for human review
+)
+```
+
+### Key Insight
+
+> **Telling the model not to do something isn't a safeguard. Real protection is permissions + sandbox.**
+
 ---
 
 ## Key Principles
