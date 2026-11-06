@@ -121,11 +121,139 @@ task = Task(
 
 ---
 
+## Running the Crew
+
+```python
+result = Crew(agents=[bug_fixer], tasks=[task]).kickoff(
+    inputs={"objective": "the overdraft bug in account.py"}
+)
+```
+
+### Three Concepts to Understand
+
+1. **Agent** — defines who does the work, through its role, goal, LLM, and tools
+2. **Task** — describes the assignment
+3. **Crew** — brings agents and tasks together. Calling `kickoff()` runs the same execution loop regardless of whether the underlying model is Anthropic, OpenAI, Google, or something else
+
+---
+
+## Giving the Agent Tools
+
+Tools are what let a model that only generates text actually work on a codebase. They read files, write them, run shell commands, and call external APIs.
+
+CrewAI ships file system tools out of the box:
+- **FileReadTool** — reads files
+- **DirectoryReadTool** — lists directories
+- **FileWriterTool** — writes files
+
+```python
+from crewai_tools import DirectoryReadTool, FileReadTool, FileWriterTool
+
+read_file = FileReadTool()
+write_file = FileWriterTool()
+list_dir = DirectoryReadTool()
+
+filesystem_tools = [read_file, write_file, list_dir]
+```
+
+### Tools as External Memory
+
+These also double as external memory. Instead of holding a large search result in the model's context window, the agent can write it to a file, keep only the filename, and read it back when needed.
+
+This keeps the context window smaller and the model more focused — what Anthropic calls **context engineering**.
+
+### Custom Tools
+
+Built-in tools cover common workflows only. For anything more specific, expose a Python function as a tool with the `@tool` decorator.
+
+The docstring acts as the instruction manual, telling the model what the tool does, when to use it, and what it expects as input.
+
+```python
+from crewai.tools import tool
+import subprocess
+
+@tool("run_tests")
+def run_tests(path: str = "tests/") -> str:
+    """Run the pytest suite at the given path and return the result."""
+    result = subprocess.run(
+        ["pytest", path, "-q"], capture_output=True, text=True, timeout=120
+    )
+    output = result.stdout + result.stderr
+    return output[-4000:] if len(output) > 4000 else output
+```
+
+---
+
+## Planning Long-Running Tasks
+
+As tasks get more complex, a plain execution loop starts losing track of the original goal. After enough tool calls, file reads, and intermediate results, the context fills up and the objective gets crowded out by everything that came after it.
+
+This slow degradation is what people call **context rot**.
+
+Planning addresses it directly. The agent builds a step-by-step plan before doing any work and keeps that plan in context throughout execution.
+
+The plan doesn't do the work. It's a roadmap that keeps the model connected to the original goal — the same job Claude Code's to-do list does.
+
+### CrewAI Planning
+
+CrewAI adds this at the crew level with `planning=True`. It generates a plan before execution and keeps it available as the task progresses.
+
+```python
+from crewai import Crew, LLM
+
+crew = Crew(
+    agents=self.agents,
+    tasks=self.tasks,
+    planning=True,
+    planning_llm=LLM(model="gpt-4o-mini"),
+)
+```
+
+By default, CrewAI uses gpt-4o-mini for planning. You can swap in any LLM you prefer for that step.
+
+### Individual Agent Reasoning
+
+Individual agents can also reason about their own work with `reasoning=True`:
+
+```python
+from crewai import Agent
+
+agent = Agent(
+    role="...",
+    goal="...",
+    reasoning=True,  # agent plans its own approach
+)
+```
+
+---
+
+## Key Principles
+
+1. **The model is the brain, the harness is the hands** — don't conflate the two
+2. **The loop is simple, the layers around it are not** — safety comes from the harness, not the model
+3. **Each layer adds reliability without replacing the loop** — planning, memory, sandbox all complement the core loop
+4. **Tool calls are the interface** — everything the model does goes through the same mechanism
+5. **Tools double as external memory** — write to files to avoid context rot
+6. **Planning prevents context rot** — a roadmap keeps the model connected to the original goal
+
+---
+
+## Relationship to the Three-Layer Model
+
+| Three-Layer Model | Claude Harness |
+|-------------------|----------------|
+| **Harness Engineering** | Memory, Skills, Protocols, Harness Core (sandbox, evaluator, approval) |
+| **Loop Engineering** | The core while loop + iteration until no tool calls |
+| **Graph Engineering** | Sub-agent orchestration, conditional routing between agents |
+
+---
+
 ## Open Questions
 
 - How does this map to Baxter's current architecture (OpenClaw-based, not CrewAI)?
 - Which layers from Claude's harness are missing or underdeveloped in Baxter?
 - Should we adopt the brain/hands mental model explicitly in documentation?
+- Should we evaluate CrewAI as a potential harness framework for Baxter?
 
 ---
 
