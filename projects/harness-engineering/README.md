@@ -24,6 +24,8 @@ The goal is to apply this framework to Baxter's architecture and identify concre
 |------|---------|
 | `README.md` | This file — project overview and navigation |
 | `overview.md` | Complete reference document — all three layers, mistakes, checklist, resources |
+| `implementation-guide.md` | 10-step guide from 1 agent to 20 autonomous agents |
+| `claude-harness.md` | Claude Code's harness architecture — loop, layers, CrewAI mapping |
 | `action-plan.md` | Current phase, decisions, and next steps |
 
 ---

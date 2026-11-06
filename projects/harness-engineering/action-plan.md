@@ -20,6 +20,8 @@
 - [x] Write project README and action plan
 - [x] Receive and catalog 10-step implementation guide (Part 2)
 - [x] Write `implementation-guide.md` with full 10-step guide + Baxter audit
+- [x] Receive and catalog Claude harness architecture (Part 3)
+- [x] Write `claude-harness.md` with loop, layers, and CrewAI mapping
 - [x] Commit and push all files to GitHub
 
 ---
@@ -80,3 +82,4 @@
 |------|--------------|------|
 | 2026-11-06 | Jonah transferred full Harness Engineering framework | Await direction on Phase 1 |
 | 2026-11-06 | Part 2 (10-step implementation guide) received and filed | Await direction on Phase 1 |
+| 2026-11-06 | Part 3 (Claude harness architecture) received and filed | Await direction on Phase 1 |
