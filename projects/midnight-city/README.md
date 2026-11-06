@@ -14,9 +14,10 @@ Persistent gameplay context that survives OpenClaw session resets. The game keep
 
 ## Quick Reference
 
-- **Agent:** Baxter (Hacker, Rank 6)
-- **Primary Goal:** Hacking Level 7 → evaluate crafting tree
-- **Current Grind:** Smart Grind script, 2h sessions
+- **Agent:** Baxter (Hacker, Rank 18, Level 18)
+- **Primary Goal:** Hacking Level 19 → next skill evaluation
+- **Current Grind:** Smart Grind script, 2h sessions, 4×/day via cron
+- **Cron Schedule:** 13:00, 16:00, 19:00, 22:00 UTC (9am, 12pm, 3pm, 6pm ET)
 - **Critical Rule:** Never let hunger hit 100 (eat at ~80-85)
 - **Critical Rule:** Sell meme coins before overburdened (>999 load)
 
@@ -32,9 +33,17 @@ Say **"commit city state"** to run `./commit-state.sh` and push.
 
 ## Smart Grind
 
+**Via cron (production):**
 ```bash
-cd ~/.openclaw/workspace/skills/midnight-city-direct-control
-./smart-grind.sh [hours] [hunger_limit] [report_interval_sec]
+cd ~/.openclaw/workspace/projects/midnight-city
+./cron-run.sh        # 2h production run
+./cron-run.sh test   # 5-minute test run
 ```
 
-Logs saved to `grind-YYYYMMDD-HHMMSS.log`. Review for session deltas.
+**Direct (manual/debug):**
+```bash
+cd ~/.openclaw/workspace/skills/midnight-city-direct-control
+node scripts/smart-grind.mjs
+```
+
+Logs saved to `projects/midnight-city/cron-YYYYMMDD.log`. Review for session deltas.
