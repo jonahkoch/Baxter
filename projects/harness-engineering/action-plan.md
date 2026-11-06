@@ -23,6 +23,10 @@
 - [x] Receive and catalog Claude harness architecture (Part 3)
 - [x] Write `claude-harness.md` with loop, layers, and CrewAI mapping
 - [x] Commit and push all files to GitHub
+- [x] Expand Claude harness with all subsections: reasoning, planning, subagents, sandboxing, approval, memory, checkpointing, testing, cost, limitations
+
+**Total commits:** 6  
+**Files created:** 4 (`overview.md`, `implementation-guide.md`, `claude-harness.md`, `README.md`)
 
 ---
 
@@ -83,5 +87,8 @@
 | 2026-11-06 | Jonah transferred full Harness Engineering framework | Await direction on Phase 1 |
 | 2026-11-06 | Part 2 (10-step implementation guide) received and filed | Await direction on Phase 1 |
 | 2026-11-06 | Part 3 (Claude harness architecture) received and filed | Await direction on Phase 1 |
+| 2026-11-06 | Part 3 expanded: reasoning, planning, subagent delegation | Await direction on Phase 1 |
+| 2026-11-06 | Part 3 expanded: sandboxing, human-in-the-loop, hierarchical crews | Await direction on Phase 1 |
+| 2026-11-06 | Part 3 complete: memory, checkpointing, testing, cost, limitations | Await direction on Phase 1 |
 | 2026-11-06 | Part 3 expanded: reasoning, planning, subagent delegation | Await direction on Phase 1 |
 | 2026-11-06 | Part 3 expanded: sandboxing, human-in-the-loop, hierarchical crews | Await direction on Phase 1 |
