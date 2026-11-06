@@ -218,12 +218,78 @@ Individual agents can also reason about their own work with `reasoning=True`:
 ```python
 from crewai import Agent
 
-agent = Agent(
-    role="...",
-    goal="...",
-    reasoning=True,  # agent plans its own approach
+bug_fixer = Agent(
+    role="Bug Fixer",
+    goal="Find and describe the fix for the reported bug in the codebase.",
+    backstory="You read directories and files to build an accurate picture of the code.",
+    tools=[FileReadTool()],
+    reasoning=True,
+    max_reasoning_attempts=3  # Optional: limit reasoning iterations
 )
 ```
+
+**Planning and reasoning solve different problems:**
+- **Planning** builds a high-level roadmap for the overall task
+- **Reasoning** gives one agent time to think through its own approach before acting
+
+**When reasoning is enabled, the agent:**
+1. Reflects on the task and drafts an execution plan
+2. Evaluates whether the plan is ready
+3. Refines the plan if necessary, until satisfied or hits `max_reasoning_attempts`
+4. Injects the finalized reasoning plan into the task before execution
+
+Together, they keep the agent anchored on long-running tasks and reduce drift from the original goal.
+
+---
+
+## Delegating with Subagents
+
+Planning keeps the agent focused, but it doesn't reduce how much information the model has to hold. On a large codebase, even a well-planned task can exceed a single context window.
+
+Finding one bug may require reading dozens of files, and the main agent doesn't need to keep all of them in memory.
+
+**Subagents solve this through delegation.** The main agent hands a specific task to a helper agent, which works in its own context and returns a short summary. The main agent sees the conclusion, not the intermediate steps.
+
+CrewAI supports this through **hierarchical workflows**, where a manager agent delegates to specialist agents and combines their results.
+
+### Example: Manager + Three Specialists
+
+Instead of one Bug Fixer doing all the work, split it across a manager and three specialists:
+
+| Role | Responsibility |
+|------|---------------|
+| **Codebase Explorer** | Explores the code and maps the repository |
+| **Software Engineer** | Implements the requested change |
+| **Test Runner** | Runs tests in the sandbox and reports pass/fail |
+| **Engineering Lead** | Oversees the three specialists, decides who does what |
+
+```python
+from crewai import Crew, Agent, Task, Process
+
+explorer = Agent(
+    role="Codebase Explorer",
+    goal="Map the repository and surface the files relevant to the task.",
+    backstory="You read directories and files to build a picture of the code.",
+    tools=[read_file, list_dir],
+    llm=llm,
+)
+
+# Same pattern for Software Engineer and Test Runner
+
+manager = Agent(
+    role="Engineering Lead",
+    goal="Break the request into steps and delegate each to the right specialist.",
+    backstory="You decide who does what, review tests, finish once change is done.",
+    llm=llm,
+    allow_delegation=True,
+)
+```
+
+### Key Insight
+
+> **The main agent sees the conclusion, not the intermediate steps.**
+
+This is how you scale beyond one context window without losing coherence.
 
 ---
 
