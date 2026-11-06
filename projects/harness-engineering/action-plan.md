@@ -11,13 +11,16 @@
 **Date:** 2026-11-06
 
 **Deliverables:**
-- [x] Receive and catalog Harness Engineering framework from Jonah
+- [x] Receive and catalog Harness Engineering framework from Jonah (Part 1)
 - [x] Document all three layers (Harness, Loop, Graph)
 - [x] Capture mistakes checklist and production-ready checklist
 - [x] Record resources and further reading links
 - [x] File everything in `memory/harness-engineering/overview.md`
 - [x] Create project directory at `projects/harness-engineering/`
 - [x] Write project README and action plan
+- [x] Receive and catalog 10-step implementation guide (Part 2)
+- [x] Write `implementation-guide.md` with full 10-step guide + Baxter audit
+- [x] Commit and push all files to GitHub
 
 ---
 
@@ -76,3 +79,4 @@
 | Date | What Happened | Next |
 |------|--------------|------|
 | 2026-11-06 | Jonah transferred full Harness Engineering framework | Await direction on Phase 1 |
+| 2026-11-06 | Part 2 (10-step implementation guide) received and filed | Await direction on Phase 1 |
