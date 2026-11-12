@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual env
+venv/
+
+# Checkpoints (runtime data, not source)
+checkpoints/*.json
+
+# XP logs (runtime data)
+memory/xp-efficiency.json

@@ -260,6 +260,29 @@ Template for each session:
 
 ---
 
+## 2026-11-12 18:45-19:22
+**Duration:** 30m test run
+**Grind:** Hacking Level 20 (2,250,193 → 2,250,539 XP) — v1 Harness test
+**Delta:** +346 XP, load normalized, meme coins sold
+**Actions:**
+- **Built v1 Agent Harness** — replaced hardcoded cron-run.sh with agent-based reasoning
+- Scout Agent reads game state (context, inventory, needs, progression)
+- Strategist Agent decides: eat? sell? grind? (priorities: survival → load → food → work)
+- Operator Agent executes via mcity-control API
+- **Test results:**
+  - 3 full work sessions completed (+87, +116, +116 XP)
+  - Maintenance: sold meme coins when overburdened (load 2827 → 0)
+  - Auto-restart on terminal timeout (up to 3 retries)
+  - Health checks every 30s during work
+  - Hit lease expiry issue after ~30min — auto-reconnect needs hardening
+**Observations:**
+- Harness works for maintenance + short work cycles
+- Lease expiry during long loops causes cascading failures
+- Need: persistent connection or heartbeat in background thread
+**Next:** Harden connection persistence, add cron integration for production use
+
+---
+
 ## 2026-11-06 15:27
 **Duration:** ~2h (cron verification)
 **Grind:** Hacking Level 18 — smart-grind confirmed working
