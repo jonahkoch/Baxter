@@ -73,6 +73,19 @@ Add a true Strategist that reasons about:
 - XP/hour comparisons across skills
 - Long-term goal optimization (level 20 vs crafting vs exploration)
 
+## Session Continuity
+
+When picking up this project:
+1. Read `session-log.md` for latest status and known issues
+2. Check `memory/xp-efficiency.json` for grind efficiency data
+3. Verify agent connection: `cd skills/midnight-city-direct-control && node scripts/mcity-control.mjs claimable`
+4. The harness requires `MCITY_AGENT_ID` in the skill's `.env`
+
+### Known Issues (2026-11-12)
+- **Lease expiry:** Agent lease expires after 5min without heartbeats. During long work loops, the harness may lose connection and fail to auto-reconnect.
+- **Fix needed:** Background heartbeat thread or persistent connection wrapper.
+- **Workaround:** Run shorter iterations (`--single` or `--iterations N`) and reconnect between sessions.
+
 ## Safety
 
 - The harness runs alongside `cron-run.sh` — nothing is deleted
