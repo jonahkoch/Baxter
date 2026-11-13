@@ -260,6 +260,29 @@ Template for each session:
 
 ---
 
+## 2026-11-13 18:17-19:00
+**Duration:** 45m diagnostic + fix session
+**Grind:** Hacking Level 20 (2,251,208 XP) — work restarted manually
+**Delta:** Maintenance only (cron broken for 4+ days)
+**Actions:**
+- **Diagnosed grind gap root cause:** `smart-grind.mjs` missing from `scripts/` since Nov 9
+- **Restored smart-grind.mjs** from repo backup (`Baxter/skills/...`)
+- **Fixed harness lease expiry:** Added `_ensure_connected()` to `operator.py`
+  - Auto-connects before every API call if lease is stale
+  - Retries once on 401/403/404 errors
+  - Tracks lease expiry globally across all commands
+- **Added heartbeat monitoring:** Created `HEARTBEAT.md` with Midnight City checks
+  - Check every 4-6 hours: idle status, hunger, load, file integrity
+  - Alert if agent idle >6h or smart-grind.mjs missing
+- **Committed changes:** `bb775f22` — "fix(midnight-city): add heartbeat monitoring + harness auto-reconnect"
+- **Restarted work:** Agent now grinding at crypto terminal
+**Observations:**
+- 4+ days of zero grinding (Nov 9-13) due to deleted file — no one noticed
+- Cron logs show immediate failure: `MODULE_NOT_FOUND` on every run
+- Harness auto-reconnect fix should prevent lease expiry cascading failures
+- Heartbeat checks will catch future silent failures
+**Next:** Monitor next cron run (19:00 UTC), verify smart-grind works, heartbeat check in ~4h
+
 ## 2026-11-12 18:45-19:22
 **Duration:** 30m test run
 **Grind:** Hacking Level 20 (2,250,193 → 2,250,539 XP) — v1 Harness test
