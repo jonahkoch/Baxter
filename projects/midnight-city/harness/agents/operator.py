@@ -3,14 +3,63 @@ Operator Agent — Execute actions via the game API.
 """
 import subprocess
 import json
+import time
 from typing import Dict, Any, Optional
 from pathlib import Path
 
 SKILL_DIR = Path("/root/.openclaw/workspace/skills/midnight-city-direct-control")
 
 
+# Track last known good connection
+_last_lease_expires = 0
+_agent_id = "user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3"
+
+
+def _ensure_connected() -> bool:
+    """Ensure we have a valid lease. Reconnect if stale or missing."""
+    global _last_lease_expires
+    
+    # If lease is still fresh (with 30s buffer), no need to reconnect
+    if _last_lease_expires > (time.time() * 1000) + 30000:
+        return True
+    
+    # Try to connect
+    result = subprocess.run(
+        ["node", str(SKILL_DIR / "scripts" / "mcity-control.mjs"), "connect", _agent_id],
+        capture_output=True,
+        text=True,
+        cwd=str(SKILL_DIR),
+        timeout=30,
+    )
+    
+    if result.returncode != 0:
+        return False
+    
+    try:
+        data = json.loads(result.stdout.strip())
+        if data.get("connected"):
+            _last_lease_expires = data["lease"]["expiresAt"]
+            return True
+    except (json.JSONDecodeError, KeyError):
+        pass
+    
+    return False
+
+
 def _run_command(cmd: list, timeout: int = 120) -> Dict[str, Any]:
-    """Run a mcity-control command and return parsed JSON."""
+    """Run a mcity-control command and return parsed JSON.
+    
+    Automatically reconnects if lease is stale.
+    """
+    global _last_lease_expires
+    
+    # Ensure connection before every command
+    if not _ensure_connected():
+        return {
+            "error": True,
+            "reason": "Failed to establish connection",
+        }
+    
     full_cmd = ["node", str(SKILL_DIR / "scripts" / "mcity-control.mjs")] + cmd
     result = subprocess.run(
         full_cmd,
@@ -21,6 +70,27 @@ def _run_command(cmd: list, timeout: int = 120) -> Dict[str, Any]:
     )
     
     if result.returncode != 0:
+        # Check if it's a lease/auth error — try reconnect once
+        stderr = result.stderr.lower()
+        if any(x in stderr for x in ["401", "403", "404", "control_lost", "not connected"]):
+            _last_lease_expires = 0  # Force reconnect on next call
+            if _ensure_connected():
+                # Retry the command once
+                result = subprocess.run(
+                    full_cmd,
+                    capture_output=True,
+                    text=True,
+                    cwd=str(SKILL_DIR),
+                    timeout=timeout,
+                )
+                if result.returncode == 0:
+                    try:
+                        stdout = result.stdout.strip()
+                        if stdout:
+                            return json.loads(stdout)
+                    except json.JSONDecodeError:
+                        pass
+        
         return {
             "error": True,
             "returncode": result.returncode,
@@ -29,10 +99,13 @@ def _run_command(cmd: list, timeout: int = 120) -> Dict[str, Any]:
         }
     
     try:
-        # The mcity-control output is clean JSON from the first line
         stdout = result.stdout.strip()
         if stdout:
-            return json.loads(stdout)
+            data = json.loads(stdout)
+            # Update lease expiry from response if present
+            if isinstance(data, dict) and "lease" in data:
+                _last_lease_expires = data["lease"].get("expiresAt", _last_lease_expires)
+            return data
         return {"error": True, "parse_error": "Empty output"}
     except json.JSONDecodeError as e:
         return {"error": True, "parse_error": str(e), "stdout": result.stdout[:500]}
