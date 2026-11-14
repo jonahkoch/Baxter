@@ -1,0 +1,431 @@
+=== 2026-11-13 13:00:01 Midnight City Run (smart-grind: 2h) ===
+13:00:01 Running maintenance behaviors...
+not connected; run connect <agentId> first
+13:00:02 Starting smart grind (2h)...
+node:internal/modules/cjs/loader:1568
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/smart-grind.mjs'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)
+    at Module._load (node:internal/modules/cjs/loader:1341:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v24.22.3
+13:00:02 Smart grind exited with code 1
+13:00:02 Run complete
+=== 2026-11-13 16:00:01 Midnight City Run (smart-grind: 2h) ===
+16:00:02 Running maintenance behaviors...
+not connected; run connect <agentId> first
+16:00:02 Starting smart grind (2h)...
+node:internal/modules/cjs/loader:1568
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/smart-grind.mjs'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)
+    at Module._load (node:internal/modules/cjs/loader:1341:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v24.22.3
+16:00:02 Smart grind exited with code 1
+16:00:02 Run complete
+=== 2026-11-13 19:00:01 Midnight City Run (smart-grind: 2h) ===
+19:00:01 Running maintenance behaviors...
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"starting","detail":null,"at":1794592803411}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"idle","detail":null,"at":1794592807143}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"idle","detail":null,"at":1794592812861}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"idle","detail":null,"at":1794592818551}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"idle","detail":null,"at":1794592824127}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"idle","detail":null,"at":1794592829792}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"idle","detail":null,"at":1794592835389}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"idle","detail":null,"at":1794592841158}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"idle","detail":null,"at":1794592846947}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"idle","detail":null,"at":1794592852643}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"idle","detail":null,"at":1794592858426}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"idle","detail":null,"at":1794592864041}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"idle","detail":null,"at":1794592869894}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"idle","detail":null,"at":1794592875840}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"idle","detail":null,"at":1794592881512}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"idle","detail":null,"at":1794592887080}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"idle","detail":null,"at":1794592892738}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"idle","detail":null,"at":1794592898252}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"idle","detail":null,"at":1794592903928}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"idle","detail":null,"at":1794592909625}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"idle","detail":null,"at":1794592915320}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"idle","detail":null,"at":1794592921209}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"finished","detail":null,"at":1794592926210}
+19:02:06 Starting smart grind (2h)...
+2026-11-13T18:02:06.585Z Smart Grind starting...
+2026-11-13T18:02:07.300Z Connected, lease until 2026-11-13T18:07:07.001Z
+2026-11-13T18:02:07.300Z Starting work...
+2026-11-13T18:02:10.959Z Work submitted
+2026-11-13T18:04:11.469Z hunger=0 load=normal working=true
+2026-11-13T18:06:12.109Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T18:08:12.524Z Lost connection, reconnecting...
+2026-11-13T18:08:13.499Z Connected, lease until 2026-11-13T18:13:12.927Z
+2026-11-13T18:10:14.052Z hunger=0 load=normal working=false
+2026-11-13T18:10:14.053Z Starting work...
+2026-11-13T18:10:21.123Z Work submitted
+2026-11-13T18:12:21.888Z hunger=0 load=normal working=true
+2026-11-13T18:14:22.518Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T18:16:23.010Z Lost connection, reconnecting...
+2026-11-13T18:16:24.899Z Connected, lease until 2026-11-13T18:21:23.679Z
+2026-11-13T18:18:25.840Z hunger=0 load=normal working=false
+2026-11-13T18:18:25.897Z Starting work...
+2026-11-13T18:18:43.653Z Work submitted
+2026-11-13T18:20:44.181Z hunger=0 load=normal working=true
+2026-11-13T18:22:44.897Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T18:24:45.489Z Lost connection, reconnecting...
+2026-11-13T18:24:46.749Z Connected, lease until 2026-11-13T18:29:46.054Z
+2026-11-13T18:26:47.327Z hunger=0 load=normal working=false
+2026-11-13T18:26:47.327Z Starting work...
+2026-11-13T18:26:59.657Z Work submitted
+2026-11-13T18:29:00.527Z hunger=0 load=normal working=true
+2026-11-13T18:31:01.637Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T18:33:02.888Z Lost connection, reconnecting...
+2026-11-13T18:33:04.909Z Connected, lease until 2026-11-13T18:38:03.593Z
+2026-11-13T18:35:06.257Z hunger=0 load=normal working=false
+2026-11-13T18:35:06.257Z Starting work...
+2026-11-13T18:35:17.327Z Work submitted
+2026-11-13T18:37:17.880Z hunger=0 load=normal working=true
+2026-11-13T18:39:18.328Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T18:41:18.894Z Lost connection, reconnecting...
+2026-11-13T18:41:19.772Z Connected, lease until 2026-11-13T18:46:19.353Z
+2026-11-13T18:43:20.723Z hunger=0 load=normal working=false
+2026-11-13T18:43:20.724Z Starting work...
+2026-11-13T18:43:28.524Z Work submitted
+2026-11-13T18:45:29.194Z hunger=0 load=normal working=true
+2026-11-13T18:47:29.892Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T18:49:30.379Z Lost connection, reconnecting...
+2026-11-13T18:49:31.477Z Connected, lease until 2026-11-13T18:54:30.862Z
+2026-11-13T18:51:32.085Z hunger=0 load=normal working=false
+2026-11-13T18:51:32.085Z Starting work...
+2026-11-13T18:51:43.647Z Work submitted
+2026-11-13T18:53:44.267Z hunger=0 load=normal working=true
+2026-11-13T18:55:45.139Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T18:57:45.767Z Lost connection, reconnecting...
+2026-11-13T18:57:46.757Z Connected, lease until 2026-11-13T19:02:46.259Z
+2026-11-13T18:59:47.293Z hunger=0 load=normal working=false
+2026-11-13T18:59:47.293Z Starting work...
+2026-11-13T18:59:56.794Z Work submitted
+2026-11-13T19:01:57.462Z hunger=0 load=normal working=true
+2026-11-13T19:03:57.935Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T19:05:58.729Z Lost connection, reconnecting...
+2026-11-13T19:06:00.392Z Connected, lease until 2026-11-13T19:10:59.530Z
+2026-11-13T19:08:01.174Z hunger=0 load=normal working=false
+2026-11-13T19:08:01.174Z Starting work...
+2026-11-13T19:08:07.192Z Work submitted
+2026-11-13T19:10:07.849Z hunger=0 load=normal working=true
+2026-11-13T19:12:08.739Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T19:14:10.240Z Lost connection, reconnecting...
+2026-11-13T19:14:11.544Z Connected, lease until 2026-11-13T19:19:10.595Z
+2026-11-13T19:16:12.055Z hunger=0 load=normal working=false
+2026-11-13T19:16:12.056Z Starting work...
+2026-11-13T19:16:20.800Z Work submitted
+2026-11-13T19:18:21.401Z hunger=0 load=normal working=true
+2026-11-13T19:20:22.044Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T19:22:22.737Z Lost connection, reconnecting...
+2026-11-13T19:22:23.652Z Connected, lease until 2026-11-13T19:27:23.223Z
+2026-11-13T19:24:24.253Z hunger=0 load=normal working=false
+2026-11-13T19:24:24.253Z Starting work...
+2026-11-13T19:24:32.437Z Work submitted
+2026-11-13T19:26:33.635Z hunger=0 load=normal working=true
+2026-11-13T19:28:34.645Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T19:30:35.299Z Lost connection, reconnecting...
+2026-11-13T19:30:36.888Z Connected, lease until 2026-11-13T19:35:35.998Z
+2026-11-13T19:32:37.505Z hunger=0 load=normal working=false
+2026-11-13T19:32:37.505Z Starting work...
+2026-11-13T19:32:45.296Z Work submitted
+2026-11-13T19:34:45.818Z hunger=0 load=normal working=true
+2026-11-13T19:36:46.330Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T19:38:46.875Z Lost connection, reconnecting...
+2026-11-13T19:38:48.197Z Connected, lease until 2026-11-13T19:43:47.437Z
+2026-11-13T19:40:48.630Z hunger=0 load=normal working=false
+2026-11-13T19:40:48.630Z Starting work...
+2026-11-13T19:40:57.481Z Work submitted
+2026-11-13T19:42:58.487Z hunger=0 load=normal working=true
+2026-11-13T19:44:59.044Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T19:46:59.727Z Lost connection, reconnecting...
+2026-11-13T19:47:00.976Z Connected, lease until 2026-11-13T19:52:00.415Z
+2026-11-13T19:49:02.194Z hunger=0 load=normal working=false
+2026-11-13T19:49:02.194Z Starting work...
+2026-11-13T19:49:13.118Z Work submitted
+2026-11-13T19:51:13.902Z hunger=0 load=normal working=true
+2026-11-13T19:53:14.725Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T19:55:15.524Z Lost connection, reconnecting...
+2026-11-13T19:55:17.077Z Connected, lease until 2026-11-13T20:00:16.417Z
+2026-11-13T19:57:18.259Z hunger=0 load=normal working=false
+2026-11-13T19:57:18.261Z Starting work...
+2026-11-13T19:57:32.566Z Work submitted
+2026-11-13T19:59:33.087Z hunger=0 load=normal working=true
+2026-11-13T20:01:34.147Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T20:03:34.669Z Lost connection, reconnecting...
+2026-11-13T20:03:36.020Z Connected, lease until 2026-11-13T20:08:35.075Z
+2026-11-13T20:05:36.712Z hunger=0 load=normal working=false
+2026-11-13T20:05:36.712Z Starting work...
+2026-11-13T20:05:48.564Z Work submitted
+2026-11-13T20:07:49.121Z hunger=0 load=normal working=true
+2026-11-13T20:09:49.761Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T20:11:50.516Z Lost connection, reconnecting...
+2026-11-13T20:11:51.915Z Connected, lease until 2026-11-13T20:16:51.089Z
+21:12:06 Smart grind completed (duration reached)
+21:12:06 Run complete
+=== 2026-11-13 22:00:01 Midnight City Run (smart-grind: 2h) ===
+22:00:01 Running maintenance behaviors...
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"starting","detail":null,"at":1794603601944}
+{"agentId":"user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3","state":"control_lost","detail":"direct-control lease is no longer active; another controller may have claimed this agent. Pause the supervisor for that agent or connect to an unsupervised agent.","at":1794603602198}
+22:00:02 Starting smart grind (2h)...
+2026-11-13T21:00:02.682Z Smart Grind starting...
+2026-11-13T21:00:04.229Z Connected, lease until 2026-11-13T21:05:03.102Z
+2026-11-13T21:00:04.229Z Starting work...
+2026-11-13T21:00:26.429Z Work submitted
+2026-11-13T21:02:27.172Z hunger=0 load=normal working=true
+2026-11-13T21:04:27.601Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T21:06:28.211Z Lost connection, reconnecting...
+2026-11-13T21:06:29.241Z Connected, lease until 2026-11-13T21:11:28.691Z
+2026-11-13T21:08:29.683Z hunger=0 load=normal working=false
+2026-11-13T21:08:29.683Z Starting work...
+2026-11-13T21:08:43.430Z Work submitted
+2026-11-13T21:10:44.299Z hunger=0 load=normal working=true
+2026-11-13T21:12:44.917Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T21:14:45.429Z Lost connection, reconnecting...
+2026-11-13T21:14:46.393Z Connected, lease until 2026-11-13T21:19:45.891Z
+2026-11-13T21:16:46.870Z hunger=0 load=normal working=false
+2026-11-13T21:16:46.871Z Starting work...
+2026-11-13T21:16:57.144Z Work submitted
+2026-11-13T21:18:57.705Z hunger=0 load=normal working=true
+2026-11-13T21:20:58.607Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T21:22:59.142Z Lost connection, reconnecting...
+2026-11-13T21:23:00.244Z Connected, lease until 2026-11-13T21:27:59.590Z
+2026-11-13T21:25:02.792Z hunger=0 load=normal working=false
+2026-11-13T21:25:02.792Z Starting work...
+2026-11-13T21:25:15.691Z Work submitted
+2026-11-13T21:27:16.181Z hunger=0 load=normal working=true
+2026-11-13T21:29:16.797Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T21:31:17.607Z Lost connection, reconnecting...
+2026-11-13T21:31:18.780Z Connected, lease until 2026-11-13T21:36:18.065Z
+2026-11-13T21:33:19.408Z hunger=0 load=normal working=false
+2026-11-13T21:33:19.408Z Starting work...
+2026-11-13T21:33:27.511Z Work submitted
+2026-11-13T21:35:28.016Z hunger=0 load=normal working=true
+2026-11-13T21:37:28.448Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T21:39:29.680Z Lost connection, reconnecting...
+2026-11-13T21:39:30.706Z Connected, lease until 2026-11-13T21:44:30.094Z
+2026-11-13T21:41:31.257Z hunger=0 load=normal working=false
+2026-11-13T21:41:31.257Z Starting work...
+2026-11-13T21:41:40.065Z Work submitted
+2026-11-13T21:43:40.723Z hunger=0 load=normal working=true
+2026-11-13T21:45:41.193Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T21:47:41.773Z Lost connection, reconnecting...
+2026-11-13T21:47:42.795Z Connected, lease until 2026-11-13T21:52:42.139Z
+2026-11-13T21:49:43.802Z hunger=0 load=normal working=false
+2026-11-13T21:49:43.802Z Starting work...
+2026-11-13T21:49:56.236Z Work submitted
+2026-11-13T21:51:57.136Z hunger=0 load=normal working=true
+2026-11-13T21:53:58.274Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T21:55:58.829Z Lost connection, reconnecting...
+2026-11-13T21:56:00.484Z Connected, lease until 2026-11-13T22:00:59.474Z
+2026-11-13T21:58:01.926Z hunger=0 load=normal working=false
+2026-11-13T21:58:01.927Z Starting work...
+2026-11-13T21:58:22.756Z Work submitted
+2026-11-13T22:00:23.335Z hunger=0 load=normal working=true
+2026-11-13T22:02:23.879Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T22:04:24.503Z Lost connection, reconnecting...
+2026-11-13T22:04:25.985Z Connected, lease until 2026-11-13T22:09:25.061Z
+2026-11-13T22:06:26.808Z hunger=0 load=normal working=false
+2026-11-13T22:06:26.808Z Starting work...
+2026-11-13T22:06:43.758Z Work submitted
+2026-11-13T22:08:44.368Z hunger=0 load=normal working=true
+2026-11-13T22:10:45.018Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T22:12:45.669Z Lost connection, reconnecting...
+2026-11-13T22:12:46.645Z Connected, lease until 2026-11-13T22:17:46.109Z
+2026-11-13T22:14:47.087Z hunger=0 load=normal working=false
+2026-11-13T22:14:47.087Z Starting work...
+2026-11-13T22:14:56.249Z Work submitted
+2026-11-13T22:16:56.854Z hunger=0 load=normal working=true
+2026-11-13T22:18:57.516Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T22:20:58.162Z Lost connection, reconnecting...
+2026-11-13T22:21:00.243Z Connected, lease until 2026-11-13T22:25:59.010Z
+2026-11-13T22:23:00.768Z hunger=0 load=normal working=false
+2026-11-13T22:23:00.768Z Starting work...
+2026-11-13T22:23:13.823Z Work submitted
+2026-11-13T22:25:15.153Z hunger=0 load=normal working=true
+2026-11-13T22:27:15.570Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T22:29:16.128Z Lost connection, reconnecting...
+2026-11-13T22:29:18.118Z Connected, lease until 2026-11-13T22:34:16.721Z
+2026-11-13T22:31:18.660Z hunger=0 load=normal working=false
+2026-11-13T22:31:18.660Z Starting work...
+2026-11-13T22:31:30.395Z Work submitted
+2026-11-13T22:33:30.891Z hunger=0 load=normal working=true
+2026-11-13T22:35:31.780Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T22:37:32.396Z Lost connection, reconnecting...
+2026-11-13T22:37:33.712Z Connected, lease until 2026-11-13T22:42:33.099Z
+2026-11-13T22:39:34.408Z hunger=0 load=normal working=false
+2026-11-13T22:39:34.408Z Starting work...
+2026-11-13T22:39:45.162Z Work submitted
+2026-11-13T22:41:45.699Z hunger=0 load=normal working=true
+2026-11-13T22:43:46.298Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T22:45:46.774Z Lost connection, reconnecting...
+2026-11-13T22:45:47.806Z Connected, lease until 2026-11-13T22:50:47.193Z
+2026-11-13T22:47:48.269Z hunger=0 load=normal working=false
+2026-11-13T22:47:48.270Z Starting work...
+2026-11-13T22:47:59.486Z Work submitted
+2026-11-13T22:49:59.976Z hunger=0 load=normal working=true
+2026-11-13T22:52:00.703Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T22:54:01.401Z Lost connection, reconnecting...
+2026-11-13T22:54:02.796Z Connected, lease until 2026-11-13T22:59:01.919Z
+2026-11-13T22:56:03.830Z hunger=0 load=normal working=false
+2026-11-13T22:56:03.831Z Starting work...
+2026-11-13T22:56:15.466Z Work submitted
+2026-11-13T22:58:16.029Z hunger=0 load=normal working=true
+2026-11-13T23:00:17.477Z hunger=0 load=normal working=true
+404 Not Found
+CMD FAIL: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context Command failed: node /root/.openclaw/workspace/skills/midnight-city-direct-control/scripts/mcity-control.mjs context
+404 Not Found
+
+2026-11-13T23:02:18.680Z Lost connection, reconnecting...
+2026-11-13T23:02:20.389Z Connected, lease until 2026-11-13T23:07:19.812Z
+2026-11-13T23:04:21.680Z hunger=0 load=normal working=false
+2026-11-13T23:04:21.680Z Starting work...
+2026-11-13T23:04:37.604Z Work submitted
+2026-11-13T23:06:38.250Z hunger=0 load=normal working=true
+2026-11-13T23:08:38.785Z hunger=0 load=normal working=true
+00:10:02 Smart grind completed (duration reached)
+00:10:02 Run complete
