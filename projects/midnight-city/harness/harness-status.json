@@ -1,0 +1,13 @@
+{
+  "status": "health_check",
+  "phase": "health_check",
+  "timestamp": "2026-11-14T17:40:28.208294",
+  "timestamp_ms": 1794674428208,
+  "details": {
+    "hunger": 26.0,
+    "load_state": "overburdened",
+    "health": 100,
+    "max_health": 100,
+    "healthy": false
+  }
+}

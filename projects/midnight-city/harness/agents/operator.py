@@ -120,8 +120,8 @@ def execute_action(action_type: str, params: Dict[str, Any], state: Dict[str, An
         return _run_command(["eat"])
     
     elif action_type == "buy_food":
-        # Buy matcha_smoothie from Smoothies Matcha
-        return _run_command(["trade", "Smoothies Matcha", "matcha_smoothie", "1"])
+        # Buy matcha_smoothie from Central Smoothies Matcha Outlet
+        return _run_command(["trade", "Central Smoothies Matcha Outlet", "matcha_smoothie", "1"])
     
     elif action_type == "sell_meme_coins":
         # Sell all meme coins to Central Crypto Merchant

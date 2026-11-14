@@ -20,8 +20,14 @@ CRYSTAL_MINIMUM = 1000
 FOOD_TARGET = 50
 
 # Work durations
-GRIND_DURATION_MINUTES = 120
+# Harness runs for ~6 hours per loop, then heartbeat checks if it's alive
+# If harness is dead/crashed, heartbeat restarts it
+GRIND_DURATION_MINUTES = 360  # 6 hours
 MAINTENANCE_DURATION_MINUTES = 2
+
+# Heartbeat / status file
+STATUS_FILE = PROJECT_DIR / "harness" / "harness-status.json"
+HEARTBEAT_INTERVAL_MINUTES = 360  # 6 hours
 
 # XP tracking
 TRACK_XP_EFFICIENCY = True

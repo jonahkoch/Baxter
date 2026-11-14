@@ -8,6 +8,7 @@ existing behaviors as fallback.
 import time
 import sys
 import signal
+import json
 from datetime import datetime
 from typing import Optional
 
@@ -16,7 +17,7 @@ from agents.strategist import decide_next_action, get_strategy_context, format_d
 from agents.operator import execute_action, format_outcome, start_work, stop_work, start_maintenance_behaviors
 from checkpoints.state import save_checkpoint, load_latest_checkpoint, get_checkpoints_summary
 from memory.tracker import record_session, get_efficiency_report
-from config import GRIND_DURATION_MINUTES, MAINTENANCE_DURATION_MINUTES
+from config import GRIND_DURATION_MINUTES, MAINTENANCE_DURATION_MINUTES, STATUS_FILE
 
 
 class MidnightCityHarness:
@@ -42,6 +43,21 @@ class MidnightCityHarness:
     def _log(self, message: str):
         timestamp = datetime.now().isoformat()
         print(f"[{timestamp}] {message}")
+    
+    def _write_status(self, status: str, details: dict = None):
+        """Write status file for heartbeat monitoring."""
+        try:
+            data = {
+                "status": status,
+                "phase": self.current_phase,
+                "timestamp": datetime.now().isoformat(),
+                "timestamp_ms": int(time.time() * 1000),
+                "details": details or {},
+            }
+            STATUS_FILE.parent.mkdir(parents=True, exist_ok=True)
+            STATUS_FILE.write_text(json.dumps(data, indent=2))
+        except Exception as e:
+            self._log(f"Failed to write status file: {e}")
     
     def run_maintenance_cycle(self) -> bool:
         """
@@ -124,6 +140,15 @@ class MidnightCityHarness:
                 hunger = agent.get("hungerPercent", 0)
                 load_state = agent.get("loadState", "normal")
                 is_working = agent.get("isPerformingJob", False)
+                
+                # Write status for heartbeat monitoring
+                self._write_status("working", {
+                    "hunger": hunger,
+                    "load_state": load_state,
+                    "is_working": is_working,
+                    "work_restarts": work_restarts,
+                    "elapsed_minutes": (time.time() - self.session_start_time) / 60,
+                })
                 
                 # Check if maintenance needed
                 needs_maintenance = False
@@ -230,6 +255,14 @@ class MidnightCityHarness:
         for check, result in checks:
             status = "✅" if result else "❌"
             self._log(f"  {status} {check}")
+        
+        self._write_status("health_check", {
+            "hunger": hunger,
+            "load_state": load_state,
+            "health": health,
+            "max_health": max_health,
+            "healthy": all_pass,
+        })
         
         return all_pass
     

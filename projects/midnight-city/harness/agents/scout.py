@@ -3,14 +3,63 @@ Scout Agent — Read game state and report current conditions.
 """
 import subprocess
 import json
+import time
 from typing import Dict, Any, Optional
 from pathlib import Path
 
 SKILL_DIR = Path("/root/.openclaw/workspace/skills/midnight-city-direct-control")
 
+# Connection state (shared across scout calls)
+_last_lease_expires = 0
+_agent_id = "user-agent-66b0ebf2-f709-447a-b8e2-24d23a0f2fc3"
+
+
+def _update_lease(expires_at):
+    """Update the global lease expiry timestamp."""
+    global _last_lease_expires
+    if expires_at:
+        _last_lease_expires = expires_at
+
+
+def _ensure_connected() -> bool:
+    """Ensure we have a valid lease. Reconnect if stale or missing."""
+    global _last_lease_expires
+    
+    # If lease is still fresh (with 30s buffer), no need to reconnect
+    if _last_lease_expires > (time.time() * 1000) + 30000:
+        return True
+    
+    # Try to connect
+    result = subprocess.run(
+        ["node", str(SKILL_DIR / "scripts" / "mcity-control.mjs"), "connect", _agent_id],
+        capture_output=True,
+        text=True,
+        cwd=str(SKILL_DIR),
+        timeout=30,
+    )
+    
+    if result.returncode != 0:
+        return False
+    
+    try:
+        data = json.loads(result.stdout.strip())
+        if data.get("connected"):
+            _last_lease_expires = data["lease"]["expiresAt"]
+            return True
+    except (json.JSONDecodeError, KeyError):
+        pass
+    
+    return False
+
 
 def _run_command(cmd: list, timeout: int = 60) -> Dict[str, Any]:
-    """Run a mcity-control command and return parsed JSON."""
+    """Run a mcity-control command and return parsed JSON.
+    
+    Auto-connects first if no valid lease exists.
+    """
+    # Ensure connection before every command
+    _ensure_connected()
+    
     full_cmd = ["node", str(SKILL_DIR / "scripts" / "mcity-control.mjs")] + cmd
     result = subprocess.run(
         full_cmd,
@@ -21,6 +70,30 @@ def _run_command(cmd: list, timeout: int = 60) -> Dict[str, Any]:
     )
     
     if result.returncode != 0:
+        # Check if it's a lease/auth error — try reconnect once
+        stderr = result.stderr.lower()
+        if any(x in stderr for x in ["401", "403", "404", "control_lost", "not connected"]):
+            _last_lease_expires = 0  # Force reconnect
+            if _ensure_connected():
+                # Retry the command once
+                result = subprocess.run(
+                    full_cmd,
+                    capture_output=True,
+                    text=True,
+                    cwd=str(SKILL_DIR),
+                    timeout=timeout,
+                )
+                if result.returncode == 0:
+                    try:
+                        stdout = result.stdout.strip()
+                        if stdout:
+                            data = json.loads(stdout)
+                            if isinstance(data, dict) and "lease" in data:
+                                _update_lease(data["lease"].get("expiresAt"))
+                            return data
+                    except json.JSONDecodeError:
+                        pass
+        
         return {"error": True, "stderr": result.stderr[:500], "stdout": result.stdout[:500]}
     
     try:
@@ -31,7 +104,11 @@ def _run_command(cmd: list, timeout: int = 60) -> Dict[str, Any]:
         # Parse the full stdout as JSON (the commands output clean JSON)
         stdout = result.stdout.strip()
         if stdout:
-            return json.loads(stdout)
+            data = json.loads(stdout)
+            # Update lease expiry from response if present
+            if isinstance(data, dict) and "lease" in data:
+                _update_lease(data["lease"].get("expiresAt"))
+            return data
         return {"error": True, "parse_error": "Empty output"}
     except json.JSONDecodeError as e:
         return {"error": True, "parse_error": str(e), "stdout": result.stdout[:500]}
@@ -40,15 +117,15 @@ def _run_command(cmd: list, timeout: int = 60) -> Dict[str, Any]:
 def _parse_progression(stdout: str) -> Dict[str, Any]:
     """Parse progression output using Python to handle massive JSON."""
     import json
-    # Pipe through Python to extract only skills/health/profession
+    # Pipe through Python to extract only what we need
     proc = subprocess.run(
         ["python3", "-c", """
 import json, sys
 data = json.load(sys.stdin)
 print(json.dumps({
     'skills': data.get('skills', {}),
-    'profession': data.get('profession', {}),
-    'health': data.get('health', {}),
+    'professionRank': data.get('professionRank', 0),
+    'vitals': data.get('vitals', {}),
 }))
 """],
         input=stdout,
@@ -63,11 +140,7 @@ print(json.dumps({
 
 def ensure_connected():
     """Ensure the agent is connected. Reconnect if lease expired."""
-    result = _run_command(["context"])
-    if result.get("error") and "404" in str(result.get("stderr", "")):
-        # Lease expired, reconnect
-        from config import AGENT_ID
-        _run_command(["connect", AGENT_ID])
+    _ensure_connected()
 
 
 def scout_game_state(agent_id: Optional[str] = None) -> Dict[str, Any]:
@@ -98,7 +171,7 @@ def scout_game_state(agent_id: Optional[str] = None) -> Dict[str, Any]:
         state["timestamp"] = context.get("emittedAt")
         state["agent"]["name"] = context.get("agent", {}).get("name")
         state["agent"]["id"] = context.get("agent", {}).get("id")
-        state["agent"]["location"] = context.get("space", {}).get("name")
+        state["agent"]["location"] = context.get("currentSpace", {}).get("name")
         state["agent"]["isPerformingJob"] = context.get("agent", {}).get("isPerformingJob", False)
     
     # 2. Needs (hunger)
@@ -145,9 +218,10 @@ def scout_game_state(agent_id: Optional[str] = None) -> Dict[str, Any]:
         state["agent"]["hackingLevel"] = hacking.get("level", 0)
         state["agent"]["hackingXP"] = hacking.get("xp", 0)
         state["agent"]["hackingNextLevelXP"] = hacking.get("nextLevelXp", 0)
-        state["agent"]["professionRank"] = progression.get("profession", {}).get("rank", 0)
-        state["agent"]["health"] = progression.get("health", {}).get("current", 0)
-        state["agent"]["maxHealth"] = progression.get("health", {}).get("max", 0)
+        state["agent"]["professionRank"] = progression.get("professionRank", 0)
+        vitals = progression.get("vitals", {})
+        state["agent"]["health"] = vitals.get("health", 0)
+        state["agent"]["maxHealth"] = vitals.get("maxHealth", 0)
     
     # 5. Merchants (for sell decisions)
     merchants = _run_command(["merchants"])
