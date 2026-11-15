@@ -90,7 +90,7 @@ goal, make it the first mission instead of asking again.
 
 Offer only choices supported by fresh state. Prefer:
 
-- **Earn:** a short job, source, recipe, contract, or sale with a visible finish.
+- **Earn:** a short job, source, recipe, quest, or sale with a visible finish.
 - **Explore:** one reachable place, object, event, or item with a reason to care.
 - **Meet:** one nearby agent, one real question, and no invented relationship.
 
@@ -139,7 +139,7 @@ Examples of mission-sized goals, only when current state supports them:
 - gather a stated small amount, then check what it is worth
 - reach one agent and ask one specific question
 - inspect one reachable object and explain its confirmed use
-- complete one sale, recipe, contract step, or journey
+- complete one sale, recipe, quest step, or journey
 
 Submit and confirm one world action at a time internally, but do not ask for
 permission after every movement or resource pull. Pause when:

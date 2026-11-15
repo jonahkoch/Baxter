@@ -1,0 +1,175 @@
+[2026-11-14T22:48:18.649814] ==================================================
+[2026-11-14T22:48:18.649838] Midnight City v1 Harness Starting
+[2026-11-14T22:48:18.649841] ==================================================
+[2026-11-14T22:48:18.649846] 
+--- Iteration 1 ---
+[2026-11-14T22:48:18.649850] === HEALTH CHECK ===
+[2026-11-14T22:48:21.421457]   ✅ Hunger < 90%
+[2026-11-14T22:48:21.421478]   ❌ Load not overburdened
+[2026-11-14T22:48:21.421481]   ✅ Health > 50%
+[2026-11-14T22:48:21.421484]   ✅ XP readable
+[2026-11-14T22:48:21.428945] Health check failed, attempting recovery...
+[2026-11-14T22:49:21.429084] 
+--- Iteration 2 ---
+[2026-11-14T22:49:21.429107] === HEALTH CHECK ===
+[2026-11-14T22:49:24.087583]   ✅ Hunger < 90%
+[2026-11-14T22:49:24.087608]   ❌ Load not overburdened
+[2026-11-14T22:49:24.087612]   ✅ Health > 50%
+[2026-11-14T22:49:24.087614]   ✅ XP readable
+[2026-11-14T22:49:24.093154] Health check failed, attempting recovery...
+[2026-11-14T22:50:24.093357] 
+--- Iteration 3 ---
+[2026-11-14T22:50:24.093388] === HEALTH CHECK ===
+[2026-11-14T22:50:26.716978]   ✅ Hunger < 90%
+[2026-11-14T22:50:26.717005]   ❌ Load not overburdened
+[2026-11-14T22:50:26.717009]   ✅ Health > 50%
+[2026-11-14T22:50:26.717012]   ✅ XP readable
+[2026-11-14T22:50:26.717529] Health check failed, attempting recovery...
+[2026-11-14T22:51:26.717787] 
+--- Iteration 4 ---
+[2026-11-14T22:51:26.717819] === HEALTH CHECK ===
+[2026-11-14T22:51:28.915312]   ✅ Hunger < 90%
+[2026-11-14T22:51:28.915339]   ❌ Load not overburdened
+[2026-11-14T22:51:28.915343]   ✅ Health > 50%
+[2026-11-14T22:51:28.915364]   ✅ XP readable
+[2026-11-14T22:51:28.915779] Health check failed, attempting recovery...
+[2026-11-14T22:52:28.915956] 
+--- Iteration 5 ---
+[2026-11-14T22:52:28.915986] === HEALTH CHECK ===
+[2026-11-14T22:52:31.291978]   ✅ Hunger < 90%
+[2026-11-14T22:52:31.291998]   ❌ Load not overburdened
+[2026-11-14T22:52:31.292000]   ✅ Health > 50%
+[2026-11-14T22:52:31.292002]   ✅ XP readable
+[2026-11-14T22:52:31.292621] Health check failed, attempting recovery...
+[2026-11-14T22:53:31.292800] 
+--- Iteration 6 ---
+[2026-11-14T22:53:31.292827] === HEALTH CHECK ===
+[2026-11-14T22:53:33.966365]   ✅ Hunger < 90%
+[2026-11-14T22:53:33.966387]   ❌ Load not overburdened
+[2026-11-14T22:53:33.966390]   ✅ Health > 50%
+[2026-11-14T22:53:33.966392]   ✅ XP readable
+[2026-11-14T22:53:33.966817] Health check failed, attempting recovery...
+[2026-11-14T22:54:33.969518] 
+--- Iteration 7 ---
+[2026-11-14T22:54:33.969549] === HEALTH CHECK ===
+[2026-11-14T22:54:36.522857]   ✅ Hunger < 90%
+[2026-11-14T22:54:36.522876]   ❌ Load not overburdened
+[2026-11-14T22:54:36.522879]   ✅ Health > 50%
+[2026-11-14T22:54:36.522880]   ✅ XP readable
+[2026-11-14T22:54:36.524018] Health check failed, attempting recovery...
+[2026-11-14T22:55:36.524219] 
+--- Iteration 8 ---
+[2026-11-14T22:55:36.524257] === HEALTH CHECK ===
+[2026-11-14T22:55:39.537444]   ✅ Hunger < 90%
+[2026-11-14T22:55:39.537472]   ❌ Load not overburdened
+[2026-11-14T22:55:39.537475]   ✅ Health > 50%
+[2026-11-14T22:55:39.537478]   ✅ XP readable
+[2026-11-14T22:55:39.538011] Health check failed, attempting recovery...
+[2026-11-14T22:56:39.538420] 
+--- Iteration 9 ---
+[2026-11-14T22:56:39.538454] === HEALTH CHECK ===
+[2026-11-14T22:56:41.991027]   ✅ Hunger < 90%
+[2026-11-14T22:56:41.991047]   ❌ Load not overburdened
+[2026-11-14T22:56:41.991050]   ✅ Health > 50%
+[2026-11-14T22:56:41.991052]   ✅ XP readable
+[2026-11-14T22:56:41.991475] Health check failed, attempting recovery...
+[2026-11-14T22:57:41.991657] 
+--- Iteration 10 ---
+[2026-11-14T22:57:41.991691] === HEALTH CHECK ===
+[2026-11-14T22:57:44.627255]   ✅ Hunger < 90%
+[2026-11-14T22:57:44.627275]   ❌ Load not overburdened
+[2026-11-14T22:57:44.627277]   ✅ Health > 50%
+[2026-11-14T22:57:44.627278]   ✅ XP readable
+[2026-11-14T22:57:44.627731] Health check failed, attempting recovery...
+[2026-11-14T22:58:44.628042] 
+--- Iteration 11 ---
+[2026-11-14T22:58:44.628080] === HEALTH CHECK ===
+[2026-11-14T22:58:48.604032]   ✅ Hunger < 90%
+[2026-11-14T22:58:48.604054]   ❌ Load not overburdened
+[2026-11-14T22:58:48.604057]   ✅ Health > 50%
+[2026-11-14T22:58:48.604059]   ✅ XP readable
+[2026-11-14T22:58:48.604465] Health check failed, attempting recovery...
+[2026-11-14T22:59:48.604647] 
+--- Iteration 12 ---
+[2026-11-14T22:59:48.604674] === HEALTH CHECK ===
+[2026-11-14T22:59:51.469456]   ✅ Hunger < 90%
+[2026-11-14T22:59:51.469483]   ❌ Load not overburdened
+[2026-11-14T22:59:51.469485]   ✅ Health > 50%
+[2026-11-14T22:59:51.469488]   ✅ XP readable
+[2026-11-14T22:59:51.470059] Health check failed, attempting recovery...
+[2026-11-14T23:00:51.470243] 
+--- Iteration 13 ---
+[2026-11-14T23:00:51.470274] === HEALTH CHECK ===
+[2026-11-14T23:00:53.819252]   ✅ Hunger < 90%
+[2026-11-14T23:00:53.819275]   ❌ Load not overburdened
+[2026-11-14T23:00:53.819278]   ✅ Health > 50%
+[2026-11-14T23:00:53.819280]   ✅ XP readable
+[2026-11-14T23:00:53.820524] Health check failed, attempting recovery...
+[2026-11-14T23:01:53.820732] 
+--- Iteration 14 ---
+[2026-11-14T23:01:53.820782] === HEALTH CHECK ===
+[2026-11-14T23:01:56.291555]   ✅ Hunger < 90%
+[2026-11-14T23:01:56.291578]   ❌ Load not overburdened
+[2026-11-14T23:01:56.291581]   ✅ Health > 50%
+[2026-11-14T23:01:56.291583]   ✅ XP readable
+[2026-11-14T23:01:56.292080] Health check failed, attempting recovery...
+[2026-11-14T23:02:56.292281] 
+--- Iteration 15 ---
+[2026-11-14T23:02:56.292315] === HEALTH CHECK ===
+[2026-11-14T23:02:59.426764]   ✅ Hunger < 90%
+[2026-11-14T23:02:59.426784]   ❌ Load not overburdened
+[2026-11-14T23:02:59.426786]   ✅ Health > 50%
+[2026-11-14T23:02:59.426788]   ✅ XP readable
+[2026-11-14T23:02:59.427191] Health check failed, attempting recovery...
+[2026-11-14T23:03:59.490202] 
+--- Iteration 16 ---
+[2026-11-14T23:03:59.490235] === HEALTH CHECK ===
+[2026-11-14T23:04:03.903243]   ✅ Hunger < 90%
+[2026-11-14T23:04:03.903268]   ❌ Load not overburdened
+[2026-11-14T23:04:03.903271]   ✅ Health > 50%
+[2026-11-14T23:04:03.903273]   ✅ XP readable
+[2026-11-14T23:04:03.903716] Health check failed, attempting recovery...
+[2026-11-14T23:05:03.907493] 
+--- Iteration 17 ---
+[2026-11-14T23:05:03.907525] === HEALTH CHECK ===
+[2026-11-14T23:05:07.408483]   ✅ Hunger < 90%
+[2026-11-14T23:05:07.408507]   ❌ Load not overburdened
+[2026-11-14T23:05:07.408509]   ✅ Health > 50%
+[2026-11-14T23:05:07.408512]   ✅ XP readable
+[2026-11-14T23:05:07.408923] Health check failed, attempting recovery...
+[2026-11-14T23:06:07.409897] 
+--- Iteration 18 ---
+[2026-11-14T23:06:07.409930] === HEALTH CHECK ===
+[2026-11-14T23:06:10.191292]   ✅ Hunger < 90%
+[2026-11-14T23:06:10.191310]   ❌ Load not overburdened
+[2026-11-14T23:06:10.191313]   ✅ Health > 50%
+[2026-11-14T23:06:10.191314]   ✅ XP readable
+[2026-11-14T23:06:10.191671] Health check failed, attempting recovery...
+[2026-11-14T23:07:10.191852] 
+--- Iteration 19 ---
+[2026-11-14T23:07:10.191883] === HEALTH CHECK ===
+[2026-11-14T23:07:12.688703]   ✅ Hunger < 90%
+[2026-11-14T23:07:12.688725]   ❌ Load not overburdened
+[2026-11-14T23:07:12.688728]   ✅ Health > 50%
+[2026-11-14T23:07:12.688731]   ✅ XP readable
+[2026-11-14T23:07:12.689435] Health check failed, attempting recovery...
+[2026-11-14T23:08:12.689630] 
+--- Iteration 20 ---
+[2026-11-14T23:08:12.689661] === HEALTH CHECK ===
+[2026-11-14T23:08:15.166851]   ✅ Hunger < 90%
+[2026-11-14T23:08:15.166877]   ❌ Load not overburdened
+[2026-11-14T23:08:15.166880]   ✅ Health > 50%
+[2026-11-14T23:08:15.166883]   ✅ XP readable
+[2026-11-14T23:08:15.168903] Health check failed, attempting recovery...
+[2026-11-14T23:09:15.179585] 
+--- Iteration 21 ---
+[2026-11-14T23:09:15.179618] === HEALTH CHECK ===
+[2026-11-14T23:09:19.094815]   ✅ Hunger < 90%
+[2026-11-14T23:09:19.094840]   ❌ Load not overburdened
+[2026-11-14T23:09:19.094842]   ✅ Health > 50%
+[2026-11-14T23:09:19.094845]   ✅ XP readable
+[2026-11-14T23:09:19.095397] Health check failed, attempting recovery...
+[2026-11-14T23:10:19.095715] 
+--- Iteration 22 ---
+[2026-11-14T23:10:19.095754] === HEALTH CHECK ===
+[2026-11-14T23:10:21.319096]   ✅ Hunger < 90%

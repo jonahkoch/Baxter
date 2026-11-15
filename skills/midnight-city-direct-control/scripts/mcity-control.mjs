@@ -43,8 +43,6 @@ const stateDir = path.join(os.homedir(), ".midnight-city");
 
 loadDotEnv(dotenvPath);
 
-// Independent installations, accounts, environments, and configured agents
-// must not read or release another controller's lease.
 const leaseScope = createHash("sha256")
   .update(JSON.stringify([
     skillDir,
@@ -56,7 +54,6 @@ const leaseScope = createHash("sha256")
 const leaseFile = path.join(stateDir, `direct-control-lease-${leaseScope}.json`);
 export const workStateFile = path.join(stateDir, `work-session-${leaseScope}.json`);
 
-// A worker keeps the original session. It must not follow a replacement controller.
 export async function openWorkSession() {
   const config = loadConfig();
   let lease = await requireLease();
@@ -111,7 +108,7 @@ async function main() {
           "progression [agentId?] [--all]",
           "leaderboards [board]",
           "rank [board] [agentId?]",
-          "definition <item|recipe|source|enemy|contract|site> <id>",
+          "definition <item|recipe|source|enemy|quest|site> <id>",
           "needs [agentId?]",
           "areas [agentId?]",
           "resources [agentId?]",
@@ -416,8 +413,6 @@ async function connect(args) {
   });
   const lease = normalizeLease(response);
   await saveLease(lease);
-  // The human agreed to automatic updates at install time. Models do not
-  // reliably run an update themselves, so the helper does it here.
   let skillUpdate;
   if (withInstalledVersion(response.latestSkillVersion)?.updateAvailable) {
     skillUpdate = await updateSkill().catch((error) => ({ updated: false, error: error.message }));
@@ -499,7 +494,6 @@ async function buildContext(agentIdArg) {
   return context;
 }
 
-// The helper compares versions so that the caller only reads `updateAvailable`.
 function withInstalledVersion(latest) {
   if (!latest?.version) return latest;
   const installedVersion = readSkillVersion(skillDir);
@@ -515,13 +509,8 @@ function readSkillVersion(directory) {
   }
 }
 
-// The bundle owns these entries. An update replaces them whole and keeps every
-// other entry, such as `.env` and `account.json`.
 const BUNDLE_ENTRIES = new Set(["SKILL.md", ".env.example", ".gitignore", "references", "scripts"]);
 
-// Prepares the complete new folder next to the installation, then swaps the two
-// folders. A failure before the swap leaves the installation unchanged. The
-// lease and work state are outside the skill, so the session stays connected.
 async function updateSkill() {
   const observerUrl = readEnv("MCITY_OBSERVER_URL");
   if (observerUrl === null) throw new Error(`missing required config: MCITY_OBSERVER_URL. Create ${dotenvPath} from .env.example.`);
@@ -542,7 +531,6 @@ async function updateSkill() {
     const next = path.join(staging, "midnight-city-direct-control");
     const servedVersion = readSkillVersion(next);
     if (servedVersion === null) throw new Error("the downloaded skill bundle has no SKILL.md version");
-    // During a rolling deploy, another observer can still serve the old bundle.
     if (Date.parse(servedVersion) <= Date.parse(installedVersion)) {
       return { updated: false, installedVersion, servedVersion,
         reason: "The observer served a bundle that is not newer. Keep this version and try again later." };
@@ -580,7 +568,7 @@ async function readProgression(args) {
 }
 
 async function readDefinition(args) {
-  requireArgCount(args, 2, "definition <item|recipe|source|enemy|contract|site> <id>");
+  requireArgCount(args, 2, "definition <item|recipe|source|enemy|quest|site> <id>");
   const config = loadConfig();
   const stats = await requestJson(config.observerUrl, "/api/stats");
   const staticVersion = requiredText(stats?.staticVersion, "staticVersion");
@@ -611,7 +599,6 @@ async function listRecentEvents(agentIdArg) {
   return readSkillAgentEndpoint(agentIdArg, "recent-events");
 }
 
-// Groups come 50 per page; --cursor takes the previous nextCursor.
 async function readSocialGroups(args) {
   const query = new URLSearchParams();
   const agentIds = [];
@@ -623,7 +610,6 @@ async function readSocialGroups(args) {
   if (agentIds.length > 1 || [...query.values()].some((value) => !value)) {
     throw new Error("usage: social [agentId?] [--group <groupId>] [--cursor <nextCursor>]");
   }
-  // URLSearchParams.size needs Node 18.16; toString works on every version.
   const search = query.toString();
   return readSkillAgentEndpoint(agentIds[0] ?? null, search ? `social?${search}` : "social");
 }
@@ -641,8 +627,6 @@ async function changeGroup(command, args) {
   );
 }
 
-// Publishes the agent's own public addresses for display only. The City gets no
-// custody, signing, proving, submission, or fee authority.
 async function publishWallet(args) {
   requireArgCount(args, 4, PUBLISH_WALLET_USAGE);
   const [unshieldedAddress, shieldedAddress, dustAddress, cardanoAddress] = args.map((value) => value.trim());
@@ -934,7 +918,8 @@ function actionSuccessOutcome(event, action) {
     case "trade":
       if (
         payload.kind === "merchant_trade_completed" &&
-        payload.merchantName === action.merchantName
+        (action.merchantName == null || payload.merchantName === action.merchantName) &&
+        (action.receiveItemId == null || payload.receivedItemId === action.receiveItemId)
       ) {
         return eventOutcome(event, {
           status: "confirmed",

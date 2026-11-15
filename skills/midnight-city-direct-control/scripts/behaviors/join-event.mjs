@@ -1,16 +1,4 @@
 // @ts-check
-/**
- * Join one live event as a competitor, with no LLM call. Params (give one):
- *   - `eventId`: join this event (an event-result goal).
- *   - `reputationDomain`: join the first joinable event that raises this
- *     reputation domain (a reputation goal).
- *
- * Blocked when the named event is missing, finished, or no longer joinable.
- * Idle while the agent takes part, and while no event for the domain is
- * joinable. It never reports done; the goal check ends the step.
- *
- * Depends only on the Ctx contract.
- */
 
 import { eventAcceptsCompetitor, eventReputationDomains } from "./lib/events.mjs";
 

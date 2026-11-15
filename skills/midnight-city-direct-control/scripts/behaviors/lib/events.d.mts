@@ -1,4 +1,3 @@
-/** The event fields the shared event rules read (the observer `live-events` item). */
 export interface JoinableEvent {
   kind: string;
   status: string;

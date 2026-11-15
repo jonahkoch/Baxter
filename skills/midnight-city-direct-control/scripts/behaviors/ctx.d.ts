@@ -1,12 +1,7 @@
 /**
- * The behavior contract. A behavior depends only on this file.
- *
- * Each host provides a `Ctx` and executes the `Action` a behavior returns:
- *   - the orchestrator (in-process world snapshot, submits via the orchestrator),
- *   - the direct-control skill (observer reads + lease), used by self-hosted
- *     agents and by the belfry devtool.
- *
- * Behaviors never import a host, a client, or the harness. They see only `Ctx`.
+ * Behavior contract shared by the orchestrator and direct-control skill.
+ * The host supplies Ctx and executes the Action a behavior returns.
+ * Behaviors depend only on Ctx; they never import a host, client, or harness.
  */
 
 /** One enemy the agent can see, mirrored from the coordinator capabilities. */
@@ -60,6 +55,8 @@ export interface CtxRecovery {
  */
 export interface CtxMerchant {
   name: string;
+  /** Space the merchant stands in, when the read includes a position. */
+  spaceId?: string;
   source: "npc" | "outlet";
   offer: {
     acceptsItemId: string;
@@ -71,7 +68,7 @@ export interface CtxMerchant {
 
 /**
  * One other agent, as the skill `agents` read publishes it (self excluded).
- * A host can filter or order this list before a call; see each behavior header.
+ * A host can filter or order this list before a call.
  */
 export interface CtxAgent {
   id: string;
@@ -91,8 +88,8 @@ export interface CtxGroup {
 }
 
 /**
- * A request to open one conversation. The host writes and sends the text: the
- * orchestrator runs its hosted opener turn; the skill stops and prints it.
+ * A request to open one conversation. The orchestrator runs its hosted opener
+ * turn; the direct-control runner returns this request as needs_ai to its caller.
  */
 export interface CtxConversationRequest {
   intentKey: string;
@@ -123,6 +120,7 @@ export type Action =
   | { kind: "travel_to_district"; districtId: string }
   | { kind: "recover_items"; source: "grave" | "office" }
   | { kind: "trade"; merchantName: string; itemId: string; quantity: number }
+  | { kind: "trade"; itemId: string; receiveItemId: string; quantity: number }
   | { kind: "perform_job" }
   | { kind: "gather"; sourceId: string; nodeId?: string }
   | { kind: "craft"; recipeId: string; batches: number }
@@ -135,10 +133,8 @@ export type Action =
     }
   | { kind: "open_conversation"; request: CtxConversationRequest };
 
-/** Per-call behavior parameters, set by the host from the plan step or the runner spec. */
 export type Params = Readonly<Record<string, string | number | boolean>>;
 
-/** What a behavior decides for this tick. */
 export type Decision =
   | { kind: "act"; action: Action }
   /** Nothing now; the next behavior in the list may try. `reason` names the wait. */
@@ -220,9 +216,7 @@ export interface CtxRecipe {
 
 /** Static declaration exported by each behavior file as `meta`. */
 export interface BehaviorMeta {
-  /** Action kinds this behavior may return. */
   actionKinds: readonly Action["kind"][];
-  /** Skill reads this behavior needs. */
   reads: readonly Read[];
   /** Possible effects the owner must see when selecting a plan with this behavior. */
   effects: readonly string[];
@@ -230,11 +224,10 @@ export interface BehaviorMeta {
 
 /**
  * The read and action surface a behavior sees. Reads are plain data. Verbs are
- * pure: they build an `Action` and never execute it. This grows per behavior.
+ * pure: they build an `Action` and never execute it.
  */
 export interface Ctx {
   self: {
-    /** The agent's id. */
     agentId: string;
     /**
      * The id of the space the agent is currently in. For top-level districts this
@@ -262,9 +255,7 @@ export interface Ctx {
      * "hungry" or "starving" above the coordinator thresholds. Hunger slows work.
      */
     hunger: { state: "normal" | "hungry" | "starving"; value: number };
-    /** The agent's current profession, or null when it has none. */
     profession: string | null;
-    /** True while a `perform_job` work cycle runs. */
     isPerformingJob: boolean;
     /** True while an exclusive module (for example an event) locks common actions. */
     lockedByModule: boolean;
@@ -289,17 +280,12 @@ export interface Ctx {
   /** Social groups from the skill `social` read. */
   groups: CtxGroup[];
 
-  /** Build an attack action against one enemy with the given style. */
   attack(enemyId: string, style: "melee" | "ranged"): Action;
-  /** Build a use-item action for a consumable in inventory. */
   useItem(itemId: string): Action;
-  /** Build a move action to an area. */
   moveToArea(areaId: string): Action;
-  /** Build a move action to a specific tile (for example an enemy's approach position). */
   moveTo(destination: { spaceId: string; x: number; y: number }): Action;
   /** Build a travel action to another district's gateway (crosses districts). */
   travelToDistrict(districtId: string): Action;
-  /** Build an action to recover dropped items from a grave or office. */
   recoverItems(source: "grave" | "office"): Action;
   /**
    * Build a trade with a merchant: give `quantity` of `itemId` (a multiple of the
@@ -307,6 +293,11 @@ export interface Ctx {
    * agent to the merchant on its own.
    */
   trade(merchantName: string, itemId: string, quantity: number): Action;
+  /**
+   * Build a trade with the merchant the coordinator picks: of those whose offer
+   * takes `itemId` and pays `receiveItemId`, the one with the cheapest route.
+   */
+  tradeNearest(itemId: string, receiveItemId: string, quantity: number): Action;
   /** Build an action that starts one profession work cycle at a nearby node. */
   performJob(): Action;
   /**
@@ -321,7 +312,6 @@ export interface Ctx {
   craft(recipeId: string, batches: number): Action;
   /** Build an action that eats the best carried food. */
   eatWell(): Action;
-  /** Build an action that joins a live event with the requested role. */
   joinEvent(eventId: string, role: "competitor" | "audience"): Action;
   /** Build a request to open one conversation. The host writes the text. */
   openConversation(request: CtxConversationRequest): Action;

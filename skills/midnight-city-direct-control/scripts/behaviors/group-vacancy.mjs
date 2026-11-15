@@ -1,22 +1,4 @@
 // @ts-check
-/**
- * Ask a founder of a full group to make room for one new member, with no LLM
- * call in the behavior. The host writes and sends the text. Step params:
- *   - `memberSelector`: "founder_choice" (the founder picks the member) or
- *     "lowest_founder_sentiment" (the host names the weakest member).
- * Host params (orchestrator: added at run time; skill: from the run spec):
- *   - `groupId`: the goal group.
- *   - `weakestMemberAgentId`: the member to name for "lowest_founder_sentiment".
- *     It needs founder sentiments, which are host-only data, so it is a param.
- *   - `attempt`, `unavailableAgentIds`: see `lib/social.mjs`.
- * Founders are tried in `ctx.agents` order. The orchestrator orders that list
- * by its relationship sentiment (host-only data), best first.
- *
- * Done when the group is not full. Blocked with `goal_group_missing`,
- * `group_membership_limit` (member of another group),
- * `goal_group_founder_missing`, `weakest_group_member_resolution_missing`, or
- * `no_legal_social_target`.
- */
 
 import { goalGroup, inAgentOrder, pickConversationTarget } from "./lib/social.mjs";
 

@@ -1,18 +1,4 @@
 // @ts-check
-/**
- * Ask a founder to let the agent join a group, with no LLM call in the
- * behavior. The host writes and sends the text. No step params.
- * Host params (orchestrator: added at run time; skill: from the run spec):
- *   - `groupId`: the goal group.
- *   - `attempt`, `unavailableAgentIds`: see `lib/social.mjs`.
- * Founders are tried in `ctx.agents` order. The orchestrator orders that list
- * by its relationship sentiment (host-only data), best first.
- *
- * Done when the agent is a member. Idle (`group_still_full`) while the group
- * is full. Blocked with `goal_group_missing`, `group_membership_limit`
- * (member of another group), `goal_group_founder_missing`, or
- * `no_legal_social_target`.
- */
 
 import { goalGroup, inAgentOrder, pickConversationTarget } from "./lib/social.mjs";
 

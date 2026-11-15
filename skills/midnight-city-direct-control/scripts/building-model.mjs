@@ -1,4 +1,3 @@
-// Owns owner GLB uploads and review reads. The CLI supplies the active agent and HTTP client.
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 

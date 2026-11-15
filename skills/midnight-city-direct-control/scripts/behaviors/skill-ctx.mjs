@@ -58,6 +58,9 @@ export function buildSkillCtx(data, params = {}) {
             ? [
                 {
                   name: String(merchant.name),
+                  ...(typeof merchant.position?.spaceId === "string"
+                    ? { spaceId: merchant.position.spaceId }
+                    : {}),
                   source: merchant.source === "outlet" ? "outlet" : "npc",
                   offer: {
                     acceptsItemId: String(merchant.offer.acceptsItemId),
@@ -160,6 +163,12 @@ export function buildSkillCtx(data, params = {}) {
       kind: "trade",
       merchantName,
       itemId,
+      quantity,
+    }),
+    tradeNearest: (itemId, receiveItemId, quantity) => ({
+      kind: "trade",
+      itemId,
+      receiveItemId,
       quantity,
     }),
     performJob: () => ({ kind: "perform_job" }),

@@ -1,4 +1,3 @@
-// Group commands use coordinator results and the connected agent's control token.
 export const groupCommandHelp = [
   "my-group",
   "create-group <name> [description]",
@@ -20,7 +19,6 @@ export function buildGroupRequest(command, args) {
   if (command === "my-group") return { suffix: "", method: "GET" };
   if (command === "create-group") {
     const [name, description = ""] = values;
-    // Creation waits for the server text check. The observer waits up to 20 s.
     return { suffix: "", method: "POST", body: { name, description }, timeoutMs: 25_000 };
   }
   const group = `/${encodeURIComponent(values[0])}`;

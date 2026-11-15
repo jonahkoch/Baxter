@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-// Owns one timed work session and its local status. The coordinator owns work cycles.
 import { randomUUID } from "node:crypto";
 import { realpathSync } from "node:fs";
 import { mkdir, open, readFile, rename, rm, writeFile } from "node:fs/promises";
@@ -55,7 +54,6 @@ function readXp(response) {
   return Object.fromEntries(entries.map(([skill, row]) => [skill, row.xp]));
 }
 
-// Confirm the stop event and the server state before releasing this session.
 export async function stopWork(client, { now = Date.now, wait = sleep } = {}) {
   await client.heartbeat();
   const agentId = client.lease().agentId;
@@ -167,7 +165,6 @@ export async function runWorkSession(client, {
             state.reason = "waiting for the server to confirm work";
             nextPoll = now() + PENDING_POLL_MS;
             await publish();
-            // Keep pending after a transport failure. Read state before any retry.
             await client.action("perform_job");
           }
           if (now() >= nextProgress) await updateXp();

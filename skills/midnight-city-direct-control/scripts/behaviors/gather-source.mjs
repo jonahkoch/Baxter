@@ -1,19 +1,4 @@
 // @ts-check
-/**
- * Gather one source, with no LLM call. Gather is gated by skill level, not by
- * profession. Params:
- *   - `sourceId`: the source to gather (required).
- *   - `areaId`: optional; gather at a free node for the source in this area.
- *     Without it, the coordinator chooses the node and travels on its own.
- *   - `toolItemIds`: optional comma list of tools to keep. A missing tool is
- *     bought when the agent can pay; else the agent gathers without it.
- *
- * Order: check the source, wait while a job runs, buy a missing tool, choose a
- * node in the area, else gather. It never reports done; the host stops on its
- * progress target.
- *
- * Depends only on the Ctx contract.
- */
 
 import { toolPurchase } from "./lib/tools.mjs";
 
@@ -44,13 +29,11 @@ export function decide(ctx) {
   const tools = typeof toolItemIds === "string" ? toolItemIds.split(",").filter(Boolean) : [];
   for (const toolItemId of tools) {
     const purchase = toolPurchase(ctx, toolItemId);
-    // A tool only speeds up work. When it cannot be bought, gather without it.
     if (purchase.kind === "buy") return { kind: "act", action: purchase.action };
   }
   if (typeof areaId !== "string" || areaId.length === 0) {
     return { kind: "act", action: ctx.gather(sourceId) };
   }
-  // Capability order decides, so both hosts choose the same node.
   const nodeId = source.availableNodeIds.find((id) =>
     ctx.resourceNodes.some(
       (node) => node.id === id && node.areaId === areaId && node.availableToAgent,

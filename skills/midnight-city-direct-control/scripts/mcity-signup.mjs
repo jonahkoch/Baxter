@@ -27,7 +27,6 @@ const DEFAULT_APPEARANCE = {
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const skillDir = path.resolve(scriptDir, "..");
-// Setup state belongs to this installation, not every controller on the computer.
 const installationId = createHash("sha256").update(skillDir).digest("hex");
 const stateDir = path.join(os.homedir(), ".midnight-city", installationId);
 const sessionFile = path.join(stateDir, "account-session.json");

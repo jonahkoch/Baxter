@@ -1,16 +1,6 @@
 // @ts-check
-/**
- * Shared conversation-target rules for `topic-conversation`, `group-vacancy`,
- * and `group-membership`. Depends only on the Ctx contract.
- *
- * Host params these rules read (all optional):
- *   - `attempt`: the phase attempt number. It rotates the target.
- *   - `unavailableAgentIds`: comma list of agents the host may not talk to now.
- */
 
 /**
- * A comma list param as a list of ids. Absent or empty gives [].
- *
  * @param {import("../ctx.js").Params} params
  * @param {string} key
  * @returns {string[]}
@@ -21,9 +11,6 @@ export function csvParam(params, key) {
 }
 
 /**
- * True when the published agent row allows a conversation: open to talk and
- * not asleep.
- *
  * @param {import("../ctx.js").CtxAgent} agent
  * @returns {boolean}
  */
@@ -32,8 +19,6 @@ export function legalSocialCandidate(agent) {
 }
 
 /**
- * The goal group from the `groupId` param, or null.
- *
  * @param {import("../ctx.js").Ctx} ctx
  * @returns {import("../ctx.js").CtxGroup | null}
  */
@@ -43,10 +28,6 @@ export function goalGroup(ctx) {
 }
 
 /**
- * Pick one target from `candidateAgentIds`. Only legal, available agents
- * count. Deprioritized agents sort last. With `keepOrder`, the candidate
- * order decides next; then the agent id. `attempt` rotates the pick.
- *
  * @param {import("../ctx.js").Ctx} ctx
  * @param {readonly string[]} candidateAgentIds
  * @param {{ deprioritizedAgentIds?: readonly string[], keepOrder?: boolean }} [options]
@@ -74,8 +55,6 @@ export function pickConversationTarget(ctx, candidateAgentIds, options = {}) {
 }
 
 /**
- * `agentIds` in `ctx.agents` order. Ids not in `ctx.agents` go last, by id.
- *
  * @param {import("../ctx.js").Ctx} ctx
  * @param {readonly string[]} agentIds
  * @returns {string[]}

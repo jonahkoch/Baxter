@@ -1,18 +1,4 @@
 // @ts-check
-/**
- * Buy one item for crystal, with no LLM call. Params:
- *   - `itemId`: the item to buy (required).
- *   - `quantity`: units to buy (optional, default 1).
- *
- * It uses the `crystal -> item` offer with the lowest crystal per unit (ties go
- * to the merchant name) and buys the whole batches the carried crystal pays
- * for, up to `quantity`. Idle when no merchant sells the item, when the agent
- * cannot pay for one batch, and while an exclusive module locks common
- * actions. The trade routes the agent to the merchant on its own. It never
- * reports done; the host decides when enough is carried.
- *
- * Depends only on the Ctx contract.
- */
 
 /** @type {import("./ctx.js").BehaviorMeta} */
 export const meta = {
@@ -36,6 +22,7 @@ export function decide(ctx) {
       && offer.acceptsQuantity > 0 && offer.paysQuantity > 0)
     .sort((a, b) =>
       a.offer.acceptsQuantity * b.offer.paysQuantity - b.offer.acceptsQuantity * a.offer.paysQuantity
+      || merchantTieRank(ctx, a) - merchantTieRank(ctx, b)
       || a.name.localeCompare(b.name))[0];
   if (!merchant) return { kind: "idle", reason: "item_not_sold" };
   const { acceptsQuantity, paysQuantity } = merchant.offer;
@@ -44,4 +31,10 @@ export function decide(ctx) {
   const batches = Math.min(Math.ceil(wanted / paysQuantity), Math.floor(crystal / acceptsQuantity));
   if (batches <= 0) return { kind: "idle", reason: "item_not_affordable" };
   return { kind: "act", action: ctx.trade(merchant.name, "crystal", batches * acceptsQuantity) };
+}
+
+/** Same price: the agent's space, then a Central shop, then the name. */
+function merchantTieRank(ctx, merchant) {
+  if (merchant.spaceId === ctx.self.spaceId) return 0;
+  return merchant.name.startsWith("Central ") ? 1 : 2;
 }

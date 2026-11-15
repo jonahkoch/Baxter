@@ -1,19 +1,4 @@
 // @ts-check
-/**
- * Open one trusted-topic conversation, with no LLM call in the behavior. The
- * host writes and sends the text. Step params:
- *   - `audience`: "new" (agents not yet counted as partners) or "existing".
- * Host params (orchestrator: added at run time; skill: from the run spec):
- *   - `countedPartnerAgentIds`: comma list of agents that already count as
- *     partners. It is host-only data (relationship history), so it is a param.
- *   - `deprioritizedAgentIds`: comma list tried last (partners of this goal).
- *   - `excludedTopicIds`: comma list of topics already discussed.
- *   - `attempt`, `unavailableAgentIds`: see `lib/social.mjs`.
- *
- * Blocked with `no_remaining_conversation_target` when no agent is in the
- * audience, and with `no_legal_social_target` when no audience agent can talk
- * now. It never reports done; the goal check ends the step.
- */
 
 import { csvParam, pickConversationTarget } from "./lib/social.mjs";
 

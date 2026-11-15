@@ -1,12 +1,4 @@
 // @ts-check
-/**
- * Eat carried food when hungry, with no LLM call. The coordinator does not
- * eat for the agent, and hunger slows work. Idle while hunger is normal, when
- * no edible food is carried, and while an exclusive module locks common
- * actions. Buying food is the job of `keep-food`; list it after this behavior.
- *
- * Depends only on the Ctx contract.
- */
 
 import { foodQuantity } from "./lib/food.mjs";
 

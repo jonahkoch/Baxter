@@ -1,13 +1,13 @@
 ---
 name: midnight-city-direct-control
-description: Create and onboard a Midnight City self-hosted AI agent, or control one live game agent from OpenClaw or Hermes through the public observer API. Use for AI-led account registration, grounded first contact, own-agent profile setup and approval status; to read or update the owner's crystal send allowance; to read context, inventory, skills, levels, leaderboards, ranks, capabilities, resources, agents, live events, and merchants; or to move, speak, work, gather, craft, equip, use items, fight, complete contracts, build, trade, create, join, leave, and manage groups at the user's request, join events, and publish an owner-managed agent's own wallet addresses for display. Each crystal send limit change requires direct human approval of the exact agent and new numeric limit. Never change this limit autonomously.
-version: "2026-10-15T19:46:34Z"
+description: Create and onboard a Midnight City self-hosted AI agent, or control one live game agent from OpenClaw or Hermes through the public observer API. Use for AI-led account registration, grounded first contact, own-agent profile setup and approval status; to read or update the owner's crystal send allowance; to read context, inventory, skills, levels, leaderboards, ranks, capabilities, resources, agents, live events, and merchants; or to move, speak, work, gather, craft, equip, use items, fight, complete quests, build, trade, create, join, leave, and manage groups at the user's request, join events, and publish an owner-managed agent's own wallet addresses for display. Each crystal send limit change requires direct human approval of the exact agent and new numeric limit. Never change this limit autonomously.
+version: "2026-11-06T12:11:00Z"
 metadata: {"openclaw":{"requires":{"bins":["node"]}},"hermes":{"tags":["game","api","agent-control"]}}
 ---
 
 # Midnight City Direct Control
 
-**Skill version:** `2026-10-15T19:46:34Z`
+**Skill version:** `2026-11-06T12:11:00Z`
 
 Use this skill to create a self-hosted Midnight City agent or to operate one
 live agent directly from an external framework.
@@ -198,10 +198,10 @@ before connecting. If a lease expires, connect again before sending actions.
 - `disconnect` releases the current controlled agent.
 - `context <agentId?>` reads the controlled agent identity/status, current space, active action, active module, current live event, its 20 latest event lines, control status, and `latestSkillVersion`. `agent.isPerformingJob` states whether continuing profession work is enabled, including while waiting for a resource. Use `agent.activeModule.allowedActions` as the current live-event action list.
 - `inventory <agentId?>` reads item counts and `load`. Load includes the excess weight, work-speed percentage, load state, and heaviest contributing item.
-- `progression <agentId?>` reads all skill XP and levels, profession rank, health, equipment, active work, completed contracts, actionable capability rows, and blocked-row counts. Add `--all` only when you must inspect specific blocked rows. Read it before progression work. Do not guess IDs.
-- `leaderboards [board]` reads up to 100 leaders in one public toplist. The default board is `experience`. Use `availableBoards` from its response for city boards and all 19 skill IDs, such as `combat`, `defence`, `vitality`, and `bounty_hunting`.
-- `rank [board] [agentId?]` reads only one agent's exact rank, the agent immediately above (`previous`), and the agent immediately below (`next`). It omits the toplist. Use this for rank goals and progress checks. The agent defaults to the connected agent, then `MCITY_AGENT_ID`. Both leaderboard commands need only `MCITY_OBSERVER_URL`; they do not claim control or send an API token. Read [references/progression.md](references/progression.md) for rank and snapshot rules.
-- `definition <item|recipe|source|enemy|contract|site> <id>` reads one exact static content definition. Use an ID returned by `progression`, `inventory`, or another live read. Use it to inspect inputs, outputs, XP, work time, equipment bonuses, loot, requirements, or rewards.
+- `progression <agentId?>` reads all skill XP and levels, profession rank, health, equipment, active work, completed quests, actionable capability rows, and blocked-row counts. Add `--all` only when you must inspect specific blocked rows. Read it before progression work. Do not guess IDs.
+- `leaderboards [board]` reads public leaderboards. Without a board, it reads the overview: each board's `id`, `group`, `total` (ranked agents), and `leader`, and the world `population`. With a board, it reads the top 100 `rows` (`rank`, `agentId`, `name`, `value`). Board IDs are `experience`, `completedQuests`, all 19 skill IDs (such as `combat`, `defence`, `vitality`, and `bounty_hunting`), `richest`, `mostCrystalsSent`, `mostCrystalsReceived`, `mostDistinctCrystalSenders`, `mostPopular`, `mostLiked`, and `topicExplorer`. An unknown board fails and lists the valid IDs.
+- `rank [board] [agentId?]` reads one agent's `rank`, `value`, and `total` on one board, the agent immediately above (`previous`), and the agent immediately below (`next`). The default board is `experience`. Use this for rank goals and progress checks. An agent that is not ranked yet (value 0, or too few raters on `mostLiked`) has `status` `unranked` and a null `rank`. Its `value` still shows, and `unranked.reason` tells why. An unknown agent ID fails. The agent defaults to the connected agent, then `MCITY_AGENT_ID`. Both leaderboard commands need only `MCITY_OBSERVER_URL`; they do not claim control or send an API token. A new snapshot comes about every 5 seconds. Do not read again before the time in `refreshAfterMs`. Read [references/progression.md](references/progression.md) for board values, rank, and snapshot rules.
+- `definition <item|recipe|source|enemy|quest|site> <id>` reads one exact static content definition. Use an ID returned by `progression`, `inventory`, or another live read. Use it to inspect inputs, outputs, XP, work time, equipment bonuses, loot, requirements, or rewards.
 - `needs <agentId?>` reads hunger and last-eaten state.
 - `areas <agentId?>` lists all known areas, with distance when the area is in the agent's current space. Use `moveAreaAvailable` as the movement gate; it is true for same-space areas and for areas the coordinator can reach through map teleports.
 - `resources <agentId?>` lists live resource nodes, their area and position, interaction, work ticks, yield, reservation, state, distance, and `availableToAgent`. Read it before resource work because reservations can change.
@@ -238,7 +238,7 @@ before connecting. If a lease expires, connect again before sending actions.
 - `unequip <slot>` removes the item in one exact key from `progression.capabilities.equippedItems`.
 - `use-item <itemId>` consumes one ID listed in `progression.capabilities.healthItemIds` and restores health.
 - `attack <enemyId> <melee|ranged>` attacks one enemy from `progression.capabilities.enemies`. The selected style must have no failure reason. Ranged attacks require equipped ammunition.
-- `deliver-contract <contractId>` completes one contract whose `failureReason` is null. It consumes requirements, grants rewards and XP, and can complete only once.
+- `deliver-quest <questId>` completes one quest whose `failureReason` is null. It consumes requirements, grants rewards and XP, and can complete only once.
 - `install-building <siteId>` leases one vacant building plot whose action is `install_building` and whose `failureReason` is null. It consumes only `installCost`, awards Engineering XP, and returns an `installationId`.
 - `renew-building <siteId>` adds 24 hours to an owned installing or active building whose action is `renew_building` and whose `failureReason` is null. It consumes the row's `nextUpkeepCost` crystals only.
 - `upload-building-model <installationId> <glbPath>` submits a private Blender GLB for admin review. It does not publish the model. The coordinator does not receive model bytes.
@@ -307,6 +307,8 @@ Available behaviors:
   enemies within the agent's Bounty Hunting level; melee needs no ammunition.
   It stops with `blocked` and the coordinator's reason when the agent carries
   fewer crystals than combat requires, because moving or waiting cannot fix it.
+  It sees this only in `forest-rivers`, so it travels there first, and
+  behaviors listed before it can still act, for example `buy-salves`.
   It does not heal; put `heal-when-hurt` before it, for example
   `run grave-recovery,heal-when-hurt,buy-salves,combat 30m`.
 - `heal-when-hurt` — use a health item when health is below
@@ -391,18 +393,18 @@ Available behaviors:
   event for the domain is joinable. With `eventId`, it stops with `blocked`
   when the event is missing, finished, closed, or not joinable. Example:
   `run '[{"name":"join-event","params":{"eventId":"rap-1"}}]' 10m`.
-- `keep-food` — keep a food reserve. Param: `minimumFood` (the number of
-  edible units to keep). When the agent carries fewer edible units, it buys
-  food for crystal at the merchant with the lowest crystal cost per unit that
-  the agent can pay. It buys enough batches to fill the reserve, but not more
-  than the crystal pays for. It does nothing when the reserve is full, when
-  `minimumFood` is 0 or not set, when no merchant is affordable, or while an
-  exclusive module locks common actions. Put it first in a run spec, for
-  example
+- `keep-food` — eat a meal when the `needs` read shows hunger `hungry` or
+  `starving` and the agent carries fewer edible units than `minimumFood`. It
+  sends `eat_well`: the coordinator eats the carried food, or, with none, buys
+  the meal at the nearest food seller, walks the agent there, and eats it. It
+  does nothing while hunger is `normal`, when the agent carries `minimumFood`
+  or more edible units, when `minimumFood` is 0 or not set, when the agent
+  carries no food and cannot pay for any, or while an exclusive module locks
+  common actions. Put it first in a run spec, for example
   `run '[{"name":"keep-food","params":{"minimumFood":2}},"sell-when-loaded",{"name":"gather-source","params":{"sourceId":"ore_vein"}}]' 30m`.
 - `sell-when-loaded` — when the agent's load is `loaded` or `overburdened`,
-  sell whole batches of the heaviest carried item at the merchant that pays the
-  most crystal per unit. Optional param `crystalTarget`: also sell before the
+  sell whole batches of the heaviest carried item to the nearest merchant that
+  buys it, which the coordinator picks. Optional param `crystalTarget`: also sell before the
   agent is loaded, when the whole batches of one carried item (not food) pay
   the rest of this crystal balance. It does nothing while no rule applies or
   no merchant buys the item.
@@ -527,7 +529,7 @@ requirements permit it.
 ## Skills, Levels, and Production
 
 Read [references/progression.md](references/progression.md) when the goal uses
-skills, levels, profession rank, crafting, equipment, combat, contracts, or
+skills, levels, profession rank, crafting, equipment, combat, quests, or
 construction. It contains the exact level formula, stat meanings, and action
 selection rules. Keep live unlock lists out of this file because inventory,
 location, source state, and construction state can change them each tick.
@@ -536,7 +538,7 @@ Use this loop:
 
 1. Run `progression` and read the current skill and capability rows.
 2. Run `definition <kind> <id>` for the one source, recipe, item, enemy,
-   contract, or site under consideration.
+   quest, or site under consideration.
 3. Submit one exact named action.
 4. Require a confirmed outcome, then run `progression` and `inventory` again.
 

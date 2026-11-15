@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-23T12:35:36.804Z",
+  "updatedAt": "2026-10-29T21:35:22.556Z",
   "entries": {
     "memory:memory/2026-04-07.md:1:46": {
       "key": "memory:memory/2026-04-07.md:1:46",
@@ -201,24 +201,26 @@
       "endLine": 44,
       "source": "memory",
       "snippet": "**Recommended path**: Set up native Gmail first (built-in), use browser automation for Calendar/Drive as needed, build a Google skill later if heavy automation is required. ## Context Window Critical - Context hit **100%** (256k/256k tokens) during this session - Updated HEARTBEAT.md with critical status - Session flagged for fresh start ## Token Usage - 84k input / 2.2k output at time of flush ## Google + Obsidian Integration — Active Project Jonah confirmed intent to set up full Google workspace integration (Gmail, Calendar, Drive) and wants to connect it to **Obsidian** (his note-taking app). This is a priority project to resume in the next session. **Scope:** 1. **Gmail**: Set up",
-      "recallCount": 4,
+      "recallCount": 5,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 4,
+      "totalScore": 5,
       "maxScore": 1,
       "firstRecalledAt": "2026-06-12T19:01:52.309Z",
-      "lastRecalledAt": "2026-08-27T15:53:12.768Z",
+      "lastRecalledAt": "2026-10-29T21:33:18.216Z",
       "queryHashes": [
         "59af54970b91",
         "bb1a813ca6e7",
         "d17565cc7f45",
-        "a74f49a0b2a5"
+        "a74f49a0b2a5",
+        "20aba5ea4239"
       ],
       "recallDays": [
         "2026-06-12",
         "2026-06-13",
         "2026-07-08",
-        "2026-08-27"
+        "2026-08-27",
+        "2026-10-29"
       ],
       "conceptTags": [
         "built-in",
@@ -899,6 +901,69 @@
         "inventory",
         "severity",
         "ratings"
+      ]
+    },
+    "memory:memory/2026-10-23.md:1:38": {
+      "key": "memory:memory/2026-10-23.md:1:38",
+      "path": "memory/2026-10-23.md",
+      "startLine": 1,
+      "endLine": 38,
+      "source": "memory",
+      "snippet": "# 2026-10-23 — Baxter Showcase Dashboard ## What We Built **Baxter Showcase** — a Proscenium-inspired, state-driven project dashboard living at: `https://jonahkoch.github.io/Baxter/` ### Architecture - React + Vite + Tailwind + Framer Motion - State-driven via `latest-world.json` (frontend polls every 4s) - `gh-pages` branch deployment (clean force-push, `.nojekyll` included) - I can update by rewriting `public/latest-world.json` and redeploying ### What's Live - **Avatar window** — placeholder (Bot icon), ready for v2 image/animation - **About window** — brief description of the dashboard - **7 project cards** with status badges, progress bars, tags, links: - Midnight City, Kochfoto A",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-10-29T21:33:18.216Z",
+      "lastRecalledAt": "2026-10-29T21:35:22.556Z",
+      "queryHashes": [
+        "20aba5ea4239",
+        "0a18cb915a3a"
+      ],
+      "recallDays": [
+        "2026-10-29"
+      ],
+      "conceptTags": [
+        "proscenium-inspired",
+        "state-driven",
+        "jonahkoch.github.io/baxter",
+        "latest-world.json",
+        "gh-pages",
+        "force-push",
+        "public/latest-world.json",
+        "image/animation"
+      ]
+    },
+    "memory:memory/2026-10-23.md:29:49": {
+      "key": "memory:memory/2026-10-23.md:29:49",
+      "path": "memory/2026-10-23.md",
+      "startLine": 29,
+      "endLine": 49,
+      "source": "memory",
+      "snippet": "`scripts/update-state.js` — CLI for updating state without hand-editing JSON: ```bash node scripts/update-state.js --set-progress project-midnight-city 80 node scripts/update-state.js --set-status project-ojonah complete node scripts/update-state.js --window skills --field domains --value '<json>' ``` ### v2 Ideas (future) - Custom domain + Vercel deployment - Animated avatar (WebGL/CSS) - Text-to-speech for project updates - Visual project timelines / dependency graphs - Theme switching (dark/light) - Mobile-responsive layout ## Custom Domain Plan (Tabled) - Subdomain under existing domain (e.g., `baxter.kochfoto.com`) - Simple CNAME → `jonahkoch.github.io` - GitHub auto-provisions HTTPS",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-10-29T21:33:18.216Z",
+      "lastRecalledAt": "2026-10-29T21:33:18.216Z",
+      "queryHashes": [
+        "20aba5ea4239"
+      ],
+      "recallDays": [
+        "2026-10-29"
+      ],
+      "conceptTags": [
+        "scripts/update-state.js",
+        "hand-editing",
+        "set-progress",
+        "project-midnight-city",
+        "set-status",
+        "project-ojonah",
+        "webgl/css",
+        "text-to-speech"
       ]
     }
   }

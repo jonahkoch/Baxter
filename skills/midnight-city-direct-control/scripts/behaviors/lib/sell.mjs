@@ -1,17 +1,9 @@
 // @ts-check
-/**
- * Shared sell rule: sell whole batches of one item for crystal.
- * Depends only on the Ctx contract.
- */
 
 /**
- * Build a trade that sells whole batches of `quantity` units of `itemId` at the
- * best `itemId -> crystal` offer (most crystal per unit; ties go to the merchant
- * name). Null when no merchant buys the item or less than one batch is on hand.
- *
  * @param {import("../ctx.js").Ctx} ctx
  * @param {string} itemId
- * @param {number} quantity  Units the agent may sell.
+ * @param {number} quantity
  * @returns {import("../ctx.js").Action | null}
  */
 export function sellBatches(ctx, itemId, quantity) {
@@ -19,12 +11,10 @@ export function sellBatches(ctx, itemId, quantity) {
   if (!offer) return null;
   const batch = offer.offer.acceptsQuantity;
   const sell = Math.floor(quantity / batch) * batch;
-  return sell > 0 ? ctx.trade(offer.name, itemId, sell) : null;
+  return sell > 0 ? ctx.tradeNearest(itemId, "crystal", sell) : null;
 }
 
 /**
- * The best merchant that buys `itemId` for crystal, or null.
- *
  * @param {import("../ctx.js").Ctx} ctx
  * @param {string} itemId
  * @returns {import("../ctx.js").CtxMerchant | null}

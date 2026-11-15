@@ -1,14 +1,6 @@
 // @ts-check
-/**
- * Shared tool-purchase rule for behaviors that need a productivity tool.
- * Depends only on the Ctx contract.
- */
 
 /**
- * Decide how to get one unit of `itemId`: already owned, buy it now, or blocked.
- * Picks the cheapest `crystal -> itemId` offer that pays exactly one unit; ties
- * go to the merchant name.
- *
  * @param {import("../ctx.js").Ctx} ctx
  * @param {string} itemId
  * @returns {{ kind: "owned" } | { kind: "buy", action: import("../ctx.js").Action } | { kind: "blocked", reason: string }}
@@ -26,6 +18,7 @@ export function toolPurchase(ctx, itemId) {
     .sort(
       (left, right) =>
         left.offer.acceptsQuantity - right.offer.acceptsQuantity ||
+        merchantTieRank(ctx, left) - merchantTieRank(ctx, right) ||
         left.name.localeCompare(right.name),
     )[0];
   if (!offer) return { kind: "blocked", reason: "tool_offer_missing" };
@@ -34,4 +27,10 @@ export function toolPurchase(ctx, itemId) {
     return { kind: "blocked", reason: "tool_not_affordable" };
   }
   return { kind: "buy", action: ctx.trade(offer.name, "crystal", price) };
+}
+
+/** Same price: the agent's space, then a Central shop, then the name. */
+function merchantTieRank(ctx, merchant) {
+  if (merchant.spaceId === ctx.self.spaceId) return 0;
+  return merchant.name.startsWith("Central ") ? 1 : 2;
 }

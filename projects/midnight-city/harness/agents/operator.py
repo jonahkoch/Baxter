@@ -111,6 +111,46 @@ def _run_command(cmd: list, timeout: int = 120) -> Dict[str, Any]:
         return {"error": True, "parse_error": str(e), "stdout": result.stdout[:500]}
 
 
+def _wait_for_trade_completion(merchant: str, item: str, max_wait: int = 120) -> Dict[str, Any]:
+    """Poll agent state after a trade to verify it completed.
+    
+    The agent may need to walk to the merchant, so we wait up to max_wait seconds
+    checking if the trade went through.
+    """
+    import time
+    from agents.scout import scout_game_state
+    
+    start = time.time()
+    check_interval = 5
+    
+    while time.time() - start < max_wait:
+        time.sleep(check_interval)
+        state = scout_game_state()
+        agent = state.get("agent", {})
+        
+        # Check if agent is still walking/moving toward merchant
+        is_moving = agent.get("isMoving", False)
+        current_action = agent.get("currentAction", "")
+        
+        if is_moving or "walk" in current_action.lower() or "move" in current_action.lower():
+            # Still en route, keep waiting
+            continue
+        
+        # Agent has arrived or wasn't moving — trade should be done
+        # Return current state so caller can verify
+        return {
+            "status": "completed",
+            "agent_state": agent,
+            "waited_seconds": int(time.time() - start),
+        }
+    
+    return {
+        "status": "timeout",
+        "reason": f"Trade did not complete within {max_wait}s",
+        "waited_seconds": max_wait,
+    }
+
+
 def execute_action(action_type: str, params: Dict[str, Any], state: Dict[str, Any]) -> Dict[str, Any]:
     """
     Execute a decided action.
@@ -121,13 +161,21 @@ def execute_action(action_type: str, params: Dict[str, Any], state: Dict[str, An
     
     elif action_type == "buy_food":
         # Buy matcha_smoothie from Central Smoothies Matcha Outlet
-        return _run_command(["trade", "Central Smoothies Matcha Outlet", "matcha_smoothie", "1"])
+        result = _run_command(["trade", "Central Smoothies Matcha Outlet", "matcha_smoothie", "1"])
+        if "error" not in result:
+            wait_result = _wait_for_trade_completion("Central Smoothies Matcha Outlet", "matcha_smoothie")
+            result["wait_result"] = wait_result
+        return result
     
     elif action_type == "sell_meme_coins":
         # Sell all meme coins to Central Crypto Merchant
         meme_coin = state.get("agent", {}).get("memeCoin", 0)
         if meme_coin > 0:
-            return _run_command(["trade", "Central Crypto Merchant", "meme_coin", str(meme_coin)])
+            result = _run_command(["trade", "Central Crypto Merchant", "meme_coin", str(meme_coin)])
+            if "error" not in result:
+                wait_result = _wait_for_trade_completion("Central Crypto Merchant", "meme_coin")
+                result["wait_result"] = wait_result
+            return result
         return {"error": True, "reason": "No meme coins to sell"}
     
     elif action_type == "trade":
@@ -135,7 +183,11 @@ def execute_action(action_type: str, params: Dict[str, Any], state: Dict[str, An
         merchant = params.get("merchant", "Central Crypto Merchant")
         item = params.get("item", "meme_coin")
         qty = params.get("quantity", 1)
-        return _run_command(["trade", merchant, item, str(qty)])
+        result = _run_command(["trade", merchant, item, str(qty)])
+        if "error" not in result:
+            wait_result = _wait_for_trade_completion(merchant, item)
+            result["wait_result"] = wait_result
+        return result
     
     elif action_type == "grind":
         grind_type = params.get("grind_type", "crypto_terminal")

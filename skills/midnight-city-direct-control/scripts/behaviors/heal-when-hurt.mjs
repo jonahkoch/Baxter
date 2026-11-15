@@ -1,17 +1,4 @@
 // @ts-check
-/**
- * Use a health item when hurt, with no LLM call. Param `belowFraction`
- * (default 0.5): heal when health is below `maxHealth × belowFraction`.
- * Idle otherwise, when no health item is usable, and while an exclusive
- * module locks common actions. It never reports done, so a list can reuse it
- * (combat uses 0.5; the heal mission uses 1). Buying salves is the job of
- * `buy-salves`.
- *
- * The host fills `healthItemIds` only while hurt, so an empty list at full
- * health is normal.
- *
- * Depends only on the Ctx contract.
- */
 
 /** @type {import("./ctx.js").BehaviorMeta} */
 export const meta = {

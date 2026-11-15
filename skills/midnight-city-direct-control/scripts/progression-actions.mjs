@@ -6,7 +6,7 @@ export const progressionCommandHelp = [
   "use-item <itemId>",
   "attack <enemyId> <melee|ranged>",
   "recover-items <grave|office> [itemId...]",
-  "deliver-contract <contractId>",
+  "deliver-quest <questId>",
   "install-building <siteId>",
   "renew-building <siteId>",
 ];
@@ -50,9 +50,9 @@ export function buildProgressionAction(command, args) {
       if (source !== "grave" && source !== "office") throw new Error("source must be grave or office");
       return { kind: "recover_items", source, ...(args.length > 1 ? { itemIds: args.slice(1).map(id => text(id, "itemId")) } : {}) };
     }
-    case "deliver-contract":
-      exactArgs(args, 1, "deliver-contract <contractId>");
-      return { kind: "deliver_contract", contractId: text(args[0], "contractId") };
+    case "deliver-quest":
+      exactArgs(args, 1, "deliver-quest <questId>");
+      return { kind: "deliver_quest", questId: text(args[0], "questId") };
     case "install-building":
     case "renew-building":
       exactArgs(args, 1, `${command} <siteId>`);
@@ -98,9 +98,9 @@ export function progressionOutcomeFields(payload, action) {
         : null;
     case "recover_items":
       return payload.kind === "items_recovered" && payload.source === action.source ? pick(payload, ["source", "fee"]) : null;
-    case "deliver_contract":
-      return payload.kind === "contract_completed" && payload.contractId === action.contractId
-        ? pick(payload, ["contractId", "rewards"])
+    case "deliver_quest":
+      return payload.kind === "quest_completed" && payload.questId === action.questId
+        ? pick(payload, ["questId", "rewards"])
         : null;
     case "install_building":
     case "renew_building":
@@ -129,7 +129,7 @@ export function findContentDefinition(staticWorldResponse, kindValue, idValue) {
     recipe: "recipes",
     source: "sources",
     enemy: "enemies",
-    contract: "contracts",
+    quest: "quests",
     site: "constructionSites",
   };
   const collection = collections[kind];

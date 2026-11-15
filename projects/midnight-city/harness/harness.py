@@ -158,6 +158,12 @@ class MidnightCityHarness:
                 elif load_state == "overburdened":
                     self._log(f"Load overburdened, running maintenance...")
                     needs_maintenance = True
+                elif load_state == "heavy":
+                    # Proactive: sell before we hit overburdened
+                    meme_coins = agent.get("memeCoin", 0)
+                    if meme_coins > 100:
+                        self._log(f"Load heavy with {meme_coins} meme coins, selling early...")
+                        needs_maintenance = True
                 
                 if needs_maintenance and (time.time() - last_maintenance) > 60:
                     # Stop work, do maintenance, restart
@@ -291,13 +297,29 @@ class MidnightCityHarness:
             self._log(f"\n--- Iteration {iteration} ---")
             
             # 1. Health check
-            if not self.run_health_check():
-                self._log("Health check failed, attempting recovery...")
-                time.sleep(60)
+            healthy = self.run_health_check()
+            if not healthy:
+                self._log("Health issues detected, running maintenance...")
+            
+            # 2. Maintenance (always run — handles hunger, load, food, etc.)
+            self.run_maintenance_cycle()
+            
+            # Wait for async actions (trades, eating) to complete, then re-check
+            self._log("Waiting for maintenance actions to complete...")
+            time.sleep(10)
+            post_state = scout_game_state()
+            post_load = post_state.get("agent", {}).get("loadState", "normal")
+            post_hunger = post_state.get("agent", {}).get("hungerPercent", 0)
+            
+            if post_load == "overburdened":
+                self._log(f"Still overburdened after maintenance (meme coins: {post_state.get('agent', {}).get('memeCoin', 0)}). Retrying...")
+                time.sleep(30)
                 continue
             
-            # 2. Maintenance
-            self.run_maintenance_cycle()
+            if post_hunger >= 90:
+                self._log(f"Still hungry ({post_hunger:.0f}%) after maintenance. Retrying...")
+                time.sleep(30)
+                continue
             
             # 3. Work
             self.run_work_cycle(GRIND_DURATION_MINUTES)
@@ -319,18 +341,22 @@ class MidnightCityHarness:
         # Always run maintenance (handles hunger, load, food, etc.)
         self.run_maintenance_cycle()
         
-        # Wait briefly for async actions to complete, then re-check
-        self._log("Re-checking state after maintenance...")
-        import time
-        time.sleep(5)
+        # Wait for async actions (trades, eating) to complete, then re-check
+        self._log("Waiting for maintenance actions to complete...")
+        time.sleep(10)
+        self._write_status("maintenance_wait", {"reason": "waiting for trade/eat to complete"})
         post_state = scout_game_state()
         self._log(format_scout_report(post_state))
         
         load_state = post_state.get("agent", {}).get("loadState", "normal")
         hunger = post_state.get("agent", {}).get("hungerPercent", 0)
         
-        if load_state == "overburdened" or hunger >= 90:
-            self._log("Still critical after maintenance, skipping work cycle")
+        if load_state == "overburdened":
+            self._log(f"Still overburdened after maintenance (meme coins: {post_state.get('agent', {}).get('memeCoin', 0)}). Skipping work.")
+            return False
+        
+        if hunger >= 90:
+            self._log(f"Still hungry ({hunger:.0f}%) after maintenance. Skipping work.")
             return False
         
         self.run_work_cycle(5)  # 5-minute test grind
