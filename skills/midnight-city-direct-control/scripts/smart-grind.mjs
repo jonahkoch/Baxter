@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// Simple smart grind — keeps work going, eats when hungry, sells when loaded
+// Simple smart grind — uses gather crypto_terminal in a loop
+// Fixed to use needs/inventory endpoints (context no longer returns vitals)
 import { execSync } from "node:child_process";
 import { setTimeout } from "node:timers/promises";
 
@@ -32,13 +33,32 @@ async function connect() {
 }
 
 async function heartbeat() {
-  // Just read context to keep lease alive
+  // Read context to keep lease alive
   const res = run(`${CONTROL} context`);
   if (res?.agent) {
     leaseExpires = Date.now() + 300000; // 5 min from now
     return res.agent;
   }
   return null;
+}
+
+async function getNeeds() {
+  const res = run(`${CONTROL} needs`);
+  if (res?.hunger) {
+    return res.hunger.value ?? 0;
+  }
+  return 0;
+}
+
+async function getLoadState() {
+  const res = run(`${CONTROL} inventory`);
+  if (res?.load) {
+    return {
+      state: res.load.state ?? "normal",
+      memeCoins: res.inventory?.meme_coin ?? 0,
+    };
+  }
+  return { state: "normal", memeCoins: 0 };
 }
 
 async function eat() {
@@ -75,11 +95,9 @@ async function sell() {
   return false;
 }
 
-async function startWork() {
-  console.log(new Date().toISOString(), "Starting work...");
-  const res = run(`${CONTROL} work`);
-  if (res?.submitted) {
-    console.log(new Date().toISOString(), "Work submitted");
+async function gather() {
+  const res = run(`${CONTROL} gather crypto_terminal`);
+  if (res?.outcome?.status === "confirmed") {
     return true;
   }
   return false;
@@ -93,11 +111,11 @@ async function tick() {
     return;
   }
 
-  const hunger = agent.hunger?.value ?? 0;
-  const isWorking = agent.isPerformingJob;
-  const loadState = agent.load?.state ?? "normal";
+  // Get hunger and load from correct endpoints
+  const hunger = await getNeeds();
+  const loadInfo = await getLoadState();
 
-  console.log(new Date().toISOString(), `hunger=${hunger} load=${loadState} working=${isWorking}`);
+  console.log(new Date().toISOString(), `hunger=${hunger} load=${loadInfo.state} memeCoins=${loadInfo.memeCoins}`);
 
   // Eat if hungry
   if (hunger >= 80) {
@@ -106,28 +124,23 @@ async function tick() {
   }
 
   // Sell if loaded
-  if (loadState === "overburdened" || loadState === "loaded") {
+  if (loadInfo.state === "overburdened" || loadInfo.state === "heavy") {
     await sell();
     return;
   }
 
-  // Start work if not working
-  if (!isWorking) {
-    await startWork();
-  }
+  // Gather from crypto terminal
+  await gather();
 }
 
 async function main() {
-  console.log(new Date().toISOString(), "Smart Grind starting...");
+  console.log(new Date().toISOString(), "Smart Grind starting (gather-based)...");
   await connect();
 
-  // Initial start
-  await startWork();
-
-  // Main loop — check every 2 minutes
+  // Main loop — gather every 15 seconds
   while (true) {
-    await setTimeout(120000);
     await tick();
+    await setTimeout(15000);
   }
 }
 

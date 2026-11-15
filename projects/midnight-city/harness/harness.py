@@ -95,7 +95,9 @@ class MidnightCityHarness:
     
     def run_work_cycle(self, duration_minutes: int = 120) -> bool:
         """
-        Run one work/grind cycle.
+        Run one work/grind cycle using gather commands in a loop.
+        The 'work' command doesn't stay active, so we use gather crypto_terminal
+        repeatedly with health checks between gathers.
         Returns True if successful.
         """
         self.current_phase = "work"
@@ -113,119 +115,88 @@ class MidnightCityHarness:
         decision = decide_next_action(state)
         action_type, params = decision
         
-        if action_type in ("grind", "continue_work"):
-            # Start work via API
-            self._log(f"Starting work: {params.get('grind_type', 'profession')}")
-            outcome = execute_action("grind", params, state)
-            self._log(format_outcome(outcome))
-            
-            if "error" in outcome:
-                self._log("Failed to start work")
-                return False
-            
-            # Work loop: check health every 30s, restart work if stopped, run maintenance if needed
-            end_time = time.time() + (duration_minutes * 60)
-            last_maintenance = 0
-            work_restarts = 0
-            
-            # Give work a moment to start before first check
-            time.sleep(5)
-            
-            while time.time() < end_time and self.running:
-                time.sleep(25)  # 25s + 5s initial = 30s between checks
-                
-                # Scout state
-                check_state = scout_game_state()
-                agent = check_state.get("agent", {})
-                hunger = agent.get("hungerPercent", 0)
-                load_state = agent.get("loadState", "normal")
-                is_working = agent.get("isPerformingJob", False)
-                
-                # Write status for heartbeat monitoring
-                self._write_status("working", {
-                    "hunger": hunger,
-                    "load_state": load_state,
-                    "is_working": is_working,
-                    "work_restarts": work_restarts,
-                    "elapsed_minutes": (time.time() - self.session_start_time) / 60,
-                })
-                
-                # Check if maintenance needed
-                needs_maintenance = False
-                if hunger >= 80:
-                    self._log(f"Hunger at {hunger:.0f}%, running maintenance...")
-                    needs_maintenance = True
-                elif load_state == "overburdened":
-                    self._log(f"Load overburdened, running maintenance...")
-                    needs_maintenance = True
-                elif load_state == "heavy":
-                    # Proactive: sell before we hit overburdened
-                    meme_coins = agent.get("memeCoin", 0)
-                    if meme_coins > 100:
-                        self._log(f"Load heavy with {meme_coins} meme coins, selling early...")
-                        needs_maintenance = True
-                
-                if needs_maintenance and (time.time() - last_maintenance) > 60:
-                    # Stop work, do maintenance, restart
-                    self._log("Pausing work for maintenance...")
-                    stop_work()
-                    
-                    # Run maintenance
-                    self.run_maintenance_cycle()
-                    last_maintenance = time.time()
-                    
-                    # Restart work
-                    self._log("Restarting work after maintenance...")
-                    restart = execute_action("grind", params, scout_game_state())
-                    self._log(format_outcome(restart))
-                    time.sleep(5)  # Give restart time to take effect
-                    work_restarts = 0  # Reset restart counter
-                    continue
-                
-                # If work stopped, restart it (up to 3 times to avoid infinite loops)
-                if not is_working:
-                    if work_restarts < 3:
-                        work_restarts += 1
-                        self._log(f"Work stopped, restarting ({work_restarts}/3)...")
-                        restart = execute_action("grind", params, check_state)
-                        self._log(format_outcome(restart))
-                        time.sleep(5)
-                    else:
-                        self._log("Work stopped 3 times, giving up")
-                        break
-            
-            # Stop work
-            stop_work()
-            
-            # Post-work scout
-            end_state = scout_game_state()
-            end_xp = end_state.get("agent", {}).get("hackingXP", 0)
-            duration = (time.time() - self.session_start_time) / 60
-            
-            # Record session
-            session = record_session(
-                grind_type=params.get("grind_type", "crypto_terminal"),
-                start_xp=self.session_start_xp,
-                end_xp=end_xp,
-                duration_minutes=duration,
-                skill="hacking",
-                notes=params.get("reason", ""),
-            )
-            
-            self._log(f"Session complete: +{session['xp_gained']} XP in {duration:.1f}m ({session['xp_per_hour']:.0f} XP/hr)")
-            
-            # Checkpoint
-            save_checkpoint(
-                phase="work",
-                context=end_state,
-                decision=f"{action_type}: {params.get('reason', '')}",
-                outcome={"xp_gained": session["xp_gained"], "duration": duration},
-            )
-            
-            return True
-        else:
+        if action_type not in ("grind", "continue_work"):
             self._log(f"Work cycle deferred: {action_type}")
             return False
+        
+        # Work loop: gather repeatedly with health checks
+        end_time = time.time() + (duration_minutes * 60)
+        last_maintenance = 0
+        gathers_done = 0
+        last_gather_time = 0
+        
+        while time.time() < end_time and self.running:
+            # Scout state
+            check_state = scout_game_state()
+            agent = check_state.get("agent", {})
+            hunger = agent.get("hungerPercent", 0)
+            load_state = agent.get("loadState", "normal")
+            
+            # Write status for heartbeat monitoring
+            self._write_status("working", {
+                "hunger": hunger,
+                "load_state": load_state,
+                "gathers_done": gathers_done,
+                "elapsed_minutes": (time.time() - self.session_start_time) / 60,
+            })
+            
+            # Check if maintenance needed
+            needs_maintenance = False
+            if hunger >= 80:
+                self._log(f"Hunger at {hunger:.0f}%, running maintenance...")
+                needs_maintenance = True
+            elif load_state == "overburdened":
+                self._log(f"Load overburdened, running maintenance...")
+                needs_maintenance = True
+            elif load_state == "heavy":
+                meme_coins = agent.get("memeCoin", 0)
+                if meme_coins > 100:
+                    self._log(f"Load heavy with {meme_coins} meme coins, selling early...")
+                    needs_maintenance = True
+            
+            if needs_maintenance and (time.time() - last_maintenance) > 60:
+                self._log("Pausing work for maintenance...")
+                self.run_maintenance_cycle()
+                last_maintenance = time.time()
+                continue
+            
+            # Do a gather
+            outcome = execute_action("grind", params, check_state)
+            if "error" not in outcome:
+                gathers_done += 1
+                last_gather_time = time.time()
+            else:
+                self._log(f"Gather failed: {outcome.get('reason', 'unknown')}")
+            
+            # Wait between gathers (crypto terminals have a cooldown)
+            time.sleep(15)
+        
+        # Post-work scout
+        end_state = scout_game_state()
+        end_xp = end_state.get("agent", {}).get("hackingXP", 0)
+        duration = (time.time() - self.session_start_time) / 60
+        
+        # Record session
+        session = record_session(
+            grind_type=params.get("grind_type", "crypto_terminal"),
+            start_xp=self.session_start_xp,
+            end_xp=end_xp,
+            duration_minutes=duration,
+            skill="hacking",
+            notes=params.get("reason", ""),
+        )
+        
+        self._log(f"Session complete: +{session['xp_gained']} XP in {duration:.1f}m ({session['xp_per_hour']:.0f} XP/hr) — {gathers_done} gathers")
+        
+        # Checkpoint
+        save_checkpoint(
+            phase="work",
+            context=end_state,
+            decision=f"{action_type}: {params.get('reason', '')}",
+            outcome={"xp_gained": session["xp_gained"], "duration": duration, "gathers": gathers_done},
+        )
+        
+        return True
     
     def run_health_check(self) -> bool:
         """

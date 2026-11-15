@@ -1,9 +1,13 @@
 {
-  "status": "maintenance_wait",
-  "phase": "maintenance",
-  "timestamp": "2026-11-15T15:52:40.790381",
-  "timestamp_ms": 1794754360790,
+  "status": "working",
+  "phase": "work",
+  "timestamp": "2026-11-15T16:32:38.467877",
+  "timestamp_ms": 1794756758467,
   "details": {
-    "reason": "waiting for trade/eat to complete"
+    "hunger": 62,
+    "load_state": "normal",
+    "is_working": false,
+    "work_restarts": 1,
+    "elapsed_minutes": 1.2916131854057311
   }
 }
