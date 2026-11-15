@@ -180,14 +180,15 @@ def scout_game_state(agent_id: Optional[str] = None) -> Dict[str, Any]:
         state["errors"].append(f"needs: {needs.get('stderr', 'unknown error')}")
     else:
         state["needs"] = needs
-        # Hunger might be a dict or a simple value
+        # Hunger is a dict with 'value' (0-100 scale)
         hunger_raw = needs.get("hunger", {})
         if isinstance(hunger_raw, dict):
-            state["agent"]["hunger"] = hunger_raw.get("value", 0)
-            state["agent"]["hungerPercent"] = (hunger_raw.get("value", 0) / 100) * 100 if hunger_raw.get("value") else 0
+            hunger_value = hunger_raw.get("value", 0)
+            state["agent"]["hunger"] = hunger_value
+            state["agent"]["hungerPercent"] = hunger_value  # Already 0-100
         else:
             state["agent"]["hunger"] = hunger_raw
-            state["agent"]["hungerPercent"] = needs.get("hungerPercent", 0) or 0
+            state["agent"]["hungerPercent"] = hunger_raw
     
     # 3. Inventory (items, load, crystals)
     inventory = _run_command(["inventory"])

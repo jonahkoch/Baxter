@@ -1,13 +1,9 @@
 {
-  "status": "health_check",
-  "phase": "health_check",
-  "timestamp": "2026-11-14T23:17:40.206458",
-  "timestamp_ms": 1794694660206,
+  "status": "maintenance_wait",
+  "phase": "maintenance",
+  "timestamp": "2026-11-15T15:52:40.790381",
+  "timestamp_ms": 1794754360790,
   "details": {
-    "hunger": 50.0,
-    "load_state": "overburdened",
-    "health": 100,
-    "max_health": 100,
-    "healthy": false
+    "reason": "waiting for trade/eat to complete"
   }
 }
