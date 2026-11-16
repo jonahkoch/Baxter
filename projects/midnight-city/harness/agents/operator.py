@@ -192,7 +192,12 @@ def execute_action(action_type: str, params: Dict[str, Any], state: Dict[str, An
     elif action_type == "grind":
         grind_type = params.get("grind_type", "crypto_terminal")
         if grind_type == "crypto_terminal":
-            return _run_command(["gather", "crypto_terminal"])
+            result = _run_command(["gather", "crypto_terminal"])
+            # If gather fails with unknown error, force reconnect for next time
+            if result.get("error") and result.get("reason") == "unknown":
+                global _last_lease_expires
+                _last_lease_expires = 0
+            return result
         else:
             return _run_command(["work"])
     

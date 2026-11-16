@@ -1,13 +1,12 @@
 {
   "status": "working",
   "phase": "work",
-  "timestamp": "2026-11-15T16:32:38.467877",
-  "timestamp_ms": 1794756758467,
+  "timestamp": "2026-11-15T17:45:18.979239",
+  "timestamp_ms": 1794761118979,
   "details": {
-    "hunger": 62,
+    "hunger": 67,
     "load_state": "normal",
-    "is_working": false,
-    "work_restarts": 1,
-    "elapsed_minutes": 1.2916131854057311
+    "gathers_done": 67,
+    "elapsed_minutes": 29.520004884401956
   }
 }

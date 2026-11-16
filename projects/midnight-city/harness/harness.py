@@ -160,13 +160,19 @@ class MidnightCityHarness:
                 last_maintenance = time.time()
                 continue
             
-            # Do a gather
-            outcome = execute_action("grind", params, check_state)
-            if "error" not in outcome:
-                gathers_done += 1
-                last_gather_time = time.time()
-            else:
-                self._log(f"Gather failed: {outcome.get('reason', 'unknown')}")
+            # Do a gather with error resilience
+            try:
+                outcome = execute_action("grind", params, check_state)
+                if "error" not in outcome:
+                    gathers_done += 1
+                    last_gather_time = time.time()
+                else:
+                    self._log(f"Gather failed: {outcome.get('reason', 'unknown')}")
+                    # If we get repeated failures, force a reconnect
+                    if outcome.get('reason') == 'unknown':
+                        self._log("Unknown error — forcing reconnect on next cycle")
+            except Exception as e:
+                self._log(f"Gather exception: {e} — continuing loop")
             
             # Wait between gathers (crypto terminals have a cooldown)
             time.sleep(15)
